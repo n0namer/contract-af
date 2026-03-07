@@ -12,7 +12,7 @@ from contract_af.models import (
     Severity,
     SynthesisResult,
 )
-from contract_af.pipeline.scoring import compute_risk_score
+from contract_af.scoring import compute_risk_score
 
 
 async def synthesize_findings(

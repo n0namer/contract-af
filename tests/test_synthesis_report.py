@@ -36,7 +36,7 @@ from contract_af.models import (
     Severity,
     SynthesisResult,
 )
-from contract_af.pipeline.scoring import (
+from contract_af.scoring import (
     SEVERITY_WEIGHTS,
     compute_risk_score,
     is_enforceable,
@@ -333,9 +333,7 @@ class TestCoverageGate:
         anatomy = _make_anatomy(["1", "2", "3"])
         results = [_make_analysis_result(["1"])]
 
-        assessment = await assess_coverage(
-            mock_app, anatomy, results, iteration=MAX_ITERATIONS
-        )
+        assessment = await assess_coverage(mock_app, anatomy, results, iteration=MAX_ITERATIONS)
 
         assert assessment.is_sufficient is True
         # app.ai should NOT be called at max iterations
@@ -417,9 +415,7 @@ class TestSynthesizer:
 
         mock_app.call.return_value = {"strategy": "Negotiate.", "summary": "Summary."}
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         finding_ids = [rf.finding.id for rf in result.findings]
         assert "f-1" in finding_ids
@@ -444,9 +440,7 @@ class TestSynthesizer:
             "summary": "Critical risk.",
         }
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         categories = [rf.finding.category for rf in result.findings]
         assert "hidden_trap" in categories
@@ -468,9 +462,7 @@ class TestSynthesizer:
             "summary": "Summary.",
         }
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         scores = [rf.composite_score for rf in result.findings]
         assert scores == sorted(scores, reverse=True)
@@ -498,14 +490,10 @@ class TestSynthesizer:
 
         mock_app.call = AsyncMock(side_effect=track_calls)
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         # LOW finding (score=2.0) should get static text, not LLM call
-        low_finding = next(
-            rf for rf in result.findings if rf.finding.id == "f-low"
-        )
+        low_finding = next(rf for rf in result.findings if rf.finding.id == "f-low")
         assert "Low priority" in low_finding.negotiation_strategy
 
     @pytest.mark.asyncio
@@ -529,9 +517,7 @@ class TestSynthesizer:
             "summary": "Critical risk.",
         }
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [combo], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [combo], "Delaware")
 
         # CRITICAL=10 * 1.5 (combo) * 1.3 (exploit) = 19.5 >= 13
         assert result.overall_risk_profile.overall_risk == Severity.CRITICAL
@@ -552,9 +538,7 @@ class TestSynthesizer:
             "summary": "High risk.",
         }
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         # HIGH=7.0 * 1.3 (exploit) = 9.1 >= 9
         assert result.overall_risk_profile.overall_risk == Severity.HIGH
@@ -574,9 +558,7 @@ class TestSynthesizer:
             "summary": "Medium risk.",
         }
 
-        result = await synthesize_findings(
-            mock_app, findings, adversary, [], "Delaware"
-        )
+        result = await synthesize_findings(mock_app, findings, adversary, [], "Delaware")
 
         # HIGH=7.0 (no multipliers) >= 5 but < 9
         assert result.overall_risk_profile.overall_risk == Severity.MEDIUM
