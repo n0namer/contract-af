@@ -187,7 +187,7 @@ class TestCrossReferenceDetection:
         """Use the fixture file which has richer cross-ref language."""
         fixture_path = (
             "/Users/santoshkumarradha/Documents/agentfield/code/examples/"
-            "contract-af/_worktrees/tests-anatomy/tests/fixtures/sample_saas_agreement.txt"
+            "contract-af/tests/fixtures/sample_saas_agreement.txt"
         )
         with open(fixture_path) as f:
             text = f.read()
@@ -260,7 +260,7 @@ class TestExhibitDetection:
     def test_finds_exhibits_in_fixture_file(self) -> None:
         fixture_path = (
             "/Users/santoshkumarradha/Documents/agentfield/code/examples/"
-            "contract-af/_worktrees/tests-anatomy/tests/fixtures/sample_saas_agreement.txt"
+            "contract-af/tests/fixtures/sample_saas_agreement.txt"
         )
         with open(fixture_path) as f:
             text = f.read()
@@ -518,7 +518,7 @@ class TestFullIntegration:
         """Use the full fixture file which has cross-refs and date contexts."""
         fixture_path = (
             "/Users/santoshkumarradha/Documents/agentfield/code/examples/"
-            "contract-af/_worktrees/tests-anatomy/tests/fixtures/sample_saas_agreement.txt"
+            "contract-af/tests/fixtures/sample_saas_agreement.txt"
         )
         with open(fixture_path) as f:
             text = f.read()
@@ -535,7 +535,7 @@ class TestFullIntegration:
     async def test_integration_with_fixture_file(self) -> None:
         fixture_path = (
             "/Users/santoshkumarradha/Documents/agentfield/code/examples/"
-            "contract-af/_worktrees/tests-anatomy/tests/fixtures/sample_saas_agreement.txt"
+            "contract-af/tests/fixtures/sample_saas_agreement.txt"
         )
         with open(fixture_path) as f:
             text = f.read()
