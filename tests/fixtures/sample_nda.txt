@@ -1,0 +1,209 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of
+January 15, 2026 (the "Effective Date"), by and between:
+
+TechCorp Inc., a Delaware corporation, with its principal place of business at
+742 Innovation Drive, Suite 300, San Jose, California 95134 ("TechCorp"); and
+
+DataFlow LLC, a California limited liability company, with its principal place
+of business at 1200 Market Street, Suite 800, San Francisco, California 94103
+("DataFlow").
+
+TechCorp and DataFlow are each referred to herein as a "Party" and collectively
+as the "Parties."
+
+WHEREAS, the Parties wish to explore a potential business relationship
+concerning the integration of their respective software platforms (the
+"Purpose"); and
+
+WHEREAS, in connection with the Purpose, each Party may disclose to the other
+certain confidential and proprietary information; and
+
+WHEREAS, the Parties desire to establish the terms and conditions under which
+such information will be disclosed and protected;
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements set
+forth herein, and for other good and valuable consideration, the receipt and
+sufficiency of which are hereby acknowledged, the Parties agree as follows:
+
+
+1. DEFINITIONS
+
+1.1 "Confidential Information" means any information shared by either Party,
+whether written, oral, electronic, or observed, including but not limited to
+trade secrets, business plans, financial information, customer lists, technical
+data, software code, algorithms, designs, specifications, marketing strategies,
+pricing information, employee information, and any other information that is
+designated as confidential or that reasonably should be understood to be
+confidential given the nature of the information and the circumstances of
+disclosure. Confidential Information shall also include the existence and terms
+of this Agreement.
+
+1.2 "Disclosing Party" means the Party that discloses Confidential Information
+to the other Party.
+
+1.3 "Receiving Party" means the Party that receives Confidential Information
+from the Disclosing Party.
+
+1.4 "Representative" means, with respect to a Party, such Party's officers,
+directors, employees, agents, advisors, consultants, and contractors who have a
+need to know the Confidential Information for the Purpose and who are bound by
+obligations of confidentiality no less protective than those set forth herein.
+
+
+2. OBLIGATIONS OF RECEIVING PARTY
+
+2.1 The Receiving Party shall hold all Confidential Information of the
+Disclosing Party in strict confidence and shall not disclose such Confidential
+Information to any third party without the prior written consent of the
+Disclosing Party, except to its Representatives as permitted under Section 2.3.
+
+2.2 The Receiving Party shall use the Confidential Information solely for the
+Purpose and shall not use such information for any other purpose, including
+without limitation for the benefit of any third party.
+
+2.3 The Receiving Party may disclose Confidential Information to its
+Representatives who have a need to know such information for the Purpose,
+provided that the Receiving Party (a) informs such Representatives of the
+confidential nature of the information and (b) ensures that such
+Representatives are bound by obligations of confidentiality no less protective
+than those contained herein. The Receiving Party shall be responsible for any
+breach of this Agreement by its Representatives.
+
+2.4 The Receiving Party shall protect the Confidential Information using the
+same degree of care it uses to protect its own confidential information, but in
+no event less than a reasonable degree of care.
+
+2.5 The Receiving Party shall promptly notify the Disclosing Party in writing
+upon discovery of any unauthorized use or disclosure of Confidential Information
+and shall cooperate with the Disclosing Party to remedy such unauthorized use or
+disclosure.
+
+
+3. EXCLUSIONS FROM CONFIDENTIAL INFORMATION
+
+3.1 The obligations set forth in Section 2 shall not apply to information that
+the Receiving Party can demonstrate:
+
+    (a) was publicly known and generally available in the public domain prior to
+    the time of disclosure by the Disclosing Party;
+
+    (b) becomes publicly known and generally available after disclosure by the
+    Disclosing Party through no wrongful action or inaction of the Receiving
+    Party;
+
+    (c) was already in the possession of the Receiving Party at the time of
+    disclosure by the Disclosing Party, as shown by the Receiving Party's files
+    and records; or
+
+    (d) is obtained by the Receiving Party from a third party without a breach
+    of such third party's obligations of confidentiality.
+
+3.2 Notwithstanding the foregoing, the Receiving Party may disclose Confidential
+Information to the extent required by applicable law, regulation, or court order,
+provided that the Receiving Party (a) gives the Disclosing Party prompt written
+notice of such requirement prior to disclosure (to the extent legally
+permissible), (b) cooperates with the Disclosing Party's efforts to obtain a
+protective order or other appropriate remedy, and (c) discloses only that
+portion of the Confidential Information that is legally required to be disclosed.
+
+
+4. TERM
+
+4.1 This Agreement shall remain in effect for a period of two (2) years from
+the Effective Date, unless earlier terminated by either Party upon thirty (30)
+days' prior written notice to the other Party.
+
+4.2 The obligations of confidentiality set forth in Section 2 shall survive the
+expiration or termination of this Agreement for a period of three (3) years
+following such expiration or termination.
+
+
+5. RETURN OF MATERIALS
+
+5.1 Upon the expiration or termination of this Agreement, or upon the written
+request of the Disclosing Party at any time, the Receiving Party shall promptly:
+
+    (a) return to the Disclosing Party all documents, materials, and other
+    tangible items containing or reflecting Confidential Information of the
+    Disclosing Party; and
+
+    (b) destroy all copies, summaries, analyses, and other materials derived
+    from or containing the Disclosing Party's Confidential Information in the
+    Receiving Party's possession or control.
+
+5.2 Upon request, the Receiving Party shall certify in writing that it has
+complied with the requirements of this Section 5.
+
+5.3 Notwithstanding the foregoing, the Receiving Party may retain one (1)
+archival copy of the Confidential Information solely for the purpose of
+determining its obligations hereunder, provided such copy remains subject to
+the confidentiality obligations of this Agreement.
+
+
+6. REMEDIES
+
+6.1 Each Party acknowledges and agrees that any breach or threatened breach of
+this Agreement by the Receiving Party may cause irreparable harm to the
+Disclosing Party for which monetary damages would be an inadequate remedy.
+Accordingly, the Disclosing Party shall be entitled to seek equitable relief,
+including injunction and specific performance, in addition to all other remedies
+available at law or in equity, without the necessity of proving actual damages
+or posting a bond or other security.
+
+
+7. NO WARRANTY; NO OBLIGATION
+
+7.1 ALL CONFIDENTIAL INFORMATION IS PROVIDED "AS IS." THE DISCLOSING PARTY
+MAKES NO WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE ACCURACY, COMPLETENESS,
+OR PERFORMANCE OF ANY CONFIDENTIAL INFORMATION.
+
+7.2 Nothing in this Agreement shall obligate either Party to proceed with any
+transaction or business relationship, and each Party reserves the right, in its
+sole discretion, to terminate the discussions contemplated by this Agreement.
+
+
+8. MISCELLANEOUS
+
+8.1 Governing Law. This Agreement shall be governed by and construed in
+accordance with the laws of the State of California, without regard to its
+conflict of laws principles.
+
+8.2 Entire Agreement. This Agreement constitutes the entire agreement between
+the Parties with respect to the subject matter hereof and supersedes all prior
+and contemporaneous agreements, understandings, negotiations, and discussions,
+whether oral or written.
+
+8.3 Amendments. This Agreement may not be amended or modified except by a
+written instrument signed by both Parties.
+
+8.4 Assignment. Neither Party may assign or transfer this Agreement or any
+rights or obligations hereunder without the prior written consent of the other
+Party, and any attempted assignment without such consent shall be null and void.
+
+8.5 Severability. If any provision of this Agreement is held to be invalid or
+unenforceable, the remaining provisions shall continue in full force and effect.
+
+8.6 Notices. All notices under this Agreement shall be in writing and shall be
+deemed given when delivered personally, sent by confirmed email, or sent by
+certified mail, return receipt requested, to the addresses set forth above.
+
+8.7 Counterparts. This Agreement may be executed in counterparts, each of which
+shall be deemed an original, and all of which together shall constitute one and
+the same instrument.
+
+8.8 No Waiver. The failure of either Party to enforce any provision of this
+Agreement shall not be construed as a waiver of such provision or the right to
+enforce it at a later time.
+
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective
+Date.
+
+TECHCORP INC.                           DATAFLOW LLC
+
+By: ___________________________         By: ___________________________
+Name: Sarah Chen                        Name: Michael Rivera
+Title: Chief Executive Officer          Title: Managing Member
+Date: January 15, 2026                  Date: January 15, 2026
