@@ -12,7 +12,6 @@
 <p>
   <a href="#what-you-get-back">Output</a> •
   <a href="#how-it-works">How It Works</a> •
-  <a href="#why-this-architecture">Why It Works</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#api">API</a> •
   <a href="#comparison">Comparison</a>
@@ -59,188 +58,49 @@ Every finding includes **where** the risk lives (clause reference + text), **why
 
 ## How It Works
 
-Contract-AF decomposes legal review into a **7-phase adaptive pipeline** — the same workflow a senior lawyer follows, but with 10-15+ specialized agents working in parallel. Each agent handles a narrow, well-defined task. The orchestrator manages context flow, parallelism, and adaptive depth.
+Contract-AF runs a **7-phase adaptive pipeline** that mirrors how a senior lawyer actually reviews a contract — but with dozens of AI agents working in parallel, each handling a narrow, well-defined task. A typical run involves **20-50+ agent invocations**; complex contracts with deep cross-referencing and coverage gaps can trigger **100+**.
 
-### Architecture: 7-Phase Pipeline
+The pipeline flows through: **Intake** (classify the deal) → **Anatomy** (navigate the full document, map structure) → **Planning** (route sections to specialized analysts) → **Parallel Clause Analysis** (deep-read clusters with adaptive depth) → **Review Layer** (cross-reference resolution, adversarial review, gap verification — all streaming in parallel) → **Coverage Gate** (loop back if gaps remain) → **Synthesis** (score and rank) → **Report** (multi-format output).
 
-```
-                                    ┌─────────────────────────┐
-                                    │   CONTRACT (PDF/DOCX/TXT)│
-                                    │   + User Context         │
-                                    └───────────┬─────────────┘
-                                                │
-                              ┌─────────────────▼──────────────────┐
-                              │  Phase 1: INTAKE                    │
-                              │  Fast classification — type,        │
-                              │  parties, jurisdiction, complexity   │
-                              │  (escalates to deep read if unsure) │
-                              └─────────────────┬──────────────────┘
-                                                │
-                              ┌─────────────────▼──────────────────┐
-                              │  Phase 2: ANATOMY                   │
-                              │  Navigate full document — map        │
-                              │  sections, defined terms, cross-     │
-                              │  references, exhibits, risk signals  │
-                              └─────────────────┬──────────────────┘
-                                                │
-                              ┌─────────────────▼──────────────────┐
-                              │  Phase 3: ANALYSIS PLAN             │
-                              │  Route sections to specialized       │
-                              │  clusters, assign depth, set         │
-                              │  escalation triggers                 │
-                              └─────────────────┬──────────────────┘
-                                                │
-                    ┌───────────────────────────┼──────────────────────────┐
-                    │                           │                          │
-          ┌─────────▼──────┐       ┌────────────▼─────┐       ┌──────────▼───────┐
-          │ Clause Analyst 1│       │ Clause Analyst 2  │       │ Clause Analyst N  │
-          │ (IP/Work Product)│       │ (Liability/Indem) │       │ (Non-Compete)     │
-          │                 │       │                   │       │                   │
-          │ • Follow refs   │       │ • Escalate depth  │       │ • Early exit on   │
-          │ • Spawn sub-    │       │ • Trace defs      │       │   no signal       │
-          │   agents for    │       │                   │       │                   │
-          │   deep dives    │       │                   │       │                   │
-          └────────┬────────┘       └─────────┬─────────┘       └─────────┬─────────┘
-                   │                          │                           │
-                   └──────────────────────────┼───────────────────────────┘
-                                              │
-                                    ┌─────────▼──────────┐
-                                    │  Findings Queue     │
-                                    │  (streaming)        │
-                                    └──┬──────────────┬───┘
-                                       │              │
-                    ┌──────────────────▼──┐    ┌──────▼──────────────────┐
-                    │  Cross-Reference     │    │  Adversary Reviewer     │
-                    │  Resolver            │    │                         │
-                    │  Traces inter-clause │    │  Reviews from opposing  │
-                    │  interactions,       │    │  party's perspective,   │
-                    │  spawns deep-dives   │    │  flags false positives, │
-                    │  for combinations    │    │  discovers hidden traps │
-                    └──────────┬───────────┘    └──────────┬──────────────┘
-                               │                           │
-               ┌───────────────┼───────────────────────────┤
-               │               │                           │
-               │    ┌──────────▼────────────┐              │
-               │    │  Gap Analyst           │              │
-               │    │  Verifies missing       │              │
-               │    │  clauses are truly      │              │
-               │    │  absent (not buried)    │              │
-               │    └──────────┬─────────────┘              │
-               │               │                           │
-               └───────────────┼───────────────────────────┘
-                               │
-                    ┌──────────▼──────────┐
-                    │  Coverage Gate       │        ◄── Loop back if gaps
-                    │  Sufficient? ────────┼─── No ──► Spawn new analysts
-                    │  (max 2 iterations)  │            (max 3 per round)
-                    └──────────┬──────────┘
-                               │ Yes
-                    ┌──────────▼──────────┐
-                    │  Phase 6: SYNTHESIS  │
-                    │  Score risks (code), │
-                    │  rank findings,      │
-                    │  generate negotiation│
-                    │  strategy (LLM)      │
-                    └──────────┬──────────┘
-                               │
-                    ┌──────────▼──────────┐
-                    │  Phase 7: REPORT     │
-                    │  Markdown, JSON,     │
-                    │  negotiation playbook│
-                    └─────────────────────┘
-```
+What makes this different from "throw a contract at an LLM and ask for risks":
 
-### Signal Cascade
+### Agents that spawn agents at runtime
 
-| Phase | Purpose | Agents |
-|---|---|---|
-| **INTAKE** | Classify contract type, parties, jurisdiction | 1 (fast classifier, escalates to deep reader if unsure) |
-| **ANATOMY** | Navigate full document, map structure and risk signals | 1 (document navigator) |
-| **PLAN** | Route sections to specialized analyst clusters | 1 (planner) |
-| **CLAUSE REVIEW** | Deep analysis per cluster — follow refs, escalate depth, spawn sub-agents | N parallel (typically 2-6) |
-| **REVIEW LAYER** | Cross-ref interactions + adversary review + gap verification | 3 parallel (streaming consumers) |
-| **COVERAGE GATE** | Check if analysis is sufficient, loop back if gaps remain | 1 (max 2 iterations) |
-| **SYNTHESIS** | Deterministic scoring + LLM negotiation strategy | 1 |
-| **REPORT** | Multi-format output generation | 1 |
+When a clause analyst discovers something worth investigating deeper — a broad definition, an unusual cross-reference, a clause that interacts with another — it doesn't just flag it. It uses its own reasoning to **craft a specific investigation prompt** and **spawn a new agent** at runtime to pursue it.
 
-## Why This Architecture
+An IP analyst reads *"All Work Product shall be the sole property of Company"*, checks the Definitions section, and finds that "Work Product" is defined to include inventions *"whether or not related to Company's business."* It recognizes this is unusually broad, constructs a targeted prompt — *"Analyze the impact of this definition on Sections 5, 8, and 12. Does it capture personal projects?"* — and launches a Definition Impact Analyzer with exactly that prompt. The child investigates and reports back. The parent integrates the findings.
 
-Most AI contract tools run one big prompt and hope the LLM gets it right. Contract-AF decomposes legal review into 10-15+ focused agents, each with a narrow task and bounded autonomy. The architecture encodes the review strategy — not the prompts (see [The Atomic Unit of Intelligence](https://www.santoshkumarradha.com/writing/atomic-unit-of-intelligence) for why this matters).
+This isn't static dispatch from a fixed playbook. The investigation path emerges from what the system discovers in *your specific contract*. Different contracts trigger different deep-dives.
 
-<details>
-<summary><strong>Design patterns that make this work</strong></summary>
+### Adversarial verification
 
-**1. Meta-prompting: agents that spawn agents**
+The pipeline structurally separates **finding agents** from **disproving agents**. Clause analysts are incentivized to find risks. The Adversary Reviewer is incentivized to challenge them — re-reading actual clause text (not just summaries) to determine what's actually standard practice for this contract type, what's a false positive, and what the other side would argue. This tension between competing perspectives produces higher-confidence findings than asking a single model "is this risky?"
 
-This is the core architectural innovation. When a Clause Analyst discovers something worth investigating deeper — a broad definition, an unusual cross-reference, a clause that interacts with another — it doesn't just flag it. It uses its own intelligence to **craft a specific investigation prompt** and **spawn a child agent** at runtime.
+The adversary also hunts for **hidden traps** that the analysts missed — like discovering that three separate risk clauses all survive termination via the same Section 14, creating a combined post-termination obligation far worse than any individual clause suggests.
 
-```
-IP Analyst reads Section 8.3: "All Work Product shall be sole property of Company."
-    → Checks Definitions: "Work Product" includes "whether or not related to business"
-    → Recognizes this is unusually broad
-    → Crafts a targeted prompt: "Analyze the impact of this broad definition
-       on Sections 5, 8, 12. Does it capture personal projects?"
-    → Spawns a Definition Impact Analyzer with this specific prompt
-    → Integrates the child's findings into its own output
-```
+### Streaming analysis — overlap, don't batch
 
-The parent agent decides WHAT to investigate (intelligence, not script) and HOW to frame the investigation (crafts the prompt). The child agent has bounded autonomy — it reads the assigned sections and returns structured findings. This is fundamentally different from static dispatch where a fixed orchestrator routes to predetermined handlers.
+Downstream agents don't wait for upstream analysis to finish. The Cross-Reference Resolver and Adversary Reviewer start consuming findings from a streaming queue as clause analysts produce them. By the time the last analyst finishes, the review layer is already halfway done. When the Cross-Ref Resolver discovers a critical interaction between two clauses reported by different analysts, it can spawn a focused deep-dive immediately — while other analysts are still running.
 
-**2. Adversarial tension: FIND vs. DISPROVE**
+### Adaptive depth with hard budget caps
 
-The pipeline structurally separates finding agents from disproving agents. Clause Analysts are incentivized to find risks. The Adversary Reviewer is incentivized to disprove them — to find false positives and re-read actual clause text (not just summaries) to spot what's actually standard practice for this contract type. This tension produces higher-confidence findings than asking a single model "is this risky?"
+Not every clause deserves the same scrutiny. The system operates three nested control loops:
 
-**3. Streaming pipeline: overlap instead of batch**
+- **Per-analyst adaptation** — each analyst follows out-of-scope references (max 3), self-escalates to deeper analysis when it finds critical signals, and exits early when sections show no risk. The investigation depth is driven by what the contract actually contains, not by a fixed setting.
+- **Cross-agent deep-dives** — when the cross-reference resolver or adversary discovers a critical combination risk or hidden trap, it spawns focused sub-agents to investigate (max 3 per phase).
+- **Coverage re-analysis** — after all agents complete, a coverage gate checks whether the analysis is sufficient. If sections were missed or under-analyzed, it spawns new analysts for the gaps (max 2 iterations, 3 new analysts each).
 
-Phase 5 agents (Cross-Reference Resolver, Adversary Reviewer) don't wait for all Clause Analysts to finish. They consume findings from `asyncio.Queue` as they arrive. The Cross-Ref Resolver starts checking for inter-clause interactions as soon as two analysts have reported. This overlaps work and catches combination risks earlier.
+Every loop has hard caps. The system explores deeply where signal exists, moves on quickly where it doesn't, and never spirals into unbounded cost.
 
-**4. Three nested control loops**
+### Deterministic scoring — LLMs reason, code scores
 
-| Loop | Scope | Trigger | Budget |
-|---|---|---|---|
-| **Inner** | Per Clause Analyst | Found out-of-scope reference / critical finding | Max 3 ref follows, 1 depth escalation |
-| **Middle** | Cross-Ref + Adversary | Critical clause combination / hidden trap discovered | Max 3 sub-agent spawns |
-| **Outer** | Coverage Gate | Analysis gaps after all agents complete | Max 2 re-analysis iterations, 3 new analysts each |
+Risk scores are computed by code, not by asking an LLM to guess a number. Severity weights, combination risk multipliers (1.5x when clauses interact dangerously), exploitability multipliers (1.3x when the adversary confirms an exploitation scenario), and jurisdiction discounts (California non-competes are automatically marked unenforceable) are all deterministic. The LLM's job is the part that actually requires intelligence: generating negotiation language, suggesting fallback positions, anticipating the counterparty's arguments.
 
-Each loop has hard budget caps. Without them, adaptive systems become unbounded cost sinks. With them, the system explores deeply where signal exists and moves on quickly where it doesn't.
+### Graceful escalation
 
-**5. Deterministic scoring + LLM negotiation**
+Fast classification calls include a `confident` flag. When the first few pages don't contain enough metadata to classify the contract — unusual structure, exhibits before recitals, missing headers — the system automatically escalates to a deeper document-navigating agent. This costs ~$0.05-$0.10 extra but prevents a wrong classification from propagating through the entire pipeline. Every fast gate in the system has an escalation path to a deeper analysis when the input doesn't fit assumptions.
 
-Risk scores are computed by code — not by asking an LLM to guess a number:
-
-```python
-score = SEVERITY_WEIGHTS[finding.severity]
-if finding in combination_risks:   score *= 1.5   # combination multiplier
-if finding in exploit_scenarios:   score *= 1.3   # exploitability multiplier
-if not enforceable(jurisdiction):  score *= 0.3   # jurisdiction discount
-```
-
-California non-competes? Automatically discounted. Two clauses that interact to eliminate IP rights? Automatically boosted. The LLM's job is the part that requires intelligence — generating negotiation language, suggesting fallback positions, anticipating counterarguments.
-
-**6. Graceful escalation**
-
-Fast classification calls include a `confident` flag. When the first few pages don't contain enough metadata to classify the contract (unusual structure, exhibits before recitals, missing headers), the system automatically escalates to a deeper document-navigating agent. Cost: ~$0.05-$0.10 extra. Value: prevents a wrong classification from propagating through the entire pipeline.
-
-</details>
-
-### Agent Inventory
-
-| Agent | Role | Dynamic Behavior |
-|---|---|---|
-| **Intake Classifier** | Classify contract type, parties, jurisdiction | Escalates to deep reader when `confident: false` |
-| **Contract Anatomist** | Navigate full document, build structural map | Produces risk signals for downstream depth routing |
-| **Analysis Planner** | Route sections to specialized clusters | Assigns escalation triggers per cluster |
-| **Clause Analyst** (x N) | Deep analysis per cluster | **Inner loop:** follow refs (max 3), escalate depth, early exit. **Meta-prompting:** spawn sub-agents for definition impact analysis |
-| **Cross-Ref Resolver** | Trace inter-clause interactions | **Streaming consumer.** Spawns deep-dive sub-agents for critical combinations (max 3) |
-| **Adversary Reviewer** | Review from opposing party's perspective | **Streaming consumer.** Flags false positives, discovers hidden traps, spawns sub-agents for survival pattern analysis |
-| **Gap Analyst** | Verify missing clauses are truly absent | Searches contract for clauses under alternative names/locations |
-| **Coverage Assessor** | Check analysis sufficiency | **Outer loop:** triggers new analysts for uncovered sections |
-| **Risk Synthesizer** | Score, rank, generate negotiation strategy | Programmatic scoring + LLM-generated negotiation language |
-| **Report Writer** | Generate multi-format output | Markdown, JSON, negotiation playbook. Fallback generation if upstream fails |
-
-**Typical run:** 10-15+ agent invocations for a standard contract. Complex contracts with many cross-references and coverage gaps can trigger 20-30+.
-
-## Cost Estimate
+## Cost
 
 | Contract Size | Budget Models | Mid-Tier Models | Premium Models |
 |---|---|---|---|
@@ -307,46 +167,18 @@ curl http://localhost:8000/analyze/abc-123/report
 | **Approach** | Multi-agent pipeline with adversarial verification | Single model, enterprise | ML extraction + rules | Single model, clause library |
 | **Verified findings** | Adversarial review + exploitation scenarios | Not documented | Pattern-based extraction | Not documented |
 | **Negotiation playbook** | Per-finding strategy with fallbacks | General guidance | Not included | Clause suggestions |
-| **Cross-clause analysis** | Streaming cross-reference resolver with deep-dive sub-agents | Not documented | Not documented | Not documented |
+| **Cross-clause analysis** | Streaming cross-reference resolution with runtime deep-dives | Not documented | Not documented | Not documented |
 | **Adaptive depth** | 3 nested control loops with budget caps | Fixed pass | Fixed pass | Fixed pass |
 | **Open source** | Apache 2.0 | Proprietary | Proprietary | Proprietary |
 | **Cost** | ~$0.40-$1.30/contract | ~$500-$2000/mo | ~$1000+/mo | ~$500+/mo |
 
-**Where Contract-AF is strongest**: Adversarial verification, cross-clause interaction analysis, adaptive depth with meta-prompting, deterministic scoring, negotiation playbooks, and cost.
+**Where Contract-AF is strongest**: Adversarial verification, cross-clause interaction analysis, adaptive depth, deterministic scoring, negotiation playbooks, and cost.
 
 **Where others are stronger**: Harvey and Spellbook have enterprise integrations, clause libraries, and years of training on legal corpora. Klarity has purpose-built ML extraction for specific contract types. Contract-AF is newer and focused on depth of analysis over breadth of integrations.
 
 ## Supported Contract Types
 
-Out of the box: SaaS agreements, employment contracts, NDAs, licensing agreements, service agreements, consulting agreements, partnership agreements.
-
-The system adapts to any contract type — the Intake Classifier identifies the type, the Analysis Planner selects relevant clause categories, and the Gap Analyst checks for expected clauses based on that classification. Adding support for new contract types requires no code changes.
-
-## Project Structure
-
-```
-src/contract_af/
-├── agents/
-│   ├── intake.py          # Phase 1: classification with fallback
-│   ├── anatomy.py         # Phase 2: structural parsing
-│   ├── planner.py         # Phase 3: analysis routing
-│   ├── clause_analyst.py  # Phase 4: deep analysis with meta-prompting
-│   ├── cross_ref.py       # Phase 5a: cross-reference resolver
-│   ├── adversary.py       # Phase 5b: adversary reviewer
-│   ├── gap_analyst.py     # Phase 5c: gap verification
-│   ├── coverage.py        # Phase 5.5: coverage gate
-│   ├── synthesizer.py     # Phase 6: scoring + strategy
-│   └── report_writer.py   # Phase 7: multi-format output
-├── models/
-│   └── types.py           # All Pydantic models (IntakeResult, Finding, etc.)
-├── pipeline/
-│   ├── orchestrator.py    # 7-phase pipeline with streaming + coverage loop
-│   └── scoring.py         # Deterministic risk scoring
-├── utils/
-│   └── document_loader.py # PDF, DOCX, TXT loader
-├── api.py                 # FastAPI application
-└── cli.py                 # CLI entry point
-```
+SaaS agreements, employment contracts, NDAs, licensing agreements, service agreements, consulting agreements, partnership agreements — and any contract type you throw at it. The system identifies the contract type at intake, selects relevant clause categories, and checks for expected clauses based on that classification. No code changes needed to support new types.
 
 ## Development
 
@@ -356,19 +188,6 @@ pip install -e .[dev]
 pytest                    # 179 tests
 ruff check src/ tests/
 ```
-
-### Test Coverage
-
-| Test File | Tests | Coverage |
-|---|---|---|
-| `test_intake.py` | 6 | Intake classifier + fallback patterns |
-| `test_planner.py` | 5 | Analysis plan validation |
-| `test_anatomy.py` | 45 | Section extraction, risk signals, harness fallback |
-| `test_clause_analyst.py` | 39 | Inner loop, meta-prompting, budget caps |
-| `test_review_layer.py` | 16 | Cross-ref, adversary, gap analysis |
-| `test_synthesis_report.py` | 43 | Scoring, coverage gate, synthesis, report |
-| `test_pipeline.py` | 6 | Full pipeline integration |
-| `test_api.py` | 19 | FastAPI endpoints, CLI, document loader |
 
 ---
 
