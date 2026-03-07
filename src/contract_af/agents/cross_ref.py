@@ -64,27 +64,23 @@ async def resolve_cross_references(
 
             interaction = await app.call(
                 "contract-af.cross_ref_resolver",
-                input={
-                    "finding_a": {
-                        "clause_ref": prev.clause_ref,
-                        "description": prev.description,
-                        "clause_text": prev.clause_text,
-                    },
-                    "finding_b": {
-                        "clause_ref": new_finding.clause_ref,
-                        "description": new_finding.description,
-                        "clause_text": new_finding.clause_text,
-                    },
-                    "cross_references": relevant_refs,
+                finding_a={
+                    "clause_ref": prev.clause_ref,
+                    "description": prev.description,
+                    "clause_text": prev.clause_text,
                 },
+                finding_b={
+                    "clause_ref": new_finding.clause_ref,
+                    "description": new_finding.description,
+                    "clause_text": new_finding.clause_text,
+                },
+                cross_references=relevant_refs,
             )
 
-            if not isinstance(interaction, dict) or not interaction.get(
-                "has_interaction"
-            ):
+            if not isinstance(interaction, dict) or not interaction.get("has_interaction"):
                 continue
 
-            severity = Severity(interaction.get("severity", "high"))
+            severity = Severity(interaction.get("severity", "high").lower())
             risk = CombinationRisk(
                 clause_refs=[prev.clause_ref, new_finding.clause_ref],
                 description=interaction.get("description", ""),
@@ -98,18 +94,16 @@ async def resolve_cross_references(
                 deep_dives += 1
                 deep_result = await app.call(
                     "contract-af.combination_deep_dive",
-                    input={
-                        "prompt": interaction.get("deep_dive_prompt", ""),
-                        "sections": [prev.clause_ref, new_finding.clause_ref],
-                        "contract_text": contract_text,
-                    },
+                    prompt=interaction.get("deep_dive_prompt", ""),
+                    sections=[prev.clause_ref, new_finding.clause_ref],
+                    contract_text=contract_text,
                 )
                 if isinstance(deep_result, dict) and deep_result.get("findings"):
                     for f in deep_result["findings"]:
                         additional_risk = CombinationRisk(
                             clause_refs=f.get("clause_refs", []),
                             description=f.get("description", ""),
-                            severity=Severity(f.get("severity", "high")),
+                            severity=Severity(f.get("severity", "high").lower()),
                             investigation_result=f.get("investigation", ""),
                         )
                         combination_risks.append(additional_risk)

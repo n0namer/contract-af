@@ -1,0 +1,2997 @@
+EX-10.16
+21
+d221145dex1016.htm
+EX-10.16
+EX-10.16
+Exhibit 10.16
+CERTAIN CONFIDENTIAL INFORMATION CONTAINED IN THIS DOCUMENT, MARKED BY [***], HAS BEEN OMITTED BECAUSE TEMPUS AI, INC. HAS DETERMINED THE INFORMATION
+(I) IS NOT MATERIAL AND (II) WOULD LIKELY CAUSE COMPETITIVE HARM TO TEMPUS AI, INC. IF PUBLICLY DISCLOSED.
+CONFIDENTIAL
+EXECUTION COPY
+MASTER SERVICES AGREEMENT
+Dated as of November 17, 2021
+by and between
+ASTRAZENECA AB
+and
+TEMPUS LABS,
+INC.
+TABLE OF CONTENTS
+1.
+DEFINITIONS AND INTERPRETATION
+4
+2.
+LICENSED DATA
+11
+3.
+SERVICES AND DELIVERABLES
+11
+4.
+TEMPUS OBLIGATIONS
+14
+5.
+TEMPUS FTE COMMITMENT
+15
+6.
+GOVERNANCE
+15
+7.
+PRIVACY AND DATA PROTECTION
+16
+8.
+CYBERSECURITY
+17
+9.
+EXPECTATIONS OF THIRD PARTIES
+17
+10.
+REGULATORY MATTERS
+18
+11.
+PAYMENT AND INVOICING
+19
+12.
+TAX
+20
+13.
+INTELLECTUAL PROPERTY
+21
+14.
+ERROR/DELAY IN PERFORMANCE OF THE SERVICES
+22
+15.
+EXCLUSIVITY
+23
+16.
+TERM, TERMINATION, AND SURVIVAL
+23
+17.
+INDEPENDENT CONTRACTOR
+26
+18.
+REPRESENTATIONS AND WARRANTIES
+27
+19.
+REMEDIES
+29
+20.
+COMPLIANCE WITH APPLICABLE LAW
+30
+21.
+INSURANCE
+31
+22.
+INDEMNIFICATION
+31
+23.
+DISCLAIMERS; LIMITATION OF LIABILITY
+32
+24.
+CONFIDENTIALITY
+32
+25.
+NOTICES
+34
+26.
+ASSIGNMENT
+34
+27.
+FORCE MAJEURE
+35
+28.
+AUDIT RIGHTS
+36
+29.
+MONITORING
+36
+30.
+MISCELLANEOUS
+37
+EXHIBIT A
+40
+2
+EXHIBIT B
+41
+EXHIBIT C
+45
+EXHIBIT D
+46
+EXHIBIT E
+51
+EXHIBIT F
+53
+EXHIBIT G
+55
+3
+This Master Services Agreement (this “
+Agreement
+”), dated as of November 17, 2021 (the
+“
+Effective
+Date
+”), i s entered into by and between AstraZeneca AB, a company incorporated in Sweden under No. 556011-7482, whose registered office is at
+SE-151
+86
+Södertälje and with offices at
+SE-432
+83 Mölndal, Sweden (“
+AstraZeneca
+”) and Tempus Labs, Inc., a Delaware corporation, located at 600 W Chicago Ave, Suite 510, Chicago,
+Illinois, 60654 (“
+Tempus
+” and together with AstraZeneca, the “
+Parties
+”, and each a “
+Party
+”).
+WHEREAS,
+AstraZeneca and Tempus are, as at the Effective Date, parties to certain agreements including a master services agreement dated 16 December 2018 (“
+Existing MSA
+”); and
+WHEREAS, AstraZeneca and Tempus desire to expand their existing relationship and enter into a strategic collaboration in which, among other things, Tempus
+would provide to AstraZeneca certain oncology data and associated services, on terms set out herein, with the goal of accelerating discovery, development, and delivery of certain AstraZeneca precision therapies and with the general objective of
+furthering AstraZeneca’s data-driven drug discovery and development capabilities;
+NOW, THEREFORE, in consideration of the mutual covenants and
+agreements hereinafter set forth and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, Tempus and AstraZeneca agree as follows:
+1.
+Definitions and Interpretation
+.
+1.1 In this
+Agreement, unless otherwise stated or the context requires otherwise, the following definitions shall apply:
+“
+Acceptance Period
+”
+has the meaning given in Section 3.4.
+“
+Affiliate
+” means, with respect to a Person, any Person that directly, or indirectly through
+one or more intermediaries, controls, is controlled by or is under common control with such first Person. As used in this definition, “control” and, with correlative meanings, the terms “controlled by” and “under common
+control with” mean (i) the power to direct the management or policies of a Person, whether through ownership of voting securities or by contract relating to voting rights or corporate governance, resolution, regulation or otherwise; or
+(ii) to own more than 50% of the outstanding voting securities or other ownership interest of such Person.
+“
+Applicable Law
+” means
+all applicable laws, rules and regulations and any applicable policies of any Regulatory Authorities in effect from time to time, including FDA’s standards for the design, conduct, performance, monitoring, auditing, recording, analysis, and
+reporting of clinical trials, including those standards contained in United States Code of Federal Regulations Title 21, Parts 50, 54, 56 and 312, and all comparable standards of the EMA and any other applicable Regulatory Authority.
+“
+AstraZeneca Core IP
+” means
+[***]
+.
+4
+“
+AstraZeneca Group
+” means AstraZeneca and its Affiliates.
+“
+AstraZeneca Indemnified Parties
+” has the meaning given in Section 22.2.
+“
+AstraZeneca IP
+” means Intellectual Property Rights owned or controlled by AstraZeneca or its Affiliates.
+“
+AstraZeneca Materials
+” has the meaning given in Section 13.1(a).
+“
+AstraZeneca Project Inventions
+” means
+[***]
+.
+“
+Business Day
+” means a day, other than a Saturday, Sunday or public holiday in Illinois, United States or England, when banks are open for
+business.
+“
+Change of Control
+” means, with respect to a Party: (a) an acquisition, reorganization, merger, or consolidation of such
+Party by or with a third party in which the holders of the voting securities of such Party outstanding immediately before such transaction cease to beneficially own at least fifty percent (50%) of the combined voting power of the surviving entity,
+directly or indirectly, immediately after such transaction, (b) a transaction or series of related transactions in which a third party, together with its Affiliates (if applicable), becomes the beneficial owner of fifty percent (50%) or more of
+the combined voting power of the outstanding securities of such Party, or (c) the sale or other transfer to a third party of all or substantially all of such Party’s assets.
+“
+Change Order
+” has the meaning given in Section 3.5(a).
+“
+Clinical Data
+” means
+[***]
+.
+“
+Clinical Data Only Record
+” means
+[***]
+.
+“
+Clinical
+De-Identified
+Record
+” means
+[***]
+.
+“
+Clinical Professional Services Agreement
+” has the meaning given in Section 3.2(e).
+“
+Confidential Information
+” has the meaning given in Section 24.1.
+“
+Convicted Individual
+” or “
+Convicted Entity
+” means an individual or entity, as applicable, who has been convicted of a
+criminal offense that falls within the scope of 21 U.S.C. §335a (a) or 42 U.S.C. §1320a – 7(a).
+“
+Covered Entity
+” has
+the meaning given to it in 45 CFR Section 160.103.
+“
+Data Privacy Law
+” means any and all Applicable Law that relates to collection,
+acquisition, access, retention, use, storage, transfer, disclosure, or protection of data or information such as Personal Data, including law or regulation pertaining to data protection, confidentiality, security or privacy, such as HIPAA and GDPR.
+“
+[***]
+”
+[***]
+.
+5
+“
+Debarred Entity
+” means a corporation, partnership or association that has been debarred by
+the FDA pursuant to 21 U.S.C. §335a (a) or (b) and 21 CFR Section 312.70 from submitting or assisting in the submission of any abbreviated drug application, or an employee, partner, shareholder, member, subsidiary or affiliate of a
+Debarred Entity.
+“
+Debarred Individual
+” means an individual who has been debarred by the FDA pursuant to 21 U.S.C. §335a (a) or
+(b) and 21 CFR Section 312.70 from providing services in any capacity to a person that has an approved or pending drug product application, or an employer, employee or partner of a Debarred Individual.
+“
+[***]
+”
+[***].
+“
+Defaulting
+Party
+” has the meaning given in Section 16.5.
+“
+Deliverables
+” means
+[***]
+.
+“
+Delivery Workstream
+” means
+[***].
+“
+Development Workstream
+” means
+[***]
+.
+“
+Discloser
+” has the meaning given in Section 24.1.
+“
+Discovery Workstream
+” means
+[***]
+.
+“
+EMA
+” means the European Medicines Agency or any successor agency thereto.
+“
+[***]
+” means
+[***]
+.
+“
+Excluded
+Individual
+” or “
+Excluded Entity
+” means an individual or entity, as applicable, who has been excluded, debarred or is otherwise ineligible to participate in: A) federal health care programs such as Medicare or Medicaid by
+the Office of the Inspector General (OIG) of the U.S. Department of Health and Human Services (HHS); or B) federal procurement and
+non-procurement
+programs, including those produced by the U.S. General
+Services Administration (GSA).
+“
+Existing Statement of Work
+” means a statement of work under the Existing MSA or the Clinical
+Professional Services Agreement as identified in
+Exhibit F
+.
+“
+FDA
+” means the United States Food and Drug Administration or any
+successor agency thereto.
+“
+Financial Commitment
+” has the meaning given in
+Exhibit E
+.
+“
+Financial Commitment Period
+”
+[***].
+“
+Force Majeure Event
+” has the meaning given in Section 27.
+“
+FTE
+” means a full time equivalent employee
+[***]
+.
+“
+GDPR
+” means the General Data Protection Regulation (EU) 2016/679).
+6
+“
+Good Clinical Practice
+” means the then-current applicable standards for good clinical
+practices as promulgated under Applicable Law, which include (i) Directive 2001/20/EC and Directive 2005/28/EC as well as
+ICH-GCP
+and any other guidelines for good clinical practice for trials on
+medicinal products on human subjects; and (ii) the United States Code of Federal Regulations Title 21, Parts 50 (Protection of Human Subjects), 56 (Institutional Review Boards) and 312 (Investigational New Drug Application).
+“
+Good Industry Practice
+” means the degree of skill, care and diligence which would reasonably and ordinarily be expected from a leading,
+skilled and experienced professional company engaged in works or services similar to the Services or Deliverables in the same or similar circumstances.
+“
+HIPAA
+” means Health Insurance Portability and Accountability Act of 1996, as amended by the Health Information Technology for Economic and
+Clinical Public Health (“HITECH”) Act, and their implementing regulations, including but not limited to, the Standards for Privacy of Individually Identifiable Health Information at 45 C.F.R. Parts 160 and 164, Subparts A and E, the
+Security Standards for the Protection of Electronic Protected Health Information at 45 C.F.R. Parts 160 and 164, Subparts A and C, and the Notification of Breach of Unsecured Protected Health Information requirements at 45 C.F.R. Part 164, Subpart
+D, as amended from time to time.
+“
+ICF
+” means an informed consent form or equivalent document used in connection with the collection of
+human biological samples and associated data that are used to derive Licensed Data.
+“
+ICF Subcommittee
+” has the meaning given in
+Section 7.4.
+“
+Impacted Party
+” has the meaning given in Section 27.
+“
+Improvement Plan
+” has the meaning given in Section 9.3.
+“
+Indemnified Party
+” has the meaning given in Section 22.3(a).
+“
+Indemnifying Party
+” has the meaning given in Section 22.3(a).
+“
+Indirect Taxes
+” means value added taxes, sales taxes or other similar taxes required by
+Applicable Law to be disclosed as a separate item on the relevant Indirect Tax invoice.
+“
+Intellectual Property Rights
+” means patents, copyrights, design rights, trade marks, service marks, trade secrets,
+Know-How,
+database rights and other rights in the nature of intellectual property rights (whether registered or not) and all applications for the same which may now or in the future subsist anywhere in the world,
+including the right to sue for and recover damages for past infringements.
+“
+JSC
+” has the meaning given in Section 6.1.
+“
+JSC Subcommittee
+” has the meaning given in Section 6.1.
+7
+“
+Know-How
+” means any and all technology,
+information and data that is of a technical, scientific, business, or other nature, including
+know-how,
+improvements, inventions, discoveries, techniques, trade secrets, specifications, instructions,
+processes, designs, formulae, methods, ideas, algorithms, computer programs, apparatuses, protocols, expertise and skills, in each case whether patentable or not.
+“
+Liabilities
+” has the meaning given in Section 22.1.
+“
+Licensed Data
+” means
+[***]
+.
+“
+Licensed Data Term
+” means, with respect to given Licensed Data described in a given Statement of Work, the license term in respect of such
+Licensed Data specified in such Statement of Work.
+“
+Matched Clinical-Molecular
+De-Identified
+Records
+” means
+[***]
+.
+“
+Materials
+” means any document, information, data or other material (in whatever form) including
+software, firmware, documented methodology, process and procedure (including any reports, specifications, business rules and requirements, user manuals, user guides, operations manuals, training materials and instruction), and any other output (in
+whatever form).
+“
+MC Extension Option
+” has the meaning given in
+Exhibit E
+.
+“
+Molecular Data
+” means
+[***]
+.
+“
+Notice
+” has the meaning given in Section 25.
+“
+Notice of Election
+” has the meaning given in Section 22.3(a).
+“
+Notified Body
+” means an entity or body designated, licensed, authorized or approved by the applicable government agency, department or other
+authority to assess and certify the conformity of a medical device with the requirements of Applicable Law, including legislation governing medical devices and with applicable harmonised standards.
+“
+Other User Results
+” has the meaning given in Section 5.1.
+“
+Paid or Payable
+” has the meaning given in
+Exhibit E
+.
+“
+Person
+” means an individual, sole proprietorship, partnership, limited partnership, limited liability partnership, corporation, limited
+liability company, business trust, joint stock company, trust, incorporated association, joint venture or similar entity or organization, including a government or political subdivision, department or agency of a government.
+“
+Personal Data
+” means information in any format about an identifiable individual, including, name, address, phone number,
+e-mail
+address, account number(s), identification number(s), any other actual or assigned attribute identifiable to an individual and any information that when used separately or in combination with other
+information could identify an individual. Personal Data
+8
+includes “personal data” as defined in the GDPR and its national implementations, and “protected health information” as defined under HIPAA.
+“
+Policies and Standards
+” means all policies, procedures and standards adopted by AstraZeneca or any member of the AstraZeneca Group that are
+(i) relevant to Tempus’ activities under the Agreement, including the Services, and (ii) not inconsistent with this Agreement.
+“
+Press Release
+” has the meaning given in Section 24.6.
+“
+Project Invention
+” means
+[***]
+.
+“
+Qualifying Agreement
+” means this
+[***].
+“
+Recipient
+” has the meaning given in Section 24.1.
+“
+Record
+”
+[***]
+.
+“
+Regulatory
+Approval
+” means, with respect to a product, any and all clearances, premarket notifications, approvals, licenses, registrations, certifications and authorizations from Regulatory Authorities and declarations of conformity or other documents
+issued or to be issued by or on behalf of the manufacturer or study sponsor, necessary for the development, testing, clinical investigation, use, marketing or sale of such product in the applicable country or regulatory jurisdiction.
+“
+Regulatory Authority
+” means any applicable supra-national, federal, national, regional, state, provincial or local regulatory agencies,
+departments, bureaus, commissions, councils, or other governmental authority anywhere in the world including FDA, the EMA and any Notified Body, and any of the foregoing bodies responsible for the administration, implementation and enforcement of
+Data Privacy Law.
+“
+Representing Party
+” has the meaning given in Section 18.1.
+“
+Services
+”
+[***]
+.
+“
+Specifications
+”
+[***]
+.
+“
+Statement of Work
+” means a statement of work entered into by the Parties for the provision of Services by Tempus.
+“
+Supplier Expectations
+” has the meaning given in Section 9.1.
+“
+Tax Authority
+” has the meaning given in Section 12.4.
+“
+Tax Deduction
+” has the meaning given in Section 12.1.
+“
+Tempus Data Science Team
+” has the meaning given in Section 5.1.
+“
+Tempus Indemnified Parties
+” has the meaning given in Section 22.1.
+“
+Tempus Materials
+” has the meaning given in Section 13.2(a).
+9
+“
+Tempus Project Inventions
+” means
+[***].
+“
+Term
+” means the duration of this Agreement as under Section 16.1.
+“
+Third Party IP
+” means any Intellectual Property Rights owned by a third party.
+“
+Third Party Materials
+” means any Materials owned by, or in which the Intellectual Property Rights are owned by, a third party.
+“
+Warrant
+” means the warrant agreement executed between the Parties on November 17, 2021.
+“
+Workstreams
+”
+[***]
+.
+1.2 In this
+Agreement, unless otherwise stated or the context requires otherwise, the following rules of interpretation apply:
+(a) the recitals and Exhibits, and any
+and all Statements of Work agreed under Section 3.2, form part of this Agreement and references to this Agreement include them;
+(b) references to
+recitals, Sections and Exhibits are to recitals and Sections of, and Exhibits to this Agreement and references in an Exhibit to a Section, part or paragraph are to Sections, parts or paragraphs of that Exhibit;
+(c) references to this Agreement or any other document are to this Agreement or that document as in force for the time being and as amended from time to time
+in accordance with this Agreement or that document (as the case may be);
+(d) references to the singular include the plural and vice versa;
+(e) “or” shall be interpreted in the inclusive sense (“and/or”); and
+(f) a reference to a statute, statutory provision or subordinate legislation (as so defined) shall be construed as including a reference to that statute,
+provision or subordinate legislation as in force at the date of this Agreement and as from time to time modified or consolidated, superseded,
+re-enacted
+or replaced after the date of this Agreement.
+1.3 The headings and contents table in this Agreement are for convenience only and do not affect the interpretation of this Agreement.
+1.4 In this Agreement the words “other”, “includes”, “including” and “in particular” do not limit the generality of
+any preceding words and any words which follow them shall not be construed as being limited in scope to the same class as the preceding words where a wider construction is possible.
+1.5 Where in this Agreement a matter is subject to a Party’s consent or agreement, such consent or agreement shall be at such Party’s sole
+discretion unless expressly stated otherwise.
+10
+1.6 In the event of an inconsistency between the documents which form part of this Agreement, except where
+expressly provided in the relevant Exhibit, those documents shall apply in the following order of precedence, from highest to lowest priority, to the extent of the inconsistency:
+(a) the main body of this Agreement;
+(b) the Exhibits;
+(c) a Statement of Work; and
+(d) any other document
+incorporated by reference into this Agreement, except that any quality agreement entered into by AstraZeneca and Tempus shall prevail as to quality matters and any pharmacovigilance agreement entered into by AstraZeneca and Tempus shall prevail as
+to pharmacovigilance matters.
+1.7 If a provision of an Exhibit, Statement of Work, or any other document incorporated by reference into this Agreement
+is:
+(a) expressly stated to take precedence over a document listed in Section 1.6;
+(b) expressly references the applicable provision(s) over which it takes precedence; and
+(c) in the case of a Statement of Work, such reference is expressly set out in the designated part of the Statement of Work,
+then, notwithstanding Section 1.6, the provision of such Exhibit, Statement of Work or other document incorporated by reference into this Agreement, will
+prevail to the extent of any conflict or inconsistency.
+2.
+Licensed Data
+.
+2.1
+[***]
+.
+3.
+Services and Deliverables
+.
+3.1
+General
+.
+(a) Tempus shall provide to AstraZeneca
+the Services and Deliverables set out in one or more Statements of Work to be agreed between the Parties as set out under Section 3.2. Each Statement of Work shall be deemed accepted only if signed by authorized signatories of the Parties.
+(b) Tempus shall provide the Services and Deliverables:
+(i) in accordance with the terms and subject to the conditions set forth in the respective Statement of Work (including any applicable
+Specifications therein) and this Agreement;
+11
+(ii) in accordance with the key performance indicators applicable to the given Service or
+Deliverable that may be stated in a Statement Work;
+(iii) using personnel of required skill, experience, and qualifications;
+(iv) in a workmanlike, and professional manner; and
+(v) in accordance with Good Industry Practice.
+3.2
+Statements of Work
+.
+(a) Each Statement of Work
+shall be agreed in the following manner:
+(i) AstraZeneca shall either prepare or shall ask Tempus to prepare a draft Statement of Work for
+the Services required by AstraZeneca.
+(ii) If AstraZeneca asks Tempus to prepare a draft Statement of Work, within
+[***]
+of
+AstraZeneca’s request, Tempus shall notify AstraZeneca of any additional information it reasonably requires in order to prepare a Statement of Work, and within
+[***]
+of receipt of the required information from AstraZeneca Tempus shall
+provide AstraZeneca with the draft Statement of Work requested.
+[***]
+.
+(iii) If Tempus is to provide to AstraZeneca:
+(1)
+[***]
+, the applicable Statement of Work shall be materially based on a form to be agreed between the Parties;
+(2)
+[***]
+, the applicable Statement of Work shall be materially based on a form to be agreed between the Parties;
+(3)
+[***]
+, the applicable Statement of Work shall be materially based on a form to be agreed between the Parties,
+[***]
+;
+(4)
+[***]
+;
+(5)
+[***]
+, the applicable Statement of Work shall be materially based on a form to be agreed between the Parties;
+(6)
+[***]
+, the
+applicable Statement of Work shall be materially based on a form to be agreed between the Parties;
+(7)
+[***]
+, the applicable
+Statement of Work shall be materially based on a form to be agreed between the Parties; and
+(8) any combination of Services as provided
+under items (1) to (7), above, or other new services that may be provided by Tempus from time to time and as may be requested by AstraZeneca, in a form to be agreed between the Parties;
+(iv)
+[***]
+; and
+(v) both
+Parties shall sign the draft Statement of Work when it is agreed.
+12
+(b) Notwithstanding the terms of Section 3.2(a), each Statement of Work shall, at a minimum, contain
+terms relating to the following:
+(i) Descriptions of the relevant Services to be provided by Tempus;
+(ii) Descriptions of the relevant Deliverables to be provided by Tempus;
+(iii)
+[***]
+;
+(iv)
+[***]
+;
+(v)
+[***]
+;
+(vi)
+[***]
+; and
+(vii)
+[***]
+.
+(c) Once a Statement of Work has been agreed and signed in accordance with Section 3.2, no amendment shall be made to it except in
+accordance with Section 3.5.
+(d) For clarity, each Statement of Work shall be part of this Agreement and shall not form a separate contract to it.
+(e)
+[***]
+.
+(f)
+[***]
+.
+3.3
+Existing Statements of Work
+.
+(a) Each Existing
+Statement of Work shall, on and from the Effective Date, be deemed to be a Statement of Work for the purposes of this Agreement and Tempus acknowledges that:
+(i) throughout this Agreement, where reference is made to a Statement of Work, such reference shall apply mutatis mutandis to each Existing
+Statement of Work;
+(ii) throughout the Existing Statement of Work, any reference to a master agreement (however named) shall be a
+reference to this Agreement;
+(iii) the services and or deliverables provided by Tempus under each Existing Statement of Work on and from
+the Effective Date shall be subject to the terms of this Agreement; and
+(iv)
+[***]
+.
+3.4
+Acceptance
+. On delivery of a Deliverable, Tempus shall simultaneously contact the AstraZeneca team responsible for the work in writing (e.g., by
+email) to alert them to the fact of such Deliverable, which notice shall be provided to the AstraZeneca contact(s) as identified in the applicable Statement of Work (i.e. this does not require a formal Notice under Section 25). AstraZeneca
+shall have
+[***]
+. Notwithstanding the above,
+[***]
+.
+3.5
+Change Control
+.
+13
+(a) Either Party may propose changes to a Statement of Work, including changes to Services, Deliverables or
+any Specifications but no proposed changes shall come into effect until a relevant order for such change (“
+Change Order
+”) has been signed by both Parties. A Change Order shall be a document setting out the proposed changes and the
+effect those changes will have on:
+(i) the Deliverables or Services to be provided under a Statement of Work;
+(ii)
+[***]
+; or
+(iii) any
+other terms of the relevant Statement of Work, including
+[***]
+.
+(b) If AstraZeneca wishes to make a change to the scope or execution of any
+Deliverables or Services it shall prepare a draft Change Order, or shall notify Tempus, providing as much detail as is reasonably necessary to enable Tempus to prepare the draft Change Order and Tempus shall within
+[***]
+of receiving
+AstraZeneca’s request provide a draft Change Order to AstraZeneca.
+(c)
+[***]
+.
+(d) On agreement to a Change Order, the Parties shall promptly sign it and that Change Order shall amend the relevant Statement of Work and where Tempus is
+required to take any action as a result of such Change Order, including
+[***]
+, it will use
+[***]
+to effect such change expeditiously.
+[***]
+.
+3.6
+[***]
+.
+3.7
+[***]
+.
+3.8 Because AstraZeneca depends on the timely delivery of the Services, Deliverables and Licensed Data provided hereunder, time is of the essence with respect
+to Tempus’ performance under this Agreement, including any Statement of Work.
+3.9 For the sake of clarity, nothing in this Agreement shall be
+construed to prevent AstraZeneca from itself performing or from acquiring services or deliverables from third parties that are similar to or identical to the Services or Deliverables.
+3.10 AstraZeneca may (but shall not be required to)
+[***]
+.
+4.
+Tempus Obligations
+.
+Tempus shall:
+4.1 provide, at AstraZeneca’s reasonable
+request,
+[***]
+;
+4.2 ensure that the Services and Deliverables are provided in accordance with the Statement of Work, including any applicable
+Specifications;
+4.3 comply with the terms of this Agreement and applicable Statement of Work in its provision of the Services and development and
+provision of Deliverables, and shall cause its
+14
+Affiliates and its and their respective subcontractors, employees and representatives to comply with:
+(a) Good Clinical Practice (to the extent applicable);
+(b) the
+Policies and Standards; and
+(c) Applicable Law;
+4.4
+maintain complete and accurate records relating to (a) the provision of the Services under this Agreement, including
+[***]
+, and (b) the Licensed Data as made available to AstraZeneca (including,
+[***]
+), in each case in a
+format to the reasonable satisfaction of AstraZeneca, for the Term
+[***]
+. Tempus shall comply and will assist AstraZeneca in complying with all Applicable Laws with respect to retention of all records relating to the Services performed in
+connection with this Agreement. Tempus shall also retain records as may be reasonably directed in writing by AstraZeneca in order to comply with applicable AstraZeneca records retention requirements;
+4.5 upon AstraZeneca’s written request and subject to Tempus’s reasonable policies and procedures (e.g., related to security and confidentiality),
+allow AstraZeneca or AstraZeneca’s representative to inspect and make copies of such records and interview Tempus representatives in connection with the provision of the Services; provided that AstraZeneca provides Tempus with reasonable
+advance written notice of the planned inspection;
+4.6 enter into all agreements or mechanisms as reasonably requested by AstraZeneca to ensure compliance
+with Data Privacy Law;
+4.7 be responsible for maintaining and tracking
+[***]
+; and
+4.8
+[***]
+.
+5.
+Tempus FTE Commitment
+.
+5.1 To support AstraZeneca’s advancement of the Workstreams, Tempus will
+[***]
+(the “
+Dedicated AZ Team
+”). Tempus will also
+[***] “Services” [***]
+. Tempus will use Tempus Materials and the Licensed Data to provide the
+[***]
+.
+5.2
+[***]
+if:
+(a)
+[***]
+; or
+(b)
+[***]
+.
+6.
+Governance
+.
+6.1 No later than
+[***]
+, the Parties will establish a Joint Steering Committee (“
+JSC
+”) across all Workstreams to review and coordinate
+the activities of the Parties under this Agreement.
+15
+(a) The JSC will consist of
+[***]
+representatives:
+[***]
+. At the invitation of the JSC as
+necessary, other representatives of Tempus or AstraZeneca may attend JSC meetings as
+non-voting
+representatives.
+(b) In the event that any representative named in Section (a) is unable to carry out their duties on the JSC, then the Party of the affected
+representative shall promptly nominate a replacement, to the reasonable satisfaction of other Party, to carry out the duties of the affected representative for such period as the affected representative is unable to perform.
+(c) Tempus will assign a program manager to assist the JSC with project management activities,
+[***]
+. AstraZeneca may appoint a lead member to manage
+the activities of the JSC and prioritize activities.
+(d) The JSC will meet quarterly, or more frequently as needed, at a mutually agreeable time and
+place or by video or telephone conference. A quorum of the JSC will be
+[***]
+of the members,
+[***]
+. Each Party will bear its own personnel and travel costs and expenses relating to JSC meetings.
+(e) The JSC will provide a forum for discussing and coordinating
+[***]
+. The JSC will also consider and attempt to resolve in good faith any conflict
+between Tempus and AstraZeneca.
+(f) The Parties’ representatives on the JSC will collectively have
+[***]
+.
+(g) The JSC will not have the power to amend or modify the Agreement except as mutually agreed by the Parties, as evidenced by a written amendment to the
+Agreement that is signed by an authorized representative of each Party.
+[***]
+, the Parties will discuss in good faith the terms associated with such additional activities, which must be documented in a fully executed amendment to this
+Agreement.
+(h) The JSC shall have the power to appoint and direct subcommittees (each, a “
+JSC Subcommittee
+”). Unless otherwise agreed by
+the JSC: (i) each JSC Subcommittee shall consist of no fewer than
+[***]
+. Each Party shall bear its own personnel and travel costs and expenses relating to JSC Subcommittee meetings. JSC Subcommittees shall meet at a mutually agreeable
+time and place or by video or telephone conference.
+6.2 Where the JSC is referred any matter under this Agreement (including under Sections 3.2(a)(iv),
+3.4, 3.5(d), and 14.1(d), or under any Statement of Work) and the JSC is unable to resolve such relevant referred matter within
+[***]
+(or such longer period as is agreed in writing by the JSC) from when it receives such referral, then
+[***]
+.
+7.
+Privacy and Data Protection
+.
+7.1 Each Party shall comply with its respective obligations under Data Privacy Laws.
+7.2 To the extent that AstraZeneca has provided its permission to disapply the terms of Section 18.2(b), Tempus agrees to an amendment to this Agreement
+as reasonably proposed by AstraZeneca, and enter into any and all agreements and measures as reasonably required by AstraZeneca to maintain compliance with Applicable Law.
+16
+7.3 Tempus and AstraZeneca shall cooperate in good faith to ensure that the highest ethical standards are
+upheld in the obtaining of human biological samples, associated data and the consents with respect thereto, in relation to activities contemplated by this Agreement.
+7.4 In connection with the foregoing, no later than
+[***]
+, the JSC will establish and appoint a JSC Subcommittee (the “
+ICF
+Subcommittee
+”), the principal responsibilities of which shall be to:
+(a)
+perform the activities set out in Sections 7.3 to 7.7;
+(b)
+generally assist the Parties to uphold the highest ethical standards as described in Section 7.3; and
+(c)
+perform such other activities as may be delegated to the ICF Subcommittee by the JSC from time to time.
+7.5 The first ICF Subcommittee meeting shall be no later than
+[***]
+, with subsequent meetings scheduled as mutually agreed upon
+by ICF Subcommittee representatives, but in no event later than
+[***]
+, unless otherwise agreed upon by the JSC.
+7.6 At such meetings the ICF
+Subcommittee shall review the ICF(s) created or used by Tempus or third parties in light of (a) changes to Applicable Law, associated practices and standards, or third party uses of the data that is the subject of such ICF(s); or (b) other
+relevant factors.
+7.7 Promptly, and in any event within
+[***]
+, after each meeting, the ICF Subcommittee shall prepare and circulate to the Parties
+recommendations regarding changes to the ICF(s) and associated practices (if any) for consideration. Each Party shall consider such recommendations in good faith and, if such recommendations are agreed to be implemented, promptly do such things as
+are reasonably necessary to implement such recommendations. The ICF Subcommittee shall oversee the implementation of any such changes to the ICF(s) and associated practices.
+8.
+Cybersecurity
+.
+8.1 Each Party shall comply with its respective obligations in the Cybersecurity Requirements Exhibit as attached in
+Exhibit D
+.
+9.
+Expectations of Third Parties
+.
+9.1 Tempus recognizes AstraZeneca’s commitment to work only with suppliers and partners who embrace the standards of ethical behavior consistent with
+AstraZeneca’s Expectations of Third Parties Handbook, a copy of which can be found on
+www.astrazeneca.com
+or by clicking the “Resources” tab on
+https://www.astrazeneca.com/sustainability.html
+, as amended from time to
+time, and in particular those principles in the Section “Anti-Bribery and Anti-Corruption” as amended from time to time (“
+Supplier Expectations
+”).
+9.2 Tempus represents, warrants and covenants that it: (i) will perform this Agreement and operate its business in compliance with all Applicable Laws,
+(ii) has read and received AstraZeneca’s Code of Ethics, which can be found on
+www.astrazeneca.com
+or by clicking the
+17
+“Resources” tab on
+https://www.astrazeneca.com/sustainability.html
+and will perform this Agreement consistent with AstraZeneca’s Code of Ethics, (iii) shall ensure that
+it has, and shall procure that all relevant Tempus personnel providing Services have, received and shall comply with AstraZeneca’s Principles on Data and AI, which can be found at
+https://www.astrazeneca.com/sustainability/ethics-and-transparency/data-and-ai-ethics.html
+, and shall cooperate with AstraZeneca in good faith to ensure continued compliance with AstraZeneca’s Principles on Data and AI for the Term, (iv) will perform this Agreement and operate its business to ethical standards consistent
+with those set out in the Supplier Expectations, (v) will not take any action that will cause AstraZeneca to be in breach of any Applicable Laws for the prevention of fraud, bribery and corruption, racketeering, money laundering, terrorism,
+product security or product safety, including the US Foreign Corrupt Practices Act and the UK Bribery Act, (vi) will not offer, pay, request or accept any bribe, inducement, kickback or facilitation payment, and will not make or cause another
+to make any offer or payment to any individual or entity for the purpose of influencing a decision for the benefit of AstraZeneca, (vii) shall, without limiting the foregoing, promptly, and in any event within 60 days of the Effective Date,
+implement policies with respect to human rights and modern slavery, and any other internal policies as may be required, so as to establish and maintain compliance with the standards required in respect thereof by the Supplier Expectations and
+AstraZeneca’s Code of Ethics, and (viii) will use reasonable efforts to cause its Affiliates and its and their subcontractors performing activities under this Agreement, including the provision of Services, to operate their business in
+compliance with all Applicable Laws and in a manner consistent with the Supplier Expectations.
+9.3 In the event that Tempus fails to meet or maintain
+such ethical standards,
+[***]
+.
+9.4
+[***]
+.
+10.
+Regulatory Matters
+.
+10.1 AstraZeneca shall have sole control over any regulatory filings with respect to results obtained by AstraZeneca from the receipt of Services, or use of
+the Licensed Data or any Deliverable.
+10.2 Without limiting Tempus’ ability to fulfill its obligations under Applicable Law, and unless otherwise
+mutually agreed in a Statement of Work, AstraZeneca shall be responsible for any and all written and oral contact with any Regulatory Authority with respect to the Services and Deliverables, including the submission of all reports or notices
+required by Applicable Law. Tempus shall not initiate or participate in any communications with any Regulatory Authority to the extent concerning the Services or any Deliverable unless required by Applicable Law or requested to do so by, and then
+only after prior consultation with, AstraZeneca (to the extent such consultation is permitted under Applicable Law). To the extent not prohibited by Applicable Law, Tempus shall provide AstraZeneca with a copy of all correspondence with any
+Regulatory Authority to the extent relating to this Agreement, or the Services, the Licensed Data or any Deliverables.
+10.3
+[***]
+.
+18
+10.4 To the extent not prohibited by Applicable Law,
+[***].
+11.
+Payment and Invoicing
+.
+11.1 Subject to the terms of this Agreement (including the applicable Statement of Work), AstraZeneca shall pay to Tempus the invoiced fees as set out in each
+Statement of Work. No fees or costs other than the relevant fees under this Agreement shall be payable by AstraZeneca.
+[***]
+.
+11.2 No payment for
+Services will be made unless a purchase order is issued by AstraZeneca. Invoices must reference a corresponding purchase order number. If an Affiliate issues a purchase order under this Agreement, then the “
+Party
+” for purposes
+of such purchase order will be the Affiliate, and the Affiliate will be deemed substituted in the place of AstraZeneca solely for the purposes of such purchase order.
+11.3 AstraZeneca will pay all invoices
+[***]
+from receipt of a valid and undisputed invoice.
+11.4 Tempus agrees to participate in the electronic transaction program for purchase orders. AstraZeneca will indicate the electronic transaction program
+applicable to Tempus for each purchase order, details of which can be found on
+www.astrazeneca.com
+on the “Supplier Information” tab or by going to
+https://www.astrazeneca.com/az-suppliers.html
+, as amended from time to time.
+Participation in the electronic transaction program includes the preparation and regular maintenance of electronic catalogues to support a high-quality ordering process and accepting the electronic transmission of purchase orders from AstraZeneca.
+Tempus agrees to provide the required data and to designate a representative to assist in ensuring implementation and maintenance of the electronic transaction program.
+11.5 Tempus agrees to submit all invoices and any corresponding credit notes to AstraZeneca electronically through the electronic transaction program
+designated by AstraZeneca, details of which can be found on
+www.astrazeneca.com
+on the “Supplier Information” tab or by going to
+https://www.astrazeneca.com/az-suppliers.html
+, as amended from time to time. AstraZeneca will
+indicate the electronic transaction program applicable to Tempus for each invoice. Tempus should only submit invoices through the electronic transaction program and only valid invoices or credit notes submitted through the electronic transaction
+program will be considered received by AstraZeneca. The electronic transaction program will allow Tempus to either (i) transmit invoices and credit notes electronically; or (ii) create those invoices or credit notes within
+the electronic transaction program. AstraZeneca may reasonably reject any invoice or credit note that does not meet at least the following relevant standards. The relevant standard for an invoice is one that:
+(a) complies with local law, the European standard and any of the syntaxes published in Commission Implementing Decision (EU) 2017/1870;
+(b) documents the different goods and services within the invoice;
+(c) contains the full details of the AstraZeneca party, including legal name, address and when applicable the indirect tax ID number; and
+19
+(d) is raised by Tempus, in all circumstances, unless AstraZeneca and Tempus mutually agree in writing a
+self-invoicing scheme.
+11.6 Credit notes should be used to amend incorrect invoices and should inform of the error being corrected and invoices affected.
+11.7 If an invoice is disputed, AstraZeneca shall notify Tempus in writing not later than
+[***]
+from the date of receipt of such disputed invoice
+specifying the reasons for disputing the invoice. AstraZeneca and Tempus will discuss such disputed invoice in good faith within
+[***]
+after Tempus acknowledges the invoice has been disputed, whereby Tempus shall provide all evidence as may
+be reasonably necessary to verify such disputed invoice. Tempus may invoice for any Services that are not disputed while working to correct the disputed invoice.
+11.8 If either Party fails to pay any amount due under this agreement within
+[***]
+after payment is due, then such paying Party shall pay interest
+thereon at no more than an annual rate equal to the lesser of (i)
+[***]
+. “Reference Rate” means
+[***]
+.
+11.9
+[***]
+.
+12.
+Tax
+.
+12.1
+Deductions and Withholdings
+. If a deduction or withholding for or on account of tax (“
+Tax Deduction
+”) is required by law to be
+made by AstraZeneca, AstraZeneca shall deduct or withhold from the payments any taxes that it is required by Applicable Law to deduct or withhold. AstraZeneca shall not be required to make an increased payment to Tempus where a Tax Deduction is
+required. AstraZeneca shall cooperate reasonably with Tempus to reduce or recover the Tax Deduction (e.g., by completing prescribed forms) provided that AstraZeneca shall not apply a reduced rate of Tax Deduction unless Tempus has provided evidence,
+in a form satisfactory to AstraZeneca of authorization to do so.
+12.2
+Indirect Taxes
+. All payments under this Agreement are stated exclusive of
+any Indirect Tax. Accordingly, if any Indirect Tax is chargeable on the recipient of a payment in respect of such payment, the party making such payment shall pay an additional amount equal to such Indirect Tax at the applicable rate in respect of
+such payment, on the due date of the payment to which such Indirect Tax relates. The Parties shall promptly issue appropriate Indirect Tax invoices in respect of all goods and services supplied under this Agreement consistent with applicable
+Indirect Tax requirements, and to the extent an invoice is not initially issued in an appropriate form, they shall cooperate to provide such information or assistance as may be necessary to enable the issuance of such invoice consistent with
+Indirect Tax requirements.
+12.3
+Anti-Tax
+Evasion
+. Each of AstraZeneca and Tempus represents, warrants and
+undertakes that it shall not commit a tax evasion facilitation offence under Part 3 of the UK Criminal Finances Act 2017 in connection with or otherwise attributable to this Agreement or the transactions contemplated hereby.
+12.4 Each Party shall promptly report to the other Party any apparent breach of Section 12.3 and shall (i) answer, in reasonable detail, any written
+or oral inquiry from the other Party related to its compliance with Section 12.3, (ii) facilitate the interview of employees of such Party by the
+20
+other Party (or any agent of such Party) at any reasonable time specified by the inquiring Party related to such Party’s compliance with Section 12.3, and
+(iii) co-operate
+with the inquiring Party or any government, state or municipality or any local, state, federal or other fiscal, revenue, customs or excise authority, body or official anywhere in the
+world (“
+Tax Authority
+”) in relation to any investigation relating to the matters referred to in Section 12.3, in all cases, as reasonably required to enable that other Party to comply with its undertaking in Section 12.3.
+13.
+Intellectual Property
+.
+13.1
+AstraZeneca Materials
+.
+(a) “
+AstraZeneca
+Materials
+” means
+[***]
+.
+(b) AstraZeneca is and will remain the owner of all Intellectual Property Rights in the AstraZeneca Materials.
+Ownership of all Third Party Materials and of all Intellectual Property Rights therein, is and will remain with the respective owners thereof, subject to any express licenses or sublicenses granted to Tempus pursuant to or in accordance with this
+Agreement.
+(c) Unless agreed to otherwise in a Statement of Work, Tempus will promptly return to AstraZeneca all AstraZeneca Materials in its possession
+upon the termination or expiration of this Agreement or the relevant Statement of Work, under Section 16.8(b).
+13.2
+Tempus Materials
+.
+(a) “
+Tempus Materials
+” means
+[***]
+.
+(b) Tempus is and will remain the owner of all Intellectual Property Rights in the Tempus Materials and Licensed Data. Ownership of all Third Party Materials
+and of all Intellectual Property Rights therein, is and will remain with the respective owners thereof, subject to any express licenses or sublicenses granted to AstraZeneca pursuant to or in accordance with this Agreement.
+(c)
+[***]
+.
+(d) Should Tempus use any Third Party
+Materials or Third Party IP in the provision of Services,
+[***]
+all necessary rights to use such Third Party Materials and Third Party IP.
+(e)
+Without limiting Tempus’ other obligations or AstraZeneca’s rights and remedies, if Tempus becomes aware of any actual or threatened claim or risk of infringement or misappropriation of any Third Party IP or Third Party Materials arising
+out of the provision of the Services or Licensed Data to AstraZeneca under this Agreement,
+[***]
+.
+13.3
+Rights in Project Inventions
+.
+(a) Subject to Section 13.2(b), AstraZeneca shall own all AstraZeneca Project Inventions
+[***]
+.
+21
+(b) Tempus shall own all Tempus Project Inventions and Intellectual Property Rights therein.
+[***]
+.
+(c) If a Project Invention constitutes AstraZeneca Core IP and (but for the exclusion of
+[***].
+(d)
+[***]
+.
+(e) Each Party shall do and execute, or
+arrange for the doing and executing of, each necessary act, document and thing that the other Party may consider necessary or desirable to perfect the right, title and interest of such other Party in and to the relevant Project Inventions and
+Intellectual Property Rights therein, free and clear of all encumbrances and liens of any kind, as may be required to give effect to the other provisions of this Section 13.3.
+(f) Notwithstanding anything to the contrary herein, Licensed Data shall always remain subject to the license terms set forth in
+Exhibit B
+.
+13.4
+Restrictions
+. AstraZeneca agrees not to disclose, sell, sublicense or otherwise transfer or make available all or any portion of the Tempus
+Materials to, or use the Tempus Materials to provide services to, any third party (other than an AstraZeneca Affiliate) without the prior written consent of Tempus, other than as specifically provided for in a license granted to such Tempus
+Materials either pursuant to Sections 13.2 or 13.3, above, or in a Statement of Work or as otherwise permitted by this Agreement. Otherwise, nothing contained in this Agreement shall directly or indirectly be construed to assign or grant to
+AstraZeneca any right, title or interest in or to the trademarks, copyrights, patents or trade secrets of Tempus or any ownership rights in or to the Tempus Materials. AstraZeneca shall not cause or permit the reverse engineering, reverse assembly,
+or reverse compilation of, or otherwise attempt to derive source code from, the Tempus Materials.
+14.
+Error/Delay in Performance of the Services.
+14.1 In the event of an error or delay by Tempus in the performance of the Services, whereby such error or delay renders the Services or Deliverables (in
+whole or in part) unacceptable to AstraZeneca, then without limiting any other right or remedy of AstraZeneca:
+(a) AstraZeneca shall promptly notify
+Tempus in writing, detailing the issues and areas of concern.
+(b) Tempus shall, within
+[***]
+of notifying AstraZeneca, provide to AstraZeneca a
+proposed formal action plan to remedy such error or delay.
+(c) The Parties shall discuss such action plan in good faith and within
+[***]
+of
+delivery of the action plan both Parties will meet to discuss progress.
+(d) In the event such errors or delays (as the case may be) continue, in
+AstraZeneca’s sole discretion, AstraZeneca shall have the right to escalate the matter to JSC for consideration.
+14.2 Notwithstanding
+Section 14.1 above and without limiting any other right or remedy available to AstraZeneca, in the event of a notified error or delay in the performance of the Services, AstraZeneca may:
+22
+(a)
+[***]
+(b)
+[***]
+.
+15.
+Exclusivity
+.
+The scope and duration of any exclusivity for AstraZeneca with respect to the provision of Services, access to Licensed Data or any other subject matter may
+be agreed in each Statement of Work, including (as applicable) any specific restrictions on the activities of Tempus and its Affiliates with respect to third parties, any restrictions on Tempus providing services or deliverables to such third
+parties that are the same as, or similar to, the Services or Deliverables (as applicable) under such Statement of Work for a specified period of time. Except to the extent expressly specified in a Statement of Work, the Services and Licensed Data
+are not subject to exclusivity obligations under this Agreement.
+16.
+Term, Termination, and Survival
+.
+16.1 This Agreement shall commence as of the Effective Date and shall continue thereafter through December 31, 2026, unless sooner terminated pursuant to
+this Section 16 (the “
+Term
+”).
+16.2 Each Statement of Work shall commence on the date of execution, and continue in accordance with
+its terms, unless sooner terminated pursuant to the Sections of this Agreement, or the terms of such Statement of Work. For the avoidance of doubt, expiry of this Agreement shall not itself cause the termination of any then-existing Statements of
+Work.
+16.3 AstraZeneca,
+[***]
+. For clarity, AstraZeneca shall remain responsible for the Financial Commitment notwithstanding the termination of
+any Statement of Work pursuant to this Section.
+16.4 Termination of a Statement of Work alone will not result in the termination of this Agreement or the
+termination of any other Statement of Work. Upon the termination of this Agreement for any reason (but excluding its expiration), all Statements of Work then in effect will automatically terminate and Tempus will cease performing the Services,
+unless AstraZeneca requests that Tempus complete one or more of the Services. In such case, and provided the Agreement has not been terminated due to AstraZeneca’s uncured material breach, the rights and obligations of the Parties under this
+Agreement will continue in effect with respect to such Services until completion.
+16.5 Either Party may terminate this Agreement, effective upon written
+notice to the other Party (the “
+Defaulting Party
+”), if the Defaulting Party:
+(a) materially breaches this Agreement, and such breach is
+incapable of cure, or with respect to a material breach capable of cure, the Defaulting Party does not cure such breach within thirty (30) days after receipt of written notice of such breach;
+(b) becomes insolvent or admits its inability to pay its debts generally as they become due;
+(c) becomes subject, voluntarily or involuntarily, to any proceeding under any domestic or foreign bankruptcy or insolvency law, which is not fully stayed
+within seven (7) Business Days or is not dismissed or vacated within forty-five (45) days after filing;
+23
+(d) is dissolved or liquidated or takes any corporate action for such purpose;
+(e) makes a general assignment for the benefit of creditors; or
+(f) has a receiver, trustee, custodian, or similar agent appointed by order of any court of competent jurisdiction to take charge of or sell any material
+portion of its property or business.
+16.6 Without limiting any other right or remedy of AstraZeneca, AstraZeneca may terminate this Agreement, effective
+upon written notice to Tempus:
+(a)
+[***]
+;
+(b)
+[***]
+;
+(c) for convenience at any time, provided that where at the effective date of the termination of this Agreement AstraZeneca has not
+fulfilled its Financial Commitment in accordance with
+Exhibit E
+, then AstraZeneca will be liable to pay Tempus the balance of its unfulfilled Financial Commitment, i.e., the unfulfilled portion of two hundred million dollars ($200,000,000) if
+the MC Extension Option has not been exercised, or three hundred million dollars ($300,000,000) if the MC Extension Option has been exercised;
+(d) (i)
+Tempus or one of Tempus’ employees is convicted of a crime involving pharmaceutical counterfeiting, diversion or illegal trade, (ii) there is sufficient evidence of Tempus’ involvement in counterfeiting, diversion or illegal trade,
+and the involvement was either knowing or the result of a failure to establish necessary preventative controls, or (iii) there is a publicly announced investigation by a Regulatory Authority relating to any suspected or actual violation of
+Applicable Laws relating to anti-corruption or anti-bribery by Tempus or any Affiliates, consultants, agents, representatives or
+sub-contractors
+of Tempus or its Affiliates connected with this Agreement; or
+(i) Tempus is prevented or restricted by Applicable Law (including as a result of a court order or action of a Regulatory Authority) from providing all
+or a material part of the Services or Licensed Data in the form contemplated under this Agreement and Tempus does not remedy the same within thirty (30) days of the commencement of such prevention or restriction.
+16.7 Without limiting any other right or remedy of AstraZeneca, AstraZeneca may terminate this Agreement (in whole or in part, with respect to any Statement
+of Work), effective upon (a) Tempus’ failure to perform an obligation under this Agreement or Statement of Work (whether or not a repudiatory breach) that has been, or substantially similar failures have been, repeated sufficiently often
+to have a materially adverse impact on the use or enjoyment of the Services or Deliverables (including material detriment to the quality of Services or Deliverables or Licensed Data as provided in
+Exhibit B
+) or the business of AstraZeneca;
+(b) Tempus failing to remedy such breach within
+[***]
+; and (c) AstraZeneca having previously informed Tempus that if the failure or a substantially similar failure is repeated AstraZeneca may wish to terminate this Agreement.
+24
+16.8 Upon expiration or termination of this Agreement or Statement of Work for any reason, Tempus shall
+promptly (and in the case of a Statement of Work, to the extent applicable to such Statement of Work):
+(a) deliver to AstraZeneca all documents, work
+product, and other materials and Deliverables, whether or not complete, prepared by or on behalf of Tempus in the course of performing the Services for which AstraZeneca has paid;
+(b) at AstraZeneca’s direction, return to AstraZeneca or permanently erase/destroy all AstraZeneca Materials;
+(c) remove any Tempus-owned property, equipment, or materials located at AstraZeneca’s locations;
+(d) at AstraZeneca’s direction, deliver to AstraZeneca or permanently erase/destroy, all of AstraZeneca’s Confidential Information, including any
+and all documents and tangible materials (and any copies) containing, reflecting, incorporating, or based on AstraZeneca’s Confidential Information, except that Tempus shall be permitted to retain such copies of such Confidential Information as
+are reasonably required for the sole purpose of performing any obligations under this Agreement that survive expiry or termination of this Agreement or for archival purposes. Notwithstanding the foregoing, Tempus shall also be permitted to retain
+such additional copies of or any computer records or files containing such Confidential Information that have been created solely by Tempus’ automatic archiving and
+back-up
+procedures, to the extent
+created and retained in a manner consistent with Tempus’ standard archiving and
+back-up
+procedures, but not for any other use or purpose;
+(e) provide reasonable cooperation and assistance to AstraZeneca upon AstraZeneca’s written request in transitioning the Services to an alternate service
+provider;
+(f) on a pro rata basis, repay all fees and expenses paid in advance for any Services, Deliverables, Licensed Data or other elements that have
+not been provided;
+(g) certify (through an authorized officer of Tempus) in writing to AstraZeneca that it has complied with the requirements of this
+Section 16.8; and
+(h) provide all transition and exit assistance as provided in the relevant Statement of Work.
+16.9 Upon expiration or termination of this Agreement or Statement of Work for any reason, AstraZeneca shall promptly (and in the case of a Statement of Work,
+to the extent applicable to such Statement of Work):
+(a) at Tempus’ direction, return to Tempus or permanently erase/destroy all Tempus Materials
+(including Licensed Data) except that AstraZeneca shall be permitted to retain such copies of such Tempus Materials as are reasonably required for the sole purpose of performing any obligations or exercising rights (including exploiting Deliverables
+and AstraZeneca Project Inventions, and with respect to Licensed Data under Exhibit B) under this Agreement that survive expiry or termination of this Agreement or for archival purposes. Notwithstanding the foregoing, AstraZeneca shall also be
+permitted to retain such additional copies of or any
+25
+computer records or files containing such Tempus Materials that have been created solely by AstraZeneca’s automatic archiving and
+back-up
+procedures,
+to the extent created and retained in a manner consistent with AstraZeneca’s standard archiving and
+back-up
+procedures, but not for any other use or purpose. For clarity, nothing in the foregoing shall
+operate to terminate, limit or otherwise affect the rights and licenses with respect to Licensed Data that are granted under Exhibit B;
+(b) remove any
+AstraZeneca-owned property, equipment, or materials located at Tempus’ locations;
+(c) At Tempus’ direction, deliver to Tempus or permanently
+erase/destroy, all of Tempus’ Confidential Information, including any and all documents and tangible materials (and any copies) containing, reflecting, incorporating, or based on Tempus’ Confidential Information except that AstraZeneca
+shall be permitted to retain such copies of such Confidential Information as are reasonably required for the sole purpose of performing any obligations or exercising rights (including exploiting Deliverables and AstraZeneca Project Inventions, and
+with respect to Licensed Data under Exhibit B) under this Agreement that survive expiry or termination of this Agreement or for archival purposes. Notwithstanding the foregoing, AstraZeneca shall also be permitted to retain such additional copies of
+or any computer records or files containing such Confidential Information that have been created solely by AstraZeneca’s automatic archiving and
+back-up
+procedures, to the extent created and retained in a
+manner consistent with AstraZeneca’s standard archiving and
+back-up
+procedures, but not for any other use or purpose. For clarity, nothing in the foregoing shall operate to terminate, limit or otherwise
+affect the rights and licenses with respect to Licensed Data that are granted under Exhibit B; and
+(d) certify (through an authorized officer of
+AstraZeneca) in writing to Tempus that it has complied with the requirements of this Section 16.9; and
+(e) upon the later of (i) expiry or
+termination of this Agreement, and (ii) the last to expire or terminate Statement of Work, the following shall survive: Sections 1, 7.1, 8, 10, 13, 15, 16, 17, 19.1, 19.3, 22, 23, 24, 25, 26, 27, 28, 29, 30.1, 30.2, 30.3, 30.4, paragraphs 1, 2
+and 4 of Exhibit B, and Exhibit D.
+17.
+Independent Contractor
+.
+17.1 Each Party expressly understands and agrees that the other is an independent contractor in the performance of each and every part of this Agreement and
+nothing in this Agreement operates or may be construed as constituting the Parties as partners, joint venturers, principals, joint employers, agents or employees of or with the other. Each Party is solely responsible for all of its employees and
+agents and its labor costs and expenses arising in connection therewith. AstraZeneca shall have the right to inspect the work of Tempus as it progresses solely for the purpose of determining whether the work is completed according to the applicable
+Statement of Work.
+17.2 Tempus has no authority to commit, act for or on behalf of AstraZeneca, or to bind AstraZeneca to any obligation or liability.
+26
+17.3 Tempus shall not be eligible for and shall not receive any employee benefits from AstraZeneca and shall
+be solely responsible for the payment of all taxes, FICA, federal and state unemployment insurance contributions, state disability premiums, and all similar taxes and fees relating to the fees earned by Tempus hereunder.
+18.
+Representations and Warranties
+.
+18.1 Each Party (the “
+Representing Party
+”) represents and warrants to the other that as of the Effective Date:
+(a) the Representing Party has the requisite power and full authority to enter into this Agreement, and the Representing Party’s execution, delivery of,
+and performance under, this Agreement have been duly authorized by the Representing Party and do not, and shall not, violate or conflict with any Applicable Law to the Representing Party, that the Representing Party has full legal power to extend
+the rights and undertake the responsibilities ascribed to such Party in this Agreement;
+(b) the Representing Party is duly licensed, authorized and
+qualified to do business and is in good standing in every jurisdiction in which a license, authorization or qualification is required for the ownership or leasing of its assets or the transaction of business of the character transacted by it; and
+(c) neither the Representing Party nor any of its employees or contractors: (A) have been convicted of a criminal offense related to healthcare;
+(B) are listed on the U.S. Department of Health and Human Services Office of Inspector General’s List of Excluded Individuals/Entities, or are otherwise currently excluded, suspended or debarred from participating in any federal healthcare
+program; (C) are under investigation (civil or criminal) by any federal or state enforcement, regulatory, administrative or licensing agency; or (D) are currently listed on the U.S. General Services Administration List of Parties Excluded
+from the Federal Procurement and
+Non-Procurement
+Programs.
+18.2 Tempus represents and warrants, and undertakes,
+that:
+(a) it shall dedicate all appropriate resources to fulfilling its obligations under this Agreement and shall ensure it is not, and will not be, a
+party to any agreement or under any condition that would in any way prevent, or impede, its ability to provide the Services, without first obtaining the prior written permission of AstraZeneca;
+(b) unless otherwise expressly agreed in a Statement of Work, any Licensed Data provided or made available to AstraZeneca by Tempus shall not contain any
+Personal Data:
+(i) that can be used to directly identify any natural persons;
+(ii)
+[***]
+;
+(iii)
+[***]
+;
+(iv)
+[***]
+27
+(v)
+[***]
+,
+without the prior written consent of AstraZeneca.
+(c) there is
+no claim or litigation pending or claim that was previously asserted in writing against Tempus or any of its Affiliates (and Tempus has no knowledge of any claim, whether or not pending or asserted), and to Tempus’ knowledge, no such claim will
+be made during the Term, by any Person alleging that (i) Tempus Materials or Tempus’ Intellectual Property Rights are invalid or unenforceable or (ii) the possession, collection, acquisition, access, retention, storage, transfer,
+disclosure, protection, or other use or exploitation of any Licensed Data, Services, or Tempus Materials violates, infringes, constitutes misappropriation or otherwise conflicts or interferes with, or would violate, infringe or otherwise conflict or
+interfere with, any Intellectual Property Rights or proprietary right of any Person;
+(d) it and its employees and subcontractors have all of the
+necessary qualifications, consents (including from the individuals from whom the Licensed Data is derived, to the extent necessary under Applicable Law), licenses, permits or registrations to license the Licensed Data and perform the Services, in
+accordance with the terms and conditions of this Agreement, and at all times during the Term, all such qualifications, licenses, permits or registrations shall be current and in good standing;
+(e) Tempus has obtained all necessary rights, consents, authorizations or permissions to (i) create, process, and provide all Licensed Data (including in
+relation to the creation of
+De-Identified
+Information from any Protected Health Information, as such terms are defined under HIPAA) to AstraZeneca for use, disclosure and any other purpose contemplated by the
+terms of this Agreement and has done so in accordance with all Applicable Law (including having ensured that all appropriate notices to the subjects of such Licensed Data have been provided) and (ii) Tempus’ rights to
+De-Identified
+Information included in the Licensed Data are perpetual and
+non-terminable;
+(f) Tempus is the owner of, or otherwise has all of the rights necessary to use, all materials and information (including the Tempus Materials) that it
+provides to AstraZeneca under this Agreement and that it uses to provide the Services (including Deliverables);
+(g) it has never been, is not currently,
+and, during the Term, shall not become a Debarred Individual or Debarred Entity, an Excluded Individual or Excluded Entity or a Convicted Individual or Convicted Entity;
+(h) that no Debarred Individual, Debarred Entity, Excluded Individual, Excluded Entity, Convicted Individual or Convicted Entity has performed or rendered, or
+will perform or render, any services or assistance relating to activities taken pursuant to this Agreement. Tempus further warrants and represents that Tempus has no knowledge of any circumstances which may affect the accuracy of the foregoing
+representations and warranties including FDA OIG/HHS investigations of, or debarment or exclusion (as applicable) proceedings against Tempus or any person or entity performing services or rendering assistance relating to activities taken pursuant to
+this Agreement, and Tempus will immediately notify AstraZeneca if Tempus becomes aware of any such circumstances during the Term;
+28
+(i) it shall not engage in any activity under this Agreement that would result in AstraZeneca being
+considered a Covered Entity or Business Associate (as defined under HIPAA);
+(j) it shall ensure that all Protected Health Information (as defined under
+HIPAA), extracts thereof or other data related thereto contained in Licensed Data have been
+de-identified
+in accordance with a methodology set forth under HIPAA and other Applicable Law, including HIPAA, and
+that no Deliverable shall include data or information that has not been so
+de-identified
+or that otherwise permits the identification of the individuals or patients from whose data the Deliverable is derived.
+At AstraZeneca’s request Tempus shall certify its compliance with the foregoing to AstraZeneca annually in writing, including by providing a summary of all applicable expert certifications. Tempus shall notify AstraZeneca upon the expiration or
+revision of any such certifications. For the avoidance of doubt, Tempus’s failure to comply with this Section shall be deemed a material breach of this Agreement;
+(k)
+[***]
+; and
+(l)
+[***]
+every calendar year
+beginning from
+[***]
+and lasting until
+[***]
+. AstraZeneca acknowledges that
+[***]
+.
+18.3 If any AstraZeneca Materials or other
+information provided or made available to Tempus under this Agreement include any Protected Health Information as that term is defined under the HIPAA, AstraZeneca agrees that it is solely AstraZeneca’s responsibility to ensure that AstraZeneca
+has obtained all necessary rights, consents or permissions to provide such information to Tempus for use in accordance with the terms of this Agreement and done so in accordance with all Applicable Law.
+18.4 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER PARTY MAKES ANY, AND EACH PARTY HEREBY SPECIFICALLY DISCLAIMS ANY, REPRESENTATIONS OR
+WARRANTIES, EXPRESS OR IMPLIED, REGARDING ITS ACTIVITIES CONTEMPLATED BY THIS AGREEMENT, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+NON-INFRINGEMENT
+AND IMPLIED
+WARRANTIES ARISING FROM COURSE OF DEALING OR COURSE OF PERFORMANCE.
+19.
+Remedies
+.
+19.1 If Tempus breaches any provision of this Agreement, AstraZeneca shall, in addition to any damages to which it is entitled, be entitled to seek immediate
+injunctive relief against Tempus prohibiting further actions inconsistent with Tempus’ obligations under this Agreement. Each Party acknowledges that its threatened or actual breach of its respective obligations under Sections 7.1, 7.2, 8 or
+24 may cause irreparable harm to the other Party such that compensation in damages may not be adequate and such other Party is entitled to seek injunctive relief (without limiting any other right or remedy available to it) for such a threatened
+or actual breach.
+19.2 Without limiting any other right or remedy available to AstraZeneca, if any Services or Deliverables are not provided in
+accordance with this Agreement or any Statement of Work in any respect, Tempus agrees to,
+[***]
+.
+29
+19.3 All rights and remedies provided in this Agreement are cumulative and not exclusive, and the exercise
+by either Party of any right or remedy does not preclude the exercise of any other rights or remedies that may now or subsequently be available at law, in equity, by statute, in any other agreement between the Parties, or otherwise.
+20.
+Compliance with Applicable Law
+.
+20.1 Each Party represents, warrants and undertakes that it shall comply with, all Applicable Law in the performance of its obligations under this Agreement.
+Without limiting the foregoing, Tempus has and shall maintain in effect all the licenses, permissions, authorizations, consents, and permits that it needs to carry out its obligations under this Agreement.
+20.2 Tempus and AstraZeneca agree that the funds provided hereunder are not being given in exchange for any explicit or implicit agreement to purchase,
+prescribe, recommend, influence or provide favorable formulary status for any of AstraZeneca’s products. This Agreement is not for the purpose of promoting any product, service, or company. AstraZeneca shall not, and shall ensure that the
+AstraZeneca Affiliates do not, offer any inducements to Tempus, any of their Affiliates, their volunteers, or any health care providers relating to this Agreement.
+20.3 Any physician licensed to practice in the U.S. and any U.S. teaching hospital is a “Covered Recipient.” A “Payment or Transfer of
+Value” is any payment or transfer of value as defined in the U.S. Physician Payment Sunshine Act (42 USC
+1320a-7h(e))
+and implementing regulations (42 CFR 403.900 et seq.), and includes compensation,
+reimbursement for expenses, meals, travel, medical journal reprints, study drug study supplies and medical writing and publications assistance. Tempus acknowledges and agrees that any direct or indirect Payments or Transfers of Value to Covered
+Recipients are subject to transparency reporting requirements, including disclosure on AstraZeneca’s website. Tempus shall not knowingly make any indirect or direct Payment or Transfer of Value to a Covered Recipient on behalf of AstraZeneca in
+connection with this Agreement. Tempus and AstraZeneca acknowledge and agree that none of the licenses to Licensed Data and the Services described in the Statements of Work executed prior to the Effective Date or contemplated by this Agreement will
+give rise to or constitute a reportable Payment or Transfer of Value.
+20.4 Tempus and AstraZeneca and their respective Affiliates, representatives,
+agents and employees shall comply with the U.S. Foreign Corrupt Practices Act, as amended, the UK Bribery Act of 2010, and any other applicable anti-corruption laws for the prevention of fraud, racketeering, money laundering or terrorism, and shall
+not knowingly taken any action that will, or would reasonably be expected to, cause the other Party or its Affiliates to be in violation of any such laws or policies.
+20.5 The Parties mutually acknowledge and agree that (i) any rights granted and Services to be provided by Tempus to AstraZeneca under this Agreement do
+not reflect remuneration in exchange for data in a manner that constitutes a prohibited sale of PHI (as defined by HIPAA) under HIPAA; and (ii) any fees to be paid by AstraZeneca or any of its Affiliate hereunder or in any Statement of Work are
+intended to reflect the fair market value of the rights and Services to be received and do not reflect remuneration in exchange for data in a manner that constitutes a prohibited sale of PHI under HIPAA.
+30
+21.
+Insurance
+.
+Tempus shall maintain during the Term insurance coverage of the types and in the amounts typically carried by Tempus of the types of Services and Deliverables
+within this Agreement. Tempus shall provide to AstraZeneca upon written request certificates of insurance evidencing its insurance coverage and limits.
+22.
+Indemnification
+.
+22.1 AstraZeneca shall indemnify, defend and hold harmless Tempus and its officers, directors, shareholders, employees, agents, successors and assigns
+(collectively, the “
+Tempus Indemnified Parties
+”), from any and all liabilities, judgments, costs, losses, fines, penalties, damages and expenses (including reasonable attorneys’ fees and court costs) (collectively,
+“
+Liabilities
+”), in connection with any claim, suit, action, investigation, or other proceeding brought or threatened by a third party (including a Regulatory Authority) against any of the Tempus Indemnified Parties, and relating to,
+based upon or arising out of or in connection with
+[***]
+.
+22.2 Tempus shall indemnify, defend and hold harmless AstraZeneca and its officers,
+directors, shareholders, employees, agents, successors and assigns (collectively, the “
+AstraZeneca Indemnified Parties
+”), from any and all Liabilities in connection with any claim, suit, action, investigation or other proceeding
+brought or threatened by a third party (including a Regulatory Authority) against any of the AstraZeneca Indemnified Parties, and relating to, based upon or arising out of or in connection
+[***]
+.
+22.3 With respect to indemnification claims, the following procedures shall apply:
+(a) Promptly after receipt by a Party (the “
+Indemnified Party
+”) of notice of the commencement or threatened commencement of any action or
+proceeding involving a claim for which such Indemnified Party will seek indemnification pursuant to this Section 22, such Indemnified Party shall notify the other Party (the “
+Indemnifying Party
+”) of such claim in writing. No
+failure to so notify an Indemnifying Party shall relieve it of its obligations under this Agreement except to the extent that it can demonstrate damages or prejudice attributable to such failure. Within ten (10) Business Days following receipt
+of written notice from the Indemnified Party relating to any claim, but not later than fifteen (15) days before the date on which any response to a complaint or summons is due, the Indemnifying Party shall notify the Indemnified Party in
+writing if the Indemnifying Party elects to assume control of the defense and settlement of that claim (a “
+Notice of Election
+”).
+(b) If
+the Indemnifying Party delivers a Notice of Election relating to any claim within the required notice period, the Indemnifying Party shall be entitled to have sole control over the defense and settlement of such claim; provided that (A) the
+Indemnified Party shall be entitled to participate in the defense of such claim and to employ counsel at its own expense to assist in the handling of such claim, and (B) the Indemnifying Party shall obtain the prior written approval of the
+Indemnified Party before entering into any settlement of such claim or ceasing to defend against such claim. The Indemnifying Party shall not be required to indemnify the Indemnified Party for any amount paid or payable by the Indemnified Party in
+the settlement of any claim for
+31
+which the Indemnifying Party has delivered a timely Notice of Election if such amount was agreed to without the written consent of the Indemnifying Party.
+(c) If the Indemnifying Party does not deliver a Notice of Election relating to any claim within the required notice period, the Indemnified Party shall have
+the right to defend the claim in such manner as it may deem appropriate, at the cost and expense of the Indemnifying Party. The Indemnifying Party shall promptly reimburse the Indemnified Party for all such costs and expenses including but not
+limited to any and all reasonable counsel fees.
+23.
+Disclaimers; Limitation of Liability
+.
+IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR ANY LOST REVENUES OR PROFITS, OR OTHER INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY
+DAMAGES ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE SERVICES PERFORMED UNDER THIS AGREEMENT, EVEN IF THAT PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS, DISCLAIMERS AND EXCLUSIONS DO NOT APPLY TO ANY
+BREACH OF SECTION 13, THE REPRESENTATIONS AND WARRANTIES MADE BY EACH PARTY IN SECTION 18, BREACH OF CONFIDENTIALITY OBLIGATIONS AS SPECIFIED IN SECTION 24, PAYMENT OBLIGATIONS IN SECTION 11, AND EACH PARTY’S INDEMNIFICATION OBLIGATIONS SET
+FORTH IN SECTION 22. The Parties agree that the disclaimers, exclusions and limitations of liability in this Agreement are an essential basis of the bargain between the Parties and, absent any of such disclaimers, exclusions or limitations of
+liability, the provisions of this Agreement, including the economic terms, would be substantially different.
+24.
+Confidentiality
+.
+24.1 “
+Confidential Information
+” means the
+non-public
+information that is exchanged between the
+Parties, provided that such information is: (i) identified as confidential at the time of disclosure by the disclosing Party (“
+Discloser
+”), or (ii) disclosed under circumstances that would indicate to a reasonable person
+that the information should be treated as confidential by the Party receiving such information (“
+Recipient
+”). Without limitation, the terms and conditions of this Agreement, the nature of the discussions and the relationship between
+the Parties, and the terms of any commercial transaction between the Parties, including pricing for any deliverable or service of Tempus, shall be considered Confidential Information of each Party (and each Party shall be deemed the Discloser and
+Recipient thereof). Confidential Information shall not include information that is (a) part of or becomes part of the public domain (other than by disclosure by the Recipient in violation of this Agreement); (b) previously known to the
+Recipient without an obligation of confidentiality; (c) independently developed by the Recipient outside this Agreement; or (d) rightfully obtained by the Recipient from third parties without an obligation of confidentiality. Without
+limiting the license set forth in Section 13.3(f), all Project Inventions (including all Deliverables) shall be the Confidential Information of AstraZeneca and AstraZeneca shall be deemed the Discloser and Tempus the Recipient in respect
+thereof. Without limiting the license set forth in Section 13.2(c), all Tempus Materials shall be the Confidential Information of Tempus and Tempus shall be deemed the Discloser and AstraZeneca the Recipient in respect thereof.
+32
+24.2 For the Term of this Agreement and for
+[***]
+, each Party agrees that it shall: (i) take
+reasonable measures to protect the Confidential Information of the other Party by using the same degree of care, but no less than a reasonable degree of care, to prevent the unauthorized use, dissemination or publication of the Confidential
+Information of the other Party as the Recipient uses to protect its own confidential information of a like nature, (ii) limit disclosure to those persons within Recipient’s organization with a need to know and who have previously agreed in
+writing, prior to receipt of Confidential Information of the other Party either as a condition of their employment or in order to obtain the Confidential Information, to obligations similar to the provisions hereof, (iii) not copy, reverse
+engineer, disassemble, create any works from, or decompile any prototypes, software or other tangible objects which embody the Confidential Information of the other Party or which are provided to the Party hereunder, and (iv) not use the
+Confidential Information of the other Party for any purpose other than to perform or receive (as applicable) the Services or Deliverables hereunder.
+24.3
+AstraZeneca may disclose Confidential Information of Tempus,
+[***]
+to the extent such disclosure is:
+(a) made to a Regulatory Authority as required
+in connection with any filing, application or request for Regulatory Approval, if such Confidential Information is marked as confidential and proprietary; or
+(b) made to a patent authority as may be reasonably necessary or useful for the purposes of obtaining or enforcing a patent.
+24.4
+[***]
+.
+24.5 Each Party may disclose Confidential
+Information of the other Party, including Licensed Data to the extent in response to a valid order of a court of competent jurisdiction or other Regulatory Authority of competent jurisdiction or, if in the reasonable opinion of the receiving
+Party’s legal counsel, such disclosure is otherwise required by Applicable Law, including by reason of filing with securities regulators; provided, however, that the receiving Party shall first have given notice to the disclosing Party and
+given the disclosing Party a reasonable opportunity to quash such order or to obtain a protective order or confidential treatment requiring that the Confidential Information and documents that are the subject of such order be held in confidence by
+such court or agency or, if disclosed, be used only for the purposes for which the order was issued; and provided further that the Confidential Information disclosed in response to such court or governmental order shall be limited to that
+information which is legally required to be disclosed in response to such court or governmental order.
+24.6 Neither Tempus nor AstraZeneca have the right
+to make public statements regarding the existence of this Agreement, its terms and conditions or the services being supplied without the consent of the other Party. Neither Party may use the other Party’s name or mark for any purpose unless a
+Party has consent in writing. After the execution of this Agreement, the Parties will negotiate in good faith the issuance of a joint press release (“
+Press Release
+”) on a mutually agreed upon date. Each Party will have the right to
+approve the Press Release in advance. Any Press Release will require approval of both Parties and, for AstraZeneca, will require approval from AstraZeneca’s Corporate Affairs department. The restriction on the Parties’ ability to make
+33
+public statements regarding the existence of this Agreement and its terms and use of the other Party’s name or mark shall not apply to the extent that a Party is otherwise required to make
+such disclosure pursuant to (i) any requirement under Applicable Law (including U.S. securities laws), or (ii) in connection with enforcing its rights under this Agreement.
+25.
+Notices
+.
+All notices, requests, consents, claims, demands, waivers, and other communications under this Agreement (each, a “
+Notice
+”) must be in
+writing and addressed to the other Party at its address set forth below (or to such other address that the receiving Party may designate from time to time in accordance with this Section 25). Unless otherwise agreed herein, all Notices must be
+delivered by personal delivery, nationally recognized overnight courier, or certified or registered mail (in each case, return receipt requested, postage prepaid). Except as otherwise provided in this Agreement, a Notice is effective only
+(a) on receipt by the receiving Party; and (b) if the Party giving the Notice has complied with the requirements of this Section 25.
+Notice to AstraZeneca:
+AstraZeneca AB
+SE-432
+86 Mölndal
+Sweden
+Attn: Legal Department
+with a copy to:
+Email:
+legalnotices@astrazeneca.com
+Attn: Legal Department
+Notice to Tempus:
+Tempus Labs, Inc.
+600 W. Chicago Ave., Suite 510
+Chicago, IL 60654
+United States of America
+Attn: Chief Executive Officer
+with a copy to:
+Tempus Labs, Inc.
+600 W. Chicago Ave., Suite 510
+Chicago, IL 60654
+United States of America
+Attn: General Counsel
+26.
+Assignment
+.
+Tempus shall not assign, transfer, delegate, or subcontract any of its rights or obligations under this Agreement without the prior written
+consent of AstraZeneca, except in the case of an assignment or transfer of this Agreement in its entirety that is effected in conjunction with the transfer by sale, merger, or otherwise of all or substantially all of Tempus’ assets, provided
+that
+34
+(a) Tempus provides written notice in relation to such proposed assignment or transfer, and (b) the
+successor organization assumes this Agreement and agrees to be bound by all of its existing terms in an assumption agreement entered into directly with AstraZeneca. Any such purported assignment, transfer or delegation in violation of this
+Section 26 shall be null and void. No assignment, transfer or delegation shall relieve Tempus of any of its obligations hereunder. AstraZeneca may at any time assign or transfer any or all of its rights or obligations under this Agreement
+without Tempus’ prior written consent; if the successor organization assumes this Agreement and agrees to be bound by all of its terms, including all remaining Financial Commitment.
+27.
+Force Majeure
+.
+Neither Party shall be liable or responsible to the other Party, nor be deemed to have defaulted under or breached this Agreement, for any
+failure or delay in fulfilling or performing any term of this Agreement, when and to the extent such Party’s (the “
+Impacted Party
+”) failure or delay is caused by or results from the following force majeure events (each a
+“
+Force Majeure Event
+”): (a) acts of God; (b) flood, fire, earthquake, or explosion; (c) pandemic, or epidemic (d) war, invasion, hostilities (whether war is declared or not), terrorist threats or acts, riot or other
+civil unrest; (e) government order, law, or action; (f) embargoes or blockades in effect on or after the date of this Agreement; (g) national or regional emergency; and (h) strikes, labor stoppages or slowdowns or other
+industrial disturbances; (i) shortage of adequate power or transportation facilities; and (j) other similar events beyond the reasonable control of the Impacted Party. Notwithstanding the foregoing, Tempus’ financial inability to
+perform, changes in cost or availability of materials, components or services, market conditions, or Tempus actions or contract disputes will not excuse performance by Tempus under this Section 27.
+The Impacted Party shall give notice within two (2) days of the Force Majeure Event to the other Party, stating the period of time the occurrence is
+expected to continue. The Impacted Party shall use diligent efforts to end the failure or delay and ensure the effects of such Force Majeure Event are minimized. The Impacted Party shall resume the performance of its obligations as soon as
+reasonably practicable after the removal of the cause. In the event that the Impacted Party’s failure or delay remains uncured for a period of thirty (30) consecutive days following written notice given by it under this Section 27,
+the other Party may thereafter terminate this Agreement upon thirty (30) days’ written notice, subject to the provisions of 16.8.
+If Tempus is
+prevented from, or delayed, in performing fully any of its obligations under this Agreement by a Force Majeure Event, with respect to those parts of the Services, Deliverables, Licensed Data and any other elements not received by AstraZeneca or in
+respect of which AstraZeneca is not able to receive the full benefit (for example, if full use of certain Licensed Data or Deliverables is dependent upon the receipt of Services that are so prevented or delayed), without limiting any other right or
+remedy, AstraZeneca (a) may suspend payment normally due to Tempus in respect of such affected Services, Deliverables, Licensed Data or other elements, until such time as Tempus has given written notice to AstraZeneca that it is able to resume
+performance in accordance with this Agreement; and (b) if AstraZeneca has paid for such affected Services, Deliverables, Licensed Data or other elements in advance of such time as performance was so prevented or delayed, AstraZeneca may (at its
+option) on notice to Tempus
+35
+require a refund from Tempus of such advance payment or reallocation of such advance payment to other Services, Deliverables, Licensed Data or other elements, the specification of which shall be
+agreed between the Parties by way of a new or amended Statement of Work.
+28.
+Audit Rights
+.
+28.1 For the Term
+[***]
+, Tempus shall for the purpose of auditing and monitoring its performance of this Agreement grant (or procure the grant) to
+AstraZeneca, Affiliates of AstraZeneca, any auditors of any of them and any Regulatory Authority the right of access to any premises of Tempus, its Affiliates or any
+sub-contractors
+used in connection with
+this Agreement, together with a right to access personnel, systems, processes and records (including financial records) that relate to this Agreement, subject to Tempus’ reasonable processes and procedures (e.g., regarding security and
+confidentiality). Audits may be undertaken once a year for each audit type, except that there shall be no such limitation to the number of audits per year to the extent an audit is undertaken as a result of an alleged breach of any of the provisions
+in this Agreement or a
+re-audit
+is required. Audits shall normally be agreed in advance, however, in the event of an alleged breach of this Agreement audits may be conducted unannounced. To the extent that any
+audit under this Section 28.1 or any other provision of this Agreement by AstraZeneca requires access and review of any commercially or strategically sensitive information relating to the business of Tempus, its Affiliates or any
+sub-contractors,
+such activity shall be carried out by
+non-Affiliate
+third party professional advisors appointed by AstraZeneca, and such professional advisors shall only
+report back to AstraZeneca such information as is directly relevant to informing AstraZeneca on compliance with the particular provisions that are the subject of the audit.
+28.2 Tempus shall provide or procure all cooperation and assistance during normal working hours reasonably required by AstraZeneca for the purposes of an
+audit. AstraZeneca shall procure that any auditor enters into a confidentiality agreement equivalent to Section 24 in all material respects. AstraZeneca shall instruct any auditor or other person given access in respect of an audit to cause the
+minimum amount of disruption to the business of Tempus, its Affiliates and
+sub-contractors
+and to comply with relevant building and security regulations.
+28.3 Tempus acknowledges that AstraZeneca has policies and procedures in place to monitor and review performance by its third party partners and contractors.
+Tempus shall cooperate with AstraZeneca in relation to such monitoring and review, and shall supply all information relating to this Agreement reasonably required by AstraZeneca (or to its
+non-Affiliate
+third
+party professional advisors, in the case of commercially or strategically sensitive information relating to the business of Tempus, its Affiliates or any
+sub-contractors).
+28.4 Each Party shall bear its own costs of an audit or rendering assistance under this Section 28. Any report generated in connection with any such
+audit conducted in relation to Section 7.1, shall be the property of Tempus. However, Tempus agrees that AstraZeneca shall be entitled to review any such audit report and all supporting documents in relation to the audit.
+29.
+Monitoring
+.
+36
+AstraZeneca has policies and procedures in place to monitor and review performance by its third party
+contractors. Tempus shall cooperate with AstraZeneca in relation to such monitoring and review and shall supply all information relating to this Agreement reasonably required by AstraZeneca (or to its
+non-Affiliate
+third party professional advisors, in the case of commercially or strategically sensitive information relating to the business of Tempus or any subcontractors).
+30.
+Miscellaneous
+.
+30.1 This Agreement constitutes the entire Agreement of the Parties with respect to the subject matter and supersedes all prior and contemporaneous agreements
+and understandings with respect thereto, including the Existing MSA and all associated statements of work, which shall be terminated as of the Effective Date, provided, however that any Existing Statements of Work identified in
+Exhibit F
+shall continue under the terms of this Agreement.
+30.2 This Agreement may only be amended by a writing signed by both Parties.
+30.3 The invalidity or unenforceability of any provision of this Agreement shall not affect the validity or enforceability of any other provision of this
+Agreement. In the event that any provision of this Agreement is determined to be invalid, unenforceable, or otherwise illegal, such provision shall be deemed restated, in accordance with Applicable Law, to reflect as nearly as possible the original
+intentions of the Parties, and the remainder of the Agreement shall continue in full force and effect.
+30.4 This Agreement and all related documents
+including all Exhibits attached hereto, and all matters arising out of or relating to this Agreement, whether sounding in contract, tort, or statute are governed by, and construed in accordance with, the laws of the State of Delaware, United States
+of America. Each Party irrevocably and unconditionally agrees that it will not commence any action, litigation, or proceeding of any kind whatsoever against the other Party in any way arising from or relating to this Agreement, including all
+exhibits, Exhibits, attachments, and appendices attached to this Agreement, and all contemplated transactions, including contract, equity, tort, fraud, and statutory claims, in any forum other than the courts of the State of Delaware, and any
+appellate court from any thereof. Each Party agrees that a final judgment in any such action, litigation, or proceeding is conclusive and may be enforced in other jurisdictions by suit on the judgment or in any other manner provided by law.
+30.5 This Agreement and any Statements of Work may be executed in counterparts each of which shall be deemed an original and which together shall constitute
+one and the same Agreement. Signatures transmitted by facsimile or scanned into .PDF (or similar) format and transmitted via electronic mail, and electronic signatures (whether digital or encrypted) shall all constitute original signatures.
+[SIGNATURE PAGE FOLLOWS]
+37
+IN WITNESS WHEREOF, the Parties hereto have caused this Agreement to be executed as of the Effective Date by
+their respective officers thereunto duly authorized.
+ASTRAZENECA AB
+By
+/s/ Yvonne Bertlin
+Name:
+Yvonne Bertlin
+Title:
+CFO
+TEMPUS LABS,
+INC.
+By
+/s/ Jim Rogers
+Name:
+Jim Rogers
+Title:
+Chief Financial Officer
+38
+EXHIBITS
+39
+EXHIBIT A
+FORM STATEMENT OF WORK
+[
+NOT USED.
+]
+40
+EXHIBIT B
+TERMS AND CONDITIONS FOR LICENSED DATA
+1.
+License Grant to Licensed Data
+.
+Subject to the terms and conditions of this Agreement (including paragraph 4 below), Tempus hereby grants to
+AstraZeneca a
+[***]
+. AstraZeneca shall ensure that any Publication by AstraZeneca of results obtained by AstraZeneca from the use of Licensed Data (or the Licensed Data itself, subject to all applicable
+non-disclosure
+obligations) shall be subject to appropriate attribution to Tempus with respect to the use and involvement of the Licensed Data obtained from Tempus (or its licensors) and any mutually agreed
+proprietary rights and disclaimer language with respect to the Licensed Data.
+2.
+Definitions
+.
+2.1 “
+Authorized Users
+” means
+[***]
+. Additionally, each Authorized User shall be authorized by AstraZeneca pursuant to its rigorous
+data access controls, and AstraZeneca shall bear responsibility for the actions or inactions any Authorized Users that would, if performed by AstraZeneca, constitute a breach of this Agreement. AstraZeneca shall use reasonable endeavors to ensure
+each Authorized User shall be trained on the use of the Licensed Data and shall be made aware of the obligations of this Agreement, including the restrictions set forth in paragraph 3.
+[***]
+.
+2.2 “
+AZ Library
+” has the meaning given under paragraph 3.1.
+2.3 “
+Permitted Uses
+” means, with respect to certain
+[***]
+.
+3.
+AZ Library
+3.1 Tempus will provide AstraZeneca and
+its Authorized Users with access to a specific library of Licensed Data (the “
+AZ Library
+”) under the terms of this paragraph 3.
+3.2
+[***]
+:
+(a) AstraZeneca will either (i) subscribe to up to
+[***]
+(each,
+[***]
+.
+(b) The gross license fees for the baseline AZ Library is
+[***]
+.
+(c) As part of its license to the AZ Library, AstraZeneca will download into its environments (including those operated by permitted sublicensees) up to
+[***]
+.
+(d) If AstraZeneca wants to license more than
+[***]
+, it will pay
+[***]
+as long as it licenses the records for a
+[***]
+period. If AstraZeneca wants to license more than
+[***]
+, it will pay
+[***]
+, as long as it licenses the records for a
+[***]
+period.
+[***]
+.
+(e) In Q4 2021, AstraZeneca will get an updated download for
+[***]
+and
+[***]
+.
+(f)
+[***]
+.
+41
+(g) All Licensed Data will be curated by Tempus in accordance with the then current standards and using best
+practices of Tempus consistently applied for its data licensees. AstraZeneca may request
+[***]
+.
+(h) In addition,
+[***]
+.
+(i)
+[***]
+.
+3.3
+[***]
+:
+(a) AstraZeneca will also get access to
+[***]
+.
+(b)
+AstraZeneca will be allowed to select
+[***]
+.
+(c)
+[***]
+.
+(d)
+[***]
+, it will pay the per Record license fee defined in paragraph 3.2(d) above.
+(e)
+[***]
+is subject to all terms that apply to Licensed Data, in addition to the specific limitations described in this paragraph 3.3.
+4.
+Licensed Data Restrictions
+4.1 AstraZeneca shall not
+and shall ensure that AstraZeneca Affiliates and Authorized Users do not, attempt to
+re-identify
+the Licensed Data as to patient and shall use best efforts, including by establishing a related internal
+governance procedure, to ensure that the Licensed Data is not intentionally or inadvertently
+re-identified.
+AstraZeneca shall not, and shall not permit any third party to, and shall ensure that no AstraZeneca
+Affiliate or Authorized User under its control shall contact any individuals whose information is included in the Licensed Data.
+4.2 AstraZeneca shall
+not, and shall ensure that AstraZeneca Affiliates and Authorized Users shall not, remove or alter any correct notice of confidentiality, copyright, trademark, logo or other notice of ownership, origin, or confidentiality in any report, other
+document or copies of the Licensed Data provided to AstraZeneca by or on behalf of Tempus.
+4.3 Each Party will not and shall ensure that their Affiliates
+and its and their Authorized Users do not, attempt to gain unauthorized access to any other systems or data of the other Party, to the other Party’s accounts of third parties, or to the other Party’s services for which each Party has not
+engaged the other.
+4.4 AstraZeneca will not, and shall ensure that the AstraZeneca Affiliates do not, access or use the Tempus Materials or Licensed Data
+for any purposes not (a) permitted by this Agreement or (b) reasonably incidental or necessary in connection with the purposes permitted by this Agreement.
+4.5 AstraZeneca will not and shall ensure that AstraZeneca Affiliates and its and their Authorized Users do not
+re-sell
+the Licensed Data, or sublicense the Licensed Data on a standalone basis for any remuneration.
+42
+4.6 AstraZeneca will not and shall ensure that AstraZeneca Affiliates and its and their Authorized Users do
+not transfer Licensed Data (or access to Licensed Data) to any third party not otherwise specifically authorized herein, without prior written permission from Tempus.
+4.7 Tempus shall not include
+[***]
+.
+4.8 AstraZeneca
+understands that Tempus (and any of its licensors of Licensed Data) does not endorse any Research, report or Publication and AstraZeneca will not attempt to indicate or imply any such endorsement.
+4.9 Each Party shall alert the other via the governance process in Section 6 if it believes that AstraZeneca has breached any of the restrictions
+applicable to Licensed Data. The Parties shall discuss any such concerns raised by Tempus promptly with the objective of resolving such concerns, and if Tempus has reasonably demonstrated that a breach has occurred, then AstraZeneca will work
+diligently to cure such breach as soon as possible. The matter will be escalated to the JSC if necessary. If Tempus’ concerns remain unresolved
+[***]
+after the date of escalation to the JSC, then Tempus may
+[***]
+:
+o
+[***]
+o
+[***]
+within
+[***]
+of the
+applicable due date and following at least two written notices from Tempus requesting payment.
+5.
+Security Incident Reporting
+.
+Each Party shall comply with its respective obligations with respect to reporting security incidents as set out in the Cybersecurity Requirements Exhibit as
+set out in
+Exhibit D
+.
+6.
+Non-Exclusivity
+.
+Subject to the terms of this Agreement and unless otherwise specified in the applicable Statement of Work, Tempus shall not be prevented from (a) making
+available services or licenses the same or substantially similar to the services and licenses provided hereunder, (b) making available, or other Tempus licenses from using, custom data sets that are the same or similar to the Licensed Data, so
+long as none of the foregoing include use of AstraZeneca’s Confidential Information or Intellectual Property Rights.
+7.
+No Other Representation
+or Warranties
+. Except as expressly provided in this Agreement (including each Statement of Work):
+7.1 Tempus hereby disclaims any and all express,
+implied, statutory, and other warranties and representation or every kind, including without limitation the implied warranties of fitness for a particular purpose, quiet enjoyment, quality of information, and title with respect to the Licensed Data.
+7.2 Tempus makes no representations or warranties about the suitability or accuracy of the Licensed Data. Tempus uses all data provided to Tempus by
+third parties that has been
+de-identified
+to create the Licensed Data “as is” and is not and shall not be held responsible for the
+43
+accuracy or completeness of such data and Tempus expressly disclaims any liability for clinical,
+operational, business or any other decisions made by AstraZeneca or its Affiliates or Authorized Users on the basis of the Licensed Data.
+7.3 All
+technology rights and services are licensed by Tempus and are provided “as is,”
+“where-is”
+and “with all faults.”
+44
+EXHIBIT C
+DATA PROTECTION OBLIGATIONS
+[
+NOT USED.
+]
+45
+EXHIBIT D
+CYBERSECURITY REQUIREMENTS EXHIBIT
+1.
+SECURITY MEASURES AND ACTIONS
+1.1 In performing its obligations and exercising its rights under this Agreement, the Supplier warrants, represents
+and covenants that it and each other Supplier Party will comply with the Agreed Standards and, where expressly agreed, be certified in relation to such Agreed Standards.
+2.
+NOTIFICATION OF AND REMEDIATION OF SECURITY INCIDENTS
+2.1
+Notification
+The Supplier will notify, in writing
+in accordance with paragraph 2.2, AstraZeneca and any affected Service Recipient about any Security Incident affecting or which may affect any Service Recipient’s IT Infrastructure and Data or facilities owned, leased or of, used by or provided
+for use by any Supplier Party: (a) subject to paragraph 2.1.1 below, without undue delay and in any event within 48 hours after the Supplier becomes aware of or suspects that a Security Incident has occurred; or (b) immediately if the
+affected Service Recipient(s) or Supplier Party is subject to a requirement to notify an applicable Regulator, individual or third party under one or more Applicable Laws in a shorter timeframe that is tied to awareness of the Security Incident by
+Supplier.
+2.1.1 The notification will include the following information:
+2.1.1.1 the categories and nature of Data affected;
+2.1.1.2 an
+indication of the root cause of the incident;
+2.1.1.3 the duration of the Security Incident;
+2.1.1.4 the sites, IT Infrastructure and Data (including Customer Information) affected and territories involved;
+2.1.1.5 information concerning the nature and impact of the Security Incident;
+2.1.1.6 the measures which have been taken or which are proposed to be taken to address the Security Incident and to mitigate its possible adverse effects;
+and
+2.1.1.7 details of any reporting obligations to Regulators, which shall not name or disclose AstraZeneca without AstraZeneca’s written consent.
+2.2 Where the Supplier is required to notify AstraZeneca and any other Service Recipient under this paragraph 2, such notification will be, in the first
+instance, sent by
+e-mail
+to the following
+e-mail
+address:
+[***]
+and immediately followed up by telephone to
+[***]
+(or such other
+e-mail
+address or telephone number notified by AstraZeneca to the Supplier in writing from time to time).
+2.3 The
+Supplier will promptly:
+46
+2.3.1 assist AstraZeneca and any other affected Service Recipient in documenting any Security Incidents;
+2.3.1.1 take measures to promptly address Security Incidents, including, where appropriate, taking measures to mitigate and minimise their possible
+adverse effects and future risks which may (in consultation with AstraZeneca prior to doing so and at AstraZeneca’s option) include taking down any environments, systems, components (or part thereof) that have been impacted by the relevant
+Security Incident and which contain AstraZeneca’s Information; or used to deliver Services to AstraZeneca; and
+2.3.1.2 where expressly required by
+AstraZeneca, assist AstraZeneca and any other affected Service Recipient in reporting and responding to investigations or other communications from Regulators and their representatives.
+2.4
+Remediation plan
+2.4.1 If at any time: (a) a
+Security Incident has occurred; (b) there is a reasonably likely risk to security of the IT Infrastructure and Data in the future that may negatively impact this Agreement, the Services or any Service Recipient; or (c) an audit undertaken
+by or on behalf of AstraZeneca, the Supplier or a third party identifies a Security Issue, the Supplier will promptly propose a rectification plan to remedy the Security Issue. All rectification plans will (unless otherwise agreed in writing by
+AstraZeneca) require the Supplier (and any relevant Supplier Party) to, at the Supplier’s cost, deploy such resources and take such actions that are reasonably necessary to rectify the relevant Security Issue or any vulnerabilities or
+underlying issues arising or ensure that the Security Measures are being met. The Supplier will give AstraZeneca reasonable opportunity to comment on the proposed rectification plan and will amend any proposed rectification plan to reflect all of
+AstraZeneca’s reasonable comments and additional steps that AstraZeneca may reasonably require and then, at the Supplier’s cost, implement the amended rectification plan as soon as possible.
+3.
+ADDITIONAL PROVISIONS RELATING TO CONFIDENTIALITY AND ANNOUNCEMENTS IN RESPECT OF SECURITY INCIDENTS
+The Supplier will not and will procure that all Supplier Parties will not, without AstraZeneca’s prior written consent, make or permit any announcement
+or public communication in respect of a Security Incident or issue any information to any third party (or otherwise permit the publication of information) about any Security Incident which relates to this Agreement or to a Service Recipient unless:
+(a) instructed to do so by AstraZeneca (in a form approved by AstraZeneca); or (b) compelled to do so by Applicable Law or a Regulator (and in such case the Supplier will notify AstraZeneca in writing of its obligation to do so unless
+prevented by Applicable Law in which case it will notify AstraZeneca as soon as it is able to).
+4.
+ADDITIONAL PROVISION RELATING TO LIABILITY
+4.1 Notwithstanding any other provision in this Agreement, the Supplier’s liability under or in connection with this CSRE shall be unlimited.
+5.
+AUDIT RIGHTS AND INFORMATION SHARING
+5.1 AstraZeneca
+may audit Supplier and the other Supplier Parties to verify compliance with this CSRE. Such audit will typically comprise a security assessment form that the Supplier will
+47
+need to populate and share relevant details so as to demonstrate its compliance with the technical and security measures agreed under this CSRE. However, in the event of a suspected breach or in
+case of a mandate from a Regulator or to verify the cyber security controls in place, AstraZeneca shall have the right to carry out a physical audit of Supplier’s premises to access the IT Infrastructure, subject to Supplier’s reasonable
+policies and procedures (e.g., regarding security and confidentiality). Supplier shall reasonably cooperate with AstraZeneca in relation to such audit, including allowing reasonable access to the Supplier Parties’ IT Infrastructure and
+providing such information as AstraZeneca reasonably requires.
+5.2 AstraZeneca shall not conduct such audits more than once per year unless there has
+been a suspected breach or if there is a regulatory requirement. AstraZeneca shall bear the cost of the audit limited to the professional fees, except where the audit reveals any material breach or discrepancy in which case Supplier shall bear such
+costs.
+48
+ANNEX 1
+DEFINITIONS AND INTERPRETATION
+1.
+DEFINITIONS
+For the purpose of this CSRE the following definitions apply:
+Part I “
+Agreed Standards
+” means one or more of the following, as mutually agreed by the Parties: (a) ISO/IEC
+27001:2013 (Information security management systems: Requirements); (b) ISO/IEC 27017; (c) Service Organization Control 2 (“
+SOC 2
+”); (d) Control Objectives for Information and Related Technologies (COBIT) by ISACA;
+(e) any other applicable ISO standards relevant to the Services; (f) adherence to a recognised industry cybersecurity framework e.g. NIST CSF (g) any standards that the Parties agree in writing from time to time that the
+Supplier shall comply with; and (h) where personal health or health information is to be processed as part of the Services, The
+Security
+Standards for the Protection of Electronic Protected Health Information (the Security Rule);
+“
+Customer Information
+” means all Data (including drug information, processes, procedures or
+know-how)
+of AstraZeneca or of AstraZeneca’s Affiliates (including AstraZeneca’s and its’ Affiliates’ suppliers, customers or other relationships) and whether given or conveyed to the
+Supplier or its Affiliates by or on behalf of AstraZeneca or its Affiliates or which the Supplier or its Affiliates are able to access, transmit or otherwise process as a result of performing the Services or accessing the Service Recipients’ IT
+Infrastructure and Data or which is otherwise received by the Supplier in the performance of this Agreement or the Services and, for the avoidance of doubt, which includes AstraZeneca’s and its Affiliates’ Confidential Information;
+“
+Data
+” means data including personal data or personally identifiable data, personal health or health information and
+other data, including information, records, studies, diagrams, charts, plans, methodologies, processes, documents, databases, papers, materials or specifications (and irrespective of whether such data is business critical data, comprises
+confidential information or trade secrets or otherwise);
+“
+IT Infrastructure
+” means information technology system(s)
+comprising any or all of the following, each to the extent storing or processing Data: programs, business processing system, electronic operations system, communications networks, hosted applications and connectivity to the internet/the computer,
+telecommunication facilities (including networks, network devices, cables and routers), hardware, mobile devices, peripherals, software, hardware, equipment and databases and whether on premise, cloud or otherwise;
+“
+Loss of Data
+” means the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to Data;
+“
+Regulator
+” means all governmental, statutory or regulatory bodies and any other competent authorities or entities in any
+jurisdiction having responsibility for the
+49
+regulation or governance of the Customer, any other Service Recipient, the Supplier, any
+other Supplier Party, this Agreement, the Services or the activities which are comprised in all or some of the Services or the use or application of the output from any part of the Services;
+“
+Security Incident
+” means: (a) any information security incident or any event or incident having an actual adverse effect
+on any element of the security of the IT Infrastructure of any Service Recipient or any Supplier Party; (b) any reasonably suspected event or incident or “near miss” incident; (c) any event or incident involving any breach of
+security leading to a Loss of Data; or (d) any event or incident which involves the compromise of confidentiality, integrity or availability of information of Data, including:
+(i) a data security incident; (ii) a cyber attack; (iii) a disaster; (iv) a discovery or reasonable suspicion that there is
+a vulnerability in any technological measure used to protect any Customer Information or other Data that has previously been subject to any such event, which may result in exploitation or exposure of that Customer Information or other Data;
+(v) any material defect or vulnerability with the reasonably likely potential to impact the ongoing resilience, security or integrity of the IT Systems; (vi) any other unauthorised use of or access to any part of an IT Infrastructure or
+Data (including Customer Information); or (vii) any damage, destruction, corruption or alteration of any Customer Information or other Data;
+“
+Security Issue
+” means any: (a) material security vulnerabilities or inadequacies in security; or (b) that the
+security measures are not being met; (c) discovery or reasonable suspicion that there is a material vulnerability in any technological measure used to protect any Data, which is reasonably likely to result in exploitation or exposure of
+that Data; or (d) any material defect or vulnerability with the potential to impact the ongoing resilience, security or integrity of systems processing (including Processing) Data;
+“
+Service Recipient
+” means AstraZeneca or AstraZeneca’s Affiliates, as the context permits;
+“
+Services
+” will be given the meaning set out in the Agreement above or below or, where none is set out, will mean the services
+performed or to be performed under this Agreement; and
+“
+Supplier Party
+” means the Supplier together with:
+(a) any of the Supplier’s Affiliates; (b) any authorised
+sub-contractors;
+or (c) any authorised
+Sub-Processors,
+that are engaged in the
+provision of or delivery of the Services or otherwise in the performance of this Agreement, as permitted by this Agreement and “
+Supplier Party
+” means any of them and such terms shall include the employees and other personnel of
+such entities.
+2. ORDER OF PRECEDENCE
+In the event
+of a conflict between this CSRE and the Agreement, the provisions which provide AstraZeneca and its Affiliates with the higher level of protection and contractual coverage shall prevail.
+50
+EXHIBIT E
+FINANCIAL TERMS
+1.
+Fees.
+(a)
+[***]
+.
+[***].
+(b)
+[***]
+.
+(c)
+[***]
+.
+(d)
+Financial Commitment
+. In consideration of the Licensed Data, Services, and other activities to be carried out by Tempus under this Agreement, and
+subject to the terms of this Exhibit, AstraZeneca has committed to the following total financial commitment (the “
+Financial Commitment
+”), all calculated based on actual fees Paid or Payable to Tempus (not
+pre-discount
+fees):
+2021(Q4)
+2022
+2023
+2024
+2025
+2026
+Total
+Financial
+Commitment
+Financial Commitment ($M)*
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+$300*
+*
+The last $100,000,000 of the Financial Commitment only applies if AstraZeneca exercises the MC Extension Option
+described below.
+For purposes of the Financial Commitment, “Paid or Payable” means that either the amount has been paid to
+Tempus or the amount is payable but not yet paid with respect to a Deliverable or Service that Tempus has agreed to deliver within the applicable calendar year pursuant to a Statement of Work.
+[***]
+.
+[***].
+[***].
+[***]:
+o
+[***];
+o
+[***];
+o
+[***];
+o
+[***];
+51
+o
+[***];
+o
+[***].
+It is agreed and acknowledged that the
+Financial Commitment is for a total amount of $200,000,000, unless and until AstraZeneca exercises its option to extend the Financial Commitment for an additional $100,000,000 (the “MC Extension Option”). The exercise period for the MC
+Extension Option will be from the Effective Date to the earlier of (i) December 31, 2024 or (ii) the date that AstraZeneca exercises the Warrant. AstraZeneca will exercise the MC Extension Option either via a written notice to Tempus
+or by exercising the Warrant. If AstraZeneca has not already exercised the MC Extension Option or the Warrant, Tempus will notify AstraZeneca in writing between 90 and 30 days prior to December 31, 2024 that the deadline to exercise the MC
+Extension Option is approaching.
+(e)
+[***]
+.
+(f)
+Invoices
+. All invoices will be due and payable in accordance with the terms of the Agreement.
+52
+EXHIBIT F
+QUALIFYING AGREEMENTS AND EXISTING STATEMENTS OF WORK
+1.
+The Qualifying Agreements
+.
+1.1
+This Agreement.
+1.2
+The Existing MSA.
+1.3
+The Clinical Professional Services Agreement between AstraZeneca Pharmaceuticals LP and Tempus Labs, Inc.,
+dated March 17, 2021, including all Existing Statements of Work under this agreement.
+2.
+Existing Statements of Work Moved to this Agreement and Continuing
+.
+2.1 The Existing Statements of Work specified below, including any amendments thereto, along with their respective estimated spend, either Paid or Payable,
+from AstraZeneca to Tempus as of the Effective Date, will become Statements of Work under this Agreement from the Effective Date.
+Existing Statement of Work
+Estimated Spend
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***].
+[***].
+2.2 No fewer than once every quarter, the Parties shall review any estimated spend associated with each respective Existing Statement of Work and to the
+extent any changes have occurred, reconcile such changes the Financial Commitment as of the relevant time of review, including, to the extent required, amending this Agreement.
+3.
+Existing Statements of Work that are terminated and replaced by this Agreement
+.
+53
+Existing Statement of Work
+Estimated Spend
+[***]
+[***]
+[***]
+[***]
+54
+EXHIBIT G
+DATA FIELDS TYPICALLY CURATED
+Tempus
+obtains the following data fields, when and to the extent available from the associated clinical records provided to Tempus. Fill rate of clinical data will be based on its availability in the clinical records that Tempus receives when sequencing
+these patients, which are typically the patient’s most recent progress note as well as applicable pathology reports.
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+[***]
+55
+Execution Version
+THIS WARRANT AND THE UNDERLYING SECURITIES HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED (THE “ACT”). THEY MAY NOT BE
+SOLD, OFFERED FOR SALE, PLEDGED OR HYPOTHECATED IN THE ABSENCE OF AN EFFECTIVE REGISTRATION STATEMENT AS TO SUCH SECURITIES UNDER THE ACT OR AN OPINION OF COUNSEL SATISFACTORY TO THE COMPANY THAT SUCH REGISTRATION IS NOT REQUIRED OR UNLESS SOLD
+PURSUANT TO RULE 144 UNDER THE ACT.
+TEMPUS LABS, INC.
+WARRANT TO PURCHASE CLASS A COMMON STOCK
+November 17, 2021
+T
+HIS
+C
+ERTIFIES
+T
+HAT
+, for value received,
+A
+STRA
+Z
+ENECA
+AB
+, a company incorporated in Sweden under No. 556011-7482, whose registered office is at
+SE-151
+86 Södertälje and with offices at
+SE-432
+83 Mölndal, Sweden, or such Person’s assigns (the “
+Holder
+”), is entitled to subscribe for and purchase from
+T
+EMPUS
+L
+ABS
+, I
+NC
+.
+, a
+Delaware corporation (the “
+Company
+”), the Exercise Shares at the Exercise Price (each subject to adjustment as provided herein).
+1.
+D
+EFINITIONS
+.
+As used herein, the following terms shall have the following respective meanings:
+(a)
+“
+Affiliate
+” shall mean, with respect to a Person, any Person that directly, or indirectly through one or
+more intermediaries, controls, is controlled by or is under common control with such first Person. “
+Control
+” and, with correlative meanings, the terms “
+controlled by
+” and “
+under common control with
+”
+mean: (i) the power to direct the management or policies of a Person, whether through ownership of voting securities or by contract relating to voting rights or corporate governance, resolution, regulation or otherwise; or (ii) to own more
+than 50% of the outstanding voting securities or other ownership interest of such Person.
+(b)
+“
+Aggregate Exercise
+Price
+” shall mean the aggregate Exercise Price payable in connection with the exercise in full of this Warrant.
+(c)
+“
+Business Day
+” means a day other than Saturday, Sunday or any other day on which commercial banks located in New York City are authorized or obligated by applicable laws to close.
+(d)
+“
+Change of Control
+” shall mean (i) any consolidation or merger of the Company with or into any other
+corporation or other Person, or any other corporate reorganization, other than any such consolidation, merger or reorganization in which the stockholders of the Company immediately prior to such consolidation, merger or reorganization, continue to
+hold at least a majority of the voting power of the surviving entity in substantially the same proportions (or, if the surviving entity is a wholly owned subsidiary, its parent) immediately after such consolidation, merger or reorganization;
+(ii) any transaction or series of related transactions to which the Company is a party in which the stockholders of the Company transfer shares in excess of fifty percent (50%) of the Company’s then-outstanding combined voting power;
+provided
+, that a Change of Control shall not include any transaction or series of transactions principally for bona fide equity financing purposes in which cash is received by the Company or any successor or indebtedness of the Company
+is cancelled or converted or a combination thereof; or (iii) a sale, lease, exclusive license or other disposition of all or substantially all of the assets of the Company.
+(e)
+“
+Collaboration Agreement
+” shall mean that certain Master
+Services Agreement dated as of November 17, 2021 by and between the Holder and the Company.
+(f)
+“
+Collaboration
+Expiration Date
+” shall mean December 31, 2026.
+(g)
+“
+Commission
+” shall mean the
+Securities and Exchange Commission.
+(h)
+“
+Common Stock
+” shall mean the Company’s Class A Common
+Stock, par value $0.0001 per share.
+(i)
+“
+De-SPAC
+Transaction
+”
+shall mean the completion by the Company of a business combination, merger, consolidation or share exchange with a special purpose acquisition company or its subsidiary in which the Common Stock (or substantively similar securities) of the
+surviving or parent entity is listed on the New York Stock Exchange or the Nasdaq Stock Market.
+(j)
+“
+De-SPAC
+Price
+” shall mean the price per share at which the Company’s Common Stock is valued in connection with the consummation of a
+De-SPAC
+Transaction.
+(k)
+“
+Equity Securities
+” means the Company’s preferred stock or any securities conferring
+the right to purchase the Company’s preferred stock or securities convertible into, or exchangeable for (with or without additional consideration), the Company’s preferred stock, except any security granted, issued and/or sold by the
+Company to any director, officer, employee or consultant of the Company in such capacity for the primary purpose of soliciting or retaining their services.
+(l)
+“
+Equity Financing Price
+” means, with respect to the Last Equity Financing, the lowest price per share of
+the Equity Securities sold to the investors acquiring Equity Securities in such Last Equity Financing, excluding any discounts applicable to any debt securities converted in connection with such Last Equity Financing.
+(m)
+“
+Exercise Period
+” shall mean the period (i) commencing on the earlier of (A) the trading day
+following the date that is one hundred eighty (180) days following the date that the Company consummates an IPO or a
+De-SPAC
+Transaction, (B) immediately prior to the closing of a Change of Control
+prior to the consummation of an IPO and a
+De-SPAC
+Transaction, and (C) December 31, 2022, and (ii) ending on the Collaboration Expiration Date, unless sooner terminated as provided below.
+(n)
+“
+Exercise Price
+” shall mean (i) in the event the Company consummates an IPO on or prior to
+December 31, 2022, the IPO Price per Exercise Share, (ii) in the event the Company consummates a
+De-SPAC
+Transaction on or prior to December 31, 2022, the
+De-SPAC
+Price, and (iii) in the event the Company consummates a Change of Control on or prior to December 31, 2022 or if the Company does not consummate an IPO or a
+De-SPAC
+Transaction on or prior to December 31, 2022, the Equity Financing Price per Exercise Share, in each case subject to adjustment as set forth herein.
+(o)
+“
+Exercise Shares
+” shall mean a number of shares of Common Stock
+issuable
+upon exercise
+of this Warrant equal to the product of (i) $100,000,000 divided by (ii) the Exercise Price;
+provided
+, that if the foregoing calculation would result in the issuance of a fractional share, the number of Exercise Shares shall be rounded
+up to the nearest whole number of shares.
+(p)
+“
+HSR Act
+” means the Hart-Scott-Rodino Antitrust Improvements
+Act of 1976, as amended from time to time, and the rules and regulations promulgated thereunder, or any successor statute, rules and regulations thereto.
+2.
+(q)
+“
+IPO
+” shall mean an initial public offering of securities
+of the Company registered under the Act.
+(r)
+“
+IPO Price
+” shall mean the offering price per share of
+the shares of Common Stock sold to the public in the IPO.
+(s)
+“
+Last Equity Financing
+” means the most
+recent sale or issuance (in one transaction or a series of related transactions) by the Company of its Equity Securities as of the date of delivery by Holder of an Exercise Notice to the Company.
+(t)
+“
+Person
+” shall mean an individual, sole proprietorship, partnership, limited partnership, limited liability
+partnership, corporation, limited liability company, business trust, joint stock company, trust, incorporated association, joint venture or similar entity or organization, including a government or political subdivision, department or agency of a
+government.
+2. E
+XERCISE
+OF
+W
+ARRANT
+.
+2.1
+Exercise.
+The rights represented by this Warrant may be exercised in whole or in part at any time (i) during the
+Exercise Period, or (ii) pursuant to
+Section
+8.2
+or
+8.3
+hereof, by delivery of the following to the Company at its address set forth on the signature page hereto (or at such other address as it may
+designate by notice in writing to the Holder):
+(a)
+an executed Notice of Exercise in the form attached hereto as
+E
+XHIBIT
+A
+;
+(b)
+subject to
+Section
+2.2
+, payment of the Exercise Price in cash or by
+check or wire transfer; and
+(c)
+this Warrant.
+2.2
+Net Issue Exercise
+.
+(a)
+Notwithstanding Section 2.1(b) above, this Warrant may be exercised by the Holder, in whole or in part, without the payment
+by the Holder of any cash by the surrender of this Warrant to the Company, together with a duly executed Notice of Exercise in the form attached hereto as
+Exhibit A
+, and instructing the Company to withhold and cancel a number of Exercise
+Shares requested to be exercised having an aggregate Fair Market Value equal to the total Exercise Price, as determined below (a “
+Net Issue Exercise
+”). The Company agrees that the number of Exercise Shares set forth in the
+formula below shall be deemed to be issued to the Holder as the record holder of such Warrant Shares as of the close of business on the date on which this Warrant shall have been surrendered as aforesaid. Upon such exercise, the Company shall issue
+to Holder a number of Exercise Shares computed as of the date of surrender of this Warrant to the Company using the following formula:
+X=
+Y(A-B)
+A
+Where X =
+the number of Exercise Shares to be issued to Holder under this
+Section
+2.2
+;
+Y =
+the number of Exercise Shares to be the subject of the Net Issue Exercise;
+3.
+A =
+the Fair Market Value (as defined below) of one Exercise Share at the date of such calculation; and
+B =
+the Exercise Price.
+(b)
+For purposes of
+Section
+2.2(a)
+, “
+Fair Market
+Value
+” of one Exercise Share as of any date shall be calculated as follows: (i) if the Warrant is exercised other than in connection with a Change of Control and the Common Stock is then traded or quoted on a nationally recognized
+securities exchange, inter-dealer quotation system or
+over-the-counter
+market, the Fair Market Value of an Exercise Share shall be the closing price of a share of
+Common Stock reported for the trading day immediately preceding the date on which Holder delivers this Warrant together with its Notice of Exercise to the Company, (ii) if the Warrant is exercised in connection with a Change of Control,
+the Fair Market Value of an Exercise Share shall be the purchase price per share of Common Stock to be paid by the purchaser in such Change of Control, and (iii) in all other cases, the Fair Market Value of an Exercise Share shall be the fair
+market value per Exercise Share on the date such notice was received by the Company as reasonably determined in good faith by the Board of Directors of the Company.
+2.3
+Mechanics of Exercise
+.
+Upon the exercise of the rights represented by this Warrant, a certificate or certificates for
+the Exercise Shares so purchased, registered in the name of the Holder or Persons affiliated with the Holder, if the Holder so designates, shall be issued and delivered to the Holder within a reasonable time (but no later than fifteen
+(15) days) after the rights represented by this Warrant shall have been so exercised. In the event that this Warrant is being exercised for less than all of the then-current number of Exercise Shares purchasable hereunder, the Company shall,
+concurrently with the issuance by the Company of the number of Exercise Shares for which this Warrant is then being exercised, issue a new Warrant exercisable for the remaining number of Exercise Shares purchasable hereunder. The Person in whose
+name any certificate or certificates for Exercise Shares are to be issued upon exercise of this Warrant shall be deemed to have become the holder of record of such shares on the date on which this Warrant was surrendered and payment of the Exercise
+Price was made, irrespective of the date of delivery of such certificate or certificates, except that, if the date of such surrender and payment is a date when the stock transfer books of the Company are closed, such Person shall be deemed to
+have become the holder of such shares at the close of business on the next succeeding date on which the stock transfer books are open.
+3. C
+OVENANTS
+OF
+THE
+C
+OMPANY
+.
+3.1
+Covenants as to Exercise Shares.
+The Company covenants and agrees that all Exercise Shares that may be issued upon the
+exercise of the rights represented by this Warrant will, upon issuance, be validly issued and outstanding, fully paid and nonassessable, and free from all taxes, liens and charges with respect to the issuance thereof. The Company further covenants
+and agrees that the Company will at all times during the Exercise Period have authorized and reserved a sufficient number of shares of the series of equity securities comprising the Exercise Shares to provide for the exercise of the rights
+represented by this Warrant. The issuance of the Exercise Shares will not be subject to any preemptive rights that have not been properly complied with.
+3.2
+Notices of Record Date.
+In the event of any taking by the Company of a record of the holders of any class and/or series of
+securities for the purpose of determining the holders thereof who are entitled to receive any dividend or other distribution, the Company shall mail to the Holder, at least ten days prior to the date specified herein, a notice specifying the date on
+which any such record is to be taken for the purpose of such dividend or distribution.
+4.
+3.3
+Registration Rights
+. Upon the earlier of (i) the date that the
+Company consummates an IPO or a
+De-SPAC
+Transaction, and (ii) December 31, 2022, the Company covenants and agrees to grant to the Holder substantially the same registration rights with respect to the
+Exercise Shares as those granted to holders of Registrable Securities (as defined in the Ninth Amended and Restated Investors’ Rights Agreement, dated November 19, 2020, by and among the Company and the stockholders of the Company party
+thereto (as the same may be amended and/or restated from time to time, the “
+Rights Agreement
+”)) in accordance with, and subject to the limitations set forth in, Section 2 of the Rights Agreement, and the Company shall include
+the Holder in all notices sent by the Company pursuant to Section 2 of the Rights Agreement. For purposes of determining the Holder’s participation rights in connection with the registration of any Registrable Securities in accordance with
+the Rights Agreement (i) the Holder shall be deemed to be an “
+Investor
+” and a “
+Holder
+” under the Rights Agreement for all purposes under Section 2 of the Rights Agreement and (ii) all of the Exercise
+Shares shall constitute Registrable Securities under the Rights Agreement and shall be deemed to be held by the Holder for purposes of determining the Holder’s participation rights, whether or not the Holder has exercised its purchase
+rights under this Warrant with respect to any of the Exercise Shares.
+3.4
+Diligence Cooperation
+. At any time, and from time
+to time, prior to the Company consummating an IPO or a
+De-SPAC
+Transaction, if the Holder has determined in good faith that it is contemplating exercising the Warrant in whole or in part, upon written
+request from the Holder to the Company, the Company shall provide such documents, records and other diligence materials reasonably requested by the Holder to allow the Holder to conduct limited due diligence on the Company reasonably necessary to
+determine the value of the Exercise Shares, to confirm that the Company is in good standing and to ascertain its corporate structure and capitalization;
+provided
+, that following such written request, the Holder shall enter into a
+customary confidentiality agreement with the Company prior to the Company providing such diligence materials to the Holder.
+3.5
+Antitrust Approval
+. If any clearance is required under the HSR Act or such other applicable laws for the exercise of this Warrant and the purchase of the Exercise Shares (any such clearance, an “
+Antitrust
+Approval
+”), the Company and the Holder shall cooperate in good faith to as promptly as practicable (i) file with the U.S. Federal Trade Commission and the United States Department of Justice the premerger notification and
+report form, if any, required as a result of the purchase of the Exercise Shares, and shall include any supplemental information requested in connection therewith, pursuant to the HSR Act and (ii) make such other filings as are
+necessary or advisable in other jurisdictions in order to comply with all applicable laws relating to competition, merger control or antitrust and shall promptly provide any supplemental information requested by applicable governmental
+authorities relating thereto. The Company and the Holder shall work together and shall furnish to one another such necessary information and reasonable assistance as such other parties may request in connection with its preparation of any
+filing or submission which is necessary under the HSR Act or such other applicable laws.
+4. R
+EPRESENTATIONS
+OF
+H
+OLDER
+.
+4.1
+Acquisition of Warrant for Personal Account.
+The Holder represents and
+warrants that it is acquiring this Warrant and the Exercise Shares solely for its account for investment and not with a view to or for sale or distribution of said Warrant or Exercise Shares or any part thereof. The Holder also represents that the
+entire legal and beneficial interests of this Warrant and Exercise Shares the Holder is acquiring is being acquired for, and will be held for, its account only.
+5.
+4.2 Securities Are Not Registered.
+(a)
+The Holder understands that this Warrant and the Exercise Shares have not been registered under the Securities Act of 1933, as
+amended (the “
+Act
+”) on the basis that no distribution or public offering of the stock of the Company is to be effected. The Holder realizes that the basis for the exemption may not be present if, notwithstanding its
+representations, the Holder has a present intention of acquiring the securities for a fixed or determinable period in the future, selling (in connection with a distribution or otherwise), granting any participation in, or otherwise distributing
+the securities. The Holder has no such present intention.
+(b)
+The Holder recognizes that this Warrant and the Exercise Shares
+must be held indefinitely unless they are subsequently registered under the Act or an exemption from such registration is available. Other than as set forth in Section 3.3, the Holder recognizes that the Company has no obligation to
+register this Warrant or the Exercise Shares of the Company, or to comply with any exemption from such registration.
+(c)
+The
+Holder is aware that neither this Warrant nor the Exercise Shares may be sold pursuant to Rule 144 adopted under the Act unless certain conditions are met, including, among other things, the existence of a public market for the shares, the
+availability of certain current public information about the Company, the resale following the required holding period under Rule 144 and the number of shares being sold during any three month period not exceeding specified limitations. Holder is
+aware that the conditions for resale set forth in Rule 144 have not been satisfied and that the Company presently has no plans to satisfy these conditions in the foreseeable future.
+4.3 Disposition of Warrant and Exercise Shares.
+(a)
+The Holder further agrees not to make any disposition of all or any part of this Warrant or Exercise Shares in any event,
+other than to an Affiliate of the Holder, unless and until:
+(i)
+The Company shall have received a letter secured
+by the Holder from the Commission stating that no action will be recommended to the Commission with respect to the proposed disposition;
+(ii)
+There is then in effect a registration statement under the Act covering such proposed disposition and such
+disposition is made in accordance with said registration statement; or
+(iii)
+The Holder shall have notified the
+Company of the proposed disposition and shall have furnished the Company with a detailed statement of the circumstances surrounding the proposed disposition, and if reasonably requested by the Company, the Holder shall have furnished the Company
+with an opinion of counsel, reasonably satisfactory to the Company, for the Holder to the effect that such disposition will not require registration of such Warrant or Exercise Shares under the Act or any applicable state securities laws. The
+Company agrees that it will not require an opinion of counsel with respect to transactions under Rule 144 of the Act, except in unusual circumstances, and will not require an opinion of counsel with respect to any transfer to an Affiliate of Holder.
+(b)
+The Holder understands and agrees that all certificates evidencing the shares to be issued to the Holder may bear the
+following legend:
+6.
+THESE SECURITIES HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED (THE
+“
+ACT
+”). THEY MAY NOT BE SOLD, OFFERED FOR SALE, PLEDGED OR HYPOTHECATED IN THE ABSENCE OF AN EFFECTIVE REGISTRATION STATEMENT AS TO THE SECURITIES UNDER THE ACT OR AN OPINION OF COUNSEL SATISFACTORY TO THE COMPANY THAT SUCH
+REGISTRATION IS NOT REQUIRED OR UNLESS SOLD PURSUANT TO RULE 144 UNDER THE ACT.
+4.4
+Accredited Investor Status.
+The Holder
+is an “accredited investor” as defined in Regulation D promulgated under the Act.
+5. A
+DJUSTMENT
+OF
+E
+XERCISE
+P
+RICE
+AND
+N
+UMBER
+OF
+E
+XERCISE
+S
+HARES
+.
+5.1
+Changes in Securities.
+In the event of changes in the series of equity securities of the Company comprising the Exercise
+Shares by reason of stock dividends, splits, recapitalizations, reclassifications, combinations or exchanges of such shares of equity securities, the number and class and/or series of Exercise Shares available under this Warrant in the aggregate and
+the Exercise Price shall be correspondingly adjusted to give the Holder of this Warrant, on exercise for the same Aggregate Exercise Price, the total number and class and/or series of shares as the Holder would have owned had this Warrant been
+exercised prior to the event and had the Holder continued to hold such shares until after the event requiring adjustment. The form of this Warrant need not be changed because of any adjustment in the number of Exercise Shares subject to this
+Warrant.
+5.2
+Organic Changes.
+In the event of, at any time during the Exercise Period, any capital reorganization of the
+capital stock of the Company (other than (a) a change in par value or from par value to no par value or no par value to par value or as a result of a stock dividend or subdivision,
+split-up
+or
+combination of shares, or (b) a Change in Control) (an “
+Organic Change
+”), then, as a condition of such Organic Change, lawful and adequate provisions shall be made by the Company whereby the Holder hereof shall
+thereafter have the right to purchase and receive (in lieu of the Exercise Shares of the Company immediately theretofore purchasable and receivable upon the exercise of the rights represented hereby) such shares of stock, securities or other assets
+or property as may be issued or payable with respect to or in exchange for a number of outstanding shares of such Exercise Shares equal to the number of shares of such stock immediately theretofore purchasable and receivable upon the exercise of the
+rights represented hereby, and the Exercise Price shall be appropriately adjusted so that the Aggregate Exercise Price after such Organic Change shall be equal to the Aggregate Exercise Price immediately prior to such Organic Change.
+6.
+F
+RACTIONAL
+S
+HARES
+.
+No fractional shares shall be issued upon the exercise of this Warrant as a
+consequence of any adjustment pursuant hereto. All Exercise Shares (including fractions) to be issued upon exercise of this Warrant shall be aggregated for purposes of determining whether the exercise would result in the issuance of any fractional
+share. If, after aggregation, the exercise would result in the issuance of a fractional share, the Company shall, in lieu of issuance of any fractional share, pay the Holder otherwise entitled to such fraction a sum in cash equal to the product
+resulting from multiplying the then current fair market value of one Exercise Share by such fraction.
+7. [R
+ESERVED
+].
+8. E
+XERCISE
+U
+PON
+IPO; V
+OLUNTARY
+E
+XERCISE
+AT
+E
+XPIRATION
+; T
+ERMINATION
+AND
+C
+ANCELLATION
+; C
+OLLABORATION
+A
+GREEMENT
+.
+8.1 [Reserved].
+7.
+8.2 Voluntary Exercise Upon IPO or
+De-SPAC
+Transaction.
+(a)
+In the event (i) the Company consummates an IPO or
+De-SPAC
+Transaction prior to December 31, 2024 and prior to the consummation of a Change of Control, and (ii) the average of the closing price of shares of Common Stock during any period of 30 consecutive trading days commencing on any date
+following the first anniversary of the date on which the Company consummates the IPO or
+De-SPAC
+Transaction equals or exceeds two (2) times the IPO Price or
+De-SPAC
+Price (the “
+Relevant Period
+”), then, the Company shall deliver written notice to the Holder of such event.
+(b)
+Notwithstanding anything in this Warrant to the contrary, effective as of the last trading day of the Relevant Period,
+provided that if the closing price of shares of Common Stock on such day is less than two (2) times the IPO Price or
+De-SPAC
+Price, then this provision shall not be effective until the first trading day
+thereafter on which the closing price of shares of Common Stock equals or exceeds two (2) times the IPO Price or
+De-SPAC
+Price (such trading day, the “
+Relevant Trading Day
+”), the
+Holder may, at its sole option, elect to either:
+(i)
+Net Issue Exercise this Warrant, in whole or in part,
+pursuant to
+Section 2.2
+above, and solely in such event, the number of Exercise Shares issued to the Holder as a result of such Net Issue Exercise shall thereafter be immediately repurchased by the Company from the Holder at a
+purchase price per share, payable in cash, equal to the closing price of shares of Common Stock on the Relevant Trading Day, and any portion of this Warrant that is not exercised shall remain outstanding subject to the terms hereof; or
+(ii)
+continue to hold this Warrant and exercise it in Holder’s sole discretion in accordance with
+Section
+2.1
+or
+2.2
+above;
+provided
+,
+however
+, that in either case, effective as of the Relevant Trading Day,
+the Holder shall be obligated to exercise the MC Extension Option (as defined in and pursuant to the Collaboration Agreement) pursuant to the terms of the Collaboration Agreement.
+8.3
+Voluntary Exercise at Expiration.
+Notwithstanding anything in this Warrant to the contrary, if as of the conclusion of the
+Exercise Period, the Holder has exercised the MC Extension Option and this Warrant remains outstanding, then the Company shall send a written notice to the Holder of the conclusion of the Exercise Period, and the Holder shall have fifteen
+(15) Business Days following receipt of such written notice to exercise the Warrant.
+8.4
+Voluntary Early Termination or
+Cancellation.
+Notwithstanding anything in this Warrant to the contrary, at any time prior to the consummation of an IPO or
+De-SPAC
+Transaction, the Holder may, in its sole discretion, terminate and
+cancel this Warrant and all of the Holder’s and the Company’s obligations hereunder in their entirety (but not partially) (such event, a “
+Voluntary Early Termination
+”), and such Voluntary Early Termination shall not
+otherwise affect the Holder’s right to decide in its sole discretion whether to exercise the MC Extension Option pursuant to the Collaboration Agreement.
+8.5
+Automatic Early Termination or Cancellation.
+Notwithstanding anything in this Warrant to the contrary, if the Holder has not
+exercised the MC Extension Option on or before December 31, 2024 in accordance with the Collaboration Agreement such that the Holder is not obligated
+8.
+to commit the final $100,000,000 in funding pursuant to the terms of the Collaboration Agreement, then this Warrant shall automatically be cancelled and terminated for no consideration.
+8.6
+Collaboration Agreement.
+Notwithstanding anything in this Warrant to the contrary, the Holder hereby agrees that in the
+event that the Holder has exercised this Warrant in whole or in part at any time pursuant to the terms set forth herein, the Holder shall be deemed to have exercised the MC Extension Option pursuant to the terms of the Collaboration Agreement.
+9.
+M
+ARKET
+S
+TAND
+-O
+FF
+A
+GREEMENT
+.
+Holder hereby agrees that it will not, without the prior written consent of the managing underwriter,
+during the period commencing on the date of the final prospectus relating to the registration by the Company of shares of its Common Stock or any other equity securities under the Act on a registration statement on Form
+S-1
+in connection with the IPO, and ending on the date specified by the Company (as determined by the holders of capital stock of the Company representing a majority of the voting power of all then-outstanding
+shares of capital stock of the Company) and the managing underwriter (which period may exceed 180 days), (a) lend, offer, pledge, sell, contract to sell, sell any option or contract to purchase, purchase any option or contract to sell,
+grant any option, right, or warrant to purchase, or otherwise transfer or dispose of, directly or indirectly, any shares of Common Stock or any securities convertible into or exercisable or exchangeable (directly or indirectly) for Common Stock held
+immediately before the effective date of the registration statement for such offering, or (b) enter into any swap or other arrangement that transfers to another, in whole or in part, any of the economic consequences of ownership of such
+securities, whether any such transaction described in clause (a) or (b) above is to be settled by delivery of Common Stock or other securities, in cash, or otherwise. The foregoing provisions of this
+Section
+9
+shall
+not apply to the sale of any shares to an underwriter pursuant to an underwriting agreement and shall be applicable to the Holder only if all executive officers and directors of the Company are subject to the same restrictions. The underwriters in
+connection with such registration are intended third-party beneficiaries of this
+Section
+9
+and shall have the right, power and authority to enforce the provisions hereof as though they were a party hereto. Holder further
+agrees to execute such agreements as may be reasonably requested by the underwriters in connection with such registration that are consistent with this
+Section
+9
+or that are necessary to give further effect thereto.
+10.
+N
+O
+S
+TOCKHOLDER
+R
+IGHTS
+.
+This Warrant in and of itself shall not entitle the
+Holder to vote or receive dividends or other distributions with respect to, or be deemed the holder of, the Exercise Shares or any other securities of the Company that may at any time be issuable upon the exercise hereof for any purpose, nor shall
+anything contained herein be construed to confer upon the Holder, as such, any of the rights of a stockholder of the Company or any right to vote for the election of directors or upon any other matter submitted to the stockholders of the Company at
+any meeting thereof, or to give or withhold consent to any corporate action (whether upon any recapitalization, issuance or reclassification of equity securities, consolidation, merger, conveyance or otherwise) or to receive notice of meetings, or
+to receive purchase or subscription rights or otherwise, until the Warrant shall have been exercised as provided herein. For clarity, this
+Section
+10
+shall be construed as limiting the rights of the Holder only with
+respect to the Warrant, the Exercise Shares and other securities of the Company that may at any time be issuable upon the exercise hereof for any purpose, and shall not be construed as limiting the rights of the Holder with respect to any other
+securities of the Company.
+11.
+T
+RANSFER
+OF
+W
+ARRANT
+.
+This Warrant is not
+transferable, in whole or in part, by the Holder (other than to an Affiliate of the Holder) without the prior written consent of the Company, and any attempted assignment without such consent shall be void. A change in control of the Holder,
+for example by merger, sale of stock or sale of assets, shall not be deemed to be an assignment under this Warrant. Subject to the foregoing restrictions, applicable laws and the restriction on transfer set forth on the first page of this Warrant,
+in connection with any transfer of this Warrant, the Holder shall deliver this
+9.
+Warrant and the form of assignment attached hereto as
+E
+XHIBIT
+B
+to the Company, and the transferee shall sign an investment representation letter in form and substance
+satisfactory to the Company.
+12.
+L
+OST
+, S
+TOLEN
+, M
+UTILATED
+OR
+D
+ESTROYED
+W
+ARRANT
+.
+If this Warrant is lost, stolen, mutilated or destroyed, the Company may, on such terms as to indemnity or otherwise as it may reasonably impose (which shall, in the case of a mutilated
+Warrant, include the surrender thereof), issue a new Warrant of like denomination and tenor as this Warrant so lost, stolen, mutilated or destroyed. Any such new Warrant shall constitute an original contractual obligation of the Company, whether or
+not the allegedly lost, stolen, mutilated or destroyed Warrant shall be at any time enforceable by anyone.
+13.
+C
+UMULATIVE
+R
+EMEDIES
+. The rights and remedies provided in this Warrant are cumulative and are not exclusive of, and are in addition to and not in substitution for, any other rights or remedies
+available at law, in equity or otherwise.
+14.
+E
+QUITABLE
+R
+ELIEF
+. Each of the
+Company and the Holder acknowledges that a breach or threatened breach by such party of any of its obligations under this Warrant would give rise to irreparable harm to the other party hereto for which monetary damages would not be an adequate
+remedy and hereby agrees that in the event of a breach or a threatened breach by such party of any such obligations, the other party hereto shall, in addition to any and all other rights and remedies that may be available to it in respect of
+such breach, be entitled to equitable relief, including a restraining order, an injunction, specific performance and any other relief that may be available from a court of competent jurisdiction.
+15.
+N
+OTICES
+,
+ETC
+.
+All notices required or permitted hereunder shall be in writing and shall be
+deemed effectively given: (a) upon personal delivery to the party to be notified, (b) when sent by electronic transmission or facsimile if sent during normal business hours of the recipient, if not, then on the next business day,
+(c) five days after having been sent by registered or certified mail, return receipt requested, postage prepaid, or (d) one day after deposit with a nationally recognized overnight courier, specifying next day delivery, with written
+verification of receipt. All communications shall be sent to each of the Company and the Holder at the address listed on their respective signature pages hereto or at such other address as the Company or Holder may designate by ten days’
+advance written notice to the other party.
+16.
+S
+UCCESSOR
+AND
+A
+SSIGNS
+. This Warrant and the rights evidenced hereby shall be binding upon and shall inure to the benefit of the parties hereto and the successors of the Company and the successors and permitted
+assigns of the Holder. Such successors and/or permitted assigns of the Holder shall be deemed to be a Holder for all purposes hereunder.
+17.
+N
+O
+T
+HIRD
+-P
+ARTY
+B
+ENEFICIARIES
+. This Warrant
+is for the sole benefit of the Company and the Holder and their respective successors and, in the case of the Holder, permitted assigns and nothing herein, express or implied, is intended to or shall confer upon any other Person any legal or
+equitable right, benefit or remedy of any nature whatsoever, under or by reason of this Warrant.
+18.
+H
+EADINGS
+. The headings in this Warrant are for reference only and shall not affect the interpretation of this Warrant.
+19.
+A
+MENDMENT
+AND
+M
+ODIFICATION
+; W
+AIVER
+. Except
+as otherwise provided herein, this Warrant may only be amended, modified or supplemented by an agreement in writing signed by each party hereto. No waiver by the Company or the Holder of any of the provisions hereof shall be effective unless
+explicitly set forth in writing and signed by the party so waiving. No waiver by any party shall operate or be construed as a waiver in respect of any failure, breach or default not expressly identified by
+10.
+such written waiver, whether of a similar or different character, and whether occurring before or after that waiver. No failure to exercise, or delay in exercising, any rights, remedy, power or
+privilege arising from this Warrant shall operate or be construed as a waiver thereof; nor shall any single or partial exercise of any right, remedy, power or privilege hereunder preclude any other or further exercise thereof or the exercise of
+any other right, remedy, power or privilege.
+20.
+S
+EVERABILITY
+. If any term or provision
+of this Warrant is invalid, illegal or unenforceable in any jurisdiction, such invalidity, illegality or unenforceability shall not affect any other term or provision of this Warrant or invalidate or render unenforceable such term or provision in
+any other jurisdiction.
+21.
+A
+CCEPTANCE
+.
+Receipt of this Warrant by the Holder shall constitute
+acceptance of and agreement to all of the terms and conditions contained herein.
+22.
+G
+OVERNING
+L
+AW
+.
+This Warrant and all rights, obligations and liabilities hereunder shall be governed by and construed under the laws of the State of Delaware as applied to agreements among Delaware residents, made and to be performed
+entirely within the State of Delaware without giving effect to conflicts of laws principles.
+23.
+C
+OUNTERPARTS
+. This Warrant may be executed in counterparts, each of which shall be deemed an original, but all of which together shall be deemed to be one and the same agreement. Counterparts may be
+delivered via facsimile, electronic mail (including pdf or any electronic signature complying with the U.S. federal ESIGN Act of 2000, Uniform Electronic Transactions Act or other applicable law) or other transmission method and any counterpart so
+delivered will be deemed to have been duly and validly delivered and be valid and effective for all purposes.
+[
+Signature
+Page Follows
+]
+11.
+I
+N
+W
+ITNESS
+W
+HEREOF
+, the
+parties have caused this Warrant to be executed as of the date first written above.
+TEMPUS LABS, INC.
+By:
+/s/ Jim Rogers
+Name: Jim Rogers
+Title: Chief Financial Officer
+Address:
+600 West Chicago Ave.
+Suite 510
+Chicago, Illinois 60654
+ASTRAZENECA AB
+By:
+/s/ Yvonne Bertlin
+Name: Yvonne Bertlin
+Title: CFO
+Address:
+SE-432
+83 Mölndal
+Sweden
+E
+XHIBIT
+A
+NOTICE OF EXERCISE
+T
+O
+:
+T
+EMPUS
+L
+ABS
+, I
+NC
+.
+(1)
+The undersigned hereby elects to purchase _____________
+shares of Class A Common Stock (the “
+Exercise Shares
+”) of Tempus Labs, Inc. (the “
+Company
+”) pursuant to the terms of the attached Warrant, and tenders herewith payment of the exercise price
+in full.
+(2)
+Please issue a certificate or certificates representing said Exercise Shares, if applicable, in the name of the
+undersigned or in such other name as is specified below:
+(Name)
+(3)
+Please issue a new Warrant for the unexercised portion of the attached Warrant in the name of the undersigned or in such other name
+as is specified below:
+(Name)
+(4)
+The
+undersigned represents that (i) the aforesaid Exercise Shares are being acquired for the account of the undersigned for investment and not with a view to, or for resale in connection with, the distribution thereof and that the undersigned
+has no present intention of distributing or reselling such shares; (ii) the undersigned is aware of the Company’s business affairs and financial condition and has acquired sufficient information about the Company to reach an informed and
+knowledgeable decision regarding its investment in the Company; (iii) the undersigned is experienced in making investments of this type and has such knowledge and background in financial and business matters that the undersigned is capable of
+evaluating the merits and risks of this investment and protecting the undersigned’s own interests; (iv) the undersigned understands that Exercise Shares issuable upon exercise of this Warrant have not been registered under the Securities
+Act of 1933, as amended (the “
+Act
+”), by reason of a specific exemption from the registration provisions of the Act, which exemption depends upon, among other things, the bona fide nature of the investment intent as expressed
+herein, and, because such securities have not been registered under the Act, they must be held indefinitely unless subsequently registered under the Act or an exemption from such registration is available; (v) the undersigned is aware that the
+aforesaid Exercise Shares may not be sold pursuant to Rule 144 adopted under the Act unless certain conditions are met and until the undersigned has held the shares for the number of years prescribed by Rule 144, that the conditions for use of
+the Rule may include the availability of current information to the public about the Company and the Company has not made such information available and has no present plans to do so; and (vi) the undersigned agrees not to make any disposition
+of all or any part of the aforesaid shares of Exercise Shares unless and until there is then in effect a registration statement under the Act covering such proposed disposition and such disposition is made in accordance with said registration
+statement, or, if reasonably requested by the Company, the undersigned has provided the Company with an opinion of counsel satisfactory to the Company, stating that such registration is not required, subject to any exceptions set forth in the
+attached Warrant.
+(5)
+The undersigned acknowledges and agrees that, if requested by the Company, the undersigned shall execute and
+deliver any applicable securityholders’ agreement, investor rights agreement, voting agreement, drag along agreement, right of first refusal and
+co-sale
+agreement or similar agreement (or a joinder
+to any existing agreement) that the Company and/or the holders of its securities
+1
+may enter into or that otherwise that may be in effect from time to time (and which may contain, among other provisions, additional restrictions on transfer).
+(Date)
+(Signature)
+(Print name)
+2
+E
+XHIBIT
+B
+ASSIGNMENT FORM
+(To
+assign the foregoing Warrant, execute this form and supply required information. Do not use this form to purchase shares.)
+F
+OR
+V
+ALUE
+R
+ECEIVED
+, the foregoing Warrant and all rights evidenced thereby
+are hereby assigned to
+Name:
+(Please Print)
+Address:
+(Please Print)
+E-Mail:
+(Please Print)
+Assignee’s
+Signature:
+Dated: __________, 20__
+Holder’s
+Name:
+Holder’s
+Signature:
+Holder’s
+Address:
+NOTE
+: The signature to this Assignment Form must correspond with the name as it appears on the face of this Warrant,
+without alteration or enlargement or any change whatever. Officers of corporations and those acting in a fiduciary or other representative capacity should file proper evidence of authority to assign the foregoing Warrant.
+NOTE
+: As a condition to the assignment of this Warrant, if requested by the Company, the assignee of this Warrant shall execute and deliver any
+applicable securityholders’ agreement, investor rights agreement, voting agreement, drag along agreement, right of first refusal and
+co-sale
+agreement or similar agreement (or a joinder to any existing
+agreement) that the Company and/or the holders of its securities may enter into or that otherwise that may be in effect from time to time (and which may contain, among other provisions, additional restrictions on transfer).
+NOTE
+: The assignee of this Warrant agrees to be bound by all the terms and obligations of this Warrant as if assignee were the original Holder
+party thereto.

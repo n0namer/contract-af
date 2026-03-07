@@ -14,26 +14,24 @@ async def generate_report(
     # Generate markdown report via harness
     md_result = await app.call(
         "contract-af.report_writer",
-        input={
-            "task": "generate_markdown_report",
-            "executive_summary": synthesis.executive_summary,
-            "findings": [
-                {
-                    "rank": rf.rank,
-                    "severity": rf.finding.severity.value,
-                    "clause_ref": rf.finding.clause_ref,
-                    "description": rf.finding.description,
-                    "reasoning": rf.finding.reasoning,
-                    "remediation": rf.finding.remediation,
-                    "negotiation": rf.negotiation_strategy,
-                    "score": rf.composite_score,
-                }
-                for rf in synthesis.findings
-            ],
-            "risk_profile": synthesis.overall_risk_profile.model_dump(),
-            "contract_type": intake.contract_type,
-            "parties": [p.model_dump() for p in intake.parties],
-        },
+        task="generate_markdown_report",
+        executive_summary=synthesis.executive_summary,
+        findings=[
+            {
+                "rank": rf.rank,
+                "severity": rf.finding.severity.value,
+                "clause_ref": rf.finding.clause_ref,
+                "description": rf.finding.description,
+                "reasoning": rf.finding.reasoning,
+                "remediation": rf.finding.remediation,
+                "negotiation": rf.negotiation_strategy,
+                "score": rf.composite_score,
+            }
+            for rf in synthesis.findings
+        ],
+        risk_profile=synthesis.overall_risk_profile.model_dump(),
+        contract_type=intake.contract_type,
+        parties=[p.model_dump() for p in intake.parties],
     )
 
     risk_report_md = (
@@ -45,26 +43,20 @@ async def generate_report(
     # Generate negotiation playbook
     playbook_result = await app.call(
         "contract-af.report_writer",
-        input={
-            "task": "generate_negotiation_playbook",
-            "findings": [
-                {
-                    "clause_ref": rf.finding.clause_ref,
-                    "description": rf.finding.description,
-                    "negotiation": rf.negotiation_strategy,
-                }
-                for rf in synthesis.findings
-                if rf.composite_score >= 5.0
-            ],
-            "negotiation_plan": synthesis.negotiation_strategy.model_dump(),
-        },
+        task="generate_negotiation_playbook",
+        findings=[
+            {
+                "clause_ref": rf.finding.clause_ref,
+                "description": rf.finding.description,
+                "negotiation": rf.negotiation_strategy,
+            }
+            for rf in synthesis.findings
+            if rf.composite_score >= 5.0
+        ],
+        negotiation_plan=synthesis.negotiation_strategy.model_dump(),
     )
 
-    playbook = (
-        playbook_result.get("playbook", "")
-        if isinstance(playbook_result, dict)
-        else ""
-    )
+    playbook = playbook_result.get("playbook", "") if isinstance(playbook_result, dict) else ""
 
     # Build structured JSON (programmatic, no LLM)
     structured = {
@@ -100,9 +92,7 @@ async def generate_report(
     )
 
 
-def _generate_fallback_markdown(
-    synthesis: SynthesisResult, intake: IntakeResult
-) -> str:
+def _generate_fallback_markdown(synthesis: SynthesisResult, intake: IntakeResult) -> str:
     """Fallback markdown if harness fails."""
     lines = [
         f"# Contract Review Report: {intake.contract_type.replace('_', ' ').title()}",

@@ -101,10 +101,26 @@ _NESTED_CONDITION_PATTERN = re.compile(
 
 # Roman numeral mapping for article numbering
 _ROMAN_MAP: dict[str, int] = {
-    "I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
-    "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10,
-    "XI": 11, "XII": 12, "XIII": 13, "XIV": 14, "XV": 15,
-    "XVI": 16, "XVII": 17, "XVIII": 18, "XIX": 19, "XX": 20,
+    "I": 1,
+    "II": 2,
+    "III": 3,
+    "IV": 4,
+    "V": 5,
+    "VI": 6,
+    "VII": 7,
+    "VIII": 8,
+    "IX": 9,
+    "X": 10,
+    "XI": 11,
+    "XII": 12,
+    "XIII": 13,
+    "XIV": 14,
+    "XV": 15,
+    "XVI": 16,
+    "XVII": 17,
+    "XVIII": 18,
+    "XIX": 19,
+    "XX": 20,
 }
 
 # Upper threshold for cross-refs per section to flag complexity
@@ -140,7 +156,10 @@ async def analyze_structure(
     exhibits = _extract_exhibits(document_text)
     key_dates = _extract_key_dates(document_text, sections)
     risk_surface = _compute_risk_signals(
-        sections, defined_terms, cross_references, document_text,
+        sections,
+        defined_terms,
+        cross_references,
+        document_text,
     )
 
     return AnatomyResult(
@@ -346,18 +365,46 @@ def _extract_cross_references(
 
     # Contextual cross-references ("pursuant to Section X")
     relationship_patterns: list[tuple[re.Pattern[str], str]] = [
-        (re.compile(r"as\s+defined\s+in\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE), "as_defined_in"),
-        (re.compile(r"pursuant\s+to\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE), "subject_to"),
-        (re.compile(r"subject\s+to\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE), "subject_to"),
-        (re.compile(r"notwithstanding\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE), "notwithstanding"),
-        (re.compile(r"(?:in\s+accordance\s+with|under|set\s+forth\s+in|described\s+in|referred\s+to\s+in)\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE), "references"),
+        (
+            re.compile(
+                r"as\s+defined\s+in\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE
+            ),
+            "as_defined_in",
+        ),
+        (
+            re.compile(
+                r"pursuant\s+to\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE
+            ),
+            "subject_to",
+        ),
+        (
+            re.compile(
+                r"subject\s+to\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE
+            ),
+            "subject_to",
+        ),
+        (
+            re.compile(
+                r"notwithstanding\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)", re.IGNORECASE
+            ),
+            "notwithstanding",
+        ),
+        (
+            re.compile(
+                r"(?:in\s+accordance\s+with|under|set\s+forth\s+in|described\s+in|referred\s+to\s+in)\s+(?:Section|Article|Clause)\s+(\d+(?:\.\d+)*)",
+                re.IGNORECASE,
+            ),
+            "references",
+        ),
     ]
 
     for pattern, rel_type in relationship_patterns:
         for match in pattern.finditer(text):
             to_section = match.group(1)
             from_section = _locate_section_for_position(
-                text, match.start(), sections,
+                text,
+                match.start(),
+                sections,
             )
             if not from_section:
                 continue
@@ -377,7 +424,9 @@ def _extract_cross_references(
     for match in _SIMPLE_REF_PATTERN.finditer(text):
         to_section = match.group(1)
         from_section = _locate_section_for_position(
-            text, match.start(), sections,
+            text,
+            match.start(),
+            sections,
         )
         if not from_section or from_section == to_section:
             continue
@@ -424,7 +473,9 @@ def _extract_exhibits(text: str) -> list[Exhibit]:
             # Try to figure out which section this reference falls in
             # (lightweight: look backwards for a section number)
             preceding = text[max(0, ref_match.start() - 500) : ref_match.start()]
-            sec_match = re.findall(r"(?:Section|Article)\s+(\d+(?:\.\d+)*)", preceding, re.IGNORECASE)
+            sec_match = re.findall(
+                r"(?:Section|Article)\s+(\d+(?:\.\d+)*)", preceding, re.IGNORECASE
+            )
             if sec_match:
                 sec_num = sec_match[-1]
                 if sec_num not in modifies:
@@ -467,7 +518,9 @@ def _extract_key_dates(
         seen_descriptions.add(description)
 
         section_ref = _locate_section_for_position(
-            text, match.start(), sections,
+            text,
+            match.start(),
+            sections,
         )
 
         dates.append(
@@ -487,7 +540,9 @@ def _extract_key_dates(
         seen_descriptions.add(description)
 
         section_ref = _locate_section_for_position(
-            text, match.start(), sections,
+            text,
+            match.start(),
+            sections,
         )
 
         dates.append(
@@ -550,8 +605,7 @@ def _compute_risk_signals(
                     section=dt.section_ref,
                     signal_type="broad_definition",
                     description=(
-                        f'Defined term "{dt.term}" uses broad scope language '
-                        f"in its definition."
+                        f'Defined term "{dt.term}" uses broad scope language in its definition.'
                     ),
                     severity=Severity.MEDIUM,
                 )
@@ -588,10 +642,7 @@ def _compute_risk_signals(
                         f"Section {sec_num} contains {condition_count} "
                         f"conditional qualifiers, creating complex logic."
                     ),
-                    severity=(
-                        Severity.HIGH if condition_count > 6
-                        else Severity.MEDIUM
-                    ),
+                    severity=(Severity.HIGH if condition_count > 6 else Severity.MEDIUM),
                 )
             )
 
@@ -666,12 +717,10 @@ async def _harness_fallback(
     cannot extract structure (e.g. non-standard formatting)."""
     result = await app.call(
         "contract-af.anatomist",
-        input={
-            "document_text": document_text,
-            "intake": intake.model_dump(),
-            "reason": "Programmatic section extraction found no sections; "
-                      "delegating to harness for structural analysis.",
-        },
+        document_text=document_text,
+        intake=intake.model_dump(),
+        reason="Programmatic section extraction found no sections; "
+        "delegating to harness for structural analysis.",
     )
     # The harness returns an AnatomyResult-shaped dict
     if isinstance(result, AnatomyResult):

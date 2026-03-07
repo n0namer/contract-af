@@ -18,6 +18,14 @@ from contract_af.utils.document_loader import load_document, _SUPPORTED_SUFFIXES
 
 logger = logging.getLogger(__name__)
 
+# Import the real Agent instance for pipeline use.
+# The FastAPI app below is a separate lightweight server for the REST API;
+# the Agent instance (agent_app) is used to power the analysis pipeline.
+try:
+    from contract_af.app import app as agent_app
+except Exception:
+    agent_app = None  # Graceful fallback for testing without AgentField
+
 app = FastAPI(
     title="Contract-AF",
     description="Legal contract risk analyzer — finds dangerous clauses, proves exploitability",
@@ -67,10 +75,7 @@ async def _run_analysis(job_id: str, file_path: str, user_context: str) -> None:
     try:
         full_text, _ = load_document(file_path)
 
-        # TODO: Initialize real AgentField app here.
-        # For now this is a placeholder — replace with AgentField app instance.
-        app_instance = None
-        report = await analyze_contract(app_instance, full_text, user_context)
+        report = await analyze_contract(agent_app, full_text, user_context)
 
         _jobs[job_id] = {
             "status": "completed",

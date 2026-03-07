@@ -9,6 +9,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from fastapi.testclient import TestClient
 
+# contract_af.api imports contract_af.app which needs agentfield.
+# The try/except in api.py handles missing AgentField gracefully,
+# so agent_app will be None when agentfield is not installed.
 from contract_af.api import app, _jobs
 from contract_af.utils.document_loader import load_document, _SUPPORTED_SUFFIXES
 

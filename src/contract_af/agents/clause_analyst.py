@@ -54,13 +54,11 @@ async def analyze_cluster(
     # Primary analysis via harness
     result = await app.call(
         "contract-af.clause_analyst",
-        input={
-            "sections": section_texts,
-            "context": context,
-            "depth": depth_used.value,
-            "cluster_name": cluster.name,
-            "jurisdiction_rules": cluster.jurisdiction_rules,
-        },
+        sections=section_texts,
+        context=context,
+        depth=depth_used.value,
+        cluster_name=cluster.name,
+        jurisdiction_rules=cluster.jurisdiction_rules,
     )
 
     # Parse findings from harness response
@@ -72,9 +70,7 @@ async def analyze_cluster(
             await findings_queue.put(finding)
 
     # --- Inner loop: follow out-of-scope references ---
-    refs_to_follow = (
-        result.get("references_to_follow", []) if isinstance(result, dict) else []
-    )
+    refs_to_follow = result.get("references_to_follow", []) if isinstance(result, dict) else []
     for ref in refs_to_follow[:MAX_REF_FOLLOWS]:
         ref_text = _get_section_texts(contract_text, [ref])
         if not ref_text:
@@ -85,19 +81,15 @@ async def analyze_cluster(
 
         ref_result = await app.call(
             "contract-af.clause_analyst",
-            input={
-                "sections": ref_text,
-                "context": (
-                    f"Following reference from {cluster.name} analysis. "
-                    f"Original finding context: {context}"
-                ),
-                "depth": "standard",
-                "cluster_name": cluster.name,
-            },
+            sections=ref_text,
+            context=(
+                f"Following reference from {cluster.name} analysis. "
+                f"Original finding context: {context}"
+            ),
+            depth="standard",
+            cluster_name=cluster.name,
         )
-        ref_findings = (
-            ref_result.get("findings", []) if isinstance(ref_result, dict) else []
-        )
+        ref_findings = ref_result.get("findings", []) if isinstance(ref_result, dict) else []
         for rf in ref_findings:
             finding = _parse_finding(rf, cluster.name)
             findings.append(finding)
@@ -111,19 +103,15 @@ async def analyze_cluster(
 
         escalated = await app.call(
             "contract-af.clause_analyst",
-            input={
-                "sections": section_texts,
-                "context": (
-                    f"ESCALATED ANALYSIS at {depth_used.value} depth. "
-                    f"Previous findings: {[f.description for f in findings]}"
-                ),
-                "depth": depth_used.value,
-                "cluster_name": cluster.name,
-            },
+            sections=section_texts,
+            context=(
+                f"ESCALATED ANALYSIS at {depth_used.value} depth. "
+                f"Previous findings: {[f.description for f in findings]}"
+            ),
+            depth=depth_used.value,
+            cluster_name=cluster.name,
         )
-        esc_findings = (
-            escalated.get("findings", []) if isinstance(escalated, dict) else []
-        )
+        esc_findings = escalated.get("findings", []) if isinstance(escalated, dict) else []
         existing_ids = {f.id for f in findings}
         for rf in esc_findings:
             finding = _parse_finding(rf, cluster.name)
@@ -133,22 +121,16 @@ async def analyze_cluster(
                     await findings_queue.put(finding)
 
     # --- Meta-prompting: spawn sub-agents for complex discoveries ---
-    deep_dives = (
-        result.get("deep_dives_needed", []) if isinstance(result, dict) else []
-    )
+    deep_dives = result.get("deep_dives_needed", []) if isinstance(result, dict) else []
     for dive in deep_dives[:MAX_SUB_AGENTS]:
         sub_agents_spawned += 1
         dive_result = await app.call(
             "contract-af.definition_impact_analyzer",
-            input={
-                "prompt": dive.get("prompt", ""),
-                "sections": dive.get("sections", []),
-                "contract_text": contract_text,
-            },
+            prompt=dive.get("prompt", ""),
+            sections=dive.get("sections", []),
+            contract_text=contract_text,
         )
-        dive_findings = (
-            dive_result.get("findings", []) if isinstance(dive_result, dict) else []
-        )
+        dive_findings = dive_result.get("findings", []) if isinstance(dive_result, dict) else []
         for rf in dive_findings:
             finding = _parse_finding(rf, cluster.name)
             findings.append(finding)
@@ -165,9 +147,7 @@ async def analyze_cluster(
         sub_agents_spawned=sub_agents_spawned,
         depth_used=depth_used,
         early_exit=early_exit,
-        coverage_notes=(
-            result.get("coverage_notes", []) if isinstance(result, dict) else []
-        ),
+        coverage_notes=(result.get("coverage_notes", []) if isinstance(result, dict) else []),
     )
 
 
@@ -183,7 +163,7 @@ def _parse_finding(raw: dict, category: str) -> Finding:
         clause_ref=raw.get("clause_ref", ""),
         clause_text=raw.get("clause_text", ""),
         category=category,
-        severity=Severity(raw.get("severity", "medium")),
+        severity=Severity(raw.get("severity", "medium").lower()),
         description=raw.get("description", ""),
         reasoning=raw.get("reasoning", ""),
         remediation=raw.get("remediation", ""),
@@ -191,9 +171,7 @@ def _parse_finding(raw: dict, category: str) -> Finding:
     )
 
 
-def _get_section_texts(
-    contract_text: str, section_numbers: list[str]
-) -> dict[str, str]:
+def _get_section_texts(contract_text: str, section_numbers: list[str]) -> dict[str, str]:
     """Extract section text by section number from the contract.
 
     Uses a regex-based approach to locate section headings like:
@@ -261,11 +239,7 @@ def _build_analysis_context(
 
     # Relevant defined terms
     cluster_sections_set = set(cluster.sections)
-    relevant_terms = [
-        dt
-        for dt in anatomy.defined_terms
-        if dt.section_ref in cluster_sections_set
-    ]
+    relevant_terms = [dt for dt in anatomy.defined_terms if dt.section_ref in cluster_sections_set]
     if relevant_terms:
         term_lines = [
             f'  - "{dt.term}" (defined in {dt.section_ref}): {dt.definition_text}'
@@ -277,8 +251,7 @@ def _build_analysis_context(
     relevant_xrefs = [
         cr
         for cr in anatomy.cross_references
-        if cr.from_section in cluster_sections_set
-        or cr.to_section in cluster_sections_set
+        if cr.from_section in cluster_sections_set or cr.to_section in cluster_sections_set
     ]
     if relevant_xrefs:
         xref_lines = [
@@ -288,13 +261,10 @@ def _build_analysis_context(
         parts.append("Cross-references:\n" + "\n".join(xref_lines))
 
     # Risk signals from anatomy
-    relevant_risks = [
-        rs for rs in anatomy.risk_surface if rs.section in cluster_sections_set
-    ]
+    relevant_risks = [rs for rs in anatomy.risk_surface if rs.section in cluster_sections_set]
     if relevant_risks:
         risk_lines = [
-            f"  - {rs.section}: {rs.signal_type} — {rs.description}"
-            for rs in relevant_risks
+            f"  - {rs.section}: {rs.signal_type} — {rs.description}" for rs in relevant_risks
         ]
         parts.append("Risk signals from anatomy:\n" + "\n".join(risk_lines))
 
@@ -319,11 +289,7 @@ def _check_escalation(findings: list[Finding], cluster: ClauseCluster) -> bool:
         return any(f.severity == Severity.CRITICAL for f in findings)
 
     if trigger == EscalationTrigger.MULTIPLE_HIGH:
-        high_count = sum(
-            1
-            for f in findings
-            if f.severity in (Severity.HIGH, Severity.CRITICAL)
-        )
+        high_count = sum(1 for f in findings if f.severity in (Severity.HIGH, Severity.CRITICAL))
         return high_count >= 2
 
     return False

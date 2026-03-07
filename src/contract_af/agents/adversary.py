@@ -59,18 +59,16 @@ async def review_as_adversary(
         # For each finding, ask harness to review from adversary perspective
         review = await app.call(
             "contract-af.adversary_reviewer",
-            input={
-                "finding": {
-                    "id": item.id,
-                    "clause_ref": item.clause_ref,
-                    "description": item.description,
-                    "severity": item.severity.value,
-                    "clause_text": item.clause_text,
-                },
-                "contract_type": intake.contract_type,
-                "opposing_role": _get_opposing_role(intake),
-                "contract_text": contract_text,
+            finding={
+                "id": item.id,
+                "clause_ref": item.clause_ref,
+                "description": item.description,
+                "severity": item.severity.value,
+                "clause_text": item.clause_text,
             },
+            contract_type=intake.contract_type,
+            opposing_role=_get_opposing_role(intake),
+            contract_text=contract_text,
         )
 
         if not isinstance(review, dict):
@@ -103,7 +101,7 @@ async def review_as_adversary(
                     clause_refs=trap.get("clause_refs", [item.clause_ref]),
                     description=trap.get("description", ""),
                     exploitation_scenario=trap.get("exploitation_scenario", ""),
-                    severity=Severity(trap.get("severity", "high")),
+                    severity=Severity(trap.get("severity", "high").lower()),
                 )
             )
 
@@ -117,14 +115,12 @@ async def review_as_adversary(
         sub_agents_used += 1
         trap_result = await app.call(
             "contract-af.adversary_reviewer",
-            input={
-                "prompt": (
-                    f"Multiple clauses survive termination: {survival_refs}. "
-                    f"Analyze combined post-termination obligations for {intake.your_role}."
-                ),
-                "survival_sections": survival_refs,
-                "contract_text": contract_text,
-            },
+            prompt=(
+                f"Multiple clauses survive termination: {survival_refs}. "
+                f"Analyze combined post-termination obligations for {intake.your_role}."
+            ),
+            survival_sections=survival_refs,
+            contract_text=contract_text,
         )
         if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
             for trap in trap_result["hidden_traps"]:
@@ -133,7 +129,7 @@ async def review_as_adversary(
                         clause_refs=trap.get("clause_refs", []),
                         description=trap.get("description", ""),
                         exploitation_scenario=trap.get("exploitation_scenario", ""),
-                        severity=Severity(trap.get("severity", "high")),
+                        severity=Severity(trap.get("severity", "high").lower()),
                     )
                 )
 

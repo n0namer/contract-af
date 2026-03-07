@@ -43,27 +43,26 @@ async def assess_coverage(
     unanalyzed = all_sections - all_analyzed
 
     uncovered_with_traps = (
-        adversary_result.uncovered_sections_with_traps
-        if adversary_result
-        else []
+        adversary_result.uncovered_sections_with_traps if adversary_result else []
     )
 
-    risk_signals_for_unanalyzed = [
-        rs for rs in anatomy.risk_surface if rs.section in unanalyzed
-    ]
+    risk_signals_for_unanalyzed = [rs for rs in anatomy.risk_surface if rs.section in unanalyzed]
+
+    import json as _json
 
     assessment = await app.ai(
-        prompt=COVERAGE_PROMPT,
-        input={
-            "total_sections": len(all_sections),
-            "analyzed_sections": len(all_analyzed),
-            "unanalyzed_sections": list(unanalyzed),
-            "coverage_notes": coverage_notes,
-            "uncovered_with_traps": uncovered_with_traps,
-            "risk_signals": [
-                rs.model_dump() for rs in risk_signals_for_unanalyzed
-            ],
-        },
+        system=COVERAGE_PROMPT,
+        user=_json.dumps(
+            {
+                "total_sections": len(all_sections),
+                "analyzed_sections": len(all_analyzed),
+                "unanalyzed_sections": list(unanalyzed),
+                "coverage_notes": coverage_notes,
+                "uncovered_with_traps": uncovered_with_traps,
+                "risk_signals": [rs.model_dump() for rs in risk_signals_for_unanalyzed],
+            },
+            default=str,
+        ),
         schema=CoverageAssessment,
     )
 
@@ -71,9 +70,7 @@ async def assess_coverage(
         update={
             "iteration": iteration,
             "coverage_ratio": _compute_coverage_ratio(anatomy, analysis_results),
-            "sections_to_analyze": assessment.sections_to_analyze[
-                :MAX_NEW_ANALYSTS
-            ],
+            "sections_to_analyze": assessment.sections_to_analyze[:MAX_NEW_ANALYSTS],
         },
     )
 

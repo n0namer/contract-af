@@ -56,11 +56,14 @@ async def _analyze(args: argparse.Namespace) -> None:
     full_text, _ = load_document(args.file)
     print(f"Loaded {len(full_text)} characters from {args.file}", file=sys.stderr)
 
-    # TODO: Initialize real AgentField app here.
     from contract_af.pipeline.orchestrator import analyze_contract
 
-    app = None  # Replace with AgentField app instance
-    report = await analyze_contract(app, full_text, args.context)
+    try:
+        from contract_af.app import app as agent_app
+    except Exception:
+        agent_app = None  # Graceful fallback for testing without AgentField
+
+    report = await analyze_contract(agent_app, full_text, args.context)
 
     if args.output_format == "json":
         output = json.dumps(report.structured_json, indent=2)
