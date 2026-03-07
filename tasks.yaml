@@ -1,0 +1,824 @@
+tasks:
+  # === FOUNDATION (must be done first) ===
+  - id: scaffold
+    title: "Project scaffold: pyproject.toml, src layout, .gitignore, .env.example"
+    kind: code
+    priority: 100
+    description: |
+      Create the Python project foundation for contract-af.
+
+      Files to create:
+        - pyproject.toml (name=contract-af, deps: agentfield, pydantic, fastapi, uvicorn, python-docx, pdfplumber, pytest)
+        - src/contract_af/__init__.py
+        - src/contract_af/agents/__init__.py
+        - src/contract_af/models/__init__.py
+        - src/contract_af/pipeline/__init__.py
+        - src/contract_af/utils/__init__.py
+        - tests/__init__.py
+        - tests/conftest.py (shared fixtures: sample contract text, mock AgentField app)
+        - .gitignore (standard Python + .plandb.db + .env)
+        - .env.example (AGENTFIELD_SERVER, OPENROUTER_API_KEY)
+        - README.md (brief: what it is, how to run, link to architecture doc)
+
+      Convention: Use src layout. All agents register with AgentField via SDK.
+      Reference: code/platform/agentfield/CLAUDE.md for SDK patterns.
+      Reference: code/examples/sec-af/ for project structure patterns.
+
+      Acceptance criteria:
+        - `pip install -e .` succeeds
+        - `python -c "import contract_af"` succeeds
+        - pytest discovers tests/conftest.py
+
+  - id: models
+    title: "Define all Pydantic data models for every pipeline phase"
+    kind: code
+    priority: 99
+    deps: [{ from: scaffold, kind: feeds_into }]
+    description: |
+      Create all shared Pydantic models used across the pipeline.
+      These are the contracts between agents - get them right first.
+
+      File: src/contract_af/models/types.py
+
+      Models to define (from architecture doc):
+
+      === Intake (Phase 1) ===
+      - Party(name, role, entity_type)
+      - IntakeResult(contract_type, parties, your_role, jurisdiction,
+        governing_law, deal_structure, complexity, confident: bool)
+
+      === Anatomy (Phase 2) ===
+      - Section(number, title, page_range, subsections)
+      - DefinedTerm(term, definition_text, section_ref, usage_count)
+      - CrossRef(from_section, to_section, relationship_type)
+      - Exhibit(label, title, pages, modifies_sections)
+      - KeyDate(date, description, section_ref)
+      - RiskSignal(section, signal_type, description, severity)
+      - AnatomyResult(sections, defined_terms, cross_references, exhibits,
+        key_dates, risk_surface)
+
+      === Analysis Plan (Phase 3) ===
+      - ClauseCluster(name, sections, initial_depth, escalation_trigger,
+        escalated_depth, jurisdiction_rules, priority)
+      - AnalysisPlan(clusters, skipped_sections, unassigned_sections,
+        jurisdiction_rules)
+
+      === Findings (Phase 4) ===
+      - Finding(id, clause_ref, clause_text, category, severity,
+        description, reasoning, remediation, confidence)
+      - ClauseAnalysisResult(findings, sections_analyzed, sections_followed,
+        sub_agents_spawned, depth_used, early_exit, coverage_notes)
+
+      === Review Layer (Phase 5) ===
+      - FalsePositive(finding_id, reason, evidence)
+      - HiddenTrap(clause_refs, description, exploitation_scenario, severity)
+      - Exploitation(finding_id, scenario, impact)
+      - AdversaryResult(false_positives, hidden_traps, exploitation_scenarios,
+        uncovered_sections_with_traps)
+      - GapResult(missing_clauses, verified_absent, found_elsewhere)
+      - CombinationRisk(clause_refs, description, severity, investigation_result)
+
+      === Coverage (Phase 5.5) ===
+      - CoverageAssessment(is_sufficient, coverage_ratio, sections_to_analyze,
+        sections_to_deepen, iteration)
+
+      === Synthesis (Phase 6) ===
+      - RankedFinding(finding, composite_score, rank, negotiation_strategy)
+      - NegotiationPlan(priorities, fallback_positions, deal_breakers)
+      - RiskProfile(overall_risk, category_scores, deal_recommendation)
+      - SynthesisResult(findings, negotiation_strategy, overall_risk_profile,
+        executive_summary)
+
+      === Report (Phase 7) ===
+      - ContractReport(executive_summary, risk_report_md, negotiation_playbook,
+        structured_json, metadata)
+
+      Acceptance criteria:
+        - All models importable from contract_af.models
+        - All models have proper type hints
+        - Pydantic validation works (test with sample data)
+        - Enums for: Severity(critical/high/medium/low/info),
+          Depth(scan/standard/thorough), EscalationTrigger enum
+
+  # === LAYER 1: Independent agents (PARALLELIZABLE) ===
+
+  - id: intake
+    title: "Implement intake classifier (.ai() with .harness() fallback)"
+    kind: code
+    priority: 90
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 1: Intake classification.
+
+      File: src/contract_af/agents/intake.py
+
+      Architecture (from design doc Phase 1):
+        1. Extract first 2-3 pages from input document
+        2. Call .ai() with IntakeResult schema (includes confident: bool)
+        3. If confident=false OR validation fails (empty parties, unknown type):
+           - Escalate to intake_harness that navigates full document
+           - Pass partial_intake so harness can fill gaps, not redo everything
+
+      Two agent registrations:
+        - "contract-af.intake" - the .ai() fast path
+        - "contract-af.intake_harness" - the .harness() fallback
+
+      The .ai() call:
+        prompt: "Classify this contract from the first 2-3 pages. Set confident=false
+                 if key metadata (parties, type, jurisdiction) is unclear."
+        input: {"text": first_pages}
+        schema: IntakeResult
+
+      The fallback harness:
+        - Receives: full document + partial intake
+        - Has tool access to navigate document
+        - Fills in missing fields from partial intake
+        - Returns complete IntakeResult with confident=true
+
+      Reference: Architecture doc Phase 1, .ai() Fallback Pattern section.
+
+      Acceptance criteria:
+        - .ai() path works for clean contracts (metadata on first pages)
+        - Fallback triggers when confident=false
+        - Fallback triggers when parties=[] or type="unknown"
+        - Returns complete IntakeResult in both paths
+
+  - id: intake-tests
+    title: "Write tests for intake classifier"
+    kind: test
+    priority: 89
+    deps: [{ from: intake, kind: feeds_into }]
+    description: |
+      File: tests/test_intake.py
+
+      Test cases:
+        - Happy path: clean SaaS agreement with metadata on page 1
+        - Fallback: contract with no clear parties on first pages (confident=false)
+        - Fallback: unusual structure (exhibits before recitals)
+        - Fallback: validation catch (parties=[], type="unknown")
+        - Edge: single-page NDA (all info present, simple classification)
+        - Edge: 100-page master agreement (first pages are TOC, not metadata)
+
+      Use mock AgentField app from conftest.py.
+      Mock .ai() responses and .harness() responses.
+
+  - id: anatomy
+    title: "Implement contract anatomist (.harness())"
+    kind: code
+    priority: 90
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 2: Contract Anatomy.
+
+      File: src/contract_af/agents/anatomy.py
+
+      Architecture (from design doc Phase 2):
+        This is a .harness() - the agent navigates the full document with tools.
+
+      Agent registration: "contract-af.anatomist"
+
+      The harness:
+        - Receives: full document text + IntakeResult
+        - Has tools to: read sections, search for terms, navigate cross-refs
+        - Produces: AnatomyResult with all structural metadata
+
+      What the harness does (multi-turn):
+        1. Scan document for section headers -> build sections list
+        2. Find Definitions section -> extract all defined terms
+        3. Scan for cross-references ("as defined in Section X", "pursuant to Section Y")
+           -> build cross_references graph
+        4. Find Exhibits/Schedules/Appendices -> build exhibits list
+        5. Extract key dates (effective date, term, renewal, notice periods)
+        6. Generate risk_surface signals:
+           - Sections with >3 cross-references = high structural complexity
+           - Definitions with >5 usages = high impact terms
+           - Sections >2 pages = unusual length
+           - Nested conditions (if...then...unless...except) = complexity
+
+      Output: AnatomyResult (structured JSON - consumed by Analysis Planner programmatically)
+
+      Reference: Architecture doc Phase 2.
+
+      Acceptance criteria:
+        - Extracts section map from sample contract
+        - Finds defined terms with definition text
+        - Builds cross-reference graph
+        - Generates risk_surface signals
+        - Output is valid AnatomyResult
+
+  - id: anatomy-tests
+    title: "Write tests for contract anatomist"
+    kind: test
+    priority: 89
+    deps: [{ from: anatomy, kind: feeds_into }]
+    description: |
+      File: tests/test_anatomy.py
+
+      Test cases:
+        - Standard SaaS agreement structure (numbered sections, definitions article)
+        - Contract with exhibits that modify main body sections
+        - Contract with unusual structure (definitions scattered, not in one section)
+        - Cross-reference detection (Section X references Section Y)
+        - Risk surface signal generation (long sections, heavy cross-refs)
+        - Key date extraction (effective date, term, renewal)
+
+      Use mock AgentField app. Provide sample contract text fixtures.
+
+  - id: planner
+    title: "Implement analysis planner (.ai())"
+    kind: code
+    priority: 90
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 3: Analysis Planning.
+
+      File: src/contract_af/agents/planner.py
+
+      Architecture (from design doc Phase 3):
+        This is a .ai() call - structured metadata in, routing plan out.
+
+      Agent registration: "contract-af.analysis_planner"
+
+      The .ai() call:
+        Input: IntakeResult + AnatomyResult (structured, ~1000-2000 tokens)
+        Output: AnalysisPlan
+
+        The planner:
+        1. Groups sections into ClauseClusters by topic:
+           - ip_work_product, liability_indemnity, non_compete,
+             termination_consequences, data_privacy, payment_terms,
+             representations_warranties, confidentiality, etc.
+        2. Assigns initial_depth per cluster based on:
+           - risk_surface signals from anatomy
+           - Contract type (employment -> focus on non-compete/IP)
+           - User's stated concerns
+        3. Sets escalation_trigger per cluster
+        4. Identifies skipped_sections (boilerplate: notices, counterparts, etc.)
+        5. Tracks unassigned_sections for coverage gate
+
+      Fallback: If anatomy metadata is too complex/ambiguous for .ai(),
+      escalate to a planner_harness that re-reads relevant sections.
+
+      Reference: Architecture doc Phase 3.
+
+      Acceptance criteria:
+        - Produces valid AnalysisPlan from sample IntakeResult + AnatomyResult
+        - All sections assigned to clusters or marked skipped/unassigned
+        - Depth assignments reflect risk_surface signals
+        - Escalation triggers set appropriately
+
+  - id: planner-tests
+    title: "Write tests for analysis planner"
+    kind: test
+    priority: 89
+    deps: [{ from: planner, kind: feeds_into }]
+    description: |
+      File: tests/test_planner.py
+
+      Test cases:
+        - SaaS agreement: IP, liability, indemnity clusters get thorough depth
+        - Employment agreement: non-compete, IP assignment clusters prioritized
+        - Simple NDA: fewer clusters, most at scan depth
+        - Complex contract: many risk_surface signals -> more thorough depths
+        - Boilerplate detection: notices, counterparts marked as skipped
+        - All sections accounted for (assigned + skipped + unassigned = total)
+
+  # === LAYER 2: Core analysis agents (PARALLELIZABLE) ===
+
+  - id: clause-analyst
+    title: "Implement clause analyst harness with inner loop + meta-prompting"
+    kind: code
+    priority: 80
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 4: Clause Review.
+
+      File: src/contract_af/agents/clause_analyst.py
+
+      Architecture (from design doc Phase 4):
+        This is the most complex agent. Each instance is a .harness() that
+        analyzes one ClauseCluster with adaptive depth.
+
+      Agent registration: "contract-af.clause_analyst"
+
+      The harness receives:
+        - cluster: ClauseCluster (sections to analyze, depth, triggers)
+        - anatomy: AnatomyResult (defined terms, cross-refs for context)
+        - intake: IntakeResult (contract type, jurisdiction for context)
+        - contract_text: full document (for tool-based navigation)
+
+      Inner Loop (self-adaptation):
+        1. Read assigned sections at initial_depth
+        2. If out-of-scope reference found -> follow it (max 3 follows)
+        3. If critical finding + escalation_trigger met -> re-analyze at escalated_depth
+        4. If no signal after N sections -> early exit
+        5. Emit findings to output as they're found
+
+      Meta-Prompting (spawn sub-agents):
+        When the analyst discovers something worth deeper investigation:
+        - Craft a specific prompt based on what was discovered
+        - Call "contract-af.definition_impact_analyzer" or
+          "contract-af.clause_deep_dive" with the crafted prompt
+        - Integrate sub-agent findings into own output
+        - Max 2 sub-agent spawns per analyst
+
+      Sub-agent registration: "contract-af.definition_impact_analyzer"
+        - Receives: dynamic prompt + relevant sections
+        - Returns: list[Finding]
+
+      Output: ClauseAnalysisResult (findings as rich text strings per archei rules -
+              consumed by Cross-Ref and Adversary LLMs downstream)
+
+      Reference: Architecture doc Phase 4, Meta-Prompting section.
+
+      Acceptance criteria:
+        - Analyzes assigned sections and produces findings
+        - Follows out-of-scope references (capped at 3)
+        - Escalates depth when trigger conditions met
+        - Early exits on no signal
+        - Spawns sub-agents via meta-prompting for complex discoveries
+        - Emits ClauseAnalysisResult
+
+  - id: clause-analyst-tests
+    title: "Write tests for clause analyst"
+    kind: test
+    priority: 79
+    deps: [{ from: clause-analyst, kind: feeds_into }]
+    description: |
+      File: tests/test_clause_analyst.py
+
+      Test cases:
+        - Standard analysis: finds risk in IP assignment clause
+        - Reference following: clause references out-of-scope definition, analyst follows
+        - Depth escalation: critical finding triggers re-analysis at thorough depth
+        - Early exit: boilerplate cluster with no findings exits after N sections
+        - Meta-prompting: broad definition triggers sub-agent spawn
+        - Budget cap: max 3 follows enforced, max 2 sub-agent spawns enforced
+        - Output format: findings are rich text strings (archei rules)
+
+  - id: cross-ref
+    title: "Implement cross-reference resolver (.harness(), streaming consumer)"
+    kind: code
+    priority: 80
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 5a: Cross-Reference Resolver.
+
+      File: src/contract_af/agents/cross_ref.py
+
+      Architecture (from design doc Phase 5a):
+        .harness() that consumes findings from asyncio.Queue as they arrive.
+
+      Agent registration: "contract-af.cross_ref_resolver"
+
+      The harness:
+        - Receives: findings_queue (asyncio.Queue), anatomy, contract_text
+        - Consumes findings as they arrive (streaming, not batch)
+        - For each new finding, checks against ALL previous findings for:
+          - Cross-clause interaction risks
+          - Contradictions between clauses
+          - Combined effects worse than individual effects
+        - When critical combination found -> spawns deep-dive sub-agent
+          via meta-prompting (max 3 spawns)
+
+      Sub-agent: "contract-af.combination_deep_dive"
+        - Receives: dynamic prompt describing the combination + relevant sections
+        - Returns: CombinationRisk
+
+      Output: list[CombinationRisk]
+
+      Reference: Architecture doc Phase 5a, Streaming Pipeline section.
+
+      Acceptance criteria:
+        - Consumes from asyncio.Queue
+        - Detects cross-clause interactions
+        - Spawns deep-dive sub-agents for critical combinations (max 3)
+        - Produces CombinationRisk findings
+
+  - id: adversary
+    title: "Implement adversary reviewer (.harness(), streaming consumer)"
+    kind: code
+    priority: 80
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 5b: Adversary Reviewer.
+
+      File: src/contract_af/agents/adversary.py
+
+      Architecture (from design doc Phase 5b):
+        .harness() that re-reads actual clause text from opposing perspective.
+
+      Agent registration: "contract-af.adversary_reviewer"
+
+      The harness:
+        - Receives: findings_queue (asyncio.Queue), anatomy, intake, contract_text
+        - Consumes findings as they arrive
+        - For each finding:
+          1. Reads the ACTUAL clause text (not just finding summary)
+          2. Checks: "Is this standard for this contract type?" -> FalsePositive
+          3. Asks: "How would opposing party USE this clause?" -> Exploitation
+          4. Looks for hidden traps the analyst missed
+        - Can spawn sub-agents for pattern discovery (e.g., survival clause analysis)
+          Max 2 sub-agent spawns.
+
+      Output: AdversaryResult(false_positives, hidden_traps, exploitation_scenarios,
+              uncovered_sections_with_traps)
+
+      Reference: Architecture doc Phase 5b.
+
+      Acceptance criteria:
+        - Correctly identifies false positives (standard clauses flagged as risks)
+        - Generates exploitation scenarios from opposing perspective
+        - Discovers hidden traps (e.g., survival clause combining multiple obligations)
+        - Reports uncovered_sections_with_traps for coverage gate
+
+  - id: gap-analyst
+    title: "Implement gap analyst (.harness())"
+    kind: code
+    priority: 80
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 5c: Gap Analysis.
+
+      File: src/contract_af/agents/gap_analyst.py
+
+      Architecture (from design doc Phase 5c):
+        .harness() that verifies missing clauses are truly absent.
+
+      Agent registration: "contract-af.gap_analyst"
+
+      The harness:
+        - Receives: intake, anatomy, list of clause types found by analysts
+        - Compares against expected clause inventory for this contract type
+        - For each potentially missing clause:
+          -> READS the contract to verify it's not present under a different name
+          -> Searches for the concept, not just the heading
+        - Reports: truly missing (verified absent), found elsewhere (different heading)
+
+      Output: GapResult(missing_clauses, verified_absent, found_elsewhere)
+
+      Reference: Architecture doc Phase 5c.
+
+      Acceptance criteria:
+        - Knows expected clauses per contract type
+        - Verifies absence by searching contract text
+        - Finds clauses hidden under different headings
+        - Distinguishes truly missing vs mislabeled
+
+  - id: review-layer-tests
+    title: "Write tests for review layer (cross-ref, adversary, gap)"
+    kind: test
+    priority: 79
+    deps:
+      - { from: cross-ref, kind: feeds_into }
+      - { from: adversary, kind: feeds_into }
+      - { from: gap-analyst, kind: feeds_into }
+    description: |
+      File: tests/test_review_layer.py
+
+      Test cases for Cross-Ref Resolver:
+        - Detects IP assignment + perpetual license combination risk
+        - Detects contradiction between termination clause and survival clause
+        - Spawns deep-dive for critical combination (max 3)
+        - Streaming: processes findings as they arrive
+
+      Test cases for Adversary Reviewer:
+        - Marks standard non-compete as false positive for NDA
+        - Generates exploitation scenario for broad IP clause
+        - Discovers hidden trap in survival clause
+        - Reports uncovered sections
+
+      Test cases for Gap Analyst:
+        - Detects missing limitation of liability in SaaS agreement
+        - Finds IP clause under "Proprietary Rights" heading (not "IP")
+        - Reports truly absent clauses vs mislabeled
+
+  # === LAYER 3: Pipeline components (PARALLELIZABLE) ===
+
+  - id: coverage-gate
+    title: "Implement coverage gate (.ai() with fallback)"
+    kind: code
+    priority: 70
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 5.5: Coverage Gate.
+
+      File: src/contract_af/agents/coverage.py
+
+      Architecture (from design doc Phase 5.5):
+        .ai() call with structured metadata input, binary decision output.
+
+      Agent registration: "contract-af.coverage_assessor"
+
+      The .ai() call:
+        Input (~500-1000 tokens of structured metadata):
+          - sections_analyzed vs total_sections
+          - analyst coverage_notes
+          - adversary uncovered_sections_with_traps
+          - anatomy risk_surface signals for unanalyzed sections
+        Output: CoverageAssessment
+
+      Outer loop: If not sufficient, return sections_to_analyze and
+      sections_to_deepen for next iteration. Max 2 iterations, max 3
+      new analysts per iteration.
+
+      Fallback: If metadata is ambiguous, escalate to harness that reads
+      the uncovered sections directly.
+
+      Reference: Architecture doc Phase 5.5.
+
+      Acceptance criteria:
+        - Returns is_sufficient=true when all sections covered
+        - Returns specific sections to analyze when gaps found
+        - Respects max 2 iterations
+        - Fallback triggers when metadata ambiguous
+
+  - id: synthesizer
+    title: "Implement risk synthesizer (.harness()) with programmatic scoring"
+    kind: code
+    priority: 70
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 6: Risk Synthesis.
+
+      File: src/contract_af/agents/synthesizer.py
+      File: src/contract_af/pipeline/scoring.py (programmatic scoring)
+
+      Architecture (from design doc Phase 6):
+        .harness() that processes findings in batches.
+
+      Agent registration: "contract-af.risk_synthesizer"
+
+      scoring.py (PURE CODE, no LLM):
+        def compute_risk_score(finding, adversary_data, cross_ref_data, jurisdiction):
+            score = SEVERITY_WEIGHTS[finding.severity]
+            if finding.clause_ref in cross_ref_data.combination_risks:
+                score *= 1.5
+            if finding.clause_ref in adversary_data.exploitation_scenarios:
+                score *= 1.3
+            if not is_enforceable(finding, jurisdiction):
+                score *= 0.3
+            return score
+
+        SEVERITY_WEIGHTS = {critical: 10, high: 7, medium: 4, low: 2, info: 0.5}
+
+      The harness:
+        1. Reads findings in batches (by risk category)
+        2. Applies adversary corrections (remove false positives, promote hidden traps)
+        3. Calls compute_risk_score() for each finding (programmatic, not LLM)
+        4. Uses LLM reasoning for negotiation strategy per high-priority finding
+        5. Produces overall deal assessment
+
+      Output: SynthesisResult (hybrid per archei rules:
+              scores as JSON for sorting, executive_summary as string for Report Writer LLM)
+
+      Reference: Architecture doc Phase 6.
+
+      Acceptance criteria:
+        - Scoring function is deterministic code (no LLM)
+        - Removes false positives from final rankings
+        - Promotes hidden traps from adversary
+        - Generates negotiation strategy via LLM for top findings
+        - Produces ranked findings sorted by composite score
+
+  - id: report-writer
+    title: "Implement report writer (.harness()) with multiple output formats"
+    kind: code
+    priority: 70
+    deps: [{ from: models, kind: feeds_into }]
+    description: |
+      Implement Phase 7: Report Generation.
+
+      File: src/contract_af/agents/report_writer.py
+
+      Architecture (from design doc Phase 7):
+        .harness() that generates report sections iteratively.
+
+      Agent registration: "contract-af.report_writer"
+
+      The harness:
+        - Receives: SynthesisResult
+        - Generates each section separately to maintain coherence:
+          1. Executive Summary (3-5 sentences)
+          2. Risk-Ranked Findings (per-finding: clause ref, risk, negotiation language)
+          3. Negotiation Playbook (per-finding: ask, counter, fallback)
+          4. Structured JSON (API output)
+
+      Output: ContractReport with all formats.
+
+      Reference: Architecture doc Phase 7.
+
+      Acceptance criteria:
+        - Generates valid Markdown report
+        - Generates valid JSON output
+        - Executive summary is concise (3-5 sentences)
+        - Negotiation playbook has ask/counter/fallback per finding
+        - All findings from synthesis appear in report
+
+  - id: synthesis-report-tests
+    title: "Write tests for coverage gate, synthesizer, and report writer"
+    kind: test
+    priority: 69
+    deps:
+      - { from: coverage-gate, kind: feeds_into }
+      - { from: synthesizer, kind: feeds_into }
+      - { from: report-writer, kind: feeds_into }
+    description: |
+      File: tests/test_synthesis_report.py
+
+      Coverage Gate tests:
+        - Sufficient coverage returns is_sufficient=true
+        - Gap detection returns specific sections
+        - Max iterations respected
+
+      Synthesizer tests:
+        - Scoring formula produces correct values
+        - False positives removed from rankings
+        - Hidden traps promoted
+        - Findings sorted by composite score
+        - Negotiation strategy generated for top findings
+
+      Report Writer tests:
+        - Markdown report contains all findings
+        - JSON output is valid and complete
+        - Executive summary length check
+        - Negotiation playbook completeness
+
+  # === LAYER 4: Pipeline orchestration (depends on all agents) ===
+
+  - id: pipeline
+    title: "Implement main pipeline orchestrator with streaming queue and parallel execution"
+    kind: code
+    priority: 60
+    deps:
+      - { from: intake, kind: feeds_into }
+      - { from: anatomy, kind: feeds_into }
+      - { from: planner, kind: feeds_into }
+      - { from: clause-analyst, kind: feeds_into }
+      - { from: cross-ref, kind: feeds_into }
+      - { from: adversary, kind: feeds_into }
+      - { from: gap-analyst, kind: feeds_into }
+      - { from: coverage-gate, kind: feeds_into }
+      - { from: synthesizer, kind: feeds_into }
+      - { from: report-writer, kind: feeds_into }
+    description: |
+      Wire all agents into the full pipeline with streaming and parallel execution.
+
+      File: src/contract_af/pipeline/orchestrator.py
+
+      The pipeline:
+        1. Phase 1: Intake (.ai() with fallback)
+        2. Phase 2: Anatomy (.harness()) - sequential, needs intake result
+        3. Phase 3: Analysis Planner (.ai()) - sequential, needs anatomy result
+        4. Phase 4: Clause Analysts (.harness() x N) - PARALLEL per cluster
+           -> emit findings to asyncio.Queue
+        5. Phase 5: Review Layer - PARALLEL, STREAMING from queue
+           5a. Cross-Ref Resolver (consumes queue)
+           5b. Adversary Reviewer (consumes queue)
+           5c. Gap Analyst (independent, reads contract)
+        6. Phase 5.5: Coverage Gate (.ai())
+           -> if gaps: spawn new analysts (back to Phase 4), max 2 iterations
+        7. Phase 6: Synthesis (.harness())
+        8. Phase 7: Report (.harness())
+
+      Key implementation details:
+        - asyncio.Queue for streaming between Phase 4 -> Phase 5
+        - asyncio.gather() for parallel Phase 4 analysts
+        - asyncio.gather() for parallel Phase 5 agents
+        - Coverage loop with iteration counter
+        - Total cost tracking across all phases
+        - Error handling: if one analyst fails, continue with others
+
+      Function: async def analyze_contract(document, user_context) -> ContractReport
+
+      Reference: Architecture doc full pipeline, Streaming Pipeline section.
+
+      Acceptance criteria:
+        - Full pipeline runs end-to-end
+        - Phase 4 analysts run in parallel
+        - Phase 5 agents consume streaming queue
+        - Coverage loop works (max 2 iterations)
+        - Returns ContractReport with all formats
+
+  - id: pipeline-tests
+    title: "Write integration tests for full pipeline"
+    kind: test
+    priority: 59
+    deps: [{ from: pipeline, kind: feeds_into }]
+    description: |
+      File: tests/test_pipeline.py
+
+      Integration test cases:
+        - End-to-end: simple NDA -> full report
+        - End-to-end: complex SaaS agreement -> full report
+        - Streaming: verify Phase 5 starts before Phase 4 completes
+        - Coverage loop: verify re-analysis on gaps
+        - Error resilience: one analyst fails, pipeline continues
+        - Cost tracking: total cost within expected bounds
+
+      Use mock AgentField app with realistic response fixtures.
+
+  # === LAYER 5: API & CLI (depends on pipeline) ===
+
+  - id: api
+    title: "Implement FastAPI endpoints and CLI entry point"
+    kind: code
+    priority: 50
+    deps: [{ from: pipeline, kind: feeds_into }]
+    description: |
+      Create the API and CLI for contract-af.
+
+      Files:
+        - src/contract_af/api.py (FastAPI app)
+        - src/contract_af/cli.py (CLI entry point)
+        - src/contract_af/utils/document_loader.py (PDF/DOCX/text loading)
+
+      API endpoints:
+        POST /analyze
+          - Accepts: file upload (PDF/DOCX/text) + user_context JSON
+          - Returns: ContractReport as JSON
+          - Async: returns job_id, poll for status
+
+        GET /analyze/{job_id}
+          - Returns: status + partial/complete results
+
+        GET /analyze/{job_id}/report
+          - Returns: Markdown report
+
+        GET /health
+          - Returns: service status
+
+      CLI:
+        contract-af analyze <file> [--context "your role, concerns"]
+        contract-af serve [--port 8000]
+
+      Document loader:
+        - PDF: use pdfplumber to extract text
+        - DOCX: use python-docx to extract text
+        - TXT: read directly
+        - Returns: full text + per-page text (for intake first-pages extraction)
+
+      AgentField registration:
+        - Register all agents with the control plane
+        - Use AGENTFIELD_SERVER env var
+
+      Reference: code/platform/agentfield/CLAUDE.md for SDK registration patterns.
+
+      Acceptance criteria:
+        - FastAPI app starts with uvicorn
+        - POST /analyze accepts file upload
+        - Document loader handles PDF, DOCX, TXT
+        - CLI works for local analysis
+        - All agents registered with AgentField
+
+  - id: api-tests
+    title: "Write tests for API endpoints and document loader"
+    kind: test
+    priority: 49
+    deps: [{ from: api, kind: feeds_into }]
+    description: |
+      File: tests/test_api.py
+
+      Test cases:
+        - POST /analyze with text file -> returns job_id
+        - GET /analyze/{job_id} -> returns status
+        - Document loader: PDF extraction
+        - Document loader: DOCX extraction
+        - Document loader: plain text
+        - Health endpoint returns 200
+        - Invalid file type returns 400
+        - Missing file returns 400
+
+  # === LAYER 6: Sample data and documentation ===
+
+  - id: sample-contracts
+    title: "Create sample contract fixtures for testing and demos"
+    kind: research
+    priority: 85
+    deps: [{ from: scaffold, kind: feeds_into }]
+    description: |
+      Create realistic sample contract text for testing all pipeline phases.
+
+      Files:
+        - tests/fixtures/sample_nda.txt (~3 pages, simple)
+        - tests/fixtures/sample_saas_agreement.txt (~20 pages, standard complexity)
+        - tests/fixtures/sample_employment.txt (~15 pages, IP/non-compete heavy)
+
+      Each fixture should have:
+        - Realistic section structure (numbered sections, subsections)
+        - Definitions section with defined terms
+        - Cross-references between sections
+        - At least 3 intentional risks to find:
+          - One obvious (broad non-compete, unlimited liability)
+          - One hidden (definition scope issue, survival clause trap)
+          - One combination (two clauses interacting badly)
+        - Standard boilerplate (notices, counterparts, amendments)
+
+      These are TEXT representations, not actual legal documents.
+      They should be detailed enough to exercise all pipeline phases.
+
+      Acceptance criteria:
+        - Each fixture is realistic and well-structured
+        - Known risks are documented (for test assertions)
+        - Cross-references are internally consistent
+        - Defined terms are used consistently
