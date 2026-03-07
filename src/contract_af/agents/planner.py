@@ -37,12 +37,17 @@ async def create_analysis_plan(
     AnalysisPlan
         Cluster assignments, skipped sections, and unassigned sections.
     """
+    import json as _json
+
     plan: AnalysisPlan = await app.ai(
-        prompt=PLANNER_PROMPT,
-        input={
-            "intake": intake.model_dump(),
-            "anatomy": anatomy.model_dump(),
-        },
+        system=PLANNER_PROMPT,
+        user=_json.dumps(
+            {
+                "intake": intake.model_dump(),
+                "anatomy": anatomy.model_dump(),
+            },
+            default=str,
+        ),
         schema=AnalysisPlan,
     )
 

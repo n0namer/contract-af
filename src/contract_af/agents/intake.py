@@ -21,11 +21,7 @@ FIRST_PAGES_CHAR_LIMIT = 3000
 
 def _needs_fallback(intake: IntakeResult) -> bool:
     """Determine whether the .ai() result requires harness escalation."""
-    return (
-        not intake.confident
-        or not intake.parties
-        or intake.contract_type == "unknown"
-    )
+    return not intake.confident or not intake.parties or intake.contract_type == "unknown"
 
 
 async def classify_contract(
@@ -51,20 +47,20 @@ async def classify_contract(
     """
     first_pages = document_text[:FIRST_PAGES_CHAR_LIMIT]
 
+    import json as _json
+
     intake: IntakeResult = await app.ai(
-        prompt=INTAKE_PROMPT,
-        input={"text": first_pages, "user_context": user_context},
+        system=INTAKE_PROMPT,
+        user=_json.dumps({"text": first_pages, "user_context": user_context}),
         schema=IntakeResult,
     )
 
     if _needs_fallback(intake):
         harness_result = await app.call(
             "contract-af.intake_harness",
-            input={
-                "document": document_text,
-                "partial_intake": intake.model_dump(),
-                "user_context": user_context,
-            },
+            document=document_text,
+            partial_intake=intake.model_dump(),
+            user_context=user_context,
         )
         # The harness may return a dict or an IntakeResult depending on
         # how the harness serialises its output.
@@ -73,8 +69,6 @@ async def classify_contract(
         elif isinstance(harness_result, IntakeResult):
             intake = harness_result
         else:
-            raise TypeError(
-                f"Unexpected harness response type: {type(harness_result)}"
-            )
+            raise TypeError(f"Unexpected harness response type: {type(harness_result)}")
 
     return intake

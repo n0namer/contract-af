@@ -139,12 +139,10 @@ async def analyze_gaps(
         # Ask harness to verify absence by reading contract
         verification = await app.call(
             "contract-af.gap_analyst",
-            input={
-                "clause_type": clause_type,
-                "aliases": aliases,
-                "contract_text": contract_text,
-                "existing_sections": [s.title for s in anatomy.sections],
-            },
+            clause_type=clause_type,
+            aliases=aliases,
+            contract_text=contract_text,
+            existing_sections=[s.title for s in anatomy.sections],
         )
 
         if isinstance(verification, dict):

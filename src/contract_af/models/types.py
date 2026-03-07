@@ -17,17 +17,44 @@ class Severity(str, Enum):
     LOW = "low"
     INFO = "info"
 
+    @classmethod
+    def _missing_(cls, value: object) -> Severity | None:  # noqa: N805
+        if isinstance(value, str):
+            lowered = value.lower()
+            for member in cls:
+                if member.value == lowered:
+                    return member
+        return None
+
 
 class Depth(str, Enum):
     SCAN = "scan"
     STANDARD = "standard"
     THOROUGH = "thorough"
 
+    @classmethod
+    def _missing_(cls, value: object) -> Depth | None:  # noqa: N805
+        if isinstance(value, str):
+            lowered = value.lower()
+            for member in cls:
+                if member.value == lowered:
+                    return member
+        return None
+
 
 class EscalationTrigger(str, Enum):
     ANY_CRITICAL = "any_critical_finding"
     MULTIPLE_HIGH = "multiple_high"
     NEVER = "never"
+
+    @classmethod
+    def _missing_(cls, value: object) -> EscalationTrigger | None:  # noqa: N805
+        if isinstance(value, str):
+            lowered = value.lower()
+            for member in cls:
+                if member.value == lowered:
+                    return member
+        return None
 
 
 # === Phase 1: Intake ===
@@ -88,7 +115,9 @@ class KeyDate(BaseModel):
 
 class RiskSignal(BaseModel):
     section: str
-    signal_type: str  # "heavy_cross_refs", "broad_definition", "unusual_length", "nested_conditions"
+    signal_type: (
+        str  # "heavy_cross_refs", "broad_definition", "unusual_length", "nested_conditions"
+    )
     description: str
     severity: Severity = Severity.MEDIUM
 
@@ -186,7 +215,9 @@ class CombinationRisk(BaseModel):
 class GapResult(BaseModel):
     missing_clauses: list[str]  # clause types expected but not found
     verified_absent: list[str]  # confirmed not in document under any name
-    found_elsewhere: list[dict[str, str]] = Field(default_factory=list)  # [{expected, actual_section}]
+    found_elsewhere: list[dict[str, str]] = Field(
+        default_factory=list
+    )  # [{expected, actual_section}]
 
 
 # === Phase 5.5: Coverage ===

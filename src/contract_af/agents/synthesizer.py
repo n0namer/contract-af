@@ -45,9 +45,7 @@ async def synthesize_findings(
     # Score and rank (PROGRAMMATIC - no LLM)
     scored: list[tuple[Finding, float]] = []
     for finding in active_findings:
-        score = compute_risk_score(
-            finding, adversary_result, combination_risks, jurisdiction
-        )
+        score = compute_risk_score(finding, adversary_result, combination_risks, jurisdiction)
         scored.append((finding, score))
 
     scored.sort(key=lambda x: x[1], reverse=True)
@@ -58,23 +56,15 @@ async def synthesize_findings(
         if score >= 5.0:
             strategy = await app.call(
                 "contract-af.risk_synthesizer",
-                input={
-                    "finding_description": finding.description,
-                    "clause_text": finding.clause_text,
-                    "severity": finding.severity.value,
-                    "jurisdiction": jurisdiction,
-                    "task": "generate_negotiation_strategy",
-                },
+                finding_description=finding.description,
+                clause_text=finding.clause_text,
+                severity=finding.severity.value,
+                jurisdiction=jurisdiction,
+                task="generate_negotiation_strategy",
             )
-            negotiation_text = (
-                strategy.get("strategy", "")
-                if isinstance(strategy, dict)
-                else ""
-            )
+            negotiation_text = strategy.get("strategy", "") if isinstance(strategy, dict) else ""
         else:
-            negotiation_text = (
-                "Low priority - monitor but no immediate action needed."
-            )
+            negotiation_text = "Low priority - monitor but no immediate action needed."
 
         ranked_findings.append(
             RankedFinding(
@@ -88,34 +78,24 @@ async def synthesize_findings(
     # Generate overall plan via LLM
     plan_result = await app.call(
         "contract-af.risk_synthesizer",
-        input={
-            "task": "generate_negotiation_plan",
-            "top_findings": [
-                {
-                    "description": rf.finding.description,
-                    "score": rf.composite_score,
-                }
-                for rf in ranked_findings[:10]
-            ],
-            "jurisdiction": jurisdiction,
-        },
+        task="generate_negotiation_plan",
+        top_findings=[
+            {
+                "description": rf.finding.description,
+                "score": rf.composite_score,
+            }
+            for rf in ranked_findings[:10]
+        ],
+        jurisdiction=jurisdiction,
     )
 
     negotiation_plan = NegotiationPlan(
-        priorities=(
-            plan_result.get("priorities", [])
-            if isinstance(plan_result, dict)
-            else []
-        ),
+        priorities=(plan_result.get("priorities", []) if isinstance(plan_result, dict) else []),
         fallback_positions=(
-            plan_result.get("fallback_positions", [])
-            if isinstance(plan_result, dict)
-            else []
+            plan_result.get("fallback_positions", []) if isinstance(plan_result, dict) else []
         ),
         deal_breakers=(
-            plan_result.get("deal_breakers", [])
-            if isinstance(plan_result, dict)
-            else []
+            plan_result.get("deal_breakers", []) if isinstance(plan_result, dict) else []
         ),
     )
 
@@ -155,15 +135,11 @@ async def synthesize_findings(
     # Executive summary via LLM (string per archei rules - consumed by Report Writer)
     summary_result = await app.call(
         "contract-af.risk_synthesizer",
-        input={
-            "task": "generate_executive_summary",
-            "overall_risk": overall.value,
-            "finding_count": len(ranked_findings),
-            "top_risks": [
-                rf.finding.description for rf in ranked_findings[:5]
-            ],
-            "recommendation": recommendation,
-        },
+        task="generate_executive_summary",
+        overall_risk=overall.value,
+        finding_count=len(ranked_findings),
+        top_risks=[rf.finding.description for rf in ranked_findings[:5]],
+        recommendation=recommendation,
     )
     executive_summary = (
         summary_result.get("summary", "")
