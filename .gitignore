@@ -30,3 +30,4 @@ env/
 .pytest_cache/
 .coverage
 htmlcov/
+_worktrees/
