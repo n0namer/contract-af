@@ -51,14 +51,61 @@ app = Agent(
 )
 
 
-def _unwrap_phase(result: object, name: str) -> dict[str, Any]:
+def _unwrap(result: object, name: str) -> object:
+    """Extract payload from control-plane envelope, raising on error."""
     if isinstance(result, dict):
-        if "output" in result and isinstance(result["output"], dict):
+        if "error" in result and isinstance(result["error"], dict):
+            message = (
+                result["error"].get("message")
+                or result["error"].get("detail")
+                or str(result["error"])
+            )
+            raise RuntimeError(f"{name} failed: {message}")
+        if "output" in result:
             return result["output"]
-        if "result" in result and isinstance(result["result"], dict):
+        if "result" in result:
             return result["result"]
-        return result
-    raise RuntimeError(f"{name} returned non-dict: {type(result)}")
+    return result
+
+
+def _as_dict(payload: object, name: str) -> dict[str, Any]:
+    """Ensure *payload* is a dict, raising descriptively if not."""
+    if not isinstance(payload, dict):
+        raise RuntimeError(f"{name} returned non-dict payload: {type(payload).__name__}")
+    return payload
+
+
+# ---------------------------------------------------------------------------
+# Pipeline helpers (inlined from deleted pipeline/orchestrator.py)
+# ---------------------------------------------------------------------------
+
+MAX_COVERAGE_ITERATIONS = 2
+
+
+def _collect_found_types(analysis_results: list) -> list[str]:
+    """Extract unique clause categories from all analysis results."""
+    categories: set[str] = set()
+    for result in analysis_results:
+        for finding in result.findings:
+            categories.add(finding.category)
+    return sorted(categories)
+
+
+def _make_gap_clusters(section_numbers: list[str]) -> list:
+    """Create ad-hoc clusters for coverage gap re-analysis."""
+    from .models import ClauseCluster, Depth, EscalationTrigger
+
+    if not section_numbers:
+        return []
+    return [
+        ClauseCluster(
+            name=f"coverage_gap_{num}",
+            sections=[num],
+            initial_depth=Depth.STANDARD,
+            escalation_trigger=EscalationTrigger.ANY_CRITICAL,
+        )
+        for num in section_numbers
+    ]
 
 
 @app.reasoner()
@@ -69,11 +116,6 @@ async def analyze(
     """Main entry point — runs the full 7-phase pipeline via phase reasoners."""
     from .agents.coverage import assess_coverage
     from .models import AdversaryResult, AnatomyResult, ClauseAnalysisResult
-    from .pipeline.orchestrator import (
-        MAX_COVERAGE_ITERATIONS,
-        _collect_found_types,
-        _make_gap_clusters,
-    )
 
     start = time.monotonic()
     node_id = os.getenv("NODE_ID", "contract-af")
@@ -84,17 +126,17 @@ async def analyze(
     intake_raw = await app.call(
         f"{node_id}.intake_phase", document_text=document_text, user_context=user_context
     )
-    intake = _unwrap_phase(intake_raw, "intake_phase")
+    intake = _as_dict(_unwrap(intake_raw, "intake_phase"), "intake_phase")
 
     app.note("Phase 2: Anatomy", tags=["phase", "anatomy"])
     anatomy_raw = await app.call(
         f"{node_id}.anatomy_phase", document_text=document_text, intake=intake
     )
-    anatomy = _unwrap_phase(anatomy_raw, "anatomy_phase")
+    anatomy = _as_dict(_unwrap(anatomy_raw, "anatomy_phase"), "anatomy_phase")
 
     app.note("Phase 3: Planner", tags=["phase", "planner"])
     plan_raw = await app.call(f"{node_id}.planner_phase", intake=intake, anatomy=anatomy)
-    plan = _unwrap_phase(plan_raw, "planner_phase")
+    plan = _as_dict(_unwrap(plan_raw, "planner_phase"), "planner_phase")
 
     all_analysis_results: list[dict[str, Any]] = []
     all_findings: list[dict[str, Any]] = []
@@ -132,7 +174,9 @@ async def analyze(
             anatomy=anatomy,
             clusters=clusters_to_analyze,
         )
-        analysis_payload = _unwrap_phase(analysis_raw, "clause_analysis_phase")
+        analysis_payload = _as_dict(
+            _unwrap(analysis_raw, "clause_analysis_phase"), "clause_analysis_phase"
+        )
 
         iteration_results = cast(
             "list[dict[str, Any]]",
@@ -156,7 +200,7 @@ async def analyze(
             analysis_results=iteration_results,
             found_clause_types=found_types,
         )
-        review_payload = _unwrap_phase(review_raw, "review_phase")
+        review_payload = _as_dict(_unwrap(review_raw, "review_phase"), "review_phase")
 
         combination_risks.extend(
             cast("list[dict[str, Any]]", review_payload.get("combination_risks", []))
@@ -188,7 +232,7 @@ async def analyze(
         combination_risks=combination_risks,
         jurisdiction=intake.get("jurisdiction", ""),
     )
-    synthesis = _unwrap_phase(synthesis_raw, "synthesis_phase")
+    synthesis = _as_dict(_unwrap(synthesis_raw, "synthesis_phase"), "synthesis_phase")
 
     app.note("Phase 7: Report", tags=["phase", "report"])
     report_raw = await app.call(
@@ -196,7 +240,7 @@ async def analyze(
         synthesis=synthesis,
         intake=intake,
     )
-    report = _unwrap_phase(report_raw, "report_phase")
+    report = _as_dict(_unwrap(report_raw, "report_phase"), "report_phase")
 
     elapsed = time.monotonic() - start
     report["metadata"] = {

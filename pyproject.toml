@@ -12,8 +12,6 @@ dependencies = [
     "pydantic>=2.0",
     "fastapi>=0.100",
     "uvicorn>=0.20",
-    "python-docx>=0.8",
-    "pdfplumber>=0.9",
     "python-dotenv>=1.0",
 ]
 
@@ -27,8 +25,7 @@ dev = [
 ]
 
 [project.scripts]
-contract-af = "contract_af.cli:main"
-contract-af-agent = "contract_af.app:main"
+contract-af = "contract_af.app:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
