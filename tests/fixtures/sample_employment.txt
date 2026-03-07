@@ -1,0 +1,476 @@
+EMPLOYMENT AGREEMENT
+
+This Employment Agreement ("Agreement") is entered into as of March 1, 2026
+(the "Effective Date"), by and between:
+
+GlobalTech Corp., a Delaware corporation, with its principal place of business
+at 200 Park Avenue, 38th Floor, New York, New York 10166 ("Employer" or the
+"Company"); and
+
+Jordan A. Mitchell, an individual residing at 445 West 82nd Street, Apt. 7C,
+New York, New York 10024 ("Employee").
+
+Employer and Employee are each referred to herein as a "Party" and collectively
+as the "Parties."
+
+WHEREAS, Employer is a global technology company engaged in the development,
+licensing, and sale of enterprise software solutions, artificial intelligence
+platforms, cloud infrastructure services, and related technologies (the
+"Business"); and
+
+WHEREAS, Employer desires to employ Employee, and Employee desires to accept
+such employment, on the terms and conditions set forth herein;
+
+NOW, THEREFORE, in consideration of the mutual covenants, promises, and
+representations set forth herein, and for other good and valuable consideration,
+the receipt and sufficiency of which are hereby acknowledged, the Parties agree
+as follows:
+
+
+1. POSITION AND DUTIES
+
+1.1 Position. Employer hereby employs Employee as Senior Staff Engineer,
+reporting to the Vice President of Engineering or such other person as Employer
+may designate from time to time.
+
+1.2 Duties. Employee shall perform such duties and responsibilities as are
+customarily associated with the position of Senior Staff Engineer, including
+software architecture, system design, technical leadership, code review, and
+mentorship. Employee shall also perform such additional duties as may be
+reasonably assigned by Employer from time to time, consistent with Employee's
+position, skills, and experience.
+
+1.3 Full-Time Employment. Employee shall devote substantially all of Employee's
+working time, attention, energy, and best efforts to the performance of
+Employee's duties under this Agreement. Employee shall not engage in any other
+employment, consulting, or business activity during the term of this Agreement
+without the prior written consent of Employer, whether or not such activity is
+pursued for profit.
+
+1.4 Compliance. Employee shall comply with all policies, procedures, rules, and
+regulations established by Employer from time to time, as communicated to
+Employee in the Employee Handbook or otherwise.
+
+1.5 Place of Employment. Employee's primary place of employment shall be
+Employer's offices in New York, New York, subject to reasonable travel as
+required by Employee's duties.
+
+
+2. COMPENSATION AND BENEFITS
+
+2.1 Base Salary. Employer shall pay Employee an annual base salary of Two
+Hundred Forty Thousand Dollars ($240,000.00), payable in accordance with
+Employer's standard payroll schedule and subject to applicable withholdings and
+deductions ("Base Salary"). Employee's Base Salary shall be reviewed annually
+by Employer, but Employer shall have no obligation to increase the Base Salary.
+
+2.2 Annual Bonus. Employee shall be eligible to receive an annual performance
+bonus of up to twenty-five percent (25%) of Employee's Base Salary, based on
+the achievement of individual and company performance objectives as determined
+by Employer in its sole discretion. The annual bonus, if any, shall be paid
+within ninety (90) days following the end of the applicable calendar year.
+Employee must be actively employed by Employer on the date the bonus is paid
+to be eligible to receive such bonus. No partial or prorated bonus shall be
+paid if Employee's employment terminates prior to the bonus payment date.
+
+2.3 Equity. Subject to the approval of Employer's Board of Directors, Employee
+shall be granted a stock option to purchase Fifty Thousand (50,000) shares of
+Employer's common stock at the fair market value on the date of grant. Such
+stock option shall vest over four (4) years, with twenty-five percent (25%)
+vesting on the first anniversary of the Effective Date and the remainder
+vesting in equal monthly installments over the following thirty-six (36) months,
+subject to Employee's continued employment with Employer. The stock option
+shall be subject to the terms and conditions of Employer's Stock Incentive Plan
+and the applicable Stock Option Agreement.
+
+2.4 Benefits. During the term of this Agreement, Employee shall be eligible to
+participate in all employee benefit programs and plans offered by Employer to
+its similarly situated employees, in accordance with the terms and conditions
+of such plans and programs, including health insurance, dental insurance,
+vision insurance, life insurance, disability insurance, and a 401(k) retirement
+savings plan with employer matching.
+
+2.5 Paid Time Off. Employee shall be entitled to twenty (20) days of paid time
+off per calendar year, to be used in accordance with Employer's PTO policy.
+Unused PTO shall not carry over to the following year and shall not be paid out
+upon termination, except as required by applicable law.
+
+2.6 Expense Reimbursement. Employer shall reimburse Employee for all reasonable
+and documented business expenses incurred by Employee in the performance of
+Employee's duties, in accordance with Employer's expense reimbursement policy
+and subject to the submission of appropriate documentation.
+
+
+3. DEFINITIONS
+
+3.1 "Confidential Information" means any and all non-public information relating
+to Employer or its Business, whether written, oral, electronic, or visual,
+including but not limited to: trade secrets; proprietary data; inventions
+(whether or not patentable); algorithms; source code; object code; software
+designs; system architectures; technical specifications; research and
+development activities; product roadmaps; business plans and strategies;
+financial data and projections; customer and prospect lists; customer data;
+pricing information; marketing plans; vendor and supplier information; employee
+information; merger and acquisition activities; and any other information that
+Employer designates as confidential or that a reasonable person would understand
+to be confidential given the nature of the information and the circumstances of
+disclosure.
+
+3.2 "Inventions" means any and all inventions, discoveries, improvements,
+innovations, ideas, concepts, techniques, methods, processes, formulas,
+algorithms, software, code, programs, applications, systems, architectures,
+designs, works of authorship, documentation, know-how, data, trade secrets,
+and other intellectual property or materials, whether or not patentable or
+copyrightable, whether or not reduced to practice, and whether or not related
+to Employer's business, that are created, conceived, developed, discovered,
+made, or reduced to practice by Employee, either alone or jointly with others,
+during the term of Employee's employment with Employer.
+
+3.3 "Competing Business" means any person, entity, or enterprise that is
+engaged in, or is preparing to engage in, the development, licensing, sale,
+or provision of enterprise software solutions, artificial intelligence
+platforms, cloud infrastructure services, machine learning tools, data
+analytics platforms, or any other products or services that are competitive
+with or substantially similar to any products or services offered, developed,
+or under development by Employer or any of its Affiliates at any time during
+the twelve (12) months preceding Employee's termination of employment.
+
+3.4 "Affiliate" means any entity that directly or indirectly controls, is
+controlled by, or is under common control with Employer, where "control" means
+the ownership of more than fifty percent (50%) of the voting securities or
+equivalent ownership interest.
+
+
+4. INTELLECTUAL PROPERTY ASSIGNMENT
+
+4.1 Assignment of Inventions. Employee hereby irrevocably assigns and transfers
+to Employer, and agrees to assign and transfer to Employer, all of Employee's
+right, title, and interest in and to all Inventions, including all patent
+rights, copyrights, trade secret rights, trademark rights, and all other
+intellectual property rights therein. This assignment is effective automatically
+upon creation, conception, or development of any Invention, without the need
+for any further action by Employee.
+
+4.2 Scope. The assignment set forth in Section 4.1 applies to all Inventions,
+regardless of whether such Inventions are: (a) created during working hours or
+outside working hours; (b) created at Employer's premises or elsewhere;
+(c) created using Employer's equipment, supplies, or resources, or Employee's
+own equipment, supplies, or resources; (d) related to Employer's current or
+anticipated business, research, or development activities; or (e) related to
+Employee's job duties or responsibilities.
+
+4.3 Disclosure. Employee shall promptly and fully disclose to Employer all
+Inventions, whether or not Employee believes such Inventions are subject to
+this Agreement. Employee shall maintain adequate and current written records
+of all Inventions, which records shall be the property of Employer.
+
+4.4 Assistance. Employee agrees to cooperate with and assist Employer, at
+Employer's expense, in obtaining and enforcing Employer's rights in and to the
+Inventions in any and all countries. Employee shall execute any and all
+applications, assignments, and other documents that Employer may reasonably
+request in connection therewith. If Employee is unable or unwilling to execute
+such documents, Employee hereby irrevocably appoints Employer as Employee's
+attorney-in-fact, with full power of substitution, to execute such documents
+on Employee's behalf. This appointment is coupled with an interest and shall
+survive Employee's death or incapacity.
+
+4.5 Works Made for Hire. Employee acknowledges that all works of authorship
+created by Employee within the scope of Employee's employment, including
+software code, documentation, designs, and other materials, are "works made
+for hire" as defined under the United States Copyright Act (17 U.S.C. Section
+101). To the extent that any such work is determined not to be a work made for
+hire, Employee hereby assigns and transfers to Employer all right, title, and
+interest in and to such work, including all copyrights therein.
+
+4.6 Moral Rights. To the fullest extent permitted by applicable law, Employee
+hereby waives and agrees not to assert any moral rights, rights of attribution,
+rights of integrity, or any other rights of a similar nature that Employee may
+have in any Inventions or works of authorship assigned to Employer under this
+Agreement.
+
+
+5. CONFIDENTIALITY
+
+5.1 Non-Disclosure. During the term of Employee's employment and at all times
+thereafter in perpetuity, Employee shall hold all Confidential Information in
+strict confidence and shall not, directly or indirectly, disclose, publish,
+communicate, or make available any Confidential Information to any person or
+entity, except: (a) as required in the performance of Employee's duties for
+Employer; (b) with the prior written consent of Employer; or (c) as required
+by applicable law, regulation, or court order, provided that Employee gives
+Employer prompt written notice of such requirement prior to disclosure (to the
+extent legally permissible) and cooperates with Employer's efforts to obtain a
+protective order.
+
+5.2 Non-Use. Employee shall not use any Confidential Information for any
+purpose other than the performance of Employee's duties for Employer. Employee
+shall not use Confidential Information for Employee's own benefit or for the
+benefit of any third party.
+
+5.3 Return of Materials. Upon the termination of Employee's employment for any
+reason, or upon Employer's request at any time, Employee shall immediately
+return to Employer all documents, files, records, materials, equipment, and
+other property of Employer in Employee's possession or control, including all
+copies of Confidential Information in any form or medium. Employee shall also
+permanently delete all Confidential Information from any personal devices,
+accounts, or storage media.
+
+5.4 Third-Party Information. Employee represents that Employee's performance of
+duties under this Agreement will not require Employee to disclose or use any
+confidential or proprietary information of any former employer or third party.
+Employee shall not bring to Employer or use in the performance of duties any
+documents, materials, or other property belonging to any former employer or
+third party, unless expressly authorized by such former employer or third party.
+
+5.5 Defend Trade Secrets Act Notice. Pursuant to the Defend Trade Secrets Act
+of 2016 (18 U.S.C. Section 1833(b)), Employee shall not be held criminally or
+civilly liable under any federal or state trade secret law for the disclosure
+of a trade secret that: (a) is made in confidence to a federal, state, or local
+government official, or to an attorney, solely for the purpose of reporting or
+investigating a suspected violation of law; or (b) is made in a complaint or
+other document filed in a lawsuit or other proceeding, if such filing is made
+under seal.
+
+
+6. NON-COMPETITION
+
+6.1 Non-Compete Covenant. During the term of Employee's employment with
+Employer and for a period of twenty-four (24) months following the termination
+of Employee's employment for any reason (the "Restricted Period"), Employee
+shall not, directly or indirectly, whether as an employee, officer, director,
+partner, member, shareholder, consultant, contractor, advisor, agent, or in
+any other capacity:
+
+    (a) engage in, be employed by, consult for, or provide services to any
+    Competing Business;
+
+    (b) own, manage, operate, or control any Competing Business, or
+    participate in the ownership, management, operation, or control of any
+    Competing Business; or
+
+    (c) assist any person or entity in engaging in any activity that would
+    constitute a violation of this Section 6 if undertaken by Employee directly.
+
+6.2 Geographic Scope. The restrictions set forth in Section 6.1 shall apply on
+a worldwide basis, in recognition of the fact that Employer conducts business
+globally and that Employee has access to Confidential Information and customer
+relationships that extend across all geographic regions in which Employer
+operates or plans to operate.
+
+6.3 Exclusion. Notwithstanding the foregoing, Employee may own up to one
+percent (1%) of the outstanding shares of any publicly traded company, provided
+that Employee does not otherwise participate in the management, operations, or
+governance of such company.
+
+6.4 Acknowledgment. Employee acknowledges that: (a) Employee's services are
+unique and extraordinary; (b) Employee will have access to Confidential
+Information and key customer and business relationships; (c) the restrictions
+in this Section 6 are reasonable and necessary to protect Employer's legitimate
+business interests; and (d) any violation of these restrictions would cause
+irreparable harm to Employer for which monetary damages would be an inadequate
+remedy.
+
+
+7. NON-SOLICITATION
+
+7.1 Non-Solicitation of Employees. During the Restricted Period, Employee shall
+not, directly or indirectly, solicit, recruit, hire, engage, or attempt to
+solicit, recruit, hire, or engage any person who is, or was within the six (6)
+months preceding such solicitation, an employee, officer, or contractor of
+Employer or any of its Affiliates, regardless of whether Employee had direct
+contact with such person during Employee's employment.
+
+7.2 Non-Solicitation of Customers. During the Restricted Period, Employee shall
+not, directly or indirectly, solicit, contact, or attempt to solicit or contact
+any customer, client, vendor, supplier, or business partner of Employer or any
+of its Affiliates, for the purpose of: (a) providing products or services
+competitive with those offered by Employer; (b) diverting or taking away
+business from Employer; or (c) inducing such person or entity to cease or
+reduce its business relationship with Employer. This restriction applies to all
+customers and clients of Employer, including those with whom Employee did not
+have direct contact or responsibility during Employee's employment.
+
+7.3 Non-Interference. During the Restricted Period, Employee shall not, directly
+or indirectly, encourage, induce, or attempt to encourage or induce any
+employee, contractor, consultant, customer, client, vendor, or supplier of
+Employer to terminate, reduce, or adversely modify its relationship with
+Employer.
+
+
+8. TERM AND TERMINATION
+
+8.1 At-Will Employment. Employee's employment with Employer is "at will," which
+means that either Party may terminate the employment relationship at any time,
+for any reason or no reason, with or without cause, and with or without prior
+notice, subject to the provisions of this Section 8.
+
+8.2 Termination by Employer for Cause. Employer may terminate Employee's
+employment immediately for Cause. "Cause" means: (a) Employee's material breach
+of this Agreement or any other agreement with Employer; (b) Employee's
+conviction of, or plea of guilty or nolo contendere to, any felony or any crime
+involving moral turpitude, fraud, or dishonesty; (c) Employee's willful
+misconduct, gross negligence, or material failure to perform Employee's duties;
+(d) Employee's violation of any material Employer policy; (e) Employee's fraud,
+embezzlement, misappropriation, or theft relating to Employer or its assets; or
+(f) Employee's material failure to cooperate with any investigation by Employer
+or any governmental authority.
+
+8.3 Termination by Employer Without Cause. Employer may terminate Employee's
+employment without Cause at any time by providing Employee with thirty (30)
+days' prior written notice or pay in lieu of notice.
+
+8.4 Termination by Employee. Employee may terminate employment at any time by
+providing Employer with at least thirty (30) days' prior written notice.
+Employer may, in its sole discretion, waive all or any portion of such notice
+period and accelerate the effective date of termination.
+
+8.5 Death or Disability. Employee's employment shall terminate automatically
+upon Employee's death. Employer may terminate Employee's employment upon
+Employee's Disability. "Disability" means Employee's inability to perform the
+essential functions of Employee's position, with or without reasonable
+accommodation, for a period of ninety (90) consecutive days or one hundred
+twenty (120) days in any twelve (12) month period, as determined by a physician
+selected by Employer.
+
+
+9. SEVERANCE
+
+9.1 Severance Payments. If Employer terminates Employee's employment without
+Cause pursuant to Section 8.3, and provided that Employee: (a) executes and
+does not revoke a general release of claims in a form acceptable to Employer
+(the "Release") within the time period specified therein; and (b) complies with
+all post-employment obligations under this Agreement, including Sections 4, 5,
+6, and 7, Employer shall provide Employee with the following severance benefits:
+
+    (i) Continuation of Employee's Base Salary for a period of six (6) months
+    following the effective date of termination ("Severance Period"), payable
+    in accordance with Employer's regular payroll schedule;
+
+    (ii) A lump sum payment equal to a prorated portion of Employee's target
+    annual bonus for the year of termination, based on the number of days
+    Employee was employed during such year, payable within thirty (30) days
+    following the effective date of the Release; and
+
+    (iii) If Employee timely elects to continue health insurance coverage under
+    COBRA, Employer shall pay the employer portion of the COBRA premiums for
+    Employee and Employee's eligible dependents during the Severance Period or
+    until Employee becomes eligible for coverage through another employer's
+    plan, whichever occurs first.
+
+9.2 No Severance for Other Terminations. Employee shall not be entitled to any
+severance benefits if Employee's employment is terminated: (a) by Employer for
+Cause; (b) by Employee voluntarily; (c) due to Employee's death or Disability;
+or (d) for any reason other than termination by Employer without Cause.
+
+9.3 Mitigation. Employee shall have no obligation to mitigate damages by
+seeking other employment during the Severance Period. However, severance
+payments shall be reduced by the amount of any compensation earned by Employee
+from another employer during the Severance Period.
+
+9.4 Sole Remedy. The severance benefits described in this Section 9 shall
+constitute Employee's sole and exclusive remedy for any claim arising out of or
+relating to the termination of Employee's employment.
+
+
+10. GOVERNING LAW AND DISPUTE RESOLUTION
+
+10.1 Governing Law. This Agreement shall be governed by and construed in
+accordance with the laws of the State of New York, without regard to its
+conflict of laws principles.
+
+10.2 Jurisdiction. Any legal action or proceeding arising out of or relating to
+this Agreement shall be brought exclusively in the federal or state courts
+located in the Borough of Manhattan, City and State of New York, and each Party
+irrevocably submits to the personal jurisdiction and venue of such courts.
+
+10.3 Equitable Relief. Employee acknowledges that any breach or threatened
+breach of Sections 4, 5, 6, or 7 of this Agreement would cause irreparable
+harm to Employer for which monetary damages would be an inadequate remedy.
+Accordingly, Employer shall be entitled to seek equitable relief, including
+temporary and permanent injunctions and specific performance, in addition to
+any other remedies available at law or in equity, without the necessity of
+proving actual damages or posting a bond or other security.
+
+
+11. SURVIVAL
+
+11.1 The following provisions shall survive the expiration or termination of
+this Agreement and Employee's employment for any reason: Section 3
+(Definitions), Section 4 (Intellectual Property Assignment), Section 5
+(Confidentiality), Section 6 (Non-Competition), Section 7 (Non-Solicitation),
+Section 9 (Severance, to the extent of accrued obligations), Section 10
+(Governing Law and Dispute Resolution), this Section 11 (Survival), and
+Section 12 (Miscellaneous).
+
+
+12. MISCELLANEOUS
+
+12.1 Entire Agreement. This Agreement constitutes the entire agreement between
+the Parties with respect to the subject matter hereof and supersedes all prior
+and contemporaneous agreements, understandings, negotiations, and discussions,
+whether oral or written. Employee acknowledges that Employee has not relied upon
+any representations, promises, or agreements not expressly set forth herein.
+
+12.2 Amendments. This Agreement may not be amended or modified except by a
+written instrument signed by both Parties.
+
+12.3 Severability. If any provision of this Agreement is held to be invalid,
+illegal, or unenforceable by a court of competent jurisdiction, the remaining
+provisions shall continue in full force and effect. If any restriction in
+Sections 6 or 7 is found to be unreasonable or unenforceable, the court shall
+modify such restriction to the minimum extent necessary to make it reasonable
+and enforceable.
+
+12.4 Waiver. No failure or delay by either Party in exercising any right, power,
+or remedy under this Agreement shall operate as a waiver thereof.
+
+12.5 Assignment. Employee may not assign or transfer this Agreement or any
+rights or obligations hereunder without the prior written consent of Employer.
+Employer may freely assign this Agreement to any successor entity in connection
+with a merger, acquisition, or sale of all or substantially all of Employer's
+assets.
+
+12.6 Notices. All notices under this Agreement shall be in writing and shall be
+deemed given when delivered personally, sent by confirmed email, or sent by
+certified mail, return receipt requested, to the addresses set forth above
+or to such other address as a Party may designate by written notice.
+
+12.7 Counterparts. This Agreement may be executed in counterparts, each of
+which shall be deemed an original, and all of which together shall constitute
+one and the same instrument.
+
+12.8 Section Headings. The section headings in this Agreement are for
+convenience of reference only and shall not affect the interpretation or
+construction of this Agreement.
+
+12.9 No Third-Party Beneficiaries. This Agreement is intended solely for the
+benefit of the Parties and their permitted successors and assigns, and shall
+not confer any rights or remedies upon any third party.
+
+12.10 Acknowledgment. Employee acknowledges that Employee has read this
+Agreement in its entirety, understands its terms and conditions, has had the
+opportunity to consult with legal counsel, and is entering into this Agreement
+voluntarily and without duress.
+
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the
+Effective Date.
+
+GLOBALTECH CORP.                        EMPLOYEE
+
+By: ___________________________         ___________________________
+Name: Rebecca Liu                       Jordan A. Mitchell
+Title: Chief People Officer
+Date: March 1, 2026                     Date: March 1, 2026
+
+
+EXHIBIT A — PRIOR INVENTIONS DISCLOSURE
+
+Employee represents that, as of the Effective Date, Employee has no prior
+inventions, discoveries, original works of authorship, developments,
+improvements, or trade secrets that Employee wishes to exclude from the scope
+of this Agreement.
+
+Employee initials: ______
+
+Date: ______
