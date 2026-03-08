@@ -15,6 +15,8 @@ from pydantic import BaseModel, Field
 
 from contract_af.models import AnatomyResult, GapResult, IntakeResult
 
+MAX_GAP_VERIFICATIONS = 10
+
 
 class _ExpectedClauses(BaseModel):
     expected: list[str] = Field(default_factory=list)
@@ -59,7 +61,7 @@ async def analyze_gaps(
     found_lower = {c.lower() for c in found_clause_types}
     potentially_missing = [
         clause for clause in expected_result.expected if clause.lower() not in found_lower
-    ]
+    ][:MAX_GAP_VERIFICATIONS]
 
     missing: list[str] = []
     verified_absent: list[str] = []

@@ -79,7 +79,8 @@ def _as_dict(payload: object, name: str) -> dict[str, Any]:
 # Pipeline helpers (inlined from deleted pipeline/orchestrator.py)
 # ---------------------------------------------------------------------------
 
-MAX_COVERAGE_ITERATIONS = 2
+MAX_COVERAGE_ITERATIONS = 2  # Hard cap: max 3 total iterations (0, 1, 2)
+MAX_PIPELINE_TIMEOUT_S = 1800  # 30-minute hard wall-clock limit
 
 
 def _collect_found_types(analysis_results: list) -> list[str]:
@@ -108,6 +109,43 @@ def _make_gap_clusters(section_numbers: list[str]) -> list:
     ]
 
 
+def _force_partial_report(
+    intake: dict[str, Any],
+    all_findings: list[dict[str, Any]],
+    combination_risks: list[dict[str, Any]],
+    adversary_result: dict[str, Any] | None,
+    elapsed: float,
+    iterations_run: int,
+    all_analysis_results: list[dict[str, Any]],
+    reason: str,
+) -> dict[str, Any]:
+    """Build a partial report from whatever results we have when hitting a budget cap."""
+    return {
+        "executive_summary": f"Analysis terminated early: {reason}. Partial results below.",
+        "risk_report_md": "",
+        "negotiation_playbook": "",
+        "structured_json": {
+            "findings": all_findings,
+            "combination_risks": combination_risks,
+            "adversary_result": adversary_result or {},
+            "overall_risk_profile": {
+                "overall_risk": "unknown",
+                "category_scores": {},
+                "deal_recommendation": "incomplete_analysis",
+            },
+        },
+        "metadata": {
+            "elapsed_seconds": round(elapsed, 2),
+            "coverage_iterations": iterations_run,
+            "total_findings": len(all_findings),
+            "clusters_analyzed": len(all_analysis_results),
+            "combination_risks": len(combination_risks),
+            "terminated_early": True,
+            "termination_reason": reason,
+        },
+    }
+
+
 @app.reasoner()
 async def analyze(
     document_text: str,
@@ -120,127 +158,181 @@ async def analyze(
     start = time.monotonic()
     node_id = os.getenv("NODE_ID", "contract-af")
 
+    def _check_timeout() -> None:
+        elapsed = time.monotonic() - start
+        if elapsed > MAX_PIPELINE_TIMEOUT_S:
+            raise TimeoutError(f"Pipeline exceeded {MAX_PIPELINE_TIMEOUT_S}s wall-clock limit")
+
     app.note("Starting Contract-AF analysis pipeline", tags=["analyze", "start"])
-
-    app.note("Phase 1: Intake", tags=["phase", "intake"])
-    intake_raw = await app.call(
-        f"{node_id}.intake_phase", document_text=document_text, user_context=user_context
-    )
-    intake = _as_dict(_unwrap(intake_raw, "intake_phase"), "intake_phase")
-
-    app.note("Phase 2: Anatomy", tags=["phase", "anatomy"])
-    anatomy_raw = await app.call(
-        f"{node_id}.anatomy_phase", document_text=document_text, intake=intake
-    )
-    anatomy = _as_dict(_unwrap(anatomy_raw, "anatomy_phase"), "anatomy_phase")
-
-    app.note("Phase 3: Planner", tags=["phase", "planner"])
-    plan_raw = await app.call(f"{node_id}.planner_phase", intake=intake, anatomy=anatomy)
-    plan = _as_dict(_unwrap(plan_raw, "planner_phase"), "planner_phase")
 
     all_analysis_results: list[dict[str, Any]] = []
     all_findings: list[dict[str, Any]] = []
     combination_risks: list[dict[str, Any]] = []
     adversary_result: dict[str, Any] | None = None
-    coverage = None
     iterations_run = 0
 
-    anatomy_obj = AnatomyResult(**anatomy)
-
-    for iteration in range(MAX_COVERAGE_ITERATIONS + 1):
-        iterations_run = iteration + 1
-        clusters_to_analyze = (
-            plan.get("clusters", [])
-            if iteration == 0
-            else [
-                cluster.model_dump()
-                for cluster in _make_gap_clusters(
-                    cast("Any", coverage).sections_to_analyze
-                    + cast("Any", coverage).sections_to_deepen
-                )
-            ]
+    try:
+        _check_timeout()
+        app.note("Phase 1: Intake", tags=["phase", "intake"])
+        intake_raw = await app.call(
+            f"{node_id}.intake_phase", document_text=document_text, user_context=user_context
         )
+        intake = _as_dict(_unwrap(intake_raw, "intake_phase"), "intake_phase")
 
-        if not clusters_to_analyze:
-            break
-
-        app.note(
-            f"Phase 4: Clause analysis iteration {iteration}", tags=["phase", "clause", "analysis"]
+        _check_timeout()
+        app.note("Phase 2: Anatomy", tags=["phase", "anatomy"])
+        anatomy_raw = await app.call(
+            f"{node_id}.anatomy_phase", document_text=document_text, intake=intake
         )
-        analysis_raw = await app.call(
-            f"{node_id}.clause_analysis_phase",
-            document_text=document_text,
-            intake=intake,
-            anatomy=anatomy,
-            clusters=clusters_to_analyze,
+        anatomy = _as_dict(_unwrap(anatomy_raw, "anatomy_phase"), "anatomy_phase")
+
+        _check_timeout()
+        app.note("Phase 3: Planner", tags=["phase", "planner"])
+        plan_raw = await app.call(f"{node_id}.planner_phase", intake=intake, anatomy=anatomy)
+        plan = _as_dict(_unwrap(plan_raw, "planner_phase"), "planner_phase")
+
+        coverage = None
+        anatomy_obj = AnatomyResult(**anatomy)
+
+        for iteration in range(MAX_COVERAGE_ITERATIONS + 1):
+            _check_timeout()
+            iterations_run = iteration + 1
+            clusters_to_analyze = (
+                plan.get("clusters", [])
+                if iteration == 0
+                else [
+                    cluster.model_dump()
+                    for cluster in _make_gap_clusters(
+                        cast("Any", coverage).sections_to_analyze
+                        + cast("Any", coverage).sections_to_deepen
+                    )
+                ]
+            )
+
+            if not clusters_to_analyze:
+                break
+
+            app.note(
+                f"Phase 4: Clause analysis iteration {iteration}",
+                tags=["phase", "clause", "analysis"],
+            )
+            analysis_raw = await app.call(
+                f"{node_id}.clause_analysis_phase",
+                document_text=document_text,
+                intake=intake,
+                anatomy=anatomy,
+                clusters=clusters_to_analyze,
+            )
+            analysis_payload = _as_dict(
+                _unwrap(analysis_raw, "clause_analysis_phase"), "clause_analysis_phase"
+            )
+
+            iteration_results = cast(
+                "list[dict[str, Any]]",
+                analysis_payload.get("analysis_results", []),
+            )
+            iteration_findings = cast("list[dict[str, Any]]", analysis_payload.get("findings", []))
+
+            all_analysis_results.extend(iteration_results)
+            all_findings.extend(iteration_findings)
+
+            _check_timeout()
+            found_types = _collect_found_types(
+                [ClauseAnalysisResult(**result) for result in all_analysis_results]
+            )
+
+            app.note(f"Phase 5: Review iteration {iteration}", tags=["phase", "review"])
+            review_raw = await app.call(
+                f"{node_id}.review_phase",
+                document_text=document_text,
+                intake=intake,
+                anatomy=anatomy,
+                analysis_results=iteration_results,
+                found_clause_types=found_types,
+            )
+            review_payload = _as_dict(_unwrap(review_raw, "review_phase"), "review_phase")
+
+            combination_risks.extend(
+                cast("list[dict[str, Any]]", review_payload.get("combination_risks", []))
+            )
+            adversary_result = cast("dict[str, Any]", review_payload.get("adversary_result", {}))
+
+            _check_timeout()
+            coverage = await assess_coverage(
+                app,
+                anatomy_obj,
+                [ClauseAnalysisResult(**result) for result in all_analysis_results],
+                AdversaryResult(**adversary_result),
+                iteration,
+            )
+
+            if coverage.is_sufficient:
+                break
+
+            if iteration >= MAX_COVERAGE_ITERATIONS:
+                break
+
+    except TimeoutError as exc:
+        elapsed = time.monotonic() - start
+        app.note(f"Pipeline timeout: {exc}", tags=["analyze", "timeout"])
+        return _force_partial_report(
+            intake=locals().get("intake", {}),
+            all_findings=all_findings,
+            combination_risks=combination_risks,
+            adversary_result=adversary_result,
+            elapsed=elapsed,
+            iterations_run=iterations_run,
+            all_analysis_results=all_analysis_results,
+            reason=str(exc),
         )
-        analysis_payload = _as_dict(
-            _unwrap(analysis_raw, "clause_analysis_phase"), "clause_analysis_phase"
-        )
-
-        iteration_results = cast(
-            "list[dict[str, Any]]",
-            analysis_payload.get("analysis_results", []),
-        )
-        iteration_findings = cast("list[dict[str, Any]]", analysis_payload.get("findings", []))
-
-        all_analysis_results.extend(iteration_results)
-        all_findings.extend(iteration_findings)
-
-        found_types = _collect_found_types(
-            [ClauseAnalysisResult(**result) for result in all_analysis_results]
-        )
-
-        app.note(f"Phase 5: Review iteration {iteration}", tags=["phase", "review"])
-        review_raw = await app.call(
-            f"{node_id}.review_phase",
-            document_text=document_text,
-            intake=intake,
-            anatomy=anatomy,
-            analysis_results=iteration_results,
-            found_clause_types=found_types,
-        )
-        review_payload = _as_dict(_unwrap(review_raw, "review_phase"), "review_phase")
-
-        combination_risks.extend(
-            cast("list[dict[str, Any]]", review_payload.get("combination_risks", []))
-        )
-        adversary_result = cast("dict[str, Any]", review_payload.get("adversary_result", {}))
-
-        coverage = await assess_coverage(
-            app,
-            anatomy_obj,
-            [ClauseAnalysisResult(**result) for result in all_analysis_results],
-            AdversaryResult(**adversary_result),
-            iteration,
-        )
-
-        if coverage.is_sufficient:
-            break
-
-        if iteration >= MAX_COVERAGE_ITERATIONS:
-            break
 
     if adversary_result is None:
-        raise RuntimeError("Pipeline error: adversary review did not complete")
+        adversary_result = {}
 
+    _check_timeout()
     app.note("Phase 6: Synthesis", tags=["phase", "synthesis"])
-    synthesis_raw = await app.call(
-        f"{node_id}.synthesis_phase",
-        findings=all_findings,
-        adversary_result=adversary_result,
-        combination_risks=combination_risks,
-        jurisdiction=intake.get("jurisdiction", ""),
-    )
-    synthesis = _as_dict(_unwrap(synthesis_raw, "synthesis_phase"), "synthesis_phase")
+    try:
+        synthesis_raw = await app.call(
+            f"{node_id}.synthesis_phase",
+            findings=all_findings,
+            adversary_result=adversary_result,
+            combination_risks=combination_risks,
+            jurisdiction=intake.get("jurisdiction", ""),
+        )
+        synthesis = _as_dict(_unwrap(synthesis_raw, "synthesis_phase"), "synthesis_phase")
+    except (TimeoutError, RuntimeError):
+        elapsed = time.monotonic() - start
+        return _force_partial_report(
+            intake=intake,
+            all_findings=all_findings,
+            combination_risks=combination_risks,
+            adversary_result=adversary_result,
+            elapsed=elapsed,
+            iterations_run=iterations_run,
+            all_analysis_results=all_analysis_results,
+            reason="Synthesis phase failed or timed out",
+        )
 
     app.note("Phase 7: Report", tags=["phase", "report"])
-    report_raw = await app.call(
-        f"{node_id}.report_phase",
-        synthesis=synthesis,
-        intake=intake,
-    )
-    report = _as_dict(_unwrap(report_raw, "report_phase"), "report_phase")
+    try:
+        report_raw = await app.call(
+            f"{node_id}.report_phase",
+            synthesis=synthesis,
+            intake=intake,
+        )
+        report = _as_dict(_unwrap(report_raw, "report_phase"), "report_phase")
+    except (TimeoutError, RuntimeError):
+        elapsed = time.monotonic() - start
+        return _force_partial_report(
+            intake=intake,
+            all_findings=all_findings,
+            combination_risks=combination_risks,
+            adversary_result=adversary_result,
+            elapsed=elapsed,
+            iterations_run=iterations_run,
+            all_analysis_results=all_analysis_results,
+            reason="Report phase failed or timed out",
+        )
 
     elapsed = time.monotonic() - start
     report["metadata"] = {

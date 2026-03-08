@@ -20,6 +20,7 @@ from contract_af.models import (
 )
 
 MAX_SUB_AGENTS = 2
+MAX_FINDINGS_REVIEWED = 15  # Hard cap: max findings to review individually
 SENTINEL = object()
 
 
@@ -36,6 +37,9 @@ async def review_as_adversary(
     checks whether it is a false positive, an exploitation opportunity,
     or hides a trap.  When multiple findings reference a survival clause,
     a sub-agent is spawned to analyse combined post-termination impact.
+
+    Hard cap: processes at most MAX_FINDINGS_REVIEWED findings individually
+    to prevent runaway execution with large contracts.
     """
     false_positives: list[FalsePositive] = []
     hidden_traps: list[HiddenTrap] = []
@@ -43,6 +47,7 @@ async def review_as_adversary(
     uncovered_sections: list[str] = []
     sub_agents_used = 0
     accumulated_findings: list[Finding] = []
+    findings_reviewed = 0
 
     while True:
         try:
@@ -54,7 +59,11 @@ async def review_as_adversary(
 
         accumulated_findings.append(item)
 
-        # For each finding, ask harness to review from adversary perspective
+        # Budget gate: skip individual review once cap reached
+        if findings_reviewed >= MAX_FINDINGS_REVIEWED:
+            continue
+
+        findings_reviewed += 1
         review = await app.call(
             "contract-af.adversary_reviewer",
             finding={
@@ -125,16 +134,6 @@ async def review_as_adversary(
             ),
             contract_text=contract_text,
         )
-        if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
-            for trap in trap_result["hidden_traps"]:
-                hidden_traps.append(
-                    HiddenTrap(
-                        clause_refs=trap.get("clause_refs", []),
-                        description=trap.get("description", ""),
-                        exploitation_scenario=trap.get("exploitation_scenario", ""),
-                        severity=Severity(trap.get("severity", "high").lower()),
-                    )
-                )
         if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
             for trap in trap_result["hidden_traps"]:
                 hidden_traps.append(

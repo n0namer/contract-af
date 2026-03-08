@@ -17,7 +17,9 @@ from contract_af.models import (
 )
 
 MAX_DEEP_DIVES = 3
-SENTINEL = object()  # Queue termination signal
+MAX_PAIRWISE_CHECKS = 20
+MAX_FINDINGS_CONSUMED = 15
+SENTINEL = object()
 
 
 async def resolve_cross_references(
@@ -31,10 +33,14 @@ async def resolve_cross_references(
     Implements the streaming pipeline pattern: downstream agent processes
     findings as they arrive from upstream clause analysts, rather than
     waiting for all analysts to complete.
+
+    Budget caps: MAX_FINDINGS_CONSUMED findings consumed, MAX_PAIRWISE_CHECKS
+    pairwise interaction checks, MAX_DEEP_DIVES critical deep-dives.
     """
     accumulated_findings: list[Finding] = []
     combination_risks: list[CombinationRisk] = []
     deep_dives = 0
+    pairwise_checks = 0
 
     while True:
         try:
@@ -47,14 +53,18 @@ async def resolve_cross_references(
 
         accumulated_findings.append(item)
 
-        # Need at least 2 findings to check combinations
+        if len(accumulated_findings) > MAX_FINDINGS_CONSUMED:
+            continue
+
         if len(accumulated_findings) < 2:
             continue
 
-        # Check new finding against all previous findings
         new_finding = accumulated_findings[-1]
         for prev in accumulated_findings[:-1]:
-            # Build list of cross-references relevant to this pair
+            if pairwise_checks >= MAX_PAIRWISE_CHECKS:
+                break
+
+            pairwise_checks += 1
             relevant_refs = [
                 cr.model_dump()
                 for cr in anatomy.cross_references
