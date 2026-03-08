@@ -9,7 +9,10 @@ from __future__ import annotations
 # pyright: reportMissingImports=false
 
 import os
+import shutil
+import tempfile
 import time
+import uuid as _uuid
 from pathlib import Path
 from typing import Any, cast
 
@@ -151,12 +154,22 @@ async def analyze(
     document_text: str,
     user_context: str = "",
 ) -> dict[str, Any]:
-    """Main entry point — runs the full 7-phase pipeline via phase reasoners."""
+    """Main entry point — runs the full 7-phase pipeline via phase reasoners.
+
+    Writes the document to a temp file ONCE and passes the *path* through
+    ``app.call()`` wire calls so the 175 KB+ contract is never serialised
+    as inline JSON on every hop.  All phases in this process share the
+    same filesystem so they can read the file directly.
+    """
     from .agents.coverage import assess_coverage
     from .models import AdversaryResult, AnatomyResult, ClauseAnalysisResult
 
     start = time.monotonic()
     node_id = os.getenv("NODE_ID", "contract-af")
+
+    workdir = tempfile.mkdtemp(prefix=f"contract-af-{_uuid.uuid4().hex[:8]}-")
+    doc_path = os.path.join(workdir, "contract.txt")
+    Path(doc_path).write_text(document_text, encoding="utf-8")
 
     def _check_timeout() -> None:
         elapsed = time.monotonic() - start
@@ -175,14 +188,14 @@ async def analyze(
         _check_timeout()
         app.note("Phase 1: Intake", tags=["phase", "intake"])
         intake_raw = await app.call(
-            f"{node_id}.intake_phase", document_text=document_text, user_context=user_context
+            f"{node_id}.intake_phase", document_path=doc_path, user_context=user_context
         )
         intake = _as_dict(_unwrap(intake_raw, "intake_phase"), "intake_phase")
 
         _check_timeout()
         app.note("Phase 2: Anatomy", tags=["phase", "anatomy"])
         anatomy_raw = await app.call(
-            f"{node_id}.anatomy_phase", document_text=document_text, intake=intake
+            f"{node_id}.anatomy_phase", document_path=doc_path, intake=intake
         )
         anatomy = _as_dict(_unwrap(anatomy_raw, "anatomy_phase"), "anatomy_phase")
 
@@ -218,7 +231,7 @@ async def analyze(
             )
             analysis_raw = await app.call(
                 f"{node_id}.clause_analysis_phase",
-                document_text=document_text,
+                document_path=doc_path,
                 intake=intake,
                 anatomy=anatomy,
                 clusters=clusters_to_analyze,
@@ -244,7 +257,7 @@ async def analyze(
             app.note(f"Phase 5: Review iteration {iteration}", tags=["phase", "review"])
             review_raw = await app.call(
                 f"{node_id}.review_phase",
-                document_text=document_text,
+                document_path=doc_path,
                 intake=intake,
                 anatomy=anatomy,
                 analysis_results=iteration_results,
@@ -275,6 +288,7 @@ async def analyze(
     except TimeoutError as exc:
         elapsed = time.monotonic() - start
         app.note(f"Pipeline timeout: {exc}", tags=["analyze", "timeout"])
+        shutil.rmtree(workdir, ignore_errors=True)
         return _force_partial_report(
             intake=locals().get("intake", {}),
             all_findings=all_findings,
@@ -302,6 +316,7 @@ async def analyze(
         synthesis = _as_dict(_unwrap(synthesis_raw, "synthesis_phase"), "synthesis_phase")
     except (TimeoutError, RuntimeError):
         elapsed = time.monotonic() - start
+        shutil.rmtree(workdir, ignore_errors=True)
         return _force_partial_report(
             intake=intake,
             all_findings=all_findings,
@@ -323,6 +338,7 @@ async def analyze(
         report = _as_dict(_unwrap(report_raw, "report_phase"), "report_phase")
     except (TimeoutError, RuntimeError):
         elapsed = time.monotonic() - start
+        shutil.rmtree(workdir, ignore_errors=True)
         return _force_partial_report(
             intake=intake,
             all_findings=all_findings,
@@ -333,6 +349,8 @@ async def analyze(
             all_analysis_results=all_analysis_results,
             reason="Report phase failed or timed out",
         )
+
+    shutil.rmtree(workdir, ignore_errors=True)
 
     elapsed = time.monotonic() - start
     report["metadata"] = {

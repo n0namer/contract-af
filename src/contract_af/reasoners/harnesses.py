@@ -127,7 +127,7 @@ async def anatomist(
         ),
         user=_json.dumps(
             {
-                "document_text": document_text,
+                "document_text": _truncate(document_text),
                 "intake": intake,
             },
             default=str,

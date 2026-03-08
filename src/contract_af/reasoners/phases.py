@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+from pathlib import Path
 from typing import Any
 
 from pydantic import BaseModel
@@ -24,19 +25,19 @@ _runtime_router: Any = router
 
 
 @router.reasoner()
-async def intake_phase(document_text: str, user_context: str = "") -> dict[str, Any]:
-    """Phase 1: Intake classification."""
+async def intake_phase(document_path: str, user_context: str = "") -> dict[str, Any]:
     from contract_af.agents.intake import classify_contract
 
+    document_text = Path(document_path).read_text(encoding="utf-8")
     intake = await classify_contract(_runtime_router, document_text, user_context)
     return intake.model_dump()
 
 
 @router.reasoner()
-async def anatomy_phase(document_text: str, intake: dict[str, Any]) -> dict[str, Any]:
-    """Phase 2: Document anatomy."""
+async def anatomy_phase(document_path: str, intake: dict[str, Any]) -> dict[str, Any]:
     from contract_af.agents.anatomy import analyze_structure
 
+    document_text = Path(document_path).read_text(encoding="utf-8")
     intake_obj = IntakeResult(**intake)
     anatomy = await analyze_structure(_runtime_router, document_text, intake_obj)
     return anatomy.model_dump()
@@ -55,14 +56,14 @@ async def planner_phase(intake: dict[str, Any], anatomy: dict[str, Any]) -> dict
 
 @router.reasoner()
 async def clause_analysis_phase(
-    document_text: str,
+    document_path: str,
     intake: dict[str, Any],
     anatomy: dict[str, Any],
     clusters: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Phase 4: Parallel clause analysis."""
     from contract_af.agents.clause_analyst import analyze_cluster
 
+    document_text = Path(document_path).read_text(encoding="utf-8")
     intake_obj = IntakeResult(**intake)
     anatomy_obj = AnatomyResult(**anatomy)
     cluster_objs = [ClauseCluster(**cluster) for cluster in clusters]
@@ -88,19 +89,19 @@ async def clause_analysis_phase(
 
 @router.reasoner()
 async def review_phase(
-    document_text: str,
+    document_path: str,
     intake: dict[str, Any],
     anatomy: dict[str, Any],
     analysis_results: list[dict[str, Any]],
     found_clause_types: list[str],
 ) -> dict[str, Any]:
-    """Phase 5: Cross-ref + adversary + gap analysis."""
     from contract_af.agents.adversary import SENTINEL as ADVERSARY_SENTINEL
     from contract_af.agents.adversary import review_as_adversary
     from contract_af.agents.cross_ref import SENTINEL as CROSS_REF_SENTINEL
     from contract_af.agents.cross_ref import resolve_cross_references
     from contract_af.agents.gap_analyst import analyze_gaps
 
+    document_text = Path(document_path).read_text(encoding="utf-8")
     intake_obj = IntakeResult(**intake)
     anatomy_obj = AnatomyResult(**anatomy)
     parsed_results = [ClauseAnalysisResult(**result) for result in analysis_results]

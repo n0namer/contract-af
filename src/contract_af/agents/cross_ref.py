@@ -19,7 +19,15 @@ from contract_af.models import (
 MAX_DEEP_DIVES = 3
 MAX_PAIRWISE_CHECKS = 20
 MAX_FINDINGS_CONSUMED = 15
+_MAX_WIRE_CHARS = 30_000
 SENTINEL = object()
+
+
+def _truncate_for_wire(text: str, limit: int = _MAX_WIRE_CHARS) -> str:
+    if len(text) <= limit:
+        return text
+    half = limit // 2
+    return text[:half] + "\n\n[... middle truncated for wire limit ...]\n\n" + text[-half:]
 
 
 async def resolve_cross_references(
@@ -106,7 +114,7 @@ async def resolve_cross_references(
                     "contract-af.combination_deep_dive",
                     prompt=interaction.get("deep_dive_prompt", ""),
                     sections=[prev.clause_ref, new_finding.clause_ref],
-                    contract_text=contract_text,
+                    contract_text=_truncate_for_wire(contract_text),
                 )
                 if isinstance(deep_result, dict) and deep_result.get("findings"):
                     for f in deep_result["findings"]:

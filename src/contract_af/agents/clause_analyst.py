@@ -23,6 +23,14 @@ from contract_af.models import (
 
 MAX_REF_FOLLOWS = 3
 MAX_SUB_AGENTS = 2
+_MAX_WIRE_CHARS = 30_000
+
+
+def _truncate_for_wire(text: str, limit: int = _MAX_WIRE_CHARS) -> str:
+    if len(text) <= limit:
+        return text
+    half = limit // 2
+    return text[:half] + "\n\n[... middle truncated for wire limit ...]\n\n" + text[-half:]
 
 
 async def analyze_cluster(
@@ -128,7 +136,7 @@ async def analyze_cluster(
             "contract-af.definition_impact_analyzer",
             prompt=dive.get("prompt", ""),
             sections=dive.get("sections", []),
-            contract_text=contract_text,
+            contract_text=_truncate_for_wire(contract_text),
         )
         dive_findings = dive_result.get("findings", []) if isinstance(dive_result, dict) else []
         for rf in dive_findings:

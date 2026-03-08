@@ -20,8 +20,16 @@ from contract_af.models import (
 )
 
 MAX_SUB_AGENTS = 2
-MAX_FINDINGS_REVIEWED = 15  # Hard cap: max findings to review individually
+MAX_FINDINGS_REVIEWED = 15
+_MAX_WIRE_CHARS = 30_000
 SENTINEL = object()
+
+
+def _truncate_for_wire(text: str, limit: int = _MAX_WIRE_CHARS) -> str:
+    if len(text) <= limit:
+        return text
+    half = limit // 2
+    return text[:half] + "\n\n[... middle truncated for wire limit ...]\n\n" + text[-half:]
 
 
 async def review_as_adversary(
@@ -75,7 +83,7 @@ async def review_as_adversary(
             },
             contract_type=intake.contract_type,
             opposing_role=_get_opposing_role(intake),
-            contract_text=contract_text,
+            contract_text=_truncate_for_wire(contract_text),
         )
 
         if not isinstance(review, dict):
@@ -132,7 +140,7 @@ async def review_as_adversary(
                 f"- Hidden traps that only emerge when multiple clauses interact\n\n"
                 f"Findings:\n" + "\n".join(finding_summaries)
             ),
-            contract_text=contract_text,
+            contract_text=_truncate_for_wire(contract_text),
         )
         if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
             for trap in trap_result["hidden_traps"]:

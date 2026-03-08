@@ -16,6 +16,14 @@ from pydantic import BaseModel, Field
 from contract_af.models import AnatomyResult, GapResult, IntakeResult
 
 MAX_GAP_VERIFICATIONS = 10
+_MAX_WIRE_CHARS = 30_000
+
+
+def _truncate_for_wire(text: str, limit: int = _MAX_WIRE_CHARS) -> str:
+    if len(text) <= limit:
+        return text
+    half = limit // 2
+    return text[:half] + "\n\n[... middle truncated for wire limit ...]\n\n" + text[-half:]
 
 
 class _ExpectedClauses(BaseModel):
@@ -72,7 +80,7 @@ async def analyze_gaps(
             "contract-af.gap_analyst",
             clause_type=clause_type,
             aliases=[],
-            contract_text=contract_text,
+            contract_text=_truncate_for_wire(contract_text),
             existing_sections=[s.title for s in anatomy.sections],
         )
 
