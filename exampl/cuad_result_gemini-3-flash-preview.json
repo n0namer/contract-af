@@ -1,0 +1,1730 @@
+{
+  "executive_summary": "This Pharmaceutical Co-Promotion Agreement is classified as high risk due to 186 identified issues, most notably a total lack of safety and regulatory terms which shifts statutory safety reporting and recall liability entirely onto the customer (Valeant). These risks are compounded by significant structural deficiencies, including redacted governing law and broken links to dispute resolution frameworks. An immediate high-risk legal review is recommended to address the critical gaps in liability protection and regulatory compliance before proceeding.",
+  "metadata": {
+    "clusters_analyzed": 20,
+    "combination_risks": 0,
+    "coverage_iterations": 3,
+    "elapsed_seconds": 1137.05,
+    "finding_count": 186,
+    "overall_risk": "high",
+    "total_findings": 194
+  },
+  "negotiation_playbook": "PHARMACEUTICAL CO-PROMOTION NEGOTIATION PLAYBOOK\n\n1. EXECUTIVE SUMMARY & RISK PROFILE\nThe current draft of the Co-Promotion Agreement contains critical deficiencies regarding regulatory compliance (Pharmacovigilance), financial transparency (Net Sales), and legal enforceability (Redacted Governing Law). This playbook prioritizes the stabilization of the safety framework and the clarification of performance standards to mitigate existential regulatory and litigation risks.\n\n2. PHARMACOVIGILANCE (PV) & SAFETY REPORTING\n- Talk Track: \"In a pharmaceutical partnership, the absence of rigid safety data exchange protocols creates untenable patient risk and invites FDA enforcement action. We cannot proceed without a defined Safety Data Exchange Agreement (SDEA).\"\n- Fallback: If a full SDEA cannot be executed immediately, insert an \"Interim PV Protocol\" as a binding attachment to Article 5, mandating ICSR reporting to the 'Safety Originator' within 3 business days to meet the 21 CFR 314.80 15-day deadline.\n- Sequencing: This is a non-negotiable Condition Precedent (CP) to any product launch or commercial activity.\n\n3. LIABILITY REBALANCING (RECALLS & SAFETY)\n- Talk Track: \"While we acknowledge Valeant's operational lead on recalls, unilateral liability shifting is commercially disproportionate. Shared risk must follow shared decision-making.\"\n- Fallback: Accept operational responsibility in exchange for a mutual indemnification framework or a fault-based cost-sharing model. Propose a joint Safety Committee to oversee recall decisions, ensuring interests are aligned before high-cost liabilities trigger.\n\n4. JURISDICTIONAL TRANSPARENCY & DISPUTE RESOLUTION\n- Talk Track: \"We cannot agree to a hidden legal framework. Redacted governing law and broken cross-references (Section 13.6) render the contract's enforcement mechanism void for vagueness.\"\n- Fallback: If the counterparty refuses to reveal the redacted jurisdiction, insist on New York or Delaware as neutral, well-established proxies. Demand the seat of arbitration be specific (e.g., NYC) under ICC or UNCITRAL rules to ensure New York Convention enforceability.\n\n5. DEFINING PERFORMANCE & FINANCIALS (NET SALES)\n- Talk Track: \"Without objective performance metrics (KPIs) and a GAAP-compliant 'Net Sales' definition, the agreement lacks the certainty required to be an enforceable contract for services.\"\n- Fallback: Insert a 'Standard Deductions' cap (e.g., 5-8% of Gross Sales) for returns/rebates/freight. In Section 3.2, move from subjective 'best efforts' to 'Commercially Reasonable Efforts' (CRE) as defined by industry benchmarks.\n\n6. TERMINATION & EXIT ALIGNMENT\n- Talk Track: \"A 30-60 day termination for convenience is standard market practice for long-term services to ensure operational agility.\"\n- Fallback: Offer a tiered early termination fee to cover the vendor's unrecoverable implementation costs. Ensure a robust 'Survival' clause (Article 12) for IP and a mandatory 30-day data migration period to prevent post-termination operational gaps.",
+  "risk_report_md": "# Legal Risk Report: Pharmaceutical Co-Promotion Agreement\n\n## Executive Summary\nThis Pharmaceutical Co-Promotion Agreement is classified as **high risk** due to 186 identified issues, most notably a total lack of safety and regulatory terms which shifts statutory safety reporting and recall liability entirely onto the customer (Valeant). These risks are compounded by significant structural deficiencies, including redacted governing law and broken links to dispute resolution frameworks. An immediate high-risk legal review is recommended to address the critical gaps in liability protection and regulatory compliance before proceeding.\n\n## Findings\n\n### Critical Risk Findings\n\n| Clause Ref | Description | Severity | Rank | Recommendation |\n| :--- | :--- | :--- | :--- | :--- |\n| **2.2.6** | Customer (Valeant) is assuming full responsibility for statutory safety reporting and recall management. | Critical | 1 | Review Article 5 to ensure Dova (the manufacturer) retains primary liability for product defects and that Valeant is only responsible for reporting information it receives. |\n| **ARTICLE 5** | Critical absence of Safety and Regulatory terms in a Pharmaceutical Co-Promotion Agreement. | Critical | 2 | Draft and include comprehensive sections for: 1) Adverse Event reporting timelines, 2) Pharmacovigilance Agreement (PVA) cross-reference, 3) Medical Inquiry handling, and 4) Delineation of regulatory responsibilities. |\n| **2.2.6** | Regulatory and recall liability shift to the co-promoter. | Critical | 3 | Limit Valeant's role to reporting adverse events to Dova within 24 hours, while Dova (as lead) retains responsibility for interactions with Governmental Authorities and recall decisions. |\n| **13.5** | Redacted Governing Law | Critical | 4 | Disclose and agree upon a stable, commercially sophisticated jurisdiction (e.g., New York or Delaware) before execution. |\n| **Section 3.4** | Cross-reference to non-functional or redacted dispute resolution framework. | Critical | 5 | Unredact or negotiate specific governing law and jurisdiction (e.g., New York, Delaware) and ensure Section 13.6 explicitly details the forum (Arbitration vs Litigation). |\n\n### Medium & Low Risk Findings\n\n| Clause Ref | Description | Severity | Rank | Recommendation |\n| :--- | :--- | :--- | :--- | :--- |\n| **Article 7** | Missing specific timelines for reporting and data reconciliation. | Medium | 179 | Specify a monthly reporting obligation to be delivered within 15 days of month-end. |\n| **Article 12** | Ambiguous material breach cure period. | Medium | 180 | Explicitly define a 60-day cure period for material breaches and a 10-day period for payment defaults. |\n| **6.5.2** | Cost-sharing for data integrity verifications. | Low | 183 | Propose that the party whose Specialty designation position is proven incorrect shall bear the full cost of the inquiry. |\n| **5.10** | Vague performance standard ('continue to invest'). | Low | 185 | Define 'continue to invest' by referencing a specific marketing plan or defining a minimum budget floor. |\n\n## Recommended Actions\n\n1.  **Immediate High-Risk Legal Review:** Conduct a comprehensive review focusing on the 186 identified issues, specifically the unaddressed regulatory and safety domains.\n2.  **Safety Addendum:** Negotiate and execute a Safety Data Exchange Agreement (SDEA) or Pharmacovigilance Agreement (PVA) as a mandatory attachment to the contract.\n3.  **Jurisdictional Transparency:** Explicitly demand the unredaction of Article 13 to identify the governing law and dispute resolution venue before any further commercial obligation is assumed.\n4.  **Liability Reassignment:** Renegotiate Clause 2.2.6 to ensure that the Marketing Authorization Holder (Dova) retains primary statutory responsibility for safety reporting and recall management, in line with standard industry practice.",
+  "structured_json": {
+    "category_scores": {
+      "Commercial & Financial Remedies": 7,
+      "Governance & Dispute Resolution": 10,
+      "Intellectual Property & Confidentiality": 7,
+      "Operational Rights & Field Force Obligations": 10,
+      "Regulatory & Safety Compliance": 10,
+      "Termination & Exit": 7,
+      "coverage_gap_ARTICLE 1": 7,
+      "coverage_gap_ARTICLE 12": 10,
+      "coverage_gap_ARTICLE 2": 10,
+      "coverage_gap_ARTICLE 3": 10,
+      "coverage_gap_ARTICLE 4": 10,
+      "coverage_gap_ARTICLE 4 (Valeant Activities)": 10,
+      "coverage_gap_ARTICLE 5": 7,
+      "coverage_gap_ARTICLE 6": 7,
+      "coverage_gap_ARTICLE 6 (Financial Provisions)": 10,
+      "coverage_gap_ARTICLE 7": 7,
+      "coverage_gap_ARTICLE 8": 7,
+      "coverage_gap_ARTICLE 9": 10,
+      "coverage_gap_Article 12 (Termination and Effects of Termination)": 10,
+      "coverage_gap_Section 1.1 - 1.65 (Definitions)": 10
+    },
+    "contract_type": "co-promotion_agreement",
+    "deal_recommendation": "high_risk_review",
+    "finding_count": 186,
+    "findings": [
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.2.6",
+        "composite_score": 10,
+        "description": "Customer (Valeant) is assuming full responsibility for statutory safety reporting and recall management.",
+        "rank": 1,
+        "remediation": "Review Article 5 to ensure Dova (the manufacturer) retains primary liability for product defects and that Valeant is only responsible for reporting information it receives.",
+        "severity": "critical"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "ARTICLE 5",
+        "composite_score": 10,
+        "description": "Critical absence of Safety and Regulatory terms in a Pharmaceutical Co-Promotion Agreement.",
+        "rank": 2,
+        "remediation": "Draft and include comprehensive sections for: 1) Adverse Event reporting timelines (usually 24-48 hours), 2) Pharmacovigilance Agreement (PVA) cross-reference, 3) Medical Inquiry handling procedures, and 4) Delineation of responsibility for regulatory filings and interactions with health authorities.",
+        "severity": "critical"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.2.6",
+        "composite_score": 10,
+        "description": "Regulatory and recall liability shift to the co-promoter.",
+        "rank": 3,
+        "remediation": "Limit Valeant's role to reporting adverse events to Dova within 24 hours, while Dova (as lead) retains responsibility for interactions with Governmental Authorities and recall decisions.",
+        "severity": "critical"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "13.5",
+        "composite_score": 10,
+        "description": "Redacted Governing Law",
+        "rank": 4,
+        "remediation": "Disclose and agree upon a stable, commercially sophisticated jurisdiction (e.g., New York or Delaware) before execution.",
+        "severity": "critical"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "Section 3.4 (Impact on Section 13.6)",
+        "composite_score": 10,
+        "description": "Cross-reference to non-functional or redacted dispute resolution framework.",
+        "rank": 5,
+        "remediation": "Unredact or negotiate specific governing law and jurisdiction (e.g., New York, Delaware) and ensure Section 13.6 explicitly details the forum (Arbitration vs Litigation).",
+        "severity": "critical"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "General/Context",
+        "composite_score": 10,
+        "description": "Redacted Governing Law and Dispute Resolution Venue.",
+        "rank": 6,
+        "remediation": "Unmask the redacted governing law and venue sections. Preference should be given to a neutral jurisdiction (e.g., Delaware or New York) known for sophisticated commercial law.",
+        "severity": "critical"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "Section 13.6.2",
+        "composite_score": 10,
+        "description": "Missing or Redacted Arbitration Seat and Rules",
+        "rank": 7,
+        "remediation": "Expressly specify the arbitration rules (e.g., AAA, JAMS, or ICC), the seat of arbitration (legal place), and the venue (physical location). Ensure these align with the governing law once unredacted.",
+        "severity": "critical"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.4",
+        "composite_score": 10,
+        "description": "Agreement to agree regarding critical safety compliance.",
+        "rank": 8,
+        "remediation": "The Pharmacovigilance Agreement (PVA) should be an exhibit to the main agreement or executed simultaneously. At minimum, include interim reporting timelines (e.g., 24-48 hours) within this clause.",
+        "severity": "critical"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "21 CFR 314.80",
+        "composite_score": 10,
+        "description": "Risk of non-compliance with FDA mandatory postmarketing adverse drug experience (ADE) reporting timelines.",
+        "rank": 9,
+        "remediation": "Explicitly state in the Agreement or a separate SDEA that Dova (as the provider/likely NDA holder) is the primary reporter to the FDA. Valeant must be required to transmit all ADEs to Dova within 3 business days of receipt to ensure Dova meets the 15-day regulatory deadline.",
+        "severity": "critical"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.4",
+        "composite_score": 10,
+        "description": "Agreement to agree on critical safety compliance and pharmacovigilance (PV).",
+        "rank": 10,
+        "remediation": "The Pharmacovigilance Agreement should be attached as an exhibit or finalized prior to the Effective Date. At minimum, interim reporting timelines must be explicitly stated in the main agreement.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "Check for Exhibit A or Schedules related to detailing obligations",
+        "composite_score": 10,
+        "description": "Failure to define specific performance obligations (detailing efforts, target audience, frequency) creates a performance void.",
+        "rank": 11,
+        "remediation": "Attach an Exhibit A or Schedule that explicitly defines: 1) Minimum Detailing obligations by quarter; 2) Primary vs. Secondary position requirements; 3) Target physician lists; and 4) Consequences for failing to meet detailing thresholds (e.g., credit/refund or termination rights).",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "Article 1 (Product)",
+        "composite_score": 10,
+        "description": "Ambiguity in 'Product' description and lineage (e.g., follow-on products).",
+        "rank": 12,
+        "remediation": "Define 'Product' by specific NDC (National Drug Code), brand name, and chemical composition. Clarify whether the scope include line extensions, new dosages, or combinations.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "Article 9",
+        "composite_score": 10,
+        "description": "Ambiguity regarding waiver of consequential damages",
+        "rank": 13,
+        "remediation": "Insert a standard exclusion for consequential, indirect, special, and punitive damages, while maintaining exceptions for indemnification obligations and breaches of confidentiality.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "ARTICLE 2",
+        "composite_score": 10,
+        "description": "Extreme lack of substantive contractual definition regarding core performance duties.",
+        "rank": 14,
+        "remediation": "Explicitly define the 'Grant of Rights', specify whether rights are sub-licensable or transferable, and detail the 'Performance Obligations' including specific milestones, service levels, or production quotas.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "Section 3.2: Decision Making and Tie-Breaking",
+        "composite_score": 10,
+        "description": "Lack of a prescribed tie-breaking mechanism in a Co-Promotion Agreement.",
+        "rank": 15,
+        "remediation": "Specify which party has final decision-making authority over specific functional areas (e.g., Marketing, Regulatory, Compliance). If authority is shared, implement an escalation path to Executive Officers followed by a binding tie-break mechanism or expert mediation.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "ARTICLE 3",
+        "composite_score": 10,
+        "description": "Empty Placeholder for Governance Structure",
+        "rank": 16,
+        "remediation": "Insert a full governance framework including: (i) equal representation from both parties, (ii) specific frequency of meetings, (iii) clear list of delegated authorities vs. reserved matters, (iv) a formal deadlock resolution mechanism (e.g., escalation to CEOs or an independent tie-breaker), and (v) quorum/voting requirements.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "Section 12.2 - Termination for Cause",
+        "composite_score": 10,
+        "description": "Missing Termination for Cause provisions in a complex co-promotion agreement.",
+        "rank": 17,
+        "remediation": "Insert a comprehensive Termination for Cause clause that includes: (i) 30-day notice and cure period for material breaches, (ii) immediate termination for insolvency/bankruptcy, (iii) termination for failure to meet minimum promotion obligations, and (iv) termination for regulatory violations or exclusion from federal healthcare programs.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "Section 12.3",
+        "composite_score": 10,
+        "description": "Missing Termination for Convenience rights for the Customer.",
+        "rank": 18,
+        "remediation": "Insert a provision allowing the Customer to terminate the agreement for convenience upon 90-180 days' prior written notice to the Provider, ideally without an early termination penalty.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "ARTICLE 12",
+        "composite_score": 10,
+        "description": "Lack of substantive termination rights and detailed exit provisions.",
+        "rank": 19,
+        "remediation": "Insert specific clauses for (i) Termination for Convenience with 90 days' notice, (ii) Termination for Material Breach with a 30-day cure period, and (iii) immediate Termination for Insolvency. Define specific triggers relevant to the co-promotion context, such as failure to meet sales targets or regulatory non-compliance.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "Product Launch Timeline",
+        "composite_score": 10,
+        "description": "Missing defined Product Launch Timeline and implementation milestones.",
+        "rank": 20,
+        "remediation": "Insert a specific 'Launch Date' or a 'Commercialization Schedule' with concrete milestones. Include a 'Time is of the Essence' provision and a right for the customer to terminate if the launch does not occur by a specified 'Drop-Dead Date'.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 10,
+        "description": "The section header exists but contains no substantive operative language, creating a complete vacuum of performance obligations.",
+        "rank": 21,
+        "remediation": "Insert mandatory performance obligations, including specific marketing spend, minimum sales force headcount, product launch timelines, and detailed reporting requirements on commercialization activities.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "Article 10 (Intellectual Property Rights)",
+        "composite_score": 10,
+        "description": "Missing Intellectual Property (IP) Protection and Ownership Terms",
+        "rank": 22,
+        "remediation": "Draft a comprehensive IP clause specifying that: 1) Each party retains ownership of its Pre-existing IP; 2) The Customer owns all newly created marketing materials and clinical data; 3) The Customer grants a limited, non-exclusive license to the Provider solely for performance of the services; 4) Cross-indemnification for IP infringement is established.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "Article 12 (Term and Termination)",
+        "composite_score": 10,
+        "description": "Critical coverage gap: The termination and term provisions are entirely absent or undefined.",
+        "rank": 23,
+        "remediation": "Insert a fixed initial term with renewal options. Explicitly include termination for material breach, insolvency, and a right for the customer to terminate for convenience with 90 days' notice. Define 'Wind-down' obligations.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "ARTICLE 9",
+        "composite_score": 10,
+        "description": "Substantive confidentiality terms are missing, leaving only a placeholder heading.",
+        "rank": 24,
+        "remediation": "Insert a comprehensive confidentiality section including definitions of Confidential Information, obligations of non-use and non-disclosure, standard exceptions (public domain, prior knowledge), permitted disclosures to representatives, and a 'compelled disclosure' provision for legal mandates.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4 (Valeant Activities)",
+        "composite_score": 10,
+        "description": "Total absence of substantive content in the 'Valeant Activities' section of a Co-Promotion Agreement.",
+        "rank": 25,
+        "remediation": "Insert detailed provisions outlining Valeant's specific detailing obligations, minimum call requirements, territory definitions, and allocated resources. Ensure 'commercially reasonable efforts' standards are defined.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4 (Valeant Activities) / Indemnification",
+        "composite_score": 10,
+        "description": "Lack of clear indemnification linkage for Section 4 activities.",
+        "rank": 26,
+        "remediation": "Insert a comprehensive Indemnification clause where the Provider indemnifies Valeant against third-party claims arising from Provider's negligence or breach, and ensure Valeant's own indemnity is capped and excludes indirect/consequential damages.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 10,
+        "description": "Total absence of substantive content or performance obligations for the primary promoter/party.",
+        "rank": 27,
+        "remediation": "Expressly define Valeant's responsibilities, including minimum call requirements, detailing requirements, and the specific pharmaceutical products/territories covered by Article 4.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "ARTICLE 6",
+        "composite_score": 10,
+        "description": "Missing Financial Provisions Content",
+        "rank": 28,
+        "remediation": "Request the full text of Article 6. Ensure it includes clearly defined fee structures, payment milestones, net sales definitions, and a right for the customer to audit the provider\u2019s books.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "Article 10 (Termination and Effects of Termination)",
+        "composite_score": 10,
+        "description": "Total absence of termination and wind-down provisions.",
+        "rank": 29,
+        "remediation": "Draft and include a comprehensive Article 10 that provides for termination for cause (breach, insolvency) and termination for convenience with notice. Crucially, define 'Effects of Termination' to include tail payments for sales generated prior to exit.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "ARTICLE 6 (Financial Provisions)",
+        "composite_score": 10,
+        "description": "Total absence of financial terms and payment mechanisms in a commercial agreement.",
+        "rank": 30,
+        "remediation": "Draft comprehensive financial provisions including: (1) Precise definition of Net Sales with exhaustive lists of allowable deductions; (2) Payment milestones or royalty schedules; (3) Audit rights and record-keeping requirements; (4) Late payment interest penalties; and (5) Currency conversion protocols.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 1.1 - 1.65",
+        "composite_score": 10,
+        "description": "The provided text for the definitions section is empty, which is a critical risk in a complex co-promotion agreement.",
+        "rank": 31,
+        "remediation": "Obtain the full text of Sections 1.1 through 1.65. Specifically, ensure 'Net Sales' accounts for standard deductions and 'Product' is limited only to the specified therapeutic assets.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 2.1 (Scope of Co-Promotion)",
+        "composite_score": 10,
+        "description": "Undefined scope of Co-Promotion activities and obligations.",
+        "rank": 32,
+        "remediation": "Explicitly define the scope of promotion, including the specific therapeutic areas, target physician lists, geographic territory, and whether the customer has exclusive or non-exclusive rights to promote the product.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 4.1 (Compensation/Royalty)",
+        "composite_score": 10,
+        "description": "Missing economic consideration and royalty payment terms.",
+        "rank": 33,
+        "remediation": "Insert a clear royalty schedule. Define specifically what constitutes 'Net Sales' for commission or royalty calculations, specify payment timelines (e.g., 45 days post-quarter), and include audit rights to verify payment accuracy.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 10.1 (Term and Termination)",
+        "composite_score": 10,
+        "description": "Missing Termination Rights and Expiration Provisions",
+        "rank": 34,
+        "remediation": "Ensure Section 10.1 defines a clear Initial Term, Renewal Terms, and specific 'Termination for Cause' triggers including material breach, insolvency, and change of control. Additionally, seek a 'Termination for Convenience' right with a reasonable notice period (e.g., 90-180 days).",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 1.1 - 1.65 (Definitions)",
+        "composite_score": 10,
+        "description": "Critical failure to define the contractual framework of a complex co-promotion agreement.",
+        "rank": 35,
+        "remediation": "Immediately provide or draft standard pharmaceutical co-promotion definitions, specifically including: Gross-to-Net deductions, Primary and Secondary Detailing, Medical Science Liaison (MSL) activities, and the specific Licensed Product(s).",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12 (Effects of Termination)",
+        "composite_score": 10,
+        "description": "Absence of 'Tail' payment or wind-down provisions",
+        "rank": 36,
+        "remediation": "Include a tail payment provision for 6-12 months post-termination and clarify responsibility for wind-down costs (e.g., sample returns and marketing material disposal).",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Section 8.4 (Intellectual Property Ownership)",
+        "composite_score": 10,
+        "description": "Lack of predefined ownership rights for Intellectual Property (IP) created during the co-promotion.",
+        "rank": 37,
+        "remediation": "Insert a clause stating that IP developed prior to the agreement remains the property of the respective parties, and clarify that any IP created solely or jointly for the purposes of the agreement is either jointly owned or licensed back to the customer on a perpetual, royalty-free basis.",
+        "severity": "critical"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12",
+        "composite_score": 10,
+        "description": "Potential IP and Data Reversal Gap",
+        "rank": 38,
+        "remediation": "Mandate the immediate return or certified destruction of all confidential information and data, and clarify that any jointly developed IP ownership must be settled or licensed back to the Customer.",
+        "severity": "critical"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "4.1.2",
+        "composite_score": 7,
+        "description": "Exclusive remedy provision limits Dova's ability to seek monetary damages for failure to maintain the required sales force.",
+        "rank": 39,
+        "remediation": "Amend the clause to include 'without prejudice to any other rights or remedies available at law or in equity' or ensure the fee adjustment in 6.1.2 is high enough to act as a true liquidated damage.",
+        "severity": "high"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.1.1",
+        "composite_score": 7,
+        "description": "Redacted financial tiers (fee percentages and thresholds) create valuation uncertainty and mask potential misalignment of incentives.",
+        "rank": 40,
+        "remediation": "Request the unredacted schedule to verify that the royalty/fee tiers are consistent with industry standards and do not trigger 'cliff' effects where marginal sales result in disproportionate fee increases.",
+        "severity": "high"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "12.2.2",
+        "composite_score": 7,
+        "description": "Unilateral termination right based on performance metrics without cure period or force majeure exceptions.",
+        "rank": 41,
+        "remediation": "Insert a 30-60 day cure period allowing Valeant to rectify staffing levels before termination can be invoked, and ensure that failure to meet thresholds due to Force Majeure is excluded.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.1",
+        "composite_score": 7,
+        "description": "Strict prohibition on subcontracting or assigning to third parties.",
+        "rank": 42,
+        "remediation": "Negotiate the right to subcontract to reputable third parties/CSOs with Dova\u2019s prior written consent (not to be unreasonably withheld).",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.3.1",
+        "composite_score": 7,
+        "description": "Broad non-competition restriction extending to Affiliates.",
+        "rank": 43,
+        "remediation": "Carve out existing activities of 'Newly Acquired Affiliates' or narrow the definition of Affiliate to only those entities controlled by the business unit performing the activities.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.5.1(e)",
+        "composite_score": 7,
+        "description": "Sole responsibility for misclassification risks.",
+        "rank": 44,
+        "remediation": "Include mutual indemnification where Dova is liable if their specific instructions or direct management caused the misclassification or claim.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "Section 13.8 (Amendments)",
+        "composite_score": 7,
+        "description": "Missing explicit written amendment requirement.",
+        "rank": 45,
+        "remediation": "Insert a formal amendment clause: 'No amendment, modification or supplement of any provision of this Agreement shall be valid or effective unless made in writing and signed by a duly authorized officer of each Party.'",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.1",
+        "composite_score": 7,
+        "description": "Strict prohibition on subcontracting or delegation to third parties.",
+        "rank": 46,
+        "remediation": "Negotiate the right to subcontract to reputable third parties subject to Dova's prior written consent, not to be unreasonably withheld.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "2.3.1",
+        "composite_score": 7,
+        "description": "Aggressive non-compete extending to all Affiliates.",
+        "rank": 47,
+        "remediation": "Narrow the scope of 'Affiliates' to only those specifically involved in the promotion of the Product or residing within the same business unit.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.5.1(e)",
+        "composite_score": 7,
+        "description": "Unilateral indemnification for misclassification and co-employment risks.",
+        "rank": 48,
+        "remediation": "Add an exception where Dova is responsible for costs arising from its own gross negligence or willful misconduct in directing Valeant personnel.",
+        "severity": "high"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.5.1(f)",
+        "composite_score": 7,
+        "description": "Absolute liability for personnel acts without conduct carve-outs.",
+        "rank": 49,
+        "remediation": "Insert a carve-out for acts or omissions resulting from Valeant's reliance on Dova-provided instructions, materials, or labeling.",
+        "severity": "high"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "3.4",
+        "composite_score": 7,
+        "description": "Unbalanced Final Decision-Making Authority",
+        "rank": 50,
+        "remediation": "Identify specific critical 'other matters' that require mutual agreement or expert determination rather than allowing Dova unilateral control over unspecified areas.",
+        "severity": "high"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "Section 13.6.1",
+        "composite_score": 7,
+        "description": "Conflicting priority or 'Notwithstanding' language creates ambiguity.",
+        "rank": 51,
+        "remediation": "Clarify the specific 'notwithstanding' events and ensure they are bilateral, specifically regarding the customer's right to seek equitable relief.",
+        "severity": "high"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "Section 9",
+        "composite_score": 7,
+        "description": "Lack of specific confidentiality parameters for Joint Steering Committee (JSC) attendees.",
+        "rank": 52,
+        "remediation": "Add a provision requiring all JSC attendees to be bound by written confidentiality obligations no less restrictive than those in the main agreement. Ensure 'Confidential Information' explicitly includes JSC meeting minutes and presentation materials.",
+        "severity": "high"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "Section 13.6.2",
+        "composite_score": 7,
+        "description": "Lack of Carve-outs for Equitable Relief",
+        "rank": 53,
+        "remediation": "Add a provision stating that 'nothing in this Section 13.6 shall preclude either Party from seeking interim or provisional relief, including a temporary restraining order or preliminary injunction, from a court of competent jurisdiction.'",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.3.1",
+        "composite_score": 7,
+        "description": "Implicit termination or suspension of activities without liability relief.",
+        "rank": 54,
+        "remediation": "Clarify that if a Governmental Authority suggests cessation of activities, such cessation shall not constitute a breach of the 'commercially reasonable efforts' clause and will prompt a good-faith renegotiation of affected milestones/fees.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "21 CFR 314.80(c)",
+        "composite_score": 7,
+        "description": "Missing definition of 'Adverse Drug Experience' and reporting workflows.",
+        "rank": 55,
+        "remediation": "Incorporate the full 21 CFR 314.80(a) definition of 'Adverse drug experience' into the contract and require mandatory pharmacovigilance training for all customer (Valeant) personnel involved in promotion.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "Physician Payments Sunshine Act (42 U.S.C. \u00a7 1320a-7h)",
+        "composite_score": 7,
+        "description": "Missing operational framework for Sunshine Act reporting compliance.",
+        "rank": 56,
+        "remediation": "Insert a detailed provision specifying: (1) which party has the primary reporting obligation, (2) the timeline for the other party to provide necessary data (e.g., within 30 days of the end of each quarter), and (3) a representation that all data provided will be accurate and complete for CMS filing purposes.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "Section 5.3.1",
+        "composite_score": 7,
+        "description": "Lack of defined integration between Force Majeure and termination rights specifically for regulatory failures.",
+        "rank": 57,
+        "remediation": "Expressly state that Force Majeure events do not excuse obligations related to pharmacovigilance reporting, safety data exchanges, or FDA compliance, and ensure that a Force Majeure event lasting more than 30 days gives the non-impacted party a right to terminate.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.10",
+        "composite_score": 7,
+        "description": "Insufficient supply protection and lack of specific remedies for stock-outs.",
+        "rank": 58,
+        "remediation": "Define specific inventory minimums and provide for commission/fee relief or termination rights if supply falls below certain thresholds for more than 30-60 days.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.3.1",
+        "composite_score": 7,
+        "description": "Broad unilateral suspension right without financial adjustment.",
+        "rank": 59,
+        "remediation": "Narrow 'suggested' to written directives from a Governmental Authority and include a clause specifying that if the cessation is due to Valeant's misconduct, it constitutes a material breach.",
+        "severity": "high"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.7",
+        "composite_score": 7,
+        "description": "Inadequate data format and indemnity for Sunshine Act/Transparency reporting.",
+        "rank": 60,
+        "remediation": "Define the specific data schema required for reporting and include a specific indemnity clause covering penalties, interest, and legal costs arising from inaccurate or late data transfers between parties.",
+        "severity": "high"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.3.2",
+        "composite_score": 7,
+        "description": "Unbalanced sales-performance termination trap.",
+        "rank": 61,
+        "remediation": "Strike the proviso or add a cure period for Sales Force Size before the right to terminate for low Net Sales is lost.",
+        "severity": "high"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.5",
+        "composite_score": 7,
+        "description": "Restrictive 'Tail' payment eligibility.",
+        "rank": 62,
+        "remediation": "Expand Tail Period eligibility to include natural expiration (12.1) and termination by Valeant for Dova\u2019s material breach.",
+        "severity": "high"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "Section 12.3.1 (referenced in 12.5 but not provided in text)",
+        "composite_score": 7,
+        "description": "Critical missing provision regarding termination for cause or material breach.",
+        "rank": 63,
+        "remediation": "Request the full text of Section 12.3.1. Ensure it includes a clear definition of material breach, a reasonable cure period (e.g., 30 days), and unilateral termination rights for the Customer in the event of such breach.",
+        "severity": "high"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "Section 6.1 (referenced for payment calculations)",
+        "composite_score": 7,
+        "description": "Critical transparency and calculation risk due to missing payment methodology",
+        "rank": 64,
+        "remediation": "Request the full text of Section 6.1. Ensure it includes a precise definition of 'Net Sales', explicit allowable deductions, and a pro-rata adjustment for any partial periods occurring during the termination notice period.",
+        "severity": "high"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "Definition of 'Valeant Property' (referenced in 12.4)",
+        "composite_score": 7,
+        "description": "Definition of 'Valeant Property' is missing or undefined in the provided section, creating uncertainty regarding asset ownership upon termination.",
+        "rank": 65,
+        "remediation": "Expressly define 'Valeant Property' to include all trademarks, copyrights, marketing collateral, customer lists, and confidential information provided by or developed on behalf of Valeant during the term.",
+        "severity": "high"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "8.1",
+        "composite_score": 7,
+        "description": "Overly broad automatic assignment of improvements/inventions.",
+        "rank": 66,
+        "remediation": "Limit assignments to inventions that 'directly incorporate' Dova's Confidential Information. Carve out 'General Principles' or 'Residuals' where Valeant retains ownership of improvements to its own internal methods and business processes.",
+        "severity": "high"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "Intellectual Property & Confidentiality (General Cluster)",
+        "composite_score": 7,
+        "description": "Lack of defined 'Residual Knowledge' carves-out in confidentiality.",
+        "rank": 67,
+        "remediation": "Include a clause allowing the use of 'residuals' (ideas, concepts, know-how) retained in the unaided memory of employees who had access to Confidential Information.",
+        "severity": "high"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "Confidentiality Agreement dated [***]",
+        "composite_score": 7,
+        "description": "Risk of unanalyzed terms due to incorporation by reference of an undisclosed document.",
+        "rank": 68,
+        "remediation": "Request the full text of the referenced Confidentiality Agreement and ensure it includes standard exclusions (public domain, independent development) and an survival period of at least 5 years post-termination.",
+        "severity": "high"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "Section 8.1.1",
+        "composite_score": 7,
+        "description": "Unverified Intellectual Property Limitation",
+        "rank": 69,
+        "remediation": "Request the full text of Section 8.1.1 to ensure that any 'limitation' does not prevent Valeant from exercising its necessary rights under the co-promotion agreement or strip Valeant of its independently developed IP rights.",
+        "severity": "high"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "8.1.2",
+        "composite_score": 7,
+        "description": "Broad IP Capture - Improvement Forfeiture",
+        "rank": 70,
+        "remediation": "Restrict assignment to inventions that incorporate Dova's pre-existing IP and negotiate a non-exclusive license back to Valeant for any general process improvements.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "Definitions for 'Net Sales'",
+        "composite_score": 7,
+        "description": "Missing explicit definition for 'Net Sales' in a Revenue-Sharing agreement.",
+        "rank": 71,
+        "remediation": "Insert a comprehensive definition of Net Sales based on GAAP or IFRS. Specify explicit deductions such as (a) Credits or allowances for returns, (b) Trade, quantity and cash discounts, (c) Adjustments for Medicare/Medicaid/340B rebates, and (d) Freight, postage, and insurance charges.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "Definitions for 'Allowable Expenses' or 'Promotion Costs'",
+        "composite_score": 7,
+        "description": "Critical financial terms 'Allowable Expenses' and 'Promotion Costs' are missing from the definitions despite being central to a co-promotion agreement.",
+        "rank": 72,
+        "remediation": "Insist on a detailed, exhaustive list of expense categories that qualify as 'Allowable' and explicitly exclude internal corporate overhead, fixed assets, and executive compensation. Establish a 'Pre-approved Budget' mechanism for any costs exceeding a specified threshold.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "Section 1.62",
+        "composite_score": 7,
+        "description": "Lack of fixed duration within definition leads to 'Evergreen' risk.",
+        "rank": 73,
+        "remediation": "Ensure Section 13.1 contains a clear termination for convenience clause or a definitive end date that doesn't permit unilateral extension by the Provider.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "ARTICLE 2",
+        "composite_score": 7,
+        "description": "Critical lack of specificity in rights and obligations definitions.",
+        "rank": 74,
+        "remediation": "Explicitly define the scope of the co-promotion rights (exclusive vs. non-exclusive), specific sales targets, the geography/territory, and the specific duties of the Provider regarding marketing materials and regulatory compliance.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "Article 1 (Territory)",
+        "composite_score": 7,
+        "description": "Undefined or overly broad 'Territory' definition.",
+        "rank": 75,
+        "remediation": "Explicitly define 'Territory' as the United States and its territories, or specifically list the jurisdictions included. Ensure it aligns with the customer's regulatory footprint.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "Article 10",
+        "composite_score": 7,
+        "description": "Potential lack of liability parity",
+        "rank": 76,
+        "remediation": "Ensure Article 10 contains mutual indemnification for third-party claims arising from breach of contract or negligence. Ensure the Limitation of Liability section (Article 9) applies equally to both parties.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "ARTICLE 2",
+        "composite_score": 7,
+        "description": "Absence of Intellectual Property (IP) ownership and protection language.",
+        "rank": 77,
+        "remediation": "Insert a clear IP ownership clause distinguishing between Pre-existing IP and New IP developed under the agreement. Include a work-for-hire provision if applicable.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "ARTICLE 2",
+        "composite_score": 7,
+        "description": "Missing 'Territory' and 'Exclusivity' parameters.",
+        "rank": 78,
+        "remediation": "Define 'Territory' (e.g., North America, Worldwide) and state whether the rights granted are 'exclusive', 'sole', or 'non-exclusive'.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "ARTICLE 3",
+        "composite_score": 7,
+        "description": "Omission of scope of authority and fiduciary duty disclaimers.",
+        "rank": 79,
+        "remediation": "Explicitly state that the JSC has no power to amend, modify, or waive compliance with the Agreement. Add language clarifying that each party's representatives on the JSC shall act in the interest of their appointing party.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "Section 3.1: Composition and Membership",
+        "composite_score": 7,
+        "description": "Missing governance structure and Joint Steering Committee specifications.",
+        "rank": 80,
+        "remediation": "Insert language specifying that the JSC shall consist of an equal number of representatives from each party, define a quorum, and establish a designated tie-breaker or escalation process to senior executives.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "Section 3.2: Decision Making and Tie-Breaking",
+        "composite_score": 7,
+        "description": "Risk of micro-management through committee-level decision-making for routine activities.",
+        "rank": 81,
+        "remediation": "Ensure that the clause distinguishes between 'Strategic Decisions' (Joint Committee) and 'Operational Decisions' (Individual Party authority) to maintain commercial agility.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "Section 3.3",
+        "composite_score": 7,
+        "description": "Undefined or Overly Broad Scope of Authority",
+        "rank": 82,
+        "remediation": "Explicitly state that the Provider has no authority to enter into any agreement or commitment in the name of or on behalf of the Customer. Include a provision that the Provider shall not make any statements or representations concerning the products that are inconsistent with the approved labeling or the Marketing Plan.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "ARTICLE 3",
+        "composite_score": 7,
+        "description": "Lack of Fiduciary Duty Disclaimers",
+        "rank": 83,
+        "remediation": "Add a clause stating: 'Each party's representatives on the JSC shall act in the best interests of their respective employers, and nothing in this Agreement shall be construed as creating a fiduciary duty between the parties or their representatives.'",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "ARTICLE 12",
+        "composite_score": 7,
+        "description": "Lack of specific termination rights for the Customer.",
+        "rank": 84,
+        "remediation": "Ensure the full text includes a right for the Customer to terminate for convenience upon 30-90 days notice and immediate termination rights for material breach by the Provider.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "ARTICLE 12",
+        "composite_score": 7,
+        "description": "Risk of an indefinite term or automatic 'evergreen' renewal without exit rights.",
+        "rank": 85,
+        "remediation": "Define an Initial Term (e.g., 3 years) and clarify if renewal requires mutual written agreement or if it happens automatically. If automatic, ensure a 'Notice of Non-Renewal' window is established.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "ARTICLE 12",
+        "composite_score": 7,
+        "description": "Absence of post-termination IP and data transition obligations.",
+        "rank": 86,
+        "remediation": "Add a 'Consequences of Termination' section specifying the timeline for the return of proprietary data, the destruction of marketing materials, and the survival of audit and confidentiality clauses.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "ARTICLE 6",
+        "composite_score": 7,
+        "description": "Lack of substantive financial terms and detail in Article 6 heading.",
+        "rank": 87,
+        "remediation": "Ensure that Article 6 includes detailed formulas for Net Sales, specific definitions of 'Allowable Expenses,' clearly defined payment schedules, and a robust Audit Right clause allowing the customer to verify financial reports generated by the provider.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Article 1 (Definitions) - Net Sales",
+        "composite_score": 7,
+        "description": "Potential overstatement of Net Sales due to omission of specific allowable deductions.",
+        "rank": 88,
+        "remediation": "Ensure the 'Net Sales' definition explicitly includes deductions for prompt pay discounts, volume discounts, rebates, chargebacks, returns, and taxes specifically levied on sales.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Article 9",
+        "composite_score": 7,
+        "description": "Risk of unaddressed early termination fees and non-recoverable investment costs.",
+        "rank": 89,
+        "remediation": "Include a clause requiring the Provider to reimburse a pro-rata portion of any prepaid fees and compensate for non-cancelable third-party costs incurred by the Customer if the Provider terminates for convenience.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Exhibit A (Financial Reports)",
+        "composite_score": 7,
+        "description": "Missing Reporting Specifications and Formats",
+        "rank": 90,
+        "remediation": "Insist on a standardized reporting template including Gross-to-Net (GTN) adjustments, detailed expense line items, and audit trail requirements to ensure transparency in the co-promotion financial outcomes.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 7,
+        "description": "Absence of resource allocation limits or budget caps",
+        "rank": 91,
+        "remediation": "Include a sub-section defining a maximum FTE (Full-Time Equivalent) count or a fixed marketing budget that the Customer is not required to exceed.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "Definition of 'Commercially Reasonable Efforts'",
+        "composite_score": 7,
+        "description": "Missing definition of 'Commercially Reasonable Efforts' in a performance-dependent agreement.",
+        "rank": 92,
+        "remediation": "Insert a definition that includes objective criteria, such as 'the level of effort and resources typically used by a pharmaceutical company of similar size and resources for a product at a similar stage in its lifecycle, taking into account market potential and safety profile.'",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "Section on Sales Force Training",
+        "composite_score": 7,
+        "description": "The Sales Force Training section is entirely missing substantive terms or is left blank in the provided document material.",
+        "rank": 93,
+        "remediation": "Insert a comprehensive training clause requiring the provider to: 1) use only customer-approved training materials, 2) ensure all sales representatives pass a proficiency exam prior to promoting the product, and 3) maintain records of training for audit purposes.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 7,
+        "description": "Missing liability and indemnity framework for commercial activities.",
+        "rank": 94,
+        "remediation": "Add an indemnity clause requiring Valeant to indemnify the user for claims arising from their marketing activities, off-label promotion, or regulatory violations.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 7",
+        "clause_ref": "ARTICLE 7",
+        "composite_score": 7,
+        "description": "Lack of defined scope and limitations for the Provider's audit rights.",
+        "rank": 95,
+        "remediation": "Limit audits to once per calendar year upon 30 days' prior written notice. Restrict scope specifically to books and records necessary to verify compliance with payment or promotion obligations. Ensure audits are conducted during normal business hours by an independent third-party auditor subject to confidentiality.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 7",
+        "clause_ref": "Definitions of 'Change of Control' / Audit Rights",
+        "composite_score": 7,
+        "description": "The absence of a specific 'Change of Control' definition linked to audit triggers creates a coverage gap for the Customer.",
+        "rank": 96,
+        "remediation": "Include a standard Change of Control definition (e.g., acquisition of >50% voting power or sale of substantially all assets) and specify that such an event allows the Customer to conduct an out-of-cycle audit at the Provider's expense.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 7",
+        "clause_ref": "Records Retention / Audit Gap",
+        "composite_score": 7,
+        "description": "Potential mismatch between the duration records are kept and the period during which an audit can be initiated.",
+        "rank": 97,
+        "remediation": "Ensure the records retention period is at least one year longer than the audit look-back period to allow for the exercise of audit rights at the end of the term.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 5",
+        "clause_ref": "ARTICLE 5",
+        "composite_score": 7,
+        "description": "Lack of detailed cost-sharing and decision-making authority for regulatory filings.",
+        "rank": 98,
+        "remediation": "Include language requiring the provider to consult with the customer on significant regulatory submissions and providing a mechanism for cost allocation related to safety surveillance.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 5",
+        "clause_ref": "ARTICLE 5 / Pharmacovigilance Provisions",
+        "composite_score": 7,
+        "description": "Missing defined Pharmacovigilance Agreement (PVA) or Safety Data Exchange Agreement (SDEA).",
+        "rank": 99,
+        "remediation": "Insist on the inclusion of a detailed PVA as an exhibit. Ensure it clarifies which party is responsible for maintaining the Global Safety Database and the specific timelines (e.g., 24-72 hours) for exchanging safety information.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 5",
+        "clause_ref": "Definitions Section",
+        "composite_score": 7,
+        "description": "Missing or ambiguous definitions for 'Commercial Launch' and 'Promotional Plan' create performance uncertainty.",
+        "rank": 100,
+        "remediation": "Define 'Commercial Launch' as the date of the first arm's-length commercial sale of the Product to a third party by or on behalf of the parties in the Territory following Regulatory Approval. Define 'Promotional Plan' as the comprehensive annual plan that must be mutually agreed upon in writing by a Joint Steering Committee, specifying budget, frequency of details, and target audiences.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 5",
+        "clause_ref": "ARTICLE 5",
+        "composite_score": 7,
+        "description": "Risk of ambiguity in commercialization rights and financial allocations.",
+        "rank": 101,
+        "remediation": "Define 'Commercialization Plan' and 'Commercialization Expenses' and specify a dispute resolution mechanism for deadlocks in joint commercial committees.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 8",
+        "clause_ref": "Article 8 (General Liability)",
+        "composite_score": 7,
+        "description": "Potential absence of an IP infringement carve-out from the general liability cap.",
+        "rank": 102,
+        "remediation": "Ensure that indemnification for third-party Intellectual Property claims is expressly excluded from any limitation of liability or aggregate cap found in the contract.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 8",
+        "clause_ref": "ARTICLE 8",
+        "composite_score": 7,
+        "description": "Absence of IP-specific liability carve-outs and infringement protection.",
+        "rank": 103,
+        "remediation": "Explicitly state that liability arising from a breach of intellectual property rights or IP indemnification obligations is excluded from the general limitation of liability.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "ARTICLE 9",
+        "composite_score": 7,
+        "description": "Lack of substantive confidentiality terms and non-disclosure obligations.",
+        "rank": 104,
+        "remediation": "Insert a comprehensive confidentiality clause that defines 'Confidential Information', limits its use solely to the performance of the agreement, requires a standard of care at least equal to the party's own, and specifies survival periods (e.g., 5-7 years post-termination).",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "Definition of 'Confidential Information' (if located in Article 1)",
+        "composite_score": 7,
+        "description": "Evidence of coverage gap for 'Confidential Information' definition in a co-promotion agreement.",
+        "rank": 105,
+        "remediation": "Include a comprehensive definition of Confidential Information that explicitly encompasses all non-public technical, financial, and commercial information, including the terms of the Agreement itself, and ensure it covers information disclosed by both parties.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "Article 12 (Term and Termination)",
+        "composite_score": 7,
+        "description": "Lack of Intellectual Property and Data Handback clauses.",
+        "rank": 106,
+        "remediation": "Specify that Customer retains ownership of its proprietary customer lists and data upon termination, and define the survival of confidentiality and indemnification obligations.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "ARTICLE 9",
+        "composite_score": 7,
+        "description": "Absence of Return or Destruction of Materials protocol.",
+        "rank": 107,
+        "remediation": "Add a clause requiring the receiving party to return or destroy all copies of the disclosing party's confidential information upon request or termination, with a requirement to provide written certification of such destruction.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "ARTICLE 9",
+        "composite_score": 7,
+        "description": "Missing Intellectual Property (IP) protection within the confidentiality framework.",
+        "rank": 108,
+        "remediation": "Include a 'No Licenses' provision stating that no rights or licenses to a party's IP are granted except as expressly set forth in the agreement.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "Definitions section (missing 'Activities' definition)",
+        "composite_score": 7,
+        "description": "The term 'Activities' is used in Article 4 but lacks a precise, centralized definition in the definitions section.",
+        "rank": 109,
+        "remediation": "Define 'Activities' clearly to encompass only specific agreed-upon marketing and promotional tasks. Ensure the definition cross-references the Annual Commercial Plan to prevent unilateral expansion of duties.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "Termination (Missing Section)",
+        "composite_score": 7,
+        "description": "Lack of specific termination rights for breach of Article 4 (Valeant Activities).",
+        "rank": 110,
+        "remediation": "Insert a specific clause in the Termination Article stating that a material breach of Article 4 obligations by Dova qualifies as grounds for termination for cause after a specified cure period.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4 (Valeant Activities)",
+        "composite_score": 7,
+        "description": "Possible absence of a 'Duty to Defend' for regulatory non-compliance.",
+        "rank": 111,
+        "remediation": "Expressly include 'Regulatory Claims' and 'Off-label Promotion claims' within the scope of the Indemnification Article, with clear procedures for defense control.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 7,
+        "description": "Missing performance standard (e.g., Commercially Reasonable Efforts).",
+        "rank": 112,
+        "remediation": "Insert a clause requiring Valeant to use 'Commercially Reasonable Efforts' to perform the Activities and define that term based on industry-standard metrics.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 7,
+        "description": "Lack of specific indemnification for regulatory non-compliance during activities.",
+        "rank": 113,
+        "remediation": "Add a cross-reference to the Indemnification Article specifically covering any third-party claims arising from Valeant's acts or omissions in performing the Article 4 Activities.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "ARTICLE 6",
+        "composite_score": 7,
+        "description": "Lack of Liability Cap and Indirect Damage Exclusion",
+        "rank": 114,
+        "remediation": "Insert a liability cap limiting total exposure to the amount of fees paid or payable under the agreement and exclude indirect, special, and consequential damages.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "Definitions of 'Net Sales'",
+        "composite_score": 7,
+        "description": "Missing definition for 'Net Sales' in a co_promotion_agreement context.",
+        "rank": 115,
+        "remediation": "Insert a comprehensive definition of Net Sales that allows for standard GAAP/IFRS deductions, including: (i) trade, quantity, and cash discounts; (ii) credits or allowances for returns, withdrawals, and recalls; (iii) chargebacks, rebates, and pharmacy benefit adjustments; and (iv) sales/excise taxes.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "Article 7 (Reporting and Audits)",
+        "composite_score": 7,
+        "description": "Lack of predefined audit frequency, cost allocation, and dispute resolution for financial discrepancies.",
+        "rank": 116,
+        "remediation": "Insert a clause granting the Customer the right to audit the Provider's books and records once per calendar year via an independent third-party auditor. Include a provision that if an underpayment of >5% is found, the Provider must bear the cost of the audit.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "ARTICLE 6 (Financial Provisions)",
+        "composite_score": 7,
+        "description": "Lack of Liability Cap and Indirect Damage Exclusion within financial framework.",
+        "rank": 117,
+        "remediation": "Insert a 'Limitation of Liability' clause specifically addressing financial breaches, capping aggregate liability and excluding indirect, incidental, or punitive damages.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "ARTICLE 6 (Financial Provisions)",
+        "composite_score": 7,
+        "description": "Missing Audit Rights and Financial Dispute Resolution.",
+        "rank": 118,
+        "remediation": "Add an 'Audit Rights' section allowing an independent CPA to review books once per calendar year, with the cost borne by the payor if a discrepancy of >5% is found.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 2.1 (Scope of Co-Promotion)",
+        "composite_score": 7,
+        "description": "Missing performance metrics and Minimum Detailing Requirements.",
+        "rank": 119,
+        "remediation": "Insert clear 'Minimum Detailing Obligations' and specify which party is responsible for creating and approving marketing materials (Promotional Materials).",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Section 1.1 - 1.65 (Definitions)",
+        "clause_ref": "Section 1.1 - 1.65 (Definitions)",
+        "composite_score": 7,
+        "description": "Ambiguity in 'Net Sales' calculation methodology.",
+        "rank": 120,
+        "remediation": "Define 'Net Sales' using GAAP or IFRS standards, explicitly listing allowable deductions like returns, prompt-pay discounts, and government-mandated rebates.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12 (General)",
+        "composite_score": 7,
+        "description": "Lack of termination for convenience by Customer",
+        "rank": 121,
+        "remediation": "Insert a provision allowing Customer to terminate for any reason or no reason upon 120 days' written notice.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12 (IP Rights)",
+        "composite_score": 7,
+        "description": "Potential IP and Data reversal gap",
+        "rank": 122,
+        "remediation": "Add a clause requiring the destruction or return of all proprietary customer lists and marketing strategy documents within 30 days of termination.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Section 13.2 (Indemnification Survival)",
+        "composite_score": 7,
+        "description": "Indemnification survival length is not defined or is inconsistent with underlying limitation of liability or statutes of limitations.",
+        "rank": 123,
+        "remediation": "Ensure indemnification survival aligns with relevant statutes of limitations (e.g., 3-6 years) and specifically includes any claims arising from conduct during the term, regardless of when the claim is filed. Ensure that Section 12 (Termination) explicitly links to this survival clause.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12",
+        "composite_score": 7,
+        "description": "Lack of Termination for Convenience by Customer",
+        "rank": 124,
+        "remediation": "Insert a clause allowing the Customer to terminate for any reason upon providing 30 to 60 days' written notice.",
+        "severity": "high"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12",
+        "composite_score": 7,
+        "description": "Ambiguous Material Breach Cure Period",
+        "rank": 125,
+        "remediation": "Specify that a party has 30 days from receipt of written notice to cure a material breach before the other party can exercise termination rights.",
+        "severity": "high"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.3.1",
+        "composite_score": 4,
+        "description": "Ambiguous 'undisputed portion' language allows for unilateral withholding without a defined dispute resolution process.",
+        "rank": 126,
+        "remediation": "Add a requirement that any dispute must be made in writing within a specific number of days, detailing the basis for the dispute, and that the parties must follow the Section 13 (Dispute Resolution) process.",
+        "severity": "medium"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.1.2(c)",
+        "composite_score": 4,
+        "description": "Fee adjustment mechanism might be construed as an unenforceable penalty rather than liquidated damages.",
+        "rank": 127,
+        "remediation": "Include a statement that the parties agree these adjustments represent a reasonable estimate of the anticipated harm and are not intended as a penalty.",
+        "severity": "medium"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.1.1",
+        "composite_score": 4,
+        "description": "Lack of a 'Floor' or 'Minimum Performance' requirement linked to the payment obligation.",
+        "rank": 128,
+        "remediation": "Include a provision allowing for the reduction of the Promotion Fee if Valeant fails to meet agreed-upon call frequencies or sales force reach metrics as defined in the commercial plan.",
+        "severity": "medium"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.1.1",
+        "composite_score": 4,
+        "description": "Ambiguity in 'Net Sales' definition and calculation timing relative to returns and chargebacks.",
+        "rank": 129,
+        "remediation": "Ensure the 'Net Sales' definition (likely in Section 1.56) includes a robust 'true-up' mechanism and that Section 6.1.1 explicitly allows for credits against future payments in the event of sales reversals.",
+        "severity": "medium"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "12.2.2",
+        "composite_score": 4,
+        "description": "Ambiguity in 'Sales Representative' definition and calculation of 'Quarterly Average'.",
+        "rank": 130,
+        "remediation": "Cross-reference a specific definition of 'Sales Representative' and clarify that the average calculation accounts for 'vacant territories' during reasonable recruitment cycles.",
+        "severity": "medium"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.1.5",
+        "composite_score": 4,
+        "description": "Permission-based team deployment creates an 'agreement to agree'.",
+        "rank": 131,
+        "remediation": "Define minimum or maximum ranges for the team size or include a 'not to be unreasonably withheld' standard for Dova's approval.",
+        "severity": "medium"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.5.1(f)",
+        "composite_score": 4,
+        "description": "Unilateral liability for employment actions.",
+        "rank": 132,
+        "remediation": "Add language stating that Dova shall indemnify Valeant if employment claims arise directly from Valeant complying with a specific written request from Dova regarding a personnel change.",
+        "severity": "medium"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "Section 4.1.5 (Institutional Team Details)",
+        "composite_score": 4,
+        "description": "Risk of excessive operational interference and lack of flexibility in personnel management.",
+        "rank": 133,
+        "remediation": "Ensure the customer retains sole discretion over hiring, firing, and reallocation of its personnel, subject only to general competency standards rather than specific approval rights by the provider.",
+        "severity": "medium"
+      },
+      {
+        "category": "Operational Rights & Field Force Obligations",
+        "clause_ref": "4.1.5",
+        "composite_score": 4,
+        "description": "Agreement to agree regarding institutional account management.",
+        "rank": 134,
+        "remediation": "Define the criteria for approval or establish an initial agreed-upon headcount and territory list for these managers in an exhibit.",
+        "severity": "medium"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "13.6.1",
+        "composite_score": 4,
+        "description": "Lack of Specific Dispute Description for Senior Officers",
+        "rank": 135,
+        "remediation": "Require the initiating party to provide a written summary of the dispute and the desired remedy at the time of referral.",
+        "severity": "medium"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.2",
+        "composite_score": 4,
+        "description": "Information flow imbalance regarding regulatory communications.",
+        "rank": 136,
+        "remediation": "Request reciprocal review rights for any Dova communications that specifically mention Valeant or impact the 'Specialty' marketing activities.",
+        "severity": "medium"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.7",
+        "composite_score": 4,
+        "description": "Risk of inconsistent reporting to CMS/Sunshine Act.",
+        "rank": 137,
+        "remediation": "Add a requirement for a quarterly data reconciliation meeting to ensure 'transfers of value' reported by both parties are consistent and deduplicated before submission to the Open Payments portal.",
+        "severity": "medium"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "Physician Payments Sunshine Act (42 U.S.C. \u00a7 1320a-7h)",
+        "composite_score": 4,
+        "description": "Lack of indemnification for reporting inaccuracies.",
+        "rank": 138,
+        "remediation": "Include a mutual indemnity clause specifically covering losses arising from a party's failure to provide accurate data required for Physician Payments Sunshine Act compliance.",
+        "severity": "medium"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.1",
+        "composite_score": 4,
+        "description": "Lack of collaborative oversight on regulatory strategy for a co-promoted or specialized product.",
+        "rank": 139,
+        "remediation": "Include a right for Valeant to participate in significant regulatory strategy discussions or establish a Joint Regulatory Committee.",
+        "severity": "medium"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.2",
+        "composite_score": 4,
+        "description": "Asymmetric control over regulatory communication responses.",
+        "rank": 140,
+        "remediation": "Require Dova's approval (not just comment) for any communication that impacts the Product's Regulatory Approval or the Marketing Authorization holder\u2019s status.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.1",
+        "composite_score": 4,
+        "description": "Lack of convenient termination or renewal options.",
+        "rank": 141,
+        "remediation": "Add a 'Termination for Convenience' clause allowing the Party to exit with 90-180 days' notice, or include an automatic renewal (evergreen) clause.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.2.7",
+        "composite_score": 4,
+        "description": "Potential conflict with US Bankruptcy Code (Ipso Facto clauses).",
+        "rank": 142,
+        "remediation": "Consult with bankruptcy counsel to ensure the clause is enforceable in the relevant jurisdiction or link termination to a failure to perform or financial insolvency criteria rather than just the filing of a petition.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.4",
+        "composite_score": 4,
+        "description": "Broad IP/Work Product transfer upon termination.",
+        "rank": 143,
+        "remediation": "Clarify that 'developed' items only include Dova-specific deliverables and explicitly exclude Valeant\u2019s background IP and general know-how.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "Section 12.3.1 (referenced in 12.5 but not provided in text)",
+        "composite_score": 4,
+        "description": "Potential ambiguity in termination triggers due to cross-referencing.",
+        "rank": 144,
+        "remediation": "Audit all references to 12.3.1 across the agreement (specifically Sections 1.62 and 4.3.6) to identify linked liabilities or performance milestones.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "1.62 -> 12.1",
+        "composite_score": 4,
+        "description": "Circular or complex definition mapping for termination triggers",
+        "rank": 145,
+        "remediation": "Verify that the definition in 1.62 does not narrow the scope of 'Material Breach' so much that it makes Section 12.1 unenforceable for practical operational failures.",
+        "severity": "medium"
+      },
+      {
+        "category": "Termination & Exit",
+        "clause_ref": "12.4",
+        "composite_score": 4,
+        "description": "Lack of clear survival language or specific timelines for the return of property.",
+        "rank": 146,
+        "remediation": "Ensure section 12.4 includes a specific timeframe (e.g., 30 days) and a certification of destruction/return by an officer of the provider.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "2.4",
+        "composite_score": 4,
+        "description": "Amorphous internal quality standard.",
+        "rank": 147,
+        "remediation": "Replace this general reference with specific, predefined quality control guidelines or checklists provided as an exhibit to the agreement.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "8.3",
+        "composite_score": 4,
+        "description": "Lack of step-in rights for enforcement.",
+        "rank": 148,
+        "remediation": "Include a 'step-in right' allowing Valeant to enforce if Dova declines to do so within a certain period (e.g., 30 days) for infringements that materially affect Valeant\u2019s rights under the Agreement.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "9.1",
+        "composite_score": 4,
+        "description": "Fixed-duration confidentiality for trade secrets.",
+        "rank": 149,
+        "remediation": "Add an exception stating that with respect to Information constituting a 'trade secret' under applicable law, the obligations of confidentiality shall survive for as long as such information remains a trade secret.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "Exhibit A (Press Release Template)",
+        "composite_score": 4,
+        "description": "Missing template for mandatory public disclosure.",
+        "rank": 150,
+        "remediation": "Populate Exhibit A with an agreed-upon draft or include a clause stating that no press release shall be issued without the express written consent of both parties.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "Confidentiality Agreement dated [***]",
+        "composite_score": 4,
+        "description": "Potential conflict of priority between agreements.",
+        "rank": 151,
+        "remediation": "Add a priority clause stating that in the event of a conflict between the Co-Promotion Agreement and the referenced Confidentiality Agreement, the terms of the Co-Promotion Agreement shall prevail.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "2.4.2",
+        "composite_score": 4,
+        "description": "Unilateral Control over Marketing and Operations",
+        "rank": 152,
+        "remediation": "Amend to state that guidelines must be 'reasonable' and that any new instructions must provide a reasonable grace period for implementation.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "8.3",
+        "composite_score": 4,
+        "description": "Lack of Step-In Rights",
+        "rank": 153,
+        "remediation": "Add a provision allowing Valeant to enforce IP rights if Dova fails to do so within a specified timeframe (e.g., 30 days) after notification, at Valeant's expense.",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "9.1.1",
+        "composite_score": 4,
+        "description": "Fixed Duration for Trade Secret Confidentiality",
+        "rank": 154,
+        "remediation": "Amend the duration to state 'for a period of [X] years, provided that Trade Secrets shall be protected for as long as they qualify as such under applicable law.'",
+        "severity": "medium"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "9.1.1",
+        "composite_score": 4,
+        "description": "Incorporation by Reference Risk",
+        "rank": 155,
+        "remediation": "Explicitly state that the terms of the current Agreement supersede the previous Confidentiality Agreement in the event of a conflict.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "ARTICLE 1",
+        "composite_score": 4,
+        "description": "High density of cross-referenced definitions creating interpretive risk.",
+        "rank": 156,
+        "remediation": "Perform a cross-dependency map for high-value terms such as 'Net Sales', 'Promotion Costs', and 'Territory'. Ensure that any 'incorporation by reference' within these definitions does not inadvertently expand the provider's right to modify commercial terms unilaterally.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "Definitions for 'Net Sales'",
+        "composite_score": 4,
+        "description": "Absence of 'First Arm's Length Sale' clarification.",
+        "rank": 157,
+        "remediation": "Add language stating that 'Net Sales' shall be based on the amount invoiced for the sale of the Product to unaffiliated Third Parties in arm's length transactions.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "ARTICLE 1",
+        "composite_score": 4,
+        "description": "High complexity and circularity in definitions (68+ terms) increases the risk of interpretation errors.",
+        "rank": 158,
+        "remediation": "Perform a cross-reference audit to ensure no definitions create circular logic or 'hidden' obligations. Simplify definitions where possible and ensure that terms used in economic formulas (e.g., Net Sales) are not eroded by subsequent definitions in Article 1.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "Section 1.63",
+        "composite_score": 4,
+        "description": "Geographic scope ambiguity regarding 'possessions'.",
+        "rank": 159,
+        "remediation": "Explicitly list included territories and possessions (e.g., Puerto Rico, Guam, U.S. Virgin Islands) or refer to a standard international customs definition.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 1",
+        "clause_ref": "ARTICLE 1 (General)",
+        "composite_score": 4,
+        "description": "Interpretation risk due to heavy cross-referencing and circular definitions.",
+        "rank": 160,
+        "remediation": "Consolidate substantive obligations within the body of the agreement rather than within definitions. Perform a cross-reference audit to ensure no circular logic exists between 'Net Sales', 'Allowable Expenses', and 'Territory'.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 2",
+        "clause_ref": "ARTICLE 2",
+        "composite_score": 4,
+        "description": "Missing liability caps and indemnification triggers.",
+        "rank": 161,
+        "remediation": "Insert cross-indemnification clauses and ensure that total liability is capped at an amount relative to the contract value, while carving out gross negligence and willful misconduct.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 3",
+        "clause_ref": "ARTICLE 3",
+        "composite_score": 4,
+        "description": "Lack of detailed governance and deadlock resolution mechanisms.",
+        "rank": 162,
+        "remediation": "Specify the composition of the JSC, frequency of meetings, and clearly define a deadlock resolution process. For the customer (Valeant), ensure that certain 'reserved matters' require mutual consent or provide the customer with final say over specific local marketing activities.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "ARTICLE 12",
+        "composite_score": 4,
+        "description": "Ambiguity regarding post-termination obligations and IP rights.",
+        "rank": 163,
+        "remediation": "Define clear transition services, the return of confidential information, and the ownership of customer lists generated during the term.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 12",
+        "clause_ref": "Section 12.1",
+        "composite_score": 4,
+        "description": "Risk of unexpected automatic renewal or lack of termination for convenience during the initial term.",
+        "rank": 164,
+        "remediation": "Ensure the renewal requires mutual written agreement rather than automatic 'evergreen' status. Include a clear notice period (e.g., 90-180 days) for non-renewal and ensure a right to terminate for convenience is present to protect market agility.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "ARTICLE 6",
+        "composite_score": 4,
+        "description": "Missing Revenue Sharing and True-up Mechanisms.",
+        "rank": 165,
+        "remediation": "Insert clear language defining the methodology for revenue allocation and a monthly or quarterly true-up process to reconcile actual expenses against budget estimates.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Article 1 (Definitions) - Promotional Expenses",
+        "composite_score": 4,
+        "description": "Broad or vague definition of Promotional Expenses could allow for the inclusion of internal corporate overhead.",
+        "rank": 166,
+        "remediation": "Define 'Promotional Expenses' to include only direct, out-of-pocket costs and specifically exclude internal personnel costs unless expressly agreed upon in a budget. Add a requirement that all expenses must be documented and 'market rate'.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Article 9",
+        "composite_score": 4,
+        "description": "Potential for 'tail payments' or residuals continuing after the agreement ends.",
+        "rank": 167,
+        "remediation": "Ensure that any post-termination financial obligations are strictly limited to sales invoiced within 30-60 days of the termination date and specifically exclude renewals or recurring revenue.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6",
+        "clause_ref": "Exhibit A (Financial Reports)",
+        "composite_score": 4,
+        "description": "Lack of Data Protection Protocols for Shared Financial Records",
+        "rank": 168,
+        "remediation": "Cross-reference the confidentiality and data protection provisions of the main agreement and ensure Exhibit A limits data usage to reconciliation and tax purposes only.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "ARTICLE 4",
+        "composite_score": 4,
+        "description": "Lack of defined performance metrics and activity scope",
+        "rank": 169,
+        "remediation": "Define specific activities, quantitative milestones, and clarify that the customer's obligations are subject to certain conditions (e.g., supply availability or market conditions). Use 'commercially reasonable efforts' instead of absolute performance mandates.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4",
+        "clause_ref": "Section on Sales Force Training",
+        "composite_score": 4,
+        "description": "Missing allocation of training costs and infrastructure.",
+        "rank": 170,
+        "remediation": "Explicitly state that each party is responsible for the costs of their respective employees' attendance and that the provider is responsible for ensuring its force completes the training at its own expense.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 7",
+        "clause_ref": "ARTICLE 7",
+        "composite_score": 4,
+        "description": "Missing cost-shifting protections for audit expenses.",
+        "rank": 171,
+        "remediation": "Include a clause stating Dova shall bear all costs of the audit unless the audit reveals an underpayment or over-report of more than five percent (5%), in which case the Customer shall reimburse the reasonable out-of-pocket costs of the audit.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 7",
+        "clause_ref": "Article 7 / Records Scope",
+        "composite_score": 4,
+        "description": "Lack of clear definition of what constitutes 'Records' in a co-promotion context.",
+        "rank": 172,
+        "remediation": "Define 'Records' broadly to include all documentation necessary to verify compliance with FDA regulations and the financial terms of the co-promotion.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 5",
+        "clause_ref": "ARTICLE 5",
+        "composite_score": 4,
+        "description": "Ambiguous allocation of Pharmacovigilance (PV) responsibilities.",
+        "rank": 173,
+        "remediation": "Reference a separate Pharmacovigilance Agreement (PVA) or Safety Data Exchange Agreement (SDEA) that explicitly outlines reporting windows and responsibility for the Global Safety Database.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 8",
+        "clause_ref": "Article 10 (Indemnification)",
+        "composite_score": 4,
+        "description": "Unclear alignment between indemnification scope and liability limitations.",
+        "rank": 174,
+        "remediation": "Add language such as 'Notwithstanding anything to the contrary in Article 8, the following shall be excluded from all limitations of liability: (i) IP indemnification, (ii) gross negligence, and (iii) willful misconduct.'",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 9",
+        "clause_ref": "ARTICLE 9",
+        "composite_score": 4,
+        "description": "Missing 'Compelled Disclosure' and 'Return of Materials' protections.",
+        "rank": 175,
+        "remediation": "Ensure Article 9 includes provisions requiring the Provider to give prompt notice of legal process and to return or destroy all Customer data upon contract expiration.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "General Definitions",
+        "composite_score": 4,
+        "description": "Missing definition for standard of performance (e.g., 'Commercially Reasonable Efforts') in relation to 'Activities'.",
+        "rank": 176,
+        "remediation": "Insert a clear definition for 'Commercially Reasonable Efforts' and apply it to the execution of all designated 'Activities'.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 4 (Valeant Activities)",
+        "clause_ref": "Termination (Missing Section)",
+        "composite_score": 4,
+        "description": "Absence of 'Termination for Convenience' or 'Wind-down' provisions.",
+        "rank": 177,
+        "remediation": "Add a termination for convenience clause with a notice period (e.g., 90-180 days) and a clear wind-down procedure for ongoing promotional materials and regulatory filings.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "Definitions of 'Net Sales'",
+        "composite_score": 4,
+        "description": "Uncertainty regarding 'Non-Arm's Length' transactions and Samples.",
+        "rank": 178,
+        "remediation": "Explicitly state that Net Sales shall not include product distributed for promotional purposes, clinical trials, or compassionate use where no consideration is received.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_ARTICLE 6 (Financial Provisions)",
+        "clause_ref": "Article 7 (Reporting and Audits)",
+        "composite_score": 4,
+        "description": "Missing specific timelines for reporting and data reconciliation.",
+        "rank": 179,
+        "remediation": "Specify a monthly reporting obligation to be delivered within 15 days of month-end, detailing gross sales, net sales, and deductible expenses.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12 (Breach)",
+        "composite_score": 4,
+        "description": "Ambiguous material breach cure period",
+        "rank": 180,
+        "remediation": "Explicitly define a 60-day cure period for material breaches, with a shorter 10-day period for payment defaults.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12",
+        "composite_score": 4,
+        "description": "Absence of Wind-down/Tail Provisions",
+        "rank": 181,
+        "remediation": "Include a wind-down provision requiring the parties to complete ongoing obligations or provide transitional support for a period of 3-6 months post-termination.",
+        "severity": "medium"
+      },
+      {
+        "category": "coverage_gap_Article 12 (Termination and Effects of Termination)",
+        "clause_ref": "Article 12",
+        "composite_score": 4,
+        "description": "Indemnification Survival Risk",
+        "rank": 182,
+        "remediation": "Add a survival clause stating that indemnity obligations survive for a period of 3 years or the applicable statutory period following termination.",
+        "severity": "medium"
+      },
+      {
+        "category": "Commercial & Financial Remedies",
+        "clause_ref": "6.5.2",
+        "composite_score": 2,
+        "description": "Cost-sharing for data integrity verifications.",
+        "rank": 183,
+        "remediation": "Propose that the party whose Specialty designation position is proven incorrect by the investigation shall bear the full cost of the inquiry.",
+        "severity": "low"
+      },
+      {
+        "category": "Governance & Dispute Resolution",
+        "clause_ref": "3.1",
+        "composite_score": 2,
+        "description": "Ambiguity in 'Alternating Basis'",
+        "rank": 184,
+        "remediation": "Specify that the initial Chair will be appointed by Valeant (the customer) or determined by a coin toss, and define the cycle (e.g., annually).",
+        "severity": "low"
+      },
+      {
+        "category": "Regulatory & Safety Compliance",
+        "clause_ref": "5.10",
+        "composite_score": 2,
+        "description": "Vague performance standard ('continue to invest').",
+        "rank": 185,
+        "remediation": "Define 'continue to invest' by referencing a specific marketing plan, index to previous year's spend, or defining a minimum budget floor.",
+        "severity": "low"
+      },
+      {
+        "category": "Intellectual Property & Confidentiality",
+        "clause_ref": "9.2",
+        "composite_score": 2,
+        "description": "Lack of proactive protection for SEC filings.",
+        "rank": 186,
+        "remediation": "Specify that the filing party shall redact terms identified by the other party as highly sensitive, subject to the requirements of the SEC or applicable regulator.",
+        "severity": "low"
+      }
+    ],
+    "overall_risk": "high",
+    "parties": [
+      {
+        "entity_type": "corporation",
+        "name": "Dova Pharmaceuticals, Inc.",
+        "role": "provider"
+      },
+      {
+        "entity_type": "llc",
+        "name": "Valeant Pharmaceuticals North America LLC",
+        "role": "customer"
+      }
+    ]
+  }
+}

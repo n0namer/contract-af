@@ -1,0 +1,145 @@
+Contract : tests/fixtures/cuad_dova_promotion_agreement.txt
+           175,580 chars · 26,789 words
+Context  : I am the customer reviewing this agreement for renewal. Flag liability caps, IP ownership, indemnification, termination …
+Server   : http://localhost:8086
+
+POST http://localhost:8086/api/v1/execute/async/contract-af.analyze
+Execution: exec_20260308_050420_0849cnql
+Status   : queued
+
+Polling  : http://localhost:8086/api/v1/executions/exec_20260308_050420_0849cnql
+  [    10s] status=running
+  [    20s] status=running
+  [    30s] status=running
+  [    40s] status=running
+  [    50s] status=running
+  [    60s] status=running
+  [    70s] status=running
+  [    80s] status=running
+  [    90s] status=running
+  [   100s] status=running
+  [   110s] status=running
+  [   120s] status=running
+  [   130s] status=running
+  [   140s] status=running
+  [   150s] status=running
+  [   160s] status=running
+  [   170s] status=running
+  [   180s] status=running
+  [   190s] status=running
+  [   200s] status=running
+  [   210s] status=running
+  [   220s] status=running
+  [   230s] status=running
+  [   240s] status=running
+  [   250s] status=running
+  [   260s] status=running
+  [   270s] status=running
+  [   280s] status=running
+  [   290s] status=running
+  [   300s] status=running
+  [   310s] status=running
+  [   320s] status=running
+  [   330s] status=running
+  [   340s] status=running
+  [   350s] status=running
+  [   360s] status=running
+  [   370s] status=running
+  [   380s] status=running
+  [   390s] status=running
+  [   401s] status=running
+  [   411s] status=running
+  [   421s] status=running
+  [   431s] status=running
+  [   441s] status=running
+  [   451s] status=running
+  [   461s] status=running
+  [   471s] status=running
+  [   481s] status=running
+  [   491s] status=running
+  [   501s] status=running
+  [   511s] status=running
+  [   521s] status=running
+  [   531s] status=running
+  [   541s] status=running
+  [   551s] status=running
+  [   561s] status=running
+  [   571s] status=running
+  [   581s] status=running
+  [   591s] status=running
+  [   601s] status=running
+  [   611s] status=running
+  [   621s] status=running
+  [   631s] status=running
+  [   641s] status=running
+  [   651s] status=running
+  [   661s] status=running
+  [   671s] status=running
+  [   681s] status=running
+  [   691s] status=running
+  [   701s] status=running
+  [   711s] status=running
+  [   721s] status=running
+  [   731s] status=running
+  [   741s] status=running
+  [   751s] status=running
+  [   761s] status=running
+  [   771s] status=running
+  [   781s] status=running
+  [   791s] status=running
+  [   801s] status=running
+  [   811s] status=running
+  [   821s] status=running
+  [   831s] status=running
+  [   841s] status=running
+  [   851s] status=running
+  [   861s] status=running
+  [   871s] status=running
+  [   881s] status=running
+  [   891s] status=running
+  [   901s] status=running
+  [   911s] status=running
+  [   921s] status=running
+  [   931s] status=running
+  [   941s] status=running
+  [   951s] status=running
+  [   961s] status=running
+  [   971s] status=running
+  [   981s] status=running
+  [   991s] status=running
+  [  1001s] status=running
+  [  1011s] status=running
+  [  1021s] status=running
+  [  1031s] status=running
+  [  1041s] status=running
+  [  1051s] status=running
+  [  1061s] status=running
+  [  1071s] status=running
+  [  1081s] status=running
+  [  1091s] status=running
+  [  1101s] status=running
+  [  1111s] status=running
+  [  1121s] status=running
+  [  1131s] status=running
+  [  1141s] status=succeeded
+
+Results saved to exampl/cuad_result_gemini-3-flash-preview.json
+
+============================================================
+CONTRACT-AF  E2E RESULTS
+============================================================
+  Wall clock      : 1141.3s (19.0m)
+  Contract        : cuad_dova_promotion_agreement.txt
+                    175,580 chars · 26,789 words
+  Pipeline time   : 1137.05s
+  Iterations      : 3
+  Total findings  : 194
+  Clusters        : 20
+  Combo risks     : 0
+
+  Executive summary (preview):
+    This Pharmaceutical Co-Promotion Agreement is classified as high risk due to 186 identified issues, most notably a total lack of safety and regulatory terms which shifts statutory safety reporting and recall liability entirely onto the customer (Valeant). These risks are compounded by significant structural deficiencies, including redacted governing law and broken links to dispute resolution frameworks. An immediate high-risk legal review is recommended to address the critical gaps in liability protection and regulatory compliance before proceeding.
+
+============================================================
+PASS — Contract-AF analysis completed in 1141.3s
+============================================================
