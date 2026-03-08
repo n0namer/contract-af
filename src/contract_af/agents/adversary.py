@@ -11,7 +11,6 @@ import asyncio
 
 from contract_af.models import (
     AdversaryResult,
-    AnatomyResult,
     Exploitation,
     FalsePositive,
     Finding,
@@ -28,7 +27,6 @@ async def review_as_adversary(
     app,
     findings_queue: asyncio.Queue,
     intake: IntakeResult,
-    anatomy: AnatomyResult,
     contract_text: str,
 ) -> AdversaryResult:
     """Review findings from the opposing party's perspective.
@@ -108,20 +106,35 @@ async def review_as_adversary(
         # Track uncovered sections with potential traps
         uncovered_sections.extend(review.get("uncovered_sections_with_traps", []))
 
-    # Pattern detection: if multiple findings reference same survival clause,
-    # spawn sub-agent to analyze combined survival impact
-    survival_refs = _find_survival_patterns(accumulated_findings, anatomy)
-    if survival_refs and sub_agents_used < MAX_SUB_AGENTS:
+    # Combined pattern analysis: let the AI identify survival patterns,
+    # compounding risks, and other combined threats across all findings
+    if accumulated_findings and sub_agents_used < MAX_SUB_AGENTS:
         sub_agents_used += 1
+        finding_summaries = [
+            f"[{f.clause_ref}] {f.severity.value}: {f.description}" for f in accumulated_findings
+        ]
         trap_result = await app.call(
             "contract-af.adversary_reviewer",
             prompt=(
-                f"Multiple clauses survive termination: {survival_refs}. "
-                f"Analyze combined post-termination obligations for {intake.your_role}."
+                f"Review ALL findings below for combined risk patterns from the "
+                f"opposing party's perspective. Look for:\n"
+                f"- Clauses that survive termination creating combined obligations\n"
+                f"- Interacting clauses that compound liability\n"
+                f"- Hidden traps that only emerge when multiple clauses interact\n\n"
+                f"Findings:\n" + "\n".join(finding_summaries)
             ),
-            survival_sections=survival_refs,
             contract_text=contract_text,
         )
+        if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
+            for trap in trap_result["hidden_traps"]:
+                hidden_traps.append(
+                    HiddenTrap(
+                        clause_refs=trap.get("clause_refs", []),
+                        description=trap.get("description", ""),
+                        exploitation_scenario=trap.get("exploitation_scenario", ""),
+                        severity=Severity(trap.get("severity", "high").lower()),
+                    )
+                )
         if isinstance(trap_result, dict) and trap_result.get("hidden_traps"):
             for trap in trap_result["hidden_traps"]:
                 hidden_traps.append(
@@ -149,17 +162,3 @@ def _get_opposing_role(intake: IntakeResult) -> str:
         if role.lower() != your:
             return role
     return "opposing party"
-
-
-def _find_survival_patterns(
-    findings: list[Finding],
-    anatomy: AnatomyResult,
-) -> list[str]:
-    """Find findings whose clauses are referenced in a survival section."""
-    survival_sections: set[str] = set()
-    for cr in anatomy.cross_references:
-        if "surviv" in cr.relationship_type.lower() or "14" in cr.from_section:
-            survival_sections.add(cr.to_section)
-
-    matching = [f.clause_ref for f in findings if f.clause_ref in survival_sections]
-    return matching if len(matching) >= 2 else []

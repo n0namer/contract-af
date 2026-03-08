@@ -118,9 +118,7 @@ async def review_phase(
 
     results = await asyncio.gather(
         resolve_cross_references(_runtime_router, crossref_queue, anatomy_obj, document_text),
-        review_as_adversary(
-            _runtime_router, adversary_queue, intake_obj, anatomy_obj, document_text
-        ),
+        review_as_adversary(_runtime_router, adversary_queue, intake_obj, document_text),
         analyze_gaps(_runtime_router, intake_obj, anatomy_obj, found_clause_types, document_text),
         return_exceptions=True,
     )

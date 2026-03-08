@@ -12,17 +12,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY pyproject.toml README.md ./
 COPY src/ src/
-COPY .docker-sdk/ /tmp/agentfield-sdk/
 
 RUN pip install --no-cache-dir --prefix=/install \
-    /tmp/agentfield-sdk/ \
+    "agentfield>=0.1.47" \
     "pydantic>=2.0" \
     "httpx>=0.27" \
     "python-dotenv>=1.0" \
     "fastapi>=0.100" \
-    "uvicorn>=0.20" \
-    "python-docx>=0.8" \
-    "pdfplumber>=0.9" && \
+    "uvicorn>=0.20" && \
     pip install --no-cache-dir --prefix=/install --no-deps .
 
 

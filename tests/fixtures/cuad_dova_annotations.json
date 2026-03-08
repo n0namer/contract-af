@@ -1,0 +1,108 @@
+{
+  "source": "CUAD v1 (NeurIPS 2021) test set",
+  "contract": "DovaPharmaceuticalsInc_20181108_10-Q_EX-10.2_11414857_EX-10.2_Promotion Agreement",
+  "total_clause_types_annotated": 25,
+  "annotations": {
+    "Affiliate License-Licensee": [
+      "[***], Valeant hereby grants to Dova a fully paid-up, royalty free, non-transferable, non- exclusive license (with a limited right to sub-license to its Affiliates) to any Valeant Property that appear"
+    ],
+    "Agreement Date": [
+      "September 26, 2018"
+    ],
+    "Anti-Assignment": [
+      "Any attempted assignment not in accordance with this Section 13.2 shall be void.",
+      "Except as provided in this Section 13.2, this Agreement may not be assigned or otherwise transferred, nor may any rights or obligations hereunder be assigned or transferred, by either Party, without t",
+      "Except to Affiliates of Valeant, Valeant shall not subcontract the Valeant Activities with any Third Party (including any contract sales force).",
+      "In the event either Party desires to make such an assignment or other transfer of this Agreement or any rights or obligations hereunder, such Party shall deliver a written notice to the other Party re"
+    ],
+    "Audit Rights": [
+      "Dova shall bear the out-of-pocket costs and expenses incurred by the Parties in connection with any such inspection or audit, unless the audit shows an undisputed over- payment for that audited period",
+      "Valeant shall have the right, at its own expense, during normal business hours and upon reasonable prior notice, through certified public accounting firm or other auditor selected by Valeant and reaso",
+      "Where necessary, on reasonable request, Dova's audit rights shall include interviewing Sales Representatives and other employees of Valeant.",
+      "Dova shall have the right, at its own expense, during normal business hours and upon reasonable prior notice, through a certified public accounting firm or other auditor selected by Dova and reasonabl",
+      "Valeant shall bear the out-of-pocket costs and expenses incurred by the Parties in connection with any such inspection or audit, unless the audit shows an undisputed under-reporting or underpayment fo"
+    ],
+    "Cap On Liability": [
+      "NOTWITHSTANDING ANY OTHER PROVISION CONTAINED HEREIN (OTHER THAN AS SET FORTH IN THE SECOND SENTENCE OF THIS SECTION 11.4), IN NO EVENT SHALL DOVA (OR ITS AFFILIATES) OR VALEANT (OR ITS AFFILIATES) BE",
+      "Notwithstanding the above, the sole remedy of Dova for breach of this Section 4.1.2 shall be (i) the adjustment to the promotion fee as set forth in Section 6.1.2 and (ii) the termination right set ou"
+    ],
+    "Change Of Control": [
+      "Notwithstanding the foregoing, (a) either Party may, without the other Party's consent, assign this Agreement and its rights and obligations hereunder in whole or in part to an Affiliate; and (b) Dova"
+    ],
+    "Competitive Restriction Exception": [
+      "Notwithstanding anything to the contrary, in no event shall the restrictions set forth in this Section 2.3.2 apply to [***].",
+      "Notwithstanding the foregoing, this Section 2.3.1(a) shall not apply to any products marketed, promoted, detailed, offered for sale, or sold by any business (or any portion thereof), other Person, or "
+    ],
+    "Covenant Not To Sue": [
+      "During the Term, Valeant will not contest the ownership of the Dova Trademarks and Copyrights, their validity, or the validity of any registration therefor.",
+      "Valeant shall not at any time during the Term knowingly do or allow to be done any act or thing which will in any way impair or diminish the rights of Dova in or to the Dova Trademarks and Copyrights."
+    ],
+    "Document Name": [
+      "CO-PROMOTION AGREEMENT"
+    ],
+    "Effective Date": [
+      "September 26, 2018",
+      "\"Effective Date\" shall have the meaning set forth in the preamble to this Agreement."
+    ],
+    "Exclusivity": [
+      "During the Term, subject to the terms and conditions of this Agreement, Dova hereby grants to Valeant the right, on a co-exclusive basis (solely with Dova and its Affiliates), to Detail and promote th"
+    ],
+    "Expiration Date": [
+      "This Agreement shall become effective as of the Effective Date and, unless earlier terminated as provided in this ARTICLE 12, shall extend until the four (4) year anniversary of the Effective Date (th"
+    ],
+    "Governing Law": [
+      "This Agreement and any and all matters arising directly or indirectly herefrom shall be governed by and construed and enforced in accordance with the internal laws of the [***] applicable to agreement"
+    ],
+    "Insurance": [
+      "Each Party acknowledges and agrees that during the Term, it shall maintain, through purchase or self- insurance, adequate insurance, including products liability coverage and comprehensive general lia"
+    ],
+    "Ip Ownership Assignment": [
+      "The ownership, and all goodwill from the use, of any Dova Trademarks and Copyrights shall at all times vest in and inure to the benefit of Dova, and Valeant shall assign, and hereby does assign, any r",
+      "Valeant agrees to assign, and hereby does assign, to Dova (and shall cause its Affiliates and its and their respective employees and other representatives to assign to Dova) any and all right, title a",
+      "As between the Parties, Dova shall own all right, title and interest in and to any Product Materials (and all content contained therein) and any Product Labeling (and all content contained therein), i"
+    ],
+    "License Grant": [
+      "Valeant shall have the non-exclusive right to use the Dova Trademarks and Copyrights solely on Product Materials in order to perform the Valeant Activities and solely in accordance with the terms and ",
+      "During the Term, subject to the terms and conditions of this Agreement, Dova hereby grants to Valeant the right, on a co-exclusive basis (solely with Dova and its Affiliates), to Detail and promote th",
+      "[***], Valeant hereby grants to Dova a fully paid-up, royalty free, non-transferable, non- exclusive license (with a limited right to sub-license to its Affiliates) to any Valeant Property that appear"
+    ],
+    "Liquidated Damages": [
+      "Solely in the event that Dova has terminated this Agreement pursuant to Section 12.3.1 and notwithstanding anything else herein, in consideration of the promotion services performed by Valeant during "
+    ],
+    "Minimum Commitment": [
+      "Without limiting the generality of the foregoing, [***]) and continuing throughout the remainder of the Term, Valeant shall maintain at least one hundred (100) Sales Representatives with responsibilit",
+      "If the Quarterly Average Sales Force Size is less than [***] Sales Representatives for an applicable Calendar Quarter, then in calculating the promotion fee due under Section 6.1.1, the Applicable Per",
+      "A Party shall have the right to terminate this Agreement before the end of the Term as follows:",
+      "12.2.3 by Dova if the aggregate actual number of Details for the Product made by the Sales Representatives for a Calendar Quarter is less than the Quarterly Minimum Details for [***] consecutive Calen",
+      "If the aggregate actual number of Details for the Product made by the Sales Representatives for a Calendar Quarter is less than the Quarterly Minimum Details for such Calendar Quarter, then in calcula"
+    ],
+    "No-Solicit Of Employees": [
+      "[***], neither Valeant nor Dova (nor any of their respective Affiliates) shall directly or indirectly solicit for hire or employee as an employee, consultant or otherwise any of the other Party's prof"
+    ],
+    "Non-Compete": [
+      "[***], neither Valeant nor its Affiliates shall, directly or indirectly, [***] in the Territory other than the Product; provided that if the Agreement is terminated by Dova pursuant to [***], then any"
+    ],
+    "Non-Transferable License": [
+      "Except to Affiliates of Valeant, Valeant's rights and obligations under this Section 2.1 are non-transferable, non-assignable, and non-delegable.",
+      "[***], Valeant hereby grants to Dova a fully paid-up, royalty free, non-transferable, non- exclusive license (with a limited right to sub-license to its Affiliates) to any Valeant Property that appear"
+    ],
+    "Parties": [
+      "Dova",
+      "Dova and Valeant are each referred to individually as a \"Party\" and together as the \"Parties\".",
+      "Dova Pharmaceuticals, Inc.",
+      "Valeant",
+      "Valeant Pharmaceuticals North America LLC"
+    ],
+    "Revenue/Profit Sharing": [
+      "If the aggregate actual number of Details for the Product made by the Sales Representatives for a Calendar Quarter is less than the Quarterly Minimum Details for such Calendar Quarter, then in calcula",
+      "Commencing with the Calendar Quarter commencing on October 1, 2018, as consideration for the Valeant Activities performed by Valeant, Dova shall pay Valeant a promotion fee based on annual Net Sales d",
+      "If the Quarterly Average Sales Force Size is less than [***] Sales Representatives for an applicable Calendar Quarter, then in calculating the promotion fee due under Section 6.1.1, the Applicable Per"
+    ],
+    "Termination For Convenience": [
+      "Either Party shall have the right to terminate this Agreement before the end of the Term for its convenience upon [***] written notice to the other Party (and any such termination shall become effecti"
+    ],
+    "Uncapped Liability": [
+      "THE FOREGOING SENTENCE SHALL NOT LIMIT (1) THE OBLIGATIONS OF EITHER PARTY TO INDEMNIFY THE OTHER PARTY FROM AND AGAINST THIRD PARTY CLAIMS UNDER SECTION 11.1 OR 11.2, AS APPLICABLE, OR (2) DAMAGES AV"
+    ]
+  }
+}

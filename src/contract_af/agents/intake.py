@@ -11,10 +11,25 @@ from typing import Any
 
 from contract_af.models import IntakeResult, Party
 
-INTAKE_PROMPT = """Classify this contract from the first 2-3 pages.
-Extract: contract_type, parties (name, role, entity_type), your_role,
-jurisdiction, governing_law, deal_structure (one-line summary), complexity.
-Set confident=false if key metadata is unclear from these pages."""
+INTAKE_PROMPT = """You are a legal contract intake classifier. From the provided text
+(typically the first 2-3 pages), extract structured metadata.
+
+Required fields:
+- contract_type: specific type (e.g. "master_services_agreement", "nda", "saas_agreement", "employment", "license")
+- parties: each party's name, role (e.g. "provider", "customer"), and entity_type (e.g. "corporation", "llc")
+- your_role: which party the user represents (infer from user_context)
+- jurisdiction: governing jurisdiction
+- governing_law: applicable law
+- deal_structure: one-line summary of the deal
+- complexity: "simple", "standard", or "complex"
+
+Confidence rules:
+- Set confident=true if you can identify the contract_type AND at least one party from the text.
+  Most contracts clearly state these on the first page — title, preamble, or recitals.
+- Set confident=false ONLY if the text is genuinely ambiguous — no identifiable contract type,
+  no party names, or the text appears to be a fragment/exhibit without context.
+- When in doubt, lean toward confident=true. A table of contents or section headers
+  alone are sufficient to classify the contract type."""
 
 FIRST_PAGES_CHAR_LIMIT = 3000
 

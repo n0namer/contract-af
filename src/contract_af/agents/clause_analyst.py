@@ -178,6 +178,10 @@ def _get_section_texts(contract_text: str, section_numbers: list[str]) -> dict[s
       "1. Title", "1.1 Title", "Section 5.3(a)" etc.
     Returns a mapping of section number -> extracted text.
     Sections without a match return empty strings (defensive).
+
+    Handles Table-of-Contents contamination: when a section number appears
+    in a TOC (short line followed by a page number), we skip that match
+    and use a later body occurrence instead.
     """
     if not contract_text or not section_numbers:
         return {}
@@ -193,26 +197,59 @@ def _get_section_texts(contract_text: str, section_numbers: list[str]) -> dict[s
             rf"({escaped})"
             rf"[\.\s\)]"
         )
-        match = re.search(pattern, contract_text)
-        if match is None:
+
+        # Find ALL matches — pick the best one (body, not TOC)
+        matches = list(re.finditer(pattern, contract_text))
+        if not matches:
             result[section_num] = ""
             continue
 
-        start = match.start()
+        best_match = _pick_body_match(matches, contract_text)
+        start = best_match.start()
 
         # Find next section heading to bound the extraction
         next_section = re.search(
             r"\n(?:(?:Section|SECTION|Article|ARTICLE)\s+)?\d+[\.\s\)]",
-            contract_text[match.end() :],
+            contract_text[best_match.end() :],
         )
         if next_section is not None:
-            end = match.end() + next_section.start()
+            end = best_match.end() + next_section.start()
         else:
             end = len(contract_text)
 
         result[section_num] = contract_text[start:end].strip()
 
     return result
+
+
+def _pick_body_match(matches: list[re.Match], text: str) -> re.Match:
+    """Pick the match most likely to be the actual section body, not a TOC entry.
+
+    TOC entries are characterised by: short text between this match and the
+    next section-like line (typically just a title and page number, < 200 chars).
+    Body sections have substantial content after the heading.
+    """
+    if len(matches) == 1:
+        return matches[0]
+
+    # Score each match by how much text follows before the next heading
+    best = matches[0]
+    best_length = 0
+
+    for match in matches:
+        # Look ahead for the next section-like heading
+        lookahead = text[match.end() : match.end() + 5000]
+        next_heading = re.search(
+            r"\n(?:(?:Section|SECTION|Article|ARTICLE)\s+)?\d+[\.\s\)]",
+            lookahead,
+        )
+        content_length = next_heading.start() if next_heading else len(lookahead)
+
+        if content_length > best_length:
+            best_length = content_length
+            best = match
+
+    return best
 
 
 def _build_analysis_context(

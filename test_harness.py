@@ -35,7 +35,7 @@ DEFAULT_CONTEXT = (
     "and any auto-renewal or non-compete clauses."
 )
 POLL_INTERVAL_S = 10
-MAX_WAIT_S = 1800  # 30 minutes
+MAX_WAIT_S = 5400  # 90 minutes
 
 
 # ---------------------------------------------------------------------------

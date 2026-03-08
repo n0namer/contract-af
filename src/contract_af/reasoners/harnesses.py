@@ -50,15 +50,24 @@ async def intake_harness(
         confident: bool = True
 
     prompt = (
-        "You are a legal intake analyst. Read the full contract text and return a "
-        "complete classification. Resolve uncertain fields from the partial intake."
+        "You are a senior legal intake analyst performing deep classification.\n\n"
+        "A quick-pass classifier was unable to confidently classify this contract. "
+        "You now have the FULL contract text. Your job:\n"
+        "1. Read the full document to identify contract_type, all parties, jurisdiction, "
+        "governing_law, and deal_structure.\n"
+        "2. Resolve every uncertain field from the partial_intake provided.\n"
+        "3. Set confident=true — you have the complete document, so you SHOULD be able "
+        "to determine all fields. Only set confident=false if the document is genuinely "
+        "unreadable or is not actually a contract.\n\n"
+        "IMPORTANT: Do NOT copy confident=false from the partial_intake. "
+        "Re-evaluate confidence based on your own full-document analysis."
     )
 
     result = await _runtime_router.ai(
         system=prompt,
         user=_json.dumps(
             {
-                "document": document,
+                "document": _truncate(document),
                 "partial_intake": partial_intake,
                 "user_context": user_context,
             },
@@ -75,7 +84,7 @@ async def anatomist(
     intake: dict[str, Any],
     reason: str = "",
 ) -> dict[str, Any]:
-    """Structural parsing fallback when regex extraction fails."""
+    """AI-driven structural parsing of the full contract document."""
 
     class AnatomistResult(BaseModel):
         sections: list[dict[str, Any]] = Field(default_factory=list)
@@ -87,14 +96,39 @@ async def anatomist(
 
     result = await _runtime_router.ai(
         system=(
-            "You are a contract anatomist. Parse structure from non-standard legal text: "
-            "sections, defined terms, cross references, exhibits, key dates, and risk signals."
+            "You are a contract anatomist. Parse the FULL document and extract its "
+            "complete structural map.\n\n"
+            "Extract ALL of the following:\n\n"
+            "1. sections — every section and article header:\n"
+            "   {number: '1', title: 'DEFINITIONS', subsections: ['1.1', '1.2']}\n"
+            "   Include ALL levels (articles, major sections, subsections).\n"
+            "   Wire subsections to their parent via the subsections array.\n\n"
+            "2. defined_terms — every defined term (quoted capitalized phrases):\n"
+            "   {term: 'Affiliate', definition_text: 'means...', "
+            "section_ref: '1.1', usage_count: 5}\n\n"
+            "3. cross_references — inter-section references:\n"
+            "   {from_section: '13.1', to_section: '1.1', "
+            "relationship_type: 'as_defined_in'}\n"
+            "   Types: as_defined_in, subject_to, notwithstanding, references\n\n"
+            "4. exhibits — schedules, appendices, annexes:\n"
+            "   {label: 'Exhibit A', title: 'Statement of Work', "
+            "modifies_sections: ['3', '4']}\n\n"
+            "5. key_dates — effective dates, term lengths, renewal dates:\n"
+            "   {date: 'November 17, 2021', description: 'Effective Date', "
+            "section_ref: 'preamble'}\n\n"
+            "6. risk_surface — structural risk signals:\n"
+            "   {section: '13', signal_type: 'heavy_cross_refs', "
+            "description: '...', severity: 'high'}\n"
+            "   signal_type: heavy_cross_refs, broad_definition, unusual_length, "
+            "nested_conditions\n"
+            "   severity: critical, high, medium, low\n\n"
+            "Be EXHAUSTIVE with sections and defined terms. "
+            "Every section header in the document must appear in your output."
         ),
         user=_json.dumps(
             {
                 "document_text": document_text,
                 "intake": intake,
-                "reason": reason,
             },
             default=str,
         ),
@@ -131,10 +165,24 @@ async def clause_analyst(
 
     result = await _runtime_router.ai(
         system=(
-            "You are a legal contract risk analyst. Analyze clause sections for risks, "
-            "unfavorable terms, missing protections, and liability exposure. "
-            "Return findings with clause_ref, clause_text, severity, description, reasoning, "
-            "remediation, and confidence."
+            "You are a senior legal contract risk analyst. Analyze the provided clause "
+            "sections for:\n"
+            "- One-sided or unfavorable terms\n"
+            "- Missing standard protections (liability caps, IP ownership, termination rights)\n"
+            "- Broad or ambiguous language that creates exposure\n"
+            "- Unusual obligations or restrictions\n"
+            "- Liability and indemnification risks\n"
+            "- Data protection and confidentiality gaps\n\n"
+            "For EACH risk found, return a finding with:\n"
+            "  clause_ref: the section number where the risk appears\n"
+            "  clause_text: the exact problematic clause text (quote it)\n"
+            "  severity: critical|high|medium|low\n"
+            "  description: what the risk is\n"
+            "  reasoning: why this is problematic\n"
+            "  remediation: recommended fix or negotiation position\n"
+            "  confidence: 0.0-1.0\n\n"
+            "You MUST report at least one finding per section if ANY risk exists. "
+            "Do NOT return empty findings unless the sections are truly risk-free boilerplate."
         ),
         user=_json.dumps(
             {
