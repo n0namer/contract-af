@@ -31,3 +31,10 @@ env/
 .coverage
 htmlcov/
 _worktrees/
+
+# Logs
+*.log
+
+# Debug artifacts (root-level only)
+/result.json
+/result_*.json

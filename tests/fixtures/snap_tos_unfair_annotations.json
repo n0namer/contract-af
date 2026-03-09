@@ -1,0 +1,644 @@
+{
+  "source": "LexGLUE unfair_tos (CLAUDETTE)",
+  "document": "Snap Group Limited Terms of Service",
+  "dataset_rows": "411-855 (test split)",
+  "total_clauses": 445,
+  "total_chars": 64628,
+  "label_names": [
+    "Limitation of liability",
+    "Unilateral termination",
+    "Unilateral change",
+    "Content removal",
+    "Contract by using",
+    "Choice of law",
+    "Jurisdiction",
+    "Arbitration"
+  ],
+  "unfair_clauses": [
+    {
+      "clause_index": 8,
+      "text": "by using the services , you agree to the terms . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 38,
+      "text": "while we 're not required to do so , we may access , review , screen , and delete your content at any time and for any reason , including if we think your content violates these terms . \n",
+      "labels": [
+        "Content removal"
+      ],
+      "label_ids": [
+        3
+      ]
+    },
+    {
+      "clause_index": 53,
+      "text": "we encourage you to give the privacy policy a careful look because , by using our services , you agree that your information may be collected and processed by snap group limited in the uk and snap inc. in the u.s. , as well as their affiliates , and transferred outside of the country in which you reside , including to countries that may not have the same data-protection laws as your country . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 67,
+      "text": "and if snap group limited becomes aware that one of its users has repeatedly infringed copyrights , we will take reasonable steps within our power to terminate the user 's account . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 117,
+      "text": "your content in memories might become unavailable for any number of reasons , including things like an operational glitch or a decision on our end to terminate your account . \n",
+      "labels": [
+        "Content removal",
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        3,
+        1
+      ]
+    },
+    {
+      "clause_index": 120,
+      "text": "we reserve the right to set storage limits for memories , and we may change these limits from time to time in our sole discretion . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 130,
+      "text": "that means we may add or remove features , products , or functionalities , and we may also suspend or stop the services altogether . \n",
+      "labels": [
+        "Unilateral change",
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        2,
+        1
+      ]
+    },
+    {
+      "clause_index": 131,
+      "text": "we may take any of these actions at any time , and when we do , we will try to notify you beforehand , but this wo n't always be possible . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 133,
+      "text": "snap group limited may also terminate these terms with you at any time , for any reason . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 135,
+      "text": "our right to terminate these terms means that we may stop providing you with any services , or impose new or additional limits on your ability to use the services . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 136,
+      "text": "for example , we may deactivate your account due to prolonged inactivity , and we may reclaim your username at any time for any reason . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 143,
+      "text": "snap group limited , snap inc. , and their affiliates take no responsibility and assume no liability for any content that you , another user , or a third party creates , uploads , posts , sends , receives , or stores on or through our services . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 145,
+      "text": "when permitted by law , snap group limited , snap inc. , and our affiliates , directors , officers , stockholders , employees , licensors , and agents , will not be liable for any indirect , incidental , special , consequential , punitive , or multiple damages , or any loss of profits or revenues , whether incurred directly or indirectly , or any loss of data , use , goodwill , or other intangible losses , resulting from : ( a ) your use of the services or inability to use the services ; ( b ) your access to or inability to access the services ; ( c ) the conduct or content of other users or third parties on or through the services ; or ( d ) unauthorized access , use , or alteration of your content , even if snap group limited has been advised of the possibility of such damages . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 146,
+      "text": "in no event will snap group limited , snap inc. , or their affiliates ' aggregate liability for all claims relating to the services exceed the greater of # 100 gbp or the amount you paid snap group limited , if any , in the last 12 months . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 154,
+      "text": "to the extent the parties are permitted under these terms to initiate litigation in a court , both you and snap group limited agree that all claims and disputes ( whether contractual or otherwise ) arising out of or relating to the terms or the use of the services will be litigated exclusively in the courts of england in the united kingdom , unless this is prohibited by the laws of the country where you reside . \n",
+      "labels": [
+        "Jurisdiction"
+      ],
+      "label_ids": [
+        6
+      ]
+    },
+    {
+      "clause_index": 155,
+      "text": "you and snap group limited consent to the exclusive jurisdiction of those courts . \n",
+      "labels": [
+        "Jurisdiction"
+      ],
+      "label_ids": [
+        6
+      ]
+    },
+    {
+      "clause_index": 156,
+      "text": "the laws of england and wales govern these terms and any claims and disputes ( whether contractual or otherwise ) arising out of or relating to these terms or their subject matter . \n",
+      "labels": [
+        "Choice of law"
+      ],
+      "label_ids": [
+        5
+      ]
+    },
+    {
+      "clause_index": 170,
+      "text": "by using the services you agree to be bound by these terms . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 174,
+      "text": "you understand that through your use of the services you consent to the collection and use ( as set forth in the privacy policy ) of this information , including the transfer of this information to the united states , ireland , and/or other countries for storage , processing and use by twitter and its affiliates . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 183,
+      "text": "we reserve the right to remove content alleged to be infringing without prior notice , at our sole discretion , and without liability to you . \n",
+      "labels": [
+        "Content removal"
+      ],
+      "label_ids": [
+        3
+      ]
+    },
+    {
+      "clause_index": 199,
+      "text": "as such , the services may change from time to time , at our discretion . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 200,
+      "text": "we may stop ( permanently or temporarily ) providing the services or any features within the services to you or to users generally . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 201,
+      "text": "we also retain the right to create limits on use and storage at our sole discretion at any time . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 202,
+      "text": "we may also remove or refuse to distribute any content on the services , suspend or terminate users , and reclaim usernames without liability to you . \n",
+      "labels": [
+        "Content removal",
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        3,
+        0
+      ]
+    },
+    {
+      "clause_index": 203,
+      "text": "as such , the services may change from time to time , at our discretion . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 204,
+      "text": "we may stop ( permanently or temporarily ) providing the services or any features within the services to you or to users generally . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 205,
+      "text": "we also retain the right to create limits on use and storage at our sole discretion at any time . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 206,
+      "text": "we may also remove or refuse to distribute any content on the services , suspend or terminate users , and reclaim usernames without liability to you . \n",
+      "labels": [
+        "Content removal",
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        3,
+        0
+      ]
+    },
+    {
+      "clause_index": 227,
+      "text": "we may suspend or terminate your account or cease providing you with all or part of the services at any time for any or no reason , including , but not limited to , if we reasonably believe : ( i ) you have violated these terms or the twitter rules , ( ii ) you create risk or possible legal exposure for us ; ( iii ) your account should be removed due to prolonged inactivity ; or ( iv ) our provision of the services to you is no longer commercially viable . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 237,
+      "text": "the twitter entities shall not be liable for any indirect , incidental , special , consequential or punitive damages , or any loss of profits or revenues , whether incurred directly or indirectly , or any loss of data , use , good-will , or other intangible losses , resulting from ( i ) your access to or use of or inability to access or use the services ; ( ii ) any conduct or content of any third party on the services , including without limitation , any defamatory , offensive or illegal conduct of other users or third parties ; ( iii ) any content obtained from the services ; or ( iv ) unauthorized access , use or alteration of your transmissions or content . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 238,
+      "text": "the limitations of this subsection shall apply to any theory of liability , whether based on warranty , contract , statute , tort ( including negligence ) or otherwise , and whether or not the twitter entities have been informed of the possibility of any such damage , and even if a remedy set forth herein is found to have failed of its essential purpose . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 240,
+      "text": "we may revise these terms from time to time . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 241,
+      "text": "the changes will not be retroactive , and the most current version of the terms , which will always be at twitter.com/tos , will govern our relationship with you . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 242,
+      "text": "we will try to notify you of material revisions , for example via a service notification or an email to the email associated with your account . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 243,
+      "text": "by continuing to access or use the services after those revisions become effective , you agree to be bound by the revised terms . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 255,
+      "text": "when you use our services you agree to all of these terms . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 257,
+      "text": "you agree that by clicking `` join now '' , `` join linkedin '' , `` sign up '' or similar , registering , accessing or using our services ( described below ) , you are agreeing to enter into a legally binding contract with linkedin ( even if you are using our services on behalf of a company ) . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 268,
+      "text": "we may modify this contract , our privacy policy and our cookies policies from time to time . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 271,
+      "text": "your continued use of our services after we publish or send a notice about our changes to these terms means that you are consenting to the updated terms . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    },
+    {
+      "clause_index": 310,
+      "text": "we are not obligated to publish any information or content on our service and can remove it in our sole discretion , with or without notice . \n",
+      "labels": [
+        "Content removal"
+      ],
+      "label_ids": [
+        3
+      ]
+    },
+    {
+      "clause_index": 328,
+      "text": "we may change , suspend or end any service , or change and modify prices prospectively in our discretion . \n",
+      "labels": [
+        "Unilateral change",
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        2,
+        1
+      ]
+    },
+    {
+      "clause_index": 330,
+      "text": "we may change or discontinue any of our services . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 339,
+      "text": "you agree that we are not responsible for others ' ( including other members ' ) content or information . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 340,
+      "text": "we can not always prevent this misuse of our services , and you agree that we are not responsible for any such misuse . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 346,
+      "text": "except to the limited extent it may be required by applicable law , linkedin is not responsible for these other sites and apps -- use these at your own risk . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 348,
+      "text": "we have the right to limit how you connect and interact on our services . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 349,
+      "text": "linkedin reserves the right to limit your use of the services , including the number of your connections and your ability to contact other members . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 350,
+      "text": "linkedin reserves the right to restrict , suspend , or terminate your account if linkedin believes that you may be in breach of this contract or law or are misusing the services ( e.g. violating any do and do n'ts ) . \n",
+      "labels": [
+        "Unilateral change",
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        2,
+        1
+      ]
+    },
+    {
+      "clause_index": 357,
+      "text": "to the extent allowed under law , linkedin and its affiliates ( and those that linkedin works with to provide the services ) ( a ) disclaim all implied warranties and representations ( e.g. warranties of merchantability , fitness for a particular purpose , accuracy of data , and noninfringement ) ; ( b ) do not guarantee that the services will function without interruption or errors , and ( c ) provide the service ( including content and information ) on an `` as is '' and `` as available '' basis . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 360,
+      "text": "to the extent permitted under law ( and unless linkedin has entered into a separate written agreement that overrides this contract ) , linkedin and its affiliates ( and those that linkedin works with to provide the services ) shall not be liable to you or others for any indirect , incidental , special , consequential or punitive damages , or any loss of data , opportunities , reputation , profits or revenues , related to the services ( e.g. offensive or defamatory statements , down time or loss , use of , or changes to , your information or content ) . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 361,
+      "text": "in no event shall the liability of linkedin and its affiliates ( and those that linkedin works with to provide the services ) exceed , in the aggregate for all claims , an amount that is the lesser of ( a ) five times the most recent monthly or yearly fee that you paid for a premium service , if any , or ( b ) us $ 1000 . \n",
+      "labels": [
+        "Limitation of liability"
+      ],
+      "label_ids": [
+        0
+      ]
+    },
+    {
+      "clause_index": 364,
+      "text": "we can each end this contract anytime we want . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 365,
+      "text": "both you and linkedin may terminate this contract at any time with notice to the other . \n",
+      "labels": [
+        "Unilateral termination"
+      ],
+      "label_ids": [
+        1
+      ]
+    },
+    {
+      "clause_index": 373,
+      "text": "in the unlikely event we end up in a legal dispute , we agree to resolve it in california courts ( using california law ) or dublin , ireland courts ( using irish law ) . \n",
+      "labels": [
+        "Choice of law",
+        "Jurisdiction"
+      ],
+      "label_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "clause_index": 374,
+      "text": "if you live in the european union : you agree that the laws of ireland , excluding conflict of laws rules , shall exclusively govern any dispute relating to this contract and/or the services . \n",
+      "labels": [
+        "Choice of law"
+      ],
+      "label_ids": [
+        5
+      ]
+    },
+    {
+      "clause_index": 375,
+      "text": "we both agree that all of these claims can only be litigated in dublin , ireland , and we each agree to personal jurisdiction of the courts located in dublin , ireland . \n",
+      "labels": [
+        "Jurisdiction"
+      ],
+      "label_ids": [
+        6
+      ]
+    },
+    {
+      "clause_index": 376,
+      "text": "for all others , including those who live outside of the united states , you agree that the laws of the state of california , u.s.a. , excluding its conflict of laws rules , shall exclusively govern any dispute relating to this contract and/or the services . \n",
+      "labels": [
+        "Choice of law"
+      ],
+      "label_ids": [
+        5
+      ]
+    },
+    {
+      "clause_index": 377,
+      "text": "we both agree that all of these claims can only be litigated in the federal or state courts in santa clara county , california , usa , and we each agree to personal jurisdiction in those courts . \n",
+      "labels": [
+        "Jurisdiction"
+      ],
+      "label_ids": [
+        6
+      ]
+    },
+    {
+      "clause_index": 387,
+      "text": "we reserve the right to change the terms of this contract and will provide you notice if we do and we agree that changes can not be retroactive . \n",
+      "labels": [
+        "Unilateral change"
+      ],
+      "label_ids": [
+        2
+      ]
+    },
+    {
+      "clause_index": 444,
+      "text": "by accessing or using any part of the service , you represent that you have read , understood , and agree to be bound by these terms and conditions including any future modifications . \n",
+      "labels": [
+        "Contract by using"
+      ],
+      "label_ids": [
+        4
+      ]
+    }
+  ],
+  "summary": {
+    "Limitation of liability": 13,
+    "Unilateral termination": 14,
+    "Unilateral change": 16,
+    "Content removal": 6,
+    "Contract by using": 9,
+    "Choice of law": 4,
+    "Jurisdiction": 5,
+    "Arbitration": 0
+  },
+  "total_unfair_clauses": 60
+}

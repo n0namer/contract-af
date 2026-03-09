@@ -7,6 +7,10 @@ This script compares two run outputs (Kimi and Gemini by default) and prints:
 - Output completeness metrics
 - Category and CUAD clause-type coverage
 - Adversarial analysis quality metrics
+
+Usage (from project root):
+    python3 benchmarks/scripts/extract_comparison_dual.py
+    python3 benchmarks/scripts/extract_comparison_dual.py --model-a-path path/to/a.json --model-b-path path/to/b.json
 """
 
 from __future__ import annotations
@@ -56,9 +60,14 @@ CUAD_KEYWORDS: dict[str, list[str]] = {
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Dual-model Contract-AF comparison extractor")
+    script_dir = Path(__file__).resolve().parent
+    project_root = script_dir.parent.parent
+    cuad_results_dir = project_root / "benchmarks" / "cuad" / "results"
+    annotations_default = project_root / "tests" / "fixtures" / "cuad_dova_annotations.json"
+
     parser.add_argument(
         "--model-a-path",
-        default="cuad_result_kimi-k2.5.json",
+        default=str(cuad_results_dir / "result_kimi-k2.5.json"),
         help="Path to model A result JSON (default: Kimi result)",
     )
     parser.add_argument(
@@ -68,7 +77,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model-b-path",
-        default="cuad_result_gemini-3-flash-preview.json",
+        default=str(cuad_results_dir / "result_gemini-3-flash-preview.json"),
         help="Path to model B result JSON (default: Gemini result)",
     )
     parser.add_argument(
@@ -78,7 +87,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--cuad-annotations-path",
-        default="../tests/fixtures/cuad_dova_annotations.json",
+        default=str(annotations_default),
         help="Path to CUAD ground truth annotation JSON",
     )
     return parser.parse_args()

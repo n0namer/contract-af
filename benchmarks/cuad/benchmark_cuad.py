@@ -3,11 +3,11 @@
 Compares contract-af output against CUAD v1 ground-truth annotations
 to compute clause-type-level precision, recall, and F1.
 
-Usage:
-    python3 benchmark_cuad.py exampl/cuad_result.json
+Usage (from project root):
+    python3 benchmarks/cuad/benchmark_cuad.py benchmarks/cuad/results/result_kimi-k2.5.json
 
 Requires:
-    tests/fixtures/cuad_dova_annotations.json  (ground truth)
+    tests/fixtures/cuad_dova_annotations.json  (ground truth, resolved automatically)
 """
 
 from __future__ import annotations
@@ -16,6 +16,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
 
 # ---------------------------------------------------------------------------
 # CUAD clause type → contract-af category mapping
@@ -106,7 +109,7 @@ def main() -> None:
         sys.exit(1)
 
     result_path = Path(sys.argv[1])
-    annotations_path = Path("tests/fixtures/cuad_dova_annotations.json")
+    annotations_path = PROJECT_ROOT / "tests" / "fixtures" / "cuad_dova_annotations.json"
 
     if not result_path.exists():
         print(f"ERROR: result file not found: {result_path}")

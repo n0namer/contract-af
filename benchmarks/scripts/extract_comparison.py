@@ -1,13 +1,31 @@
 #!/usr/bin/env python3
-"""Extract data from cuad_result.json and cuad_dova_annotations.json for comparison."""
+"""Extract data from a CUAD result JSON and cuad_dova_annotations.json for comparison.
+
+Usage (from project root):
+    python3 benchmarks/scripts/extract_comparison.py [result.json]
+
+If no result path is provided, defaults to benchmarks/cuad/results/result_kimi-k2.5.json.
+"""
 
 import json
+import sys
 from collections import Counter
+from pathlib import Path
 
-with open("cuad_result.json") as f:
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+
+result_path = (
+    Path(sys.argv[1])
+    if len(sys.argv) > 1
+    else PROJECT_ROOT / "benchmarks" / "cuad" / "results" / "result_kimi-k2.5.json"
+)
+annotations_path = PROJECT_ROOT / "tests" / "fixtures" / "cuad_dova_annotations.json"
+
+with open(result_path) as f:
     result = json.load(f)
 
-with open("../tests/fixtures/cuad_dova_annotations.json") as f:
+with open(annotations_path) as f:
     annotations = json.load(f)
 
 # --- Result summary ---

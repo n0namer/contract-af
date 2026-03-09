@@ -1,0 +1,2064 @@
+{
+  "executive_summary": "Analysis terminated early: Pipeline exceeded 1800s wall-clock limit. Partial results below.",
+  "metadata": {
+    "clusters_analyzed": 6,
+    "combination_risks": 20,
+    "coverage_iterations": 1,
+    "elapsed_seconds": 2026.52,
+    "terminated_early": true,
+    "termination_reason": "Pipeline exceeded 1800s wall-clock limit",
+    "total_findings": 101
+  },
+  "negotiation_playbook": "",
+  "risk_report_md": "",
+  "structured_json": {
+    "adversary_result": {
+      "exploitation_scenarios": [
+        {
+          "finding_id": "f-fe307291",
+          "impact": "Complete loss of control over intellectual property; irrevocable commercial exploitation of user's identity, likeness, and voice without compensation; inability to terminate licenses for derivative works; potential forced arbitration for business users waiving class action rights.",
+          "scenario": "The service provider can exploit the false 'missing clause' report to avoid scrutiny of the draconian rights actually granted in the existing clause. By claiming the clause is absent, they can resist attempts to narrow the scope of the license during negotiation, while simultaneously enforcing the broadest possible interpretation of the existing terms. Additionally, the commingling of Snapchat, LinkedIn, and Duolingo terms creates a 'Frankenstein contract' where the provider can cherry-pick the most restrictive provisions from each platform's terms to enforce against the user, arguing the user consented to the entire document."
+        },
+        {
+          "finding_id": "f-6f036fd4",
+          "impact": "Snap faces exposure to copyright infringement claims, demands for royalty payments despite 'royalty-free' language, injunctive relief preventing use of customer content in advertising or product development, and regulatory penalties in GDPR jurisdictions where the 'unrestricted' license to use name, likeness, and voice may violate consent requirements for biometric/personal data processing.",
+          "scenario": "As the customer, I can exploit the tension between the retained ownership clause ('you retain whatever ownership rights in that content you had to begin with') and the broad license grants. I can argue that any use by Snap outside the explicitly enumerated 'limited purpose of operating, developing, providing, promoting, and improving the Services' constitutes copyright infringement despite the license, because the retention of 'whatever ownership rights' language creates an ambiguity regarding the scope of the license. Additionally, in jurisdictions recognizing moral rights, I can claim that modifications to my content under the 'modify, adapt, edit' permissions violate my retained moral rights of integrity, potentially enjoining Snap from using adapted versions of my content or demanding additional licensing fees for derivative works beyond the scope of the original grant."
+        },
+        {
+          "finding_id": "f-32cb21c4",
+          "impact": "Snap faces significant litigation risk regarding content ownership disputes. Without clear termination provisions, Snap may be unable to defend claims that it has exceeded its license scope or to enforce account terminations. The company risks being bound to perpetual content hosting obligations or being unable to remove objectionable content without breaching an implied perpetual license. The corrupted document state undermines Snap's ability to enforce any terms, potentially exposing them to liability for removing content they cannot prove they have rights to terminate under an incomplete contract.",
+          "scenario": "The customer can exploit the absence of Clause 10 (purportedly a termination or enforcement provision) by arguing: (1) Snap lacks contractual authority to terminate the broad content license granted under the Content Ownership section, rendering the license perpetual and irrevocable due to absence of termination conditions; (2) Any attempt by Snap to terminate the agreement or remove content is ultra vires due to the missing enforcement mechanism; (3) Under the doctrine of contra proferentem, all ambiguities regarding termination rights must be resolved against Snap as the drafter; (4) The conflated document sources (Snapchat, LinkedIn, Duolingo) render the entire agreement void for uncertainty or unilateral mistake, potentially releasing the customer from all restrictive covenants while retaining service benefits."
+        },
+        {
+          "finding_id": "f-d517171e",
+          "impact": "Complete avoidance of statutory indemnification costs typically ranging from $50,000 to $500,000+ per IP infringement claim; potential entitlement to defense coverage from Snap for IP disputes since Snap assumed the risk by accepting a broad license without indemnification; leverage to negotiate removal of disputed content without admitting liability or paying settlement costs; ability to upload derivative works or crowd-sourced content with reduced liability exposure.",
+          "scenario": "As the customer, exploit this absence by: (1) refusing to indemnify Snap for any IP claims arising from content uploaded, forcing Snap to bear all defense costs since they accepted the broad license without securing indemnification; (2) if Snap attempts to terminate service for alleged IP infringement or demands defense costs, challenging the action as lacking contractual basis since no indemnification clause exists to breach; (3) counter-claiming that Snap's broad sublicensing of content (including to 'affiliates and business partners' for Live/Local) without indemnification protection constitutes an assumption of liability by Snap for any resulting third-party claims; (4) demanding Snap provide representations and warranties that its platform doesn't infringe third-party IP, leveraging the reciprocal obligation asymmetry."
+        },
+        {
+          "finding_id": "f-2423c094",
+          "impact": "Customer inadvertently grants irrevocable commercial exploitation rights to all content, with specific loss of control over public submissions and personal identity attributes. The transferable nature allows Snap to monetize customer content through unrestricted third-party licensing or asset sales. The false positive prevents the customer from negotiating limitations or carve-outs for sensitive content.",
+          "scenario": "By claiming the license text is 'missing,' the platform obscures the fact that users are granting a transferable, sublicensable license that allows Snap to sell user content databases to third parties or acquirers without additional consent. The platform can exploit the 'Live/Local' distinction to claim perpetual rights to any content deemed 'public interest' or 'crowd-sourced,' while users mistakenly believe the 'as long as you use the services' limitation applies to all content. The personality rights waiver (name, likeness, voice) without compensation can be exploited for unpaid commercial endorsements in advertising and promotional materials."
+        },
+        {
+          "finding_id": "f-8c29a9cf",
+          "impact": "The customer loses the ability to negotiate or contest termination provisions they cannot see, leaving them exposed to unilateral service revocation without statutory cure periods or data portability rights. They face potential liability under the mixed-in LinkedIn prohibitions (data scraping, unauthorized invitations) while being unable to assert the actual Snap limitations of liability or indemnification clauses that likely existed in the complete Section 10. Any litigation ambiguity regarding document completeness will be met with our motion to compel arbitration (noted in the header for business users) or dismissal for failure to state a claim based on the truncated document.",
+          "scenario": "As counsel for Snap Group Limited, we can exploit this 'missing section' finding by arguing that the customer is bound by the complete Terms of Service as published on our website and accepted by continued use, not by this corrupted excerpt. We assert that Section 10 (Termination) in the actual agreement contains broad termination-for-convenience rights and survival clauses favoring Snap. Because the customer cannot verify the section's content, they cannot challenge our interpretation that Section 10 permits immediate termination without notice, data retrieval, or pro-rata refund. We can further exploit the confusion by invoking the stricter LinkedIn conduct rules (e.g., prohibitions on 'inviting people you do not know' or using 'bots') that appear in their copy to justify immediate suspension under the 'applicable laws' and 'compliance' provisions, claiming the customer violated these apparent terms. The burden shifts to the customer to prove which terms actually apply, during which time we can withhold account access and data."
+        },
+        {
+          "finding_id": "f-59153c69",
+          "impact": "Risk of unenforceability of Snap's broad content license grant and arbitration clause; exposure to individual consumer class actions in court (rather than arbitration) due to scope ambiguity; potential inability to enforce restrictions on reverse engineering or data scraping if those provisions are deemed part of the LinkedIn text rather than Snap's terms.",
+          "scenario": "Customer argues that the Terms are void for uncertainty or mutual mistake due to the commingling of three distinct corporate terms of service. Alternatively, customer invokes contra proferentem to construe ambiguous provisions (such as data use rights, content ownership, or arbitration scope) against Snap by adopting the more favorable LinkedIn or Duolingo interpretations. Customer may also claim they reasonably relied on LinkedIn's specific professional networking prohibitions as limiting Snap's data harvesting rights."
+        },
+        {
+          "finding_id": "f-b1d82caf",
+          "impact": "Customers suffer irreversible commercial exploitation of their identity and content, potential indefinite sublicensing to unknown third parties including data brokers and AI training entities, and loss of judicial remedies through forced arbitration. The commingled document creates litigation uncertainty where customers cannot determine definitive rights, exposing them to dual regulation under conflicting platform policies while bearing the burden of proving which terms apply. Automatic software updates enable unilateral modification of material terms without affirmative consent, effectively rendering the contract illusory.",
+          "scenario": "Snap Group Limited can exploit the ambiguous document boundaries to selectively enforce favorable provisions from the commingled LinkedIn/Duolingo sections (such as professional networking prohibitions or educational data restrictions) against customers while disavowing customer-friendly provisions by claiming they belong to other platforms. More critically, Snap can commercialize user biometric data (name, likeness, voice) in perpetuity through 'business partners' without compensation, arguing that Live/Local content grants are perpetual while standard content grants terminate. The 'business' arbitration trigger can be exploited to force individual creators, influencers, or gig workers into binding arbitration by claiming their promotional use constitutes 'using services on behalf of a business,' thereby stripping class action rights and court access."
+        },
+        {
+          "finding_id": "f-3c0174ee",
+          "impact": "Snap faces exposure to consumer class-action litigation (bypassing arbitration), regulatory penalties under GDPR/CCPA for incomplete data erasure, and invalidation of content licenses for minor-created content, significantly increasing legal and compliance liability beyond standard terms of service risks.",
+          "scenario": "Individual customers (non-business users) can exploit the explicit limitation of the arbitration clause to 'business' users to preserve their right to sue Snap in court with full discovery rights, avoiding the arbitration trap. Additionally, customers can leverage the disconnect between the time-limited license language and the sublicensable nature to file GDPR Article 17 (Right to Erasure) complaints, arguing Snap cannot fully delete content from third-party sublicenses, exposing Snap to regulatory fines. Customers using Live/Local features can also challenge the validity of the 'perpetual' name/likeness license if content was created before age 18, as minors may disaffirm the grant."
+        },
+        {
+          "finding_id": "f-3c1e6ac0",
+          "impact": "Customer faces uncertainty regarding which jurisdiction and entity governs their relationship, potentially subjecting them to broader content licenses, mandatory arbitration, and usage restrictions than intended. The commingling undermines the customer's ability to prove the specific terms in force at the time of contracting.",
+          "scenario": "Opposing party can exploit the document confusion to: (1) Selectively enforce the most restrictive provisions from the commingled LinkedIn/Duolingo terms against the customer; (2) Argue that the customer consented to arbitration or content licensing terms from the wrong platform due to the jumbled text; (3) Claim that specific customer protections (e.g., data locality rights under UK law for Snap Group) are invalidated by the presence of US-centric LinkedIn provisions."
+        },
+        {
+          "finding_id": "f-4eb1b085",
+          "impact": "Potential voiding of entire Terms of Service agreement; inability to enforce arbitration clause; loss of broad content licenses due to uncertainty regarding scope; exposure to litigation rather than private resolution.",
+          "scenario": "Customer can argue lack of meeting of the minds or contractual ambiguity due to the mixed document. If Snap attempts to enforce the arbitration clause or content license, customer defends that they could not determine which company's terms applied, and therefore which rights they were granting. This forces Snap to prove which specific provisions the customer actually agreed to, potentially invalidating the entire agreement or severing the most favorable-to-Snap clauses."
+        },
+        {
+          "finding_id": "f-bd9d61a2",
+          "impact": "Potential invalidation of arbitration and choice-of-law provisions due to ambiguity and failure of consideration. If challenged, courts may apply the doctrine of contra proferentem against the drafter (Snap), potentially voiding the broad content license grants or arbitration mandates due to the document's incoherence.",
+          "scenario": "Customer can exploit the lack of mutual assent caused by contradictory and mingled terms from different platforms. By highlighting the jurisdictional confusion (terms apply to non-US residents but enforce US OFAC/SDN prohibitions) and the missing arbitration clause text (referenced but not provided), the customer can challenge the enforceability of the forum selection or argue that the 'business use' arbitration trigger is conspicuously absent from the provided text, voiding arbitration requirements under unconscionability doctrines."
+        },
+        {
+          "finding_id": "f-15d0f51e",
+          "impact": "Enables customers to avoid mandatory arbitration by maintaining non-business status; creates potential defenses based on unconscionability or fraudulent inducement due to the contradictory tone versus substance; preserves access to courts and class action remedies for individual users; weakens Snap's ability to enforce harsh intellectual property and content license provisions against consumers who can claim they were misled by the casual tone.",
+          "scenario": "A customer can exploit the tonal dissonance between the marketing-friendly introduction and the harsh substantive provisions to argue unconscionability or lack of a meeting of the minds, particularly if they are a non-business user. Furthermore, the explicit carve-out stating that only business users are bound by the arbitration clause creates a clear exploit path: customers can structure their usage to maintain strict non-business status (avoiding any representation of business use) to retain the right to sue in court and participate in class actions rather than being forced into individual arbitration."
+        },
+        {
+          "finding_id": "f-ecd41367",
+          "impact": "Severe risk of unenforceability for the company across all claims. Courts may strike down specific clauses or void entire sections due to ambiguity. The company faces exposure for deceptive trade practices if users were presented with this mixed document as a single coherent contract. Class action exposure increases due to inability to enforce arbitration clauses effectively.",
+          "scenario": "As adversarial counsel for the customer, I would argue: (1) The finding proves the company cannot identify which specific term was allegedly breached, fatally undermining any enforcement action; (2) The Franken-contract structure renders the entire agreement void for uncertainty under the doctrine of non est factum or lack of meeting of the minds; (3) Under contra proferentem, all ambiguities in this jumbled text must be construed against the drafter; (4) If arbitration is invoked, challenge the validity of the arbitration clause due to the document's incoherence and inability to provide clear notice."
+        },
+        {
+          "finding_id": "f-473b27ff",
+          "impact": "Users lose control over their personal brand and likeness; potential for embarrassing or harmful commercial use of personal images/voice without consent or compensation; no recourse for unauthorized commercial exploitation; privacy erosion through broad sublicensing rights to third parties. Business users lose access to courts, face asymmetric dispute resolution costs, and risk arbitrary termination of service access critical to their operations.",
+          "scenario": "Snap can commercially exploit user-generated content from Live/Local features by creating derivative works, broadcasting across any media platform, and using personal likeness/voice for advertising or promotional purposes without paying royalties or compensation. For business users, Snap can force disputes into confidential arbitration, preventing public litigation and class actions, while reserving the right to revoke access to the Services at any time without cause, effectively holding business communications and marketing reach hostage to Snap's discretion."
+        }
+      ],
+      "false_positives": [
+        {
+          "evidence": "The document contains: (1) Retention of ownership language ('you retain whatever ownership rights in that content you had to begin with'); (2) Broad license grant ('worldwide, royalty-free, sublicensable, and transferable license to host, store, use, display, reproduce, modify, adapt, edit, publish, and distribute'); (3) Enhanced rights for crowd-sourced content ('create derivative works from, promote, exhibit, broadcast, syndicate... in any form and in any and all media'); (4) Personality rights waiver ('unrestricted, worldwide right and license to use your name, likeness, and voice').",
+          "finding_id": "f-fe307291",
+          "reason": "The Content Ownership and Rights clause is not missing from the document. The clause is present and extensively detailed, beginning with 'Many of our services let you create, upload, post, send, receive, and store content.' The finding erroneously reports a missing Clause 4 when the substantive provisions governing content ownership and licensing are clearly included in the text, including broad license grants and specific crowd-sourced content provisions."
+        },
+        {
+          "evidence": "The contract explicitly states: 'Many of our services let you create, upload, post, send, receive, and store content. When you do that, you retain whatever ownership rights in that content you had to begin with. But you grant us a license to use that content.' It then details a 'worldwide, royalty-free, sublicensable, and transferable license to host, store, use, display, reproduce, modify, adapt, edit, publish, and distribute' and includes specific provisions for Live, Local, and crowd-sourced services granting rights to create derivative works and use name, likeness, and voice without compensation.",
+          "finding_id": "f-6f036fd4",
+          "reason": "The Content Ownership and Rights clause text is not missing; it is extensively present in the contract starting with 'Many of our services let you create, upload, post...' and continuing through detailed license grant provisions. The finding appears to result from incomplete text extraction or parsing failure rather than an actual contractual gap."
+        },
+        {
+          "evidence": "The document abruptly transitions from Snap Group terms (discussing 'Live, Local, and crowd-sourced services') to LinkedIn-specific prohibitions (e.g., 'fictional profiles by linkedin,' 'accredited linkedin trainer,' 'professional community guidelines') and concludes with Duolingo service definitions. No clause numbering appears anywhere in the text. The sentence fragment 'ly fictional profiles by linkedin' indicates corrupted text extraction or document merging.",
+          "finding_id": "f-32cb21c4",
+          "reason": "The alleged 'missing Clause 10' constitutes a structural misinterpretation. The provided contract text is a corrupted concatenation of at least three distinct Terms of Service documents (Snap Group Limited, LinkedIn, and Duolingo) presented in narrative paragraph format without numerical clause demarcation. No 'Clause 10' exists in this document structure. Furthermore, to the extent the reference implies a missing termination or enforcement provision related to Content Ownership, this absence operates to the customer's advantage by creating ambiguity regarding Snap's enforcement mechanisms and potentially rendering the license grant perpetual."
+        },
+        {
+          "evidence": "The contract text provided jumps from Snap Group Limited terms (covering license grants) to LinkedIn-specific prohibited conduct clauses ('early fictional profiles by linkedin') to Duolingo service terms. No Clause 13 is present. The Snap-specific content grants broad rights without requiring user indemnification: 'you grant snap group limited... a worldwide, royalty-free, sublicensable, and transferable license' but lacks 'you agree to indemnify and hold harmless' language standard in such clauses. The 'we respect the intellectual property rights of others' paragraph appears to be from LinkedIn's terms, not Snap's, and contains no indemnification requirement.",
+          "finding_id": "f-d517171e",
+          "reason": "The referenced Clause 13 does not exist in the provided contract text, which appears to be a corrupted amalgamation of multiple platforms' terms (Snapchat, LinkedIn, Duolingo). The Content Ownership provisions, while broadly licensing user content to Snap, do not contain the standard User IP Indemnification clause typically found in Clause 13 of comparable ToS agreements. This absence is not a 'missing' protective provision for the user, but rather a missing obligation that would have burdened the user with defense costs and liability for third-party IP claims arising from their content."
+        },
+        {
+          "evidence": "The provided contract_text contains: 'you grant snap group limited, snap inc., and their affiliates a worldwide, royalty-free, sublicensable, and transferable license to host, store, use, display, reproduce, modify, adapt, edit, publish, and distribute that content' and for Live/Local services 'you also grant us a license to create derivative works from, promote, exhibit, broadcast, syndicate, sublicense, publicly perform, and publicly display content... unrestricted, worldwide right and license to use your name, likeness, and voice.'",
+          "finding_id": "f-2423c094",
+          "reason": "The assertion that missing Section 4 text prevents analysis of content license provisions is factually incorrect and constitutes a dangerous distraction. The contract_text explicitly contains the primary user content license provisions under the 'many of our services let you create...' section. These provisions include the exact high-risk terms mentioned in the finding (sublicensing rights, broad grants) and additional exploitative terms like transferability and personality rights waivers. The false positive lulls the customer into believing the license terms are unavailable for review when they are plainly visible and aggressively favorable to the platform."
+        },
+        {
+          "evidence": "The document contains incompatible amalgamations: references to 'snap group limited', 'linkedin' (prohibitions on invitations and professional profiles), and 'duolingo' (tinycards application) without section breaks. No 'Section 10' headers exist. Termination-related language appears in: 'snap group limited grants you a personal... revocable... license' and the truncated enforcement clause 'we may access, review, screen, and delete your...'. The effective date (January 10, 2017) confirms this is an archived version, but the truncation suggests the customer is reviewing an excerpt, not the complete agreement.",
+          "finding_id": "f-8c29a9cf",
+          "reason": "The provided contract text is a corrupted concatenation of multiple distinct Terms of Service agreements (Snap Group Limited, LinkedIn, and Duolingo) and lacks any visible section numbering. The 'missing Section 10' is a false positive because the document does not use a numbered section format; rather, it is an extracted or malformed copy where enforcement and termination provisions are actually embedded within unnumbered paragraphs (e.g., the revocable license grant). The actual Snap Group Limited Terms of Service from January 10, 2017, contain Section 10 in the complete document binding the customer, but this review is based on an incomplete text that cuts off mid-sentence ('we may access, review, screen, and delete your...')."
+        },
+        {
+          "evidence": "For all services other than live, local, and any other crowd-sourced service, you grant snap group limited, snap inc., and their affiliates a worldwide, royalty-free, sublicensable, and transferable license to host, store, use, display, reproduce, modify, adapt, edit, publish, and distribute that content for as long as you use the services",
+          "finding_id": "f-3c0174ee",
+          "reason": "The content license appears limited by the phrase 'for as long as you use the services,' suggesting users can terminate Snap's rights by deleting their account. However, because the license is explicitly 'sublicensable' and 'transferable,' content distributed to third-party affiliates or business partners during the term remains perpetually licensed even after account termination. This creates a false perception of data control and deletion rights."
+        },
+        {
+          "evidence": "Finding f-3c1e6ac0 contains empty strings for clause_ref, clause_text, and description. The contract_text abruptly transitions from Snap Group Limited provisions to LinkedIn-specific restrictions ('.. linkedin or with its express permission') and concludes with Duolingo terms, creating a jurisprudentially incoherent document.",
+          "finding_id": "f-3c1e6ac0",
+          "reason": "The finding references undefined contractual provisions with empty clause_ref, clause_text, and description fields, indicating a detection artifact rather than an actual identifiable clause. Additionally, the provided contract_text conflates Terms of Service from three distinct entities (Snap Group Limited, LinkedIn, and Duolingo) without demarcation, rendering the specific 'finding' unlocatable."
+        },
+        {
+          "evidence": "Contract text contains: 'es by linkedin or with its express permission in connection with a promotional campaign'; 'representing yourself as an accredited linkedin trainer'; 'deep-link to our services for any purpose other than to promote your profile'; 'duolingo websites (`` websites '' ) and mobile applications including the tinycards application'",
+          "finding_id": "f-4eb1b085",
+          "reason": "The document creates a false positive of contractual coherence and single-source authority. While purporting to be Snap Group Limited Terms of Service, the text contains interspersed provisions from LinkedIn's User Agreement (e.g., 'linkedin invitations,' 'accredited linkedin trainer,' 'do not copy or distribute (except through the available sharing functionality)') and Duolingo's Terms of Service ('duolingo websites,' 'tinycards application'). This amalgamation creates fatal ambiguity regarding which terms apply, potentially rendering the agreement void for uncertainty or allowing the customer to argue they only consented to specific, identifiable Snap provisions."
+        },
+        {
+          "evidence": "The finding fields clause_ref, clause_text, and description are all empty strings. The contract_text abruptly transitions from Snap Group Limited terms (effective January 10, 2017, referencing Snapchat Services) to LinkedIn-specific prohibitions (e.g., 'profiles by linkedin', 'linkedin invitations', 'slideshare.net'), and concludes with Duolingo terms. This creates an incoherent contractual document where no single clause can be properly identified for the supposed 'medium' severity finding.",
+          "finding_id": "f-ecd41367",
+          "reason": "The finding object contains empty strings for clause_ref, clause_text, and description, while the provided contract_text is a malformed concatenation of three distinct, unrelated Terms of Service documents (Snap Group Limited/Snapchat, LinkedIn, and Duolingo). No specific contractual provision is actually identified or referenced."
+        }
+      ],
+      "hidden_traps": [
+        {
+          "clause_refs": [
+            "4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "6"
+          ],
+          "description": "The clause states users retain 'whatever ownership rights' they had, then grants broad commercial rights. This creates a latent ambiguity where users can argue that 'retention' of ownership limits the license scope or preserves moral rights that override the license grant in civil law jurisdictions.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "6"
+          ],
+          "description": "The explicit statement that users 'will not be entitled to any compensation' for use of name, likeness, or voice in crowd-sourced services may be unenforceable under right of publicity statutes in certain US states or performers' rights in the EU, creating a voidable clause.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "6"
+          ],
+          "description": "While the license is described as sublicensable and transferable, it lacks specification of whether sublicenses survive termination of the user's account or if Snap must pass through certain obligations.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "6"
+          ],
+          "description": "The software license section allows automatic downloads of upgrades but notes users 'may be able to adjust these automatic downloads through your device's settings.' This creates an illusory promise regarding user control.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "6"
+          ],
+          "description": "The arbitration clause notice states it binds businesses but the actual arbitration clause location is referenced as appearing 'later in these terms' without specification, and the provided text cuts off before the arbitration section.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "10"
+          ],
+          "description": "Despite the missing Clause 10, the text states the license lasts 'for as long as you use the services.' Snap may argue that hosted/archived content constitutes continued 'use' of services even after account termination, effectively creating a perpetual license without needing a termination clause.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "10"
+          ],
+          "description": "The document contains an Arbitration Notice for business users early in the text. If Clause 10 was intended to contain dispute resolution or class action waiver terms, its absence may trigger default arbitration provisions that prevent class action lawsuits regarding the defective contract.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "10"
+          ],
+          "description": "The presence of extensive LinkedIn-specific terms (scraping prohibitions, keyword caps, professional guidelines) embedded within the text could be argued by Snap as governing 'affiliates and business partners' mentioned in the content license grant, creating unexpected restrictions on customer conduct toward third parties.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "13"
+          ],
+          "description": "The contract text contains commingled provisions from Snapchat, LinkedIn, and Duolingo. Any enforcement action by Snap relying on 'standard' Clause 13 or generic references to 'IP indemnification' can be challenged as referring to a non-existent provision in this specific document. The confusion weakens Snap's ability to enforce implied indemnification through course of dealing arguments.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "13"
+          ],
+          "description": "Snap obtains perpetual, transferable, sublicensable rights to user content including derivative works creation and commercial exploitation (name/likeness/voice for Live/Local), but the user assumes no liability for third-party claims arising from Snap's exercise of those rights. This creates an implied warranty by Snap that the platform can handle such content without user liability.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "13"
+          ],
+          "description": "The clause for Live/Local services explicitly states content is 'inherently public and chronicle matters of public interest' and grants unrestricted rights including 'broadcast, syndicate, publicly perform' without indemnification. This can be interpreted as Snap assuming the risk of right-of-publicity and defamation claims since they classified the content as public interest to obtain broader rights.",
+          "exploitation_scenario": "",
+          "severity": "medium"
+        },
+        {
+          "clause_refs": [
+            "Section 4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 4"
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 10"
+          ],
+          "description": "The license is granted as 'revocable' and 'nonexclusive' without procedural safeguards, allowing Snap to terminate service immediately without cause, notice, or compensation, effectively bypassing any implied termination rights the customer believes exist in the 'missing' Section 10.",
+          "exploitation_scenario": "",
+          "severity": "critical"
+        },
+        {
+          "clause_refs": [
+            "Section 10"
+          ],
+          "description": "Content submitted to Live/Local services grants Snap rights to use name, likeness, and voice 'in any form and in any and all media... now known or later developed' indefinitely without compensation, surviving account termination and continuing even after service revocation.",
+          "exploitation_scenario": "",
+          "severity": "critical"
+        },
+        {
+          "clause_refs": [
+            "Section 10"
+          ],
+          "description": "Business users are bound by arbitration (header note) but the specific clause and any opt-out window (typically 30 days) are missing from this excerpt, potentially trapping business customers into arbitration without knowledge of how to decline.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            "Section 10"
+          ],
+          "description": "The inclusion of LinkedIn-specific prohibitions ('do not invite people you do not know', 'do not use crawlers') creates a trap where Snap can allege violations of these standards (which are atypical for Snapchat social norms) to justify immediate account suspension under the broad 'compliance with laws and regulations' clause.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The Arbitration Notice explicitly states it binds only businesses ('if you're using the services on behalf of a business'), conspicuously omitting individual consumers.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The license for crowd-sourced content grants unrestricted rights to use 'name, likeness, and voice' without compensation or geographic limitation, overriding statutory protections in certain jurisdictions.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Provision states software 'may automatically download and install upgrades' without requiring explicit user consent for each instance.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Snap reserves right to delete content 'at any time and for any reason' but is not obligated to preserve content.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "For Live/Local/crowd-sourced content, users grant unrestricted worldwide rights to name, likeness, and voice with explicit waiver of compensation rights. Unlike standard content licenses limited to 'as long as you use the services,' this grant lacks temporal limitation and extends to 'any and all media or distribution methods (now known or later developed),' effectively creating an irrevocable, perpetual license to commercialize user's identity.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The arbitration clause applies only to 'business' users, but the definition of 'using the services on behalf of a business' is vague and undefined. This creates a trap where minimal commercial activity (e.g., promoting a personal brand, selling products via Snap, or corporate use of personal accounts) triggers mandatory arbitration while individual users believe they retain court rights.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The grant of 'sublicensable' rights to 'affiliates and business partners' allows Snap to transfer user content rights to unknown entities without user notification or consent. Combined with the 'unrestricted' rights for crowd-sourced content, this creates a mechanism for irrevocable data dispersal beyond Snap's control.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The automatic download and installation of upgrades, combined with the contaminated 'future modifications' language from the Duolingo section, creates a trap wherein material contract terms can be modified through software updates rather than explicit agreement.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The inclusion of LinkedIn and Duolingo terms creates legal ambiguity regarding which contractual provisions govern the relationship. This 'contamination' can be exploited by Snap to cherry-pick enforcement.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "For crowd-sourced services (Live/Local), users grant 'unrestricted, worldwide right and license to use your name, likeness, and voice' with explicit waiver of compensation rights. This allows Snap to commercially exploit user identity in advertising or broadcast media without payment, even if the original content was deleted.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The clause permitting automatic downloads of 'upgrades, updates, or other new features' allows Snap to materially change service functionality, data collection practices, or terms implementation without explicit user consent for each change, potentially circumventing 'meeting of the minds' requirements for contract modifications.",
+          "exploitation_scenario": "",
+          "severity": "medium"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "While the terms bar users under 13 and require capacity to contract, there is no described verification mechanism. If minors access the service and create content, they may disaffirm the license grant, exposing Snap to copyright infringement claims if the content continues to be used, while also violating COPPA/GDPR age requirements.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "License grants are 'sublicensable' and 'transferable' without termination clauses for downstream users. Even after account deletion or service termination, sublicensed content remains exploitable by third parties to whom Snap transferred rights.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "For crowd-sourced services, customer grants 'unrestricted, worldwide right and license to use your name, likeness, and voice' with explicit waiver of compensation rights.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Arbitration clause applies if using services 'on behalf of a business,' but the document provides no clear definition of business use versus personal use.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Software 'may automatically download and install upgrades, updates, or other new features' without requiring explicit user acceptance of modified terms for each update.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "While Snap reserves right to delete content 'for any reason,' the license grant does not automatically terminate upon deletion, and deleted content may remain in backups or derivative works.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Document references Snap Group Limited (UK), Snap Inc. (US), affiliates, and business partners without specifying governing law for specific provisions.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "For Live, Local, or 'any other crowd-sourced services,' users grant unrestricted, worldwide rights to use their name, likeness, and voice without compensation. The 'any other crowd-sourced services' language is a trap door allowing Snap to classify standard snaps or private content as crowd-sourced retroactively.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The terms state 'your business will be bound by the arbitration clause that appears later in these terms' but the actual arbitration clause is not provided in the document text. This creates a trap where business users are told they are bound to unknown terms.",
+          "exploitation_scenario": "",
+          "severity": "critical"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Users must affirm they do not appear on the U.S. Treasury Department's list of specially designated nationals. This creates a representation allowing immediate termination without recourse if the user is ever mistakenly added to such lists, with no cure period or mistake correction mechanism.",
+          "exploitation_scenario": "",
+          "severity": "medium"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Snap may automatically download and install 'upgrades, updates, or other new features' without specific consent for each change. The 'other new features' language allows installation of entirely new functionality not contemplated at time of agreement.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The license is described as 'revocable' but grants rights 'for as long as you use the services.' Simultaneously, Snap retains sublicensable and transferable rights. This creates a trap where Snap may sublicens content to third parties, then the user revokes the license, but the sublicensee retains rights.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "While standard services receive a broad license, content submitted to 'Live, Local, and any other crowd-sourced services' triggers an even broader license including the right to create derivative works, publicly perform, broadcast, syndicate, and use the user's name, likeness, and voice without compensation. This is a hidden trap because the classification of which services constitute 'crowd-sourced' is ambiguous and controlled entirely by Snap, potentially subjecting standard user content to the more expansive license without clear notice.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The document states that business users are bound by arbitration clauses 'that appears later in these terms,' but the provided text cuts off before displaying the actual arbitration clause. This creates a material ambiguity regarding whether the arbitration agreement is actually incorporated by reference or enforceable, particularly if the referenced clause is not provided or is inconspicuous.",
+          "exploitation_scenario": "",
+          "severity": "medium"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "The terms state that software 'may automatically download and install upgrades, updates, or other new features' without requiring explicit consent for each modification. This is a hidden trap because it allows Snap to fundamentally alter the functionality, performance characteristics, or data collection practices of the software without the user's specific agreement to each change, potentially introducing unwanted features or removing desired functionality.",
+          "exploitation_scenario": "",
+          "severity": "medium"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "Users must affirm they are not on the U.S. Treasury Department's list of Specially Designated Nationals (SDN) or face similar prohibitions. This is a hidden trap because it places the burden entirely on the user to self-certify their status without Snap being required to verify, yet the consequences of being on such a list (account termination, potential legal liability) are severe.",
+          "exploitation_scenario": "",
+          "severity": "low"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [
+            ""
+          ],
+          "description": "",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [],
+          "description": "The Terms create a dual-class system where users representing 'a business or some other entity' are bound by mandatory arbitration while consumers are not. Snap can exploit ambiguity in 'use on behalf of a business' to force individual consumers (influencers, gig workers, side hustles) into arbitration by characterizing their use as business-related, stripping them of court access and class action rights.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [],
+          "description": "For Live/Local/crowd-sourced content, the license grant is perpetual (duration of use), worldwide, sublicensable, and transferable, allowing Snap to commercially exploit user content indefinitely even after account termination. This includes creating derivative works and using name/likeness/voice without compensation, effectively transferring all commercial rights to Snap permanently.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [],
+          "description": "The auto-update clause allows Snap to unilaterally modify software functionality and potentially embed new terms through updates. Combined with broad modification rights, this creates a trap where users automatically accept material changes through continued use after updates, without affirmative consent to specific term changes.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [],
+          "description": "While Snap grants users a 'personal, worldwide, royalty-free, non-assignable, nonexclusive, revocable, and non-sublicensable license,' users grant Snap a license that is perpetual (for crowd-sourced content), sublicensable, transferable, and includes rights to create derivatives. This creates a massive imbalance allowing Snap to commercialize user IP while restricting user rights to the service.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        },
+        {
+          "clause_refs": [],
+          "description": "Users must affirm they are not on the U.S. Treasury Department's Specially Designated Nationals list. This creates strict liability for users if they later appear on such lists (even erroneously) and continue using the service, constituting immediate material breach and potentially facilitating asset freezing or OFAC violation claims.",
+          "exploitation_scenario": "",
+          "severity": "high"
+        }
+      ],
+      "uncovered_sections_with_traps": [
+        "Content License Scope and Duration",
+        "LinkedIn-derived prohibitions on confidentiality and employer information sharing",
+        "Name/Likeness/Voice Commercial Waiver",
+        "Name, Likeness, and Voice Commercial Exploitation",
+        "Class Action Waiver (typically paired with arbitration)",
+        "Arbitration Clause (Business Users)",
+        "Software Update and Modification Rights",
+        "Arbitration Notice (business-only applicability)",
+        "LinkedIn Professional Conduct Insertion: The mid-document appearance of LinkedIn-specific prohibitions regarding 'fictional profiles,' 'accredited trainers,' and 'professional community guidelines' creates a trap where Snap might claim these standards apply to Snapchat business accounts or content verification.",
+        "Live/Local crowd-sourced content license (name/likeness/voice)",
+        "Age Verification and Capacity: The provision barring users under 13 appears early, but without Clause 10's potential termination provisions, Snap may lack clear authority to delete underage accounts, which the customer (if a parent) could exploit to demand service restoration for terminated minor accounts.",
+        "Duolingo future modifications acceptance mechanism",
+        "Automatic Software Updates",
+        "The referenced arbitration clause 'that appears later in these terms' - absent from provided text, concealing specific waiver of class action or jury trial rights",
+        "Privacy Policy (referenced regarding content visibility but terms not incorporated)",
+        "Section 10: Termination (likely contains unilateral termination rights, data deletion timelines, and survival of IP licenses)",
+        "Arbitration clause notice and business-user classification triggers",
+        "Business User Arbitration Notice",
+        "The 'privacy policy' referenced in the content section regarding tailoring who can watch content",
+        "Arbitration clause scope - 'on behalf of a business' lacks objective criteria",
+        "Class Action Waiver (implied by arbitration reference but not shown)",
+        "Indemnification Section (customer obligation to indemnify Snap for user content violations, likely disproportionate)",
+        "Community Guidelines (referenced as usage policies but not attached)",
+        "Duolingo Service Confusion: The final paragraphs introducing 'Duolingo English Test' and separate 'Terms and Conditions' create a trap regarding data sharing consent, where Snap might argue the customer consented to Duolingo's data practices by accepting the conflated agreement.",
+        "Revocability of License",
+        "Geographic enforcement mechanisms for the 'outside United States' jurisdiction clause versus UK/EU data protection rights",
+        "Duolingo Terms insertion (service operation definitions)",
+        "Arbitration Clause (referenced but not provided in text)",
+        "Cross-border data transfer implications from 'worldwide' license grants without GDPR-style safeguards",
+        "Biometric data licensing (name, likeness, voice) for crowd-sourced content",
+        "Arbitration clause (referenced in notice but full text not provided)",
+        "Automatic software updates - no mechanism to reject material term changes",
+        "Data retention schedules and deletion procedures post-termination",
+        "Complete Arbitration and Dispute Resolution provisions (referenced but omitted)",
+        "Duolingo service provisions (mixed jurisdictional operators create confusion about contracting party)",
+        "Live/Local content licensing - perpetual rights without termination mechanism or compensation",
+        "The specific 'additional terms' for services requiring older age limits",
+        "Data Retention and Deletion Policies (not specified beyond content removal rights)",
+        "Cross-jurisdictional governing law conflicts (US vs UK vs unspecified)",
+        "Live/Local/Crowdsourced Service Terms (perpetual rights)",
+        "Content Deletion and Screening",
+        "Financial terms, payment obligations, and auto-renewal clauses",
+        "Data retention schedules for sublicensed content post-account termination",
+        "Entity Definitions and Governing Law",
+        "Jurisdictional compliance - obligation to monitor US, UK, and 'any other applicable' laws creates impossible burden",
+        "Content License Grant (falsely marked as missing)",
+        "Privacy Policy (incorporated by reference without full text)",
+        "Definitions distinguishing 'personal' use from 'business' use for arbitration applicability",
+        "Data Retention Post-Termination Section (clarifies Snap's rights to retain derived data and metadata after account closure)",
+        "LinkedIn prohibited conduct sections (erroneously included in document, creating ambiguity about applicable terms)",
+        "Automatic software updates and modification clauses spanning multiple services",
+        "Content deletion and screening rights",
+        "The LinkedIn-related provisions appearing to be erroneous text insertion (suggesting contract confusion or amalgamation)",
+        "Non-assignable user license - user cannot transfer account upon death or merger while Snap likely retains assignment rights",
+        "Indemnification Clause (standard in ToS but not shown in text)",
+        "Truncated Moderation Authority: The sentence fragment 'while we 're not required to do so , we may access , review , screen , and delete your content at any time ..' ends abruptly before transitioning to LinkedIn terms, creating a trap where Snap claims broad moderation rights that the customer can argue are limited by the missing Clause 10 enforcement context.",
+        "Limitation of Liability Section (caps on damages that would limit customer remedies, likely excluded from this excerpt)",
+        "Live/Local crowd-sourced services clause (unrestricted name/likeness/voice license with public interest classification)",
+        "Live/Local/Crowd-sourced Services License Grant",
+        "Payment and Subscription Terms (not addressed in provided text)",
+        "The full arbitration clause referenced in the header notice",
+        "Business Arbitration Clause (hidden in introductory text)",
+        "Cross-platform term contamination - ambiguous integration of LinkedIn and Duolingo provisions",
+        "The 'usage policies' and 'community guidelines' referenced in the license grant but not provided",
+        "Additional terms for specific services (referenced as requiring older age)",
+        "Modification of terms provisions and notice requirements",
+        "Community Guidelines (referenced multiple times but not attached or quoted)",
+        "Snap Inc. Terms of Service (referenced for US users but not provided)",
+        "Content Modification and Deletion Rights",
+        "Limitation of Liability and Disclaimer of Warranties (not shown but standard for these terms)",
+        "Automatic software upgrade provisions",
+        "Snap Group Limited license grant provisions (worldwide sublicensable rights without indemnification)",
+        "Indemnification obligations",
+        "Snap Inc. Terms (referenced for US users creating jurisdictional confusion)",
+        "Crowd-sourced content definition - vague boundary between personal and 'inherently public' content",
+        "LinkedIn Terms insertion (professional networking prohibitions)",
+        "Automatic software upgrade provision allowing unilateral modification of service functionality",
+        "Content deletion rights - unilateral Snap discretion without notice requirement or appeal process",
+        "Commingled third-party terms (LinkedIn and Duolingo provisions embedded within Snap terms creating jurisdictional confusion)",
+        "Limitation of Liability Clause (likely present but not shown)",
+        "Content License Grant (Crowd-sourced Services)",
+        "The termination provisions for the license grant",
+        "GDPR/Schrems II data processing addenda for non-US users",
+        "Governing Law/Jurisdiction Section (determines venue for disputes over the 'missing' termination rights)",
+        "Sanctions/SDN list compliance representation creating strict liability for false positives in user screening",
+        "Additional terms for additional services (referenced as requiring older age but not provided)"
+      ]
+    },
+    "combination_risks": [
+      {
+        "clause_refs": [
+          "4",
+          "6"
+        ],
+        "description": "The simultaneous absence of Content Ownership and Rights clause text in both Clause 4 and Clause 6 creates a compounding legal risk regarding intellectual property ownership. Rather than isolated gaps, the missing text in multiple ownership-related provisions suggests a systemic failure to establish clear IP rights frameworks within the agreement. This significantly increases the risk of ownership disputes, unclear licensing scope, and potential infringement claims, as the parties lack definitional clarity on who retains rights to created or licensed content.",
+        "investigation_result": "Obtain complete text for both Clause 4 and Clause 6 immediately to determine if they represent distinct ownership provisions (e.g., pre-existing vs. newly created content) or overlapping provisions. Conduct a comprehensive review of the entire agreement to identify any other missing IP-related clauses. Verify whether the agreement contains any implied or reference-based ownership terms that might partially cover these gaps.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "4",
+          "10"
+        ],
+        "description": "The absence of clause text for both primary Content Ownership rights (Clause 4) and potential termination/enforcement provisions (Clause 10) creates compounding legal risk. Without visibility into the rights definition and the mechanisms for their enforcement or termination, the contract presents a complete blind spot regarding intellectual property assets and remedies. This dual gap prevents assessment of whether rights are properly granted, retained, or protected, and simultaneously obscures the conditions under which such rights might revert, be terminated, or enforced, creating multiplicative uncertainty in a critical risk domain.",
+        "investigation_result": "Obtain the complete text for Clause 4 (Content Ownership and Rights) and Clause 10 (Content Ownership cluster - termination/enforcement). Verify if these clauses cross-reference each other and assess whether the termination provisions affect ownership rights or license grants.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "6",
+          "10"
+        ],
+        "description": "The simultaneous absence of Clause 6 (Content Ownership and Rights) and Clause 10 (potential termination/enforcement provision within the Content Ownership cluster) creates compounding legal risk. Without Clause 6, no ownership rights or intellectual property allocations are defined, while without Clause 10, no enforcement mechanisms or remedies exist to protect those rights. Together, these gaps form a complete vacuum in content protection where neither the substantive rights nor the procedural remedies are contractually established, exposing the parties to unresolvable ownership disputes and unenforceable content claims that would not exist if only one clause were missing.",
+        "investigation_result": "Obtain and review the complete text of both Clause 6 and Clause 10 to identify: (1) specific ownership allocations, license grants, or IP rights defined in Clause 6; (2) termination triggers, enforcement mechanisms, or remedies specified in Clause 10; and (3) explicit cross-references between these clauses determining whether Clause 10's enforcement provisions are contingent upon Clause 6's ownership definitions.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "4",
+          "13"
+        ],
+        "description": "Compounding legal risk identified: Missing Content Ownership and Rights clause (Clause 4) combined with missing IP indemnification/warranty provision (Clause 13) creates a critical double gap in intellectual property protection. Without clear ownership allocation and without indemnification safeguards, the agreement fails to establish (1) who owns contributed content and (2) who bears liability for third-party IP infringement claims. This interaction amplifies risk beyond individual gaps, exposing parties to unquantifiable IP ownership disputes and unlimited infringement liability.",
+        "investigation_result": "Conduct comprehensive review of the entire Content Ownership cluster (Clauses 4-13) to identify all missing provisions. Compare against standard IP provisions including: (1) ownership allocation of pre-existing vs. newly created content, (2) assignment/license grants, (3) moral rights waivers, (4) IP representations and warranties, (5) indemnification scope for infringement claims, (6) notice and control of defense provisions, and (7) remediation obligations. Map dependencies between ownership clauses and indemnification clauses to ensure consistent risk allocation.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "6",
+          "13"
+        ],
+        "description": "The absence of both Content Ownership provisions (Clause 6) and IP indemnification/warranty text (Clause 13) creates compounding legal risk. These clauses typically function as complementary safeguards: Clause 6 establishes ownership boundaries while Clause 13 allocates liability for infringement claims. Missing both creates a complete blind spot regarding intellectual property risk allocation, potentially exposing the company to unmitigated third-party IP claims without clear recourse or indemnification rights.",
+        "investigation_result": "Obtain and review the complete text for Clause 6 (Content Ownership and Rights) and Clause 13 (IP Indemnification/Warranty). Verify whether Clause 6 clearly defines ownership of background IP, foreground IP, and deliverables. Confirm whether Clause 13 provides mutual or unilateral indemnification for IP infringement claims, and whether indemnification obligations align with the ownership structure defined in Clause 6.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "10",
+          "13"
+        ],
+        "description": "The simultaneous absence of termination/enforcement provisions (Clause 10) and IP indemnification/warranty provisions (Clause 13) within the Content Ownership cluster creates compounding legal exposure. Without termination rights, the party cannot effectively stop ongoing IP violations, while the lack of indemnification leaves them financially exposed to third-party infringement claims. Together, these gaps eliminate both procedural remedies (enforcement) and financial protections (indemnification) for IP disputes, creating a multiplicative risk where the lack of enforcement mechanisms exacerbates the financial exposure from missing indemnification coverage.",
+        "investigation_result": "Verify whether Clauses 10 and 13 are actually missing from the agreement or merely failed extraction. Review the entire Content Ownership/IP section to identify any merged provisions that might cover both termination rights and indemnification. Check if general termination clauses elsewhere in the document apply to IP disputes, examine whether limitation of liability clauses further restrict any existing IP protections, and confirm if survival clauses would keep IP indemnification obligations in effect post-termination if such termination provisions do exist.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "4",
+          "Section 4"
+        ],
+        "description": "Both findings identify the absence of Section 4/Clause 4 text regarding content ownership and user licensing rights. This compounding gap prevents analysis of critical intellectual property terms such as perpetual irrevocable grants, sublicensing rights, and moral rights waivers, creating severe unmitigated legal exposure regarding user-generated content and platform rights.",
+        "investigation_result": "Obtain and review the complete text of Section 4 (Content Ownership and Rights) to determine the scope of user content licenses, ownership allocations, sublicensing permissions, moral rights waivers, and any perpetual or irrevocable grant terms.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "6",
+          "Section 4"
+        ],
+        "description": "The absence of text for both the Content Ownership clause (Clause 6) and the User Content License provision (Section 4) creates compounding legal risk by preventing cross-verification of IP rights allocation. These clauses typically function interdependently: Clause 6 establishes ownership baselines while Section 4 defines the scope of licensed rights granted to the platform. Without both texts, it is impossible to detect inconsistencies, overbroad grants, or conflicting reservations of rights that could expose the company to claims of IP misappropriation, license scope disputes, or uncertainty regarding sublicensing authority. The dual omission obscures the complete rights framework, preventing assessment of whether ownership claims align with or contradict the license terms.",
+        "investigation_result": "Immediately obtain the complete text for both Clause 6 (Content Ownership and Rights) and Section 4 (User Content License). Cross-reference the ownership allocations, reservation of rights, and representations in Clause 6 against the license grant scope, duration, and permitted uses in Section 4 to identify any inconsistencies or gaps. Verify whether moral rights waivers in one clause conflict with ownership assertions in the other, and confirm that sublicensing rights in Section 4 are properly supported by ownership representations in Clause 6.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "10",
+          "Section 4"
+        ],
+        "description": "The concurrent absence of Section 4 (primary user content license) and Clause 10 (potential termination/enforcement provision in the Content Ownership cluster) creates compounding uncertainty regarding the perpetuity and revocability of intellectual property grants. Without Section 4, the scope of user content rights granted to the platform\u2014including whether the license is perpetual, irrevocable, or includes sublicensing rights\u2014cannot be assessed. Without Clause 10, the mechanisms for terminating these grants or enforcing ownership boundaries remain unknown. Together, these gaps prevent determination of whether users retain ability to exit the license upon termination or are bound by ongoing grants that survive contract cessation, significantly obscuring long-term liability exposure.",
+        "investigation_result": "Obtain complete text for both Section 4 and Clause 10 to analyze: (1) the precise scope of the license grant in Section 4 (duration, revocability, sublicensing, moral rights); (2) whether Clause 10 contains termination provisions that effectively extinguish the Section 4 license; and (3) whether survival clauses or 'perpetual' language in Section 4 overrides any termination rights provided in Clause 10.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "13",
+          "Section 4"
+        ],
+        "description": "Compounding structural risk: The simultaneous absence of Section 4 (primary user content license) and Clause 13 (likely IP indemnification/warranty) creates a dual blind spot in the Content Ownership cluster. Without the license text, the scope of user rights granted to the platform (perpetual, irrevocable, sublicensable, moral rights waivers) cannot be verified against the indemnification obligations that likely appear in Clause 13. This obscures whether indemnification coverage aligns with the licensed rights scope, preventing assessment of whether the platform assumes uncapped third-party IP liability for user content or whether users bear appropriate indemnification burdens. The interaction creates exponential rather than additive risk because missing both provisions prevents cross-validation of IP risk allocation mechanics.",
+        "investigation_result": "Request complete text for both Section 4 (user content license grant) and Clause 13 (IP indemnification/warranty). Map the scope of license rights against indemnification coverage to identify gaps where broad licensing meets narrow or absent indemnification protection.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "4",
+          "Section 10"
+        ],
+        "description": "The simultaneous absence of Content Ownership definitions (Clause 4) and Enforcement/Termination provisions (Section 10) creates compounding legal risk regarding post-termination intellectual property rights. When ownership parameters are undefined and termination mechanics are unknown, parties cannot determine whether content rights survive contract conclusion, transfer upon exit, or require return/destruction. This dual gap generates uncertainty about continued usage rights, licensing scope post-termination, and enforcement capabilities, exposing parties to claims of misappropriation or unauthorized retention of materials after contract conclusion.",
+        "investigation_result": "Conduct an integrated review of the contract to determine: (1) applicable statutory default rules governing IP ownership and post-termination rights in the governing jurisdiction, (2) whether course of performance or industry standards imply ownership retention or transfer upon termination, (3) potential conflicts between implied ownership principles and default termination-at-will doctrines, and (4) whether the dual absence creates irreconcilable ambiguity regarding remedies for breach involving content-related obligations.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "6",
+          "Section 10"
+        ],
+        "description": "The simultaneous absence of Content Ownership/Rights provisions (Clause 6) and Enforcement/Termination provisions (Section 10) creates a compound structural deficiency that exceeds the sum of individual risks. Without ownership definitions, parties cannot establish baseline rights to content or intellectual property. Without termination or enforcement mechanisms, there is no contractual pathway to remedy breaches or exit the relationship. Combined, these gaps create a 'black box' contractual environment where parties lack clarity on what they own and have no defined procedures to protect or recover those undefined rights, significantly increasing litigation risk and business uncertainty.",
+        "investigation_result": "Immediate review of the executed contract or negotiation history to determine if these provisions were inadvertently omitted, redacted, or exist in separate documents. Verify if standard terms and conditions or master service agreements contain these clauses. Assess whether implied ownership rights under applicable law (copyright, work-for-hire doctrines) can fill the gap, and review current operational realities to identify immediate risks (e.g., who is using the content, what happens if one party stops performing).",
+        "severity": "critical"
+      },
+      {
+        "clause_refs": [],
+        "description": "",
+        "investigation_result": "",
+        "severity": "critical"
+      },
+      {
+        "clause_refs": [],
+        "description": "",
+        "investigation_result": "",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [],
+        "description": "",
+        "investigation_result": "",
+        "severity": "medium"
+      },
+      {
+        "clause_refs": [],
+        "description": "",
+        "investigation_result": "",
+        "severity": "critical"
+      },
+      {
+        "clause_refs": [],
+        "description": "",
+        "investigation_result": "",
+        "severity": "medium"
+      },
+      {
+        "clause_refs": [
+          "10",
+          "Section 10"
+        ],
+        "description": "Both findings identify missing text for Clause/Section 10, which appears to contain critical Content Ownership provisions and enforcement/termination rights. The simultaneous absence of both the ownership terms and the enforcement mechanisms creates compounding legal risk, as the relationship between content control and termination rights cannot be assessed. This gap prevents evaluation of whether ownership rights survive termination or if enforcement actions are available to protect proprietary content.",
+        "investigation_result": "Locate the complete text for Section/Clause 10 to determine: (1) the specific Content Ownership rights granted to each party, (2) the termination conditions and post-termination obligations, (3) enforcement mechanisms available for ownership violations, and (4) whether survival clauses extend ownership rights beyond agreement termination. Cross-reference with any IP assignment or license provisions in other sections.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "13",
+          "Section 10"
+        ],
+        "description": "The concurrent absence of Clause 13 text (potentially containing IP indemnification or warranty provisions) and Section 10 text (enforcement/termination provisions) creates compounding legal risk. Without both provisions, it is impossible to determine whether the agreement provides adequate remedies\u2014such as termination for material breach or enforcement of indemnification rights\u2014in the event of third-party IP infringement claims. This interaction creates uncertainty regarding the relationship between substantive IP obligations and procedural remedies, potentially leaving the party without exit rights or enforceable protections in an IP dispute.",
+        "investigation_result": "Locate and review the complete text for Clause 13 (Content Ownership) and Section 10 (Termination/Enforcement) to determine: (1) the scope of any IP indemnification, warranty, or ownership representations in Clause 13; (2) whether Section 10 includes termination for cause provisions that would cover IP breaches or indemnification failures; and (3) whether survival clauses or specific enforcement mechanisms ensure post-termination availability of indemnification for IP claims arising during the contract term.",
+        "severity": "high"
+      },
+      {
+        "clause_refs": [
+          "Section 4",
+          "Section 10"
+        ],
+        "description": "Section 4 (content licensing) and Section 10 (termination/enforcement) are structurally interdependent provisions where license scope directly interacts with termination efficacy. Missing text for both creates a critical blind spot: if Section 4 contains perpetual irrevocable grants (as indicated by placeholder description) and Section 10 lacks robust termination mechanisms or survival clause carve-outs, the combination creates compounding 'zombie' liability where user content rights persist indefinitely despite contract termination. The inability to verify this interaction due to missing text constitutes an additive verification risk.",
+        "investigation_result": "Request complete text for both Section 4 and Section 10 to analyze: (1) whether Section 4 licenses are perpetual, irrevocable, or survive termination; (2) whether Section 10 contains effective termination triggers and explicit survival clause carve-outs for license grants; (3) cross-references between the sections regarding post-termination rights.",
+        "severity": "high"
+      }
+    ],
+    "findings": [
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "4",
+        "clause_text": "No clause text provided",
+        "confidence": 0.9,
+        "description": "Missing Content Ownership and Rights clause text prevents risk analysis",
+        "id": "f-fe307291",
+        "reasoning": "Section 4 is identified as part of the 'Content Ownership and Rights' cluster but contains no text. Without the actual clause, we cannot assess whether Snap Group Limited properly grants users rights to their own content, whether Snap claims overly broad license rights to user-generated content, or whether IP ownership terms are balanced. This is a critical gap as content ownership terms in ToS agreements often contain one-sided license grants favoring the platform.",
+        "remediation": "Request the full text of Section 4. Negotiate for: (1) clear confirmation that users retain ownership of their original content; (2) any license to Snap should be limited, non-exclusive, and terminable upon account deletion; (3) no broad commercial exploitation rights without additional consent; (4) moral rights waiver should be excluded or narrowly scoped.",
+        "severity": "high"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "6",
+        "clause_text": "No clause text provided",
+        "confidence": 0.9,
+        "description": "Missing Content Ownership and Rights clause text prevents risk analysis",
+        "id": "f-6f036fd4",
+        "reasoning": "Section 6 is identified as part of the 'Content Ownership and Rights' cluster but contains no text. This section likely addresses user content licenses, platform content rights, or feedback provisions. Standard risks include: perpetual irrevocable licenses, broad sublicensing rights, unlimited commercial use of user content, and assignment of moral rights. Without text, consumer cannot assess exposure.",
+        "remediation": "Request the full text of Section 6. Specifically seek to limit: (1) duration of any license (should end upon account termination, not perpetual); (2) scope (should be limited to operating the service, not general commercial exploitation); (3) sublicensing (should be prohibited or require notice); (4) feedback assignment (should be licensed not assigned, with compensation for valuable ideas).",
+        "severity": "high"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "10",
+        "clause_text": "No clause text provided",
+        "confidence": 0.7,
+        "description": "Missing clause text in Content Ownership cluster - possible termination or enforcement provision",
+        "id": "f-32cb21c4",
+        "reasoning": "Section 10 is empty but positioned within Content Ownership and Rights cluster. This may address content takedown, copyright enforcement, or termination of content licenses. Common risks include: lack of notice before content removal, no appeal process for mistaken takedowns, indemnification for false copyright claims, and data retention post-termination. Absence of text prevents assessment of procedural fairness.",
+        "remediation": "Request Section 10 text. Negotiate for: (1) advance notice before content removal with opportunity to cure; (2) clear appeal mechanism for disputed takedowns; (3) data export rights before account termination; (4) no indemnification for good-faith copyright disputes; (5) confirmation that license termination does not affect prior lawful uses by other users.",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "13",
+        "clause_text": "No clause text provided",
+        "confidence": 0.7,
+        "description": "Missing clause text in Content Ownership cluster - possible IP indemnification or warranty provision",
+        "id": "f-d517171e",
+        "reasoning": "Section 13 is empty but in Content Ownership cluster. Likely addresses IP indemnification, content warranties, or third-party rights. Standard consumer risks: broad representations that user owns all content rights (difficult for remixes, memes, quotes), indemnification of Snap for any IP claim (unlimited financial exposure), no Snap indemnification for IP infringement in platform content, warranty disclaimers that leave users without recourse for stolen content.",
+        "remediation": "Request Section 13 text. Negotiate for: (1) knowledge-based rather than strict liability for content IP infringement; (2) Snap indemnification for IP infringement in provided content/features; (3) cap on user indemnification at fees paid or reasonable amount; (4) no warranty that user content does not infringe - instead, good faith belief standard; (5) mutual notice and cooperation requirements for IP claims.",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "Section 4",
+        "clause_text": "[TEXT NOT PROVIDED - Input contained only placeholder 'Request complete Section 4 text']",
+        "confidence": 1,
+        "description": "Missing clause text prevents analysis of primary user content license provision, obscuring typical high-risk terms like perpetual irrevocable grants, sublicensing rights, and moral rights waivers",
+        "id": "f-2423c094",
+        "reasoning": "The input provided only a placeholder indicating Section 4 text should be inserted, with no actual contractual language. For a Snap Group Limited Terms of Service, Section 4 typically contains the user content license grant which regularly includes: (1) perpetual, irrevocable, worldwide, royalty-free licenses; (2) broad sublicensing rights to affiliates/partners; (3) waivers of moral rights; and (4) commercial exploitation rights. Without the text, critical consumer risks regarding IP ownership and privacy cannot be identified or quantified. This is a blocking issue for the Content Ownership and Rights cluster.",
+        "remediation": "Provide the complete Section 4 text from the Snap ToS to enable analysis. Upon receipt, prioritize identifying: (a) license scope (broad vs. limited), (b) duration (perpetual vs. termination), (c) sublicensing rights, (d) moral rights waivers, and (e) commercial use permissions. Negotiate for narrow, revocable license limited to platform operation only, with explicit termination of license upon account deletion and reservation of all moral rights.",
+        "severity": "critical"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "Section 10",
+        "clause_text": "[Section text not provided - empty string]",
+        "confidence": 0.95,
+        "description": "Missing section content prevents risk assessment for enforcement or termination provisions",
+        "id": "f-8c29a9cf",
+        "reasoning": "Section 10 is referenced from Content Ownership and Rights analysis, suggesting it likely contains critical enforcement mechanisms, content takedown procedures, account termination rights, or IP infringement remedies. Without the actual text, we cannot assess: (1) whether Snap has unilateral termination rights without notice; (2) if users have appeal processes for content removal; (3) whether there are disproportionate penalties for alleged IP violations; (4) if the section contains broad 'acceptable use' definitions that could chill legitimate speech; (5) data retention/deletion obligations post-termination; and (6) survival of indemnification or license grants after termination. Given this is a consumer-facing UK terms of service with English law governing, missing termination/enforcement language is a critical gap as these provisions typically contain the most one-sided terms in platform agreements.",
+        "remediation": "Request complete Section 10 text immediately. Specifically seek: (a) termination triggers and notice periods; (b) content removal procedures and appeal rights; (c) IP infringement reporting and counter-notification processes; (d) data handling post-termination; (e) survival clauses. Negotiate for: mutual termination rights where possible; reasonable notice periods (30 days minimum); explicit data deletion obligations; clear appeal mechanisms for mistaken enforcement actions; and limitation of perpetual licenses to actual service operation period only.",
+        "severity": "critical"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-59153c69",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-b1d82caf",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-3c0174ee",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-3c1e6ac0",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-4eb1b085",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-bd9d61a2",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-15d0f51e",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-ecd41367",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-473b27ff",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Content Ownership and Rights",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-02940d96",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "18",
+        "clause_text": "[No text provided for analysis]",
+        "confidence": 1,
+        "description": "Section 18 content missing - unable to assess indemnification obligations",
+        "id": "f-115acda3",
+        "reasoning": "Section 18 typically contains indemnification provisions in Snap's Terms of Service. Without the clause text, it is impossible to determine whether the user faces broad, uncapped indemnification obligations to Snap Group Limited, including for third-party claims arising from platform use, intellectual property infringement, or breaches by other users. This creates unquantifiable exposure for the consumer.",
+        "remediation": "Obtain and review the complete text of Section 18. Negotiate to limit indemnification to direct damages caused by user's material breach, exclude indemnification for Snap's own negligence or willful misconduct, and cap indemnity amounts at fees paid in preceding 12 months.",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "19",
+        "clause_text": "[No text provided for analysis]",
+        "confidence": 1,
+        "description": "Section 19 content missing - unable to assess liability limitations and caps",
+        "id": "f-bc048f32",
+        "reasoning": "Section 19 likely contains Snap's limitation of liability clauses. Missing text prevents assessment of whether Snap has improperly excluded liability for gross negligence, data breaches, death/personal injury, or statutory consumer rights under UK Consumer Rights Act 2015. Also impossible to verify if any liability cap is reasonable or if consequential/indirect damages are excluded for the user while Snap retains full rights.",
+        "remediation": "Provide Section 19 text immediately. Ensure liability caps are mutual, exclude gross negligence/willful misconduct/fraud from limitations, preserve statutory consumer rights under UK law, and ensure indirect/consequential damages exclusion does not apply to data protection breaches or personal injury.",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "20",
+        "clause_text": "[No text provided for analysis]",
+        "confidence": 1,
+        "description": "Section 20 content missing - jurisdiction, governing law, or dispute resolution terms unknown",
+        "id": "f-19302125",
+        "reasoning": "Section 20 typically addresses governing law (English law per header but specific exclusions unknown), jurisdiction, or mandatory arbitration. Without text, cannot assess if Snap imposes exclusive jurisdiction clauses favoring London courts (acceptable) or mandatory arbitration clauses that waive consumer rights to UK court proceedings. Also cannot verify if there are forum selection clauses requiring travel for disputes.",
+        "remediation": "Supply Section 20 text. Ensure governing law is indeed English law without carve-outs benefiting Snap, confirm non-exclusive jurisdiction allowing consumer to sue in their local UK courts, and reject any mandatory arbitration or class action waiver clauses that would conflict with UK consumer protection regulations.",
+        "severity": "high"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Section 18",
+        "clause_text": "[Text not provided in input]",
+        "confidence": 1,
+        "description": "Missing indemnification clause text prevents assessment of unilateral user obligations",
+        "id": "f-889debe1",
+        "reasoning": "As the consumer party, Section 18 likely requires the user to indemnify Snap Group Limited for third-party claims arising from user content or conduct. Without the text, it is impossible to assess whether the indemnity is mutual, covers IP infringement by Snap, or requires the user to fund Snap's defense of frivolous claims. Consumer-facing indemnities are typically one-sided and expose users to unlimited third-party liability.",
+        "remediation": "Obtain Section 18 text to verify: (1) whether indemnification is mutual or unilateral; (2) if the user must defend Snap against claims arising from Snap's own negligence; (3) whether Snap reserves exclusive control of defense; (4) carve-outs for gross negligence or willful misconduct. Negotiate to limit indemnity to direct damages caused solely by user's material breach.",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Section 19",
+        "clause_text": "[Text not provided in input]",
+        "confidence": 1,
+        "description": "Missing limitation of liability clause prevents verification of liability caps and exclusion of consequential damages",
+        "id": "f-18aa2634",
+        "reasoning": "Section 19 likely caps Snap's liability at fees paid or excludes consequential damages entirely, while potentially preserving unlimited liability for the user under Section 18. For UK consumers, this creates exposure if Snap excludes liability for data breaches, service outages, or GDPR violations. The absence of text prevents verification of whether the cap applies reciprocally or asymmetrically favors Snap.",
+        "remediation": "Request Section 19 text to confirm: (1) Liability cap amount (e.g., 12 months fees vs. \u00a3100); (2) Exclusion of indirect/consequential damages; (3) Carve-outs for death/personal injury, fraud, or data protection breaches required by UK Consumer Rights Act 2015; (4) Whether limitations apply to both parties equally. Ensure caps are mutual and exclude statutory consumer rights protections.",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Section 20",
+        "clause_text": "[Text not provided in input]",
+        "confidence": 1,
+        "description": "Missing governing law and dispute resolution text prevents assessment of forum selection and class action restrictions",
+        "id": "f-ec4da4f8",
+        "reasoning": "Section 20 likely specifies English governing law but may impose arbitration clauses, class action waivers, or require disputes to be resolved in London courts. For consumers, mandatory arbitration and class waivers may prevent collective redress for systemic issues. Without the text, cannot assess compliance with UK Consumer ADR Regulations 2015 or whether small claims court options are preserved.",
+        "remediation": "Provide Section 20 text to verify: (1) Exclusive jurisdiction clauses that may force UK consumers to litigate abroad; (2) Mandatory arbitration provisions that waive court access; (3) Class action waiver validity under UK law; (4) Preservation of small claims court rights. Negotiate for non-exclusive jurisdiction and express preservation of statutory consumer rights to court action.",
+        "severity": "high"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Verify current version of Snap UK Terms of Service against Consumer Rights Act 2015 and UK GDPR requirements",
+        "clause_text": "[Section content not provided - empty string]",
+        "confidence": 0.9,
+        "description": "Absence of explicit statutory rights preservation clause required under Consumer Rights Act 2015",
+        "id": "f-78152952",
+        "reasoning": "Section 31 Consumer Rights Act 2015 renders void any term attempting to exclude or limit liability for breach of statutory implied terms (satisfactory quality, fitness for purpose, as described) in consumer contracts. Standard Snap ToS typically contain liability caps (e.g., limiting to fees paid or fixed amount) and exclusion clauses that contravene s31 when applied to consumers. Without explicit carve-outs preserving statutory rights, these terms are unenforceable against consumers and expose Snap to enforcement action by the CMA under Part 8 Enterprise Act 2002, while creating legal uncertainty.",
+        "remediation": "Negotiate insertion of prominent clause: 'For consumers dealing as such under the Consumer Rights Act 2015, nothing in these Terms limits or excludes your statutory rights regarding the quality, fitness for purpose, or description of digital content and services. Any term attempting to limit liability for breach of these statutory rights is void and unenforceable.'",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Verify current version of Snap UK Terms of Service against Consumer Rights Act 2015 and UK GDPR requirements",
+        "clause_text": "[Section content not provided - empty string]",
+        "confidence": 0.85,
+        "description": "Potential conflict between standard liability limitations and CRA 2015 prohibition on excluding negligence liability for death/personal injury",
+        "id": "f-f1f304d4",
+        "reasoning": "Section 31(1)(a) CRA 2015 specifically prohibits terms excluding or restricting liability for death or personal injury resulting from negligence in consumer contracts. Snap's standard ToS typically include broad limitations of liability that, if applied to consumers, would contravene this mandatory provision. Additionally, Unfair Terms Regulations (UTCCR) retained under UK law render unfair any term causing significant imbalance contrary to good faith, particularly one-sided liability exclusions.",
+        "remediation": "Explicitly exclude from liability caps: '(a) death or personal injury caused by our negligence; (b) fraud or fraudulent misrepresentation; (c) any statutory liability that cannot be limited under the Consumer Rights Act 2015 or other mandatory UK consumer protection legislation.'",
+        "severity": "critical"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Verify current version of Snap UK Terms of Service against Consumer Rights Act 2015 and UK GDPR requirements",
+        "clause_text": "[Section content not provided - empty string]",
+        "confidence": 0.8,
+        "description": "Broad indemnification obligations on consumers likely unfair under CRA 2015/UTCCR and UK GDPR accountability requirements",
+        "id": "f-e8d2e5a3",
+        "reasoning": "Standard Snap ToS typically require users to indemnify Snap for third-party claims arising from content uploads or service use. For consumers, such unlimited indemnity obligations create significant imbalance and potential unquantified financial exposure, likely rendering them unfair and unenforceable under CRA 2015 and retained UTCCR. Furthermore, under UK GDPR Article 82 and accountability principle (Art 5(2)), data controllers bear direct liability for breaches; attempting to shift GDPR liability to data subjects via indemnity may violate ICO guidance on controller accountability.",
+        "remediation": "For consumer users: Delete indemnification clause entirely or limit to: (i) gross negligence or willful misconduct by user; (ii) IP infringement where user has actual knowledge of infringement; (iii) cap indemnity at reasonable amount (\u00a3500 or fees paid in last 12 months). Include explicit carve-out: 'This indemnity does not apply to claims arising from Snap's own negligence, breach of GDPR, or breach of these Terms.'",
+        "severity": "high"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "Verify current version of Snap UK Terms of Service against Consumer Rights Act 2015 and UK GDPR requirements",
+        "clause_text": "[Section content not provided - empty string]",
+        "confidence": 0.85,
+        "description": "Inadequate UK GDPR compliance verification regarding lawful basis transparency and data subject rights",
+        "id": "f-3fdca80e",
+        "reasoning": "UK GDPR Articles 12-14 require transparent information about processing, lawful basis (Art 6), and retention periods. Standard Snap ToS/Privacy Policies often use broad 'legitimate interests' or 'contractual necessity' bases without sufficient granularity for UK GDPR compliance, particularly regarding AI training data, advertising profiling, or third-party sharing. Absence of explicit compliance verification with UK GDPR (post-Brexit, distinct from EU GDPR) creates risk of inadequate transparency, missing UK representative details (if applicable), and insufficient data subject rights mechanisms (Arts 15-22).",
+        "remediation": "Verify and amend to include: (1) Specific lawful basis for each processing purpose (consent, contract, legal obligation, vital interests, public task, or legitimate interests with balancing test details); (2) Explicit retention periods or criteria; (3) Clear UK GDPR data subject rights exercise procedure (including right to object to profiling under Art 21); (4) Contact details for UK representative (if Snap Inc. is controller) or DPO; (5) Explicit reference to UK GDPR (not just 'GDPR') and UK Data Protection Act 2018.",
+        "severity": "high"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-4ce38d40",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-f1d8ad9c",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-74a66553",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-a92a73ab",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-91d62990",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-2fb3bd38",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-8982ce25",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-30468098",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-0d2ffa2c",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-7187dde3",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Liability and Indemnification",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-00acfb23",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "21",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Dispute resolution clause Section 21 is empty or missing, resulting in complete absence of dispute resolution mechanisms, jurisdiction clarity, or consumer protection provisions.",
+        "id": "f-1fa6f5d3",
+        "reasoning": "The Dispute Resolution cluster includes Section 21, which contains no text. This creates critical uncertainty for the consumer regarding: (1) which courts or tribunals have jurisdiction over disputes; (2) whether mandatory arbitration applies (which would waive access to UK courts); (3) applicable procedural rules; and (4) consumer rights under UK law including access to the small claims court. Under the Consumer Rights Act 2015 and general English contract law, the absence of dispute resolution terms can render dispute handling unpredictable and potentially disadvantageous to the consumer.",
+        "remediation": "Require the provider to furnish the complete text of Section 21. Negotiate for express terms that: (a) preserve the consumer's right to bring claims in the courts of England and Wales; (b) exclude any mandatory arbitration clause that would prevent court access; (c) specify that disputes are governed by English law as stated in the context; and (d) include provisions for alternative dispute resolution (ADR) or mediation as non-binding precursors to litigation.",
+        "severity": "critical"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "Cross-reference with Section on Governing Law to confirm consistency with UK Consumer Rights Act 2015",
+        "clause_text": "",
+        "confidence": 0.9,
+        "description": "Incomplete placeholder section indicating unverified compliance with mandatory UK Consumer Rights Act 2015 consumer protections",
+        "id": "f-61444fcb",
+        "reasoning": "The section contains no operative contractual language, only a drafting instruction to verify consistency with the Consumer Rights Act 2015 (CRA 2015). For UK consumer contracts, sections 31 and 62 of CRA 2015 render void any contractual terms which exclude or restrict statutory rights to goods/services of satisfactory quality, fair terms, and appropriate remedies. If the referenced Governing Law clause selects foreign law or fails to explicitly preserve these mandatory UK consumer protections, such provisions are unenforceable. The placeholder status suggests the clause may have been templated from commercial terms without consumer-specific safeguards, creating exposure to Competition and Markets Authority (CMA) enforcement and void terms.",
+        "remediation": "Replace placeholder with explicit governing law provision stating: 'These Terms are governed by the laws of England and Wales. If you are a UK consumer, nothing in these Terms affects your statutory rights under the Consumer Rights Act 2015 and you will benefit from all mandatory protections of the jurisdiction in which you reside.' Ensure cross-reference confirms Dispute Resolution section does not circumvent CRA 2015 section 71 (consumer jurisdiction rights).",
+        "severity": "critical"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-d922274d",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-d30a5b48",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-c317ede0",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-b9ff22c3",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Dispute Resolution",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-3384f0d4",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "2",
+        "clause_text": "[Section text not provided in analysis input]",
+        "confidence": 0.9,
+        "description": "Inability to assess fundamental service terms and eligibility requirements due to missing clause text",
+        "id": "f-8d4c1f8b",
+        "reasoning": "Section 2 typically contains essential provisions regarding service description, user eligibility, account creation requirements, or acceptable use policies. In a consumer Terms of Service, this section often includes broad license grants, age restrictions, or prohibitions on commercial use. Without reviewing the actual text, the consumer cannot understand basic obligations, restrictions on use, or scope of services, creating maximum exposure to unknown unfavorable terms that may impose unexpected restrictions or grant excessive rights to the provider.",
+        "remediation": "Obtain and review the complete text of Section 2 before agreeing to the terms. Specifically look for: (1) scope of service description, (2) eligibility criteria and age verification requirements, (3) any license grants to the provider for user content, (4) prohibited use restrictions, and (5) account creation obligations. Do not proceed with contract execution until all section contents are disclosed and analyzed.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "12",
+        "clause_text": "[Section text not provided in analysis input]",
+        "confidence": 0.9,
+        "description": "Inability to assess termination rights, suspension powers, and post-termination obligations due to missing clause text",
+        "id": "f-79eba1ab",
+        "reasoning": "Section 12 likely addresses termination for convenience, suspension rights, notice periods, and effects of termination. In provider-favorable consumer ToS agreements, this section typically contains: (1) unilateral termination rights for the provider with minimal notice, (2) broad suspension powers for vague reasons like 'suspicion of violation,' (3) immediate deletion of user data without return obligations, (4) survival of broad indemnification or payment obligations, and (5) restrictions on creating new accounts. For UK consumers, certain termination terms may violate the Consumer Rights Act 2015 regarding unfair contract terms, but without the text, the consumer cannot assess the fairness of termination provisions or plan for data migration.",
+        "remediation": "Require immediate disclosure of Section 12 complete text. Negotiate for: (1) mutual termination rights with reasonable notice periods (minimum 30 days), (2) specific, limited grounds for suspension with prior notice and cure periods, (3) explicit data return/export provisions in standard format upon termination, (4) deletion of personal data per UK GDPR requirements, and (5) no unreasonable restrictions on future account creation. If the provider refuses to disclose these terms, consider this a material breach of transparency requirements under UK consumer protection law.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "16",
+        "clause_text": "[Section text not provided in analysis input]",
+        "confidence": 0.9,
+        "description": "Inability to assess liability limitations, indemnification obligations, and warranty disclaimers due to missing clause text",
+        "id": "f-5049a156",
+        "reasoning": "Section 16 typically contains the limitation of liability clause, indemnification provisions, and warranty disclaimers. These are among the highest-risk provisions in consumer Terms of Service. Standard provider-favorable terms often include: (1) broad indemnification requirements requiring the user to defend and hold harmless the provider for all claims arising from service use, (2) limitation of liability to fees paid or nominal amounts (often \u00a30 for free services), (3) exclusion of all consequential, incidental, and punitive damages, (4) disclaimer of all warranties including merchantability and fitness for purpose, and (5) carve-outs only for gross negligence/willful misconduct that are narrowly defined. For UK consumers, some of these terms may be unenforceable under the Consumer Rights Act 2015 as unfair contract terms, particularly for paid services or where they exclude liability for death/personal injury. However, without reviewing the text, the consumer cannot assess whether liability caps are reasonable or whether indemnification is mutual.",
+        "remediation": "Obtain complete Section 16 text immediately. Negotiate for: (1) mutual indemnification obligations, (2) liability caps equal to fees paid in the 12 months preceding the claim or a reasonable minimum (\u00a3100-\u00a3500), (3) explicit carve-outs for liability that cannot be excluded under UK law (death, personal injury, fraud, gross negligence), (4) warranty disclaimers that do not override statutory rights under the Consumer Rights Act 2015, and (5) exclusion of consequential damages only if mutual and reasonable. If the provider refuses to disclose liability terms, this constitutes a material lack of transparency and the consumer should not agree to the terms.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "17",
+        "clause_text": "[Section text not provided in analysis input]",
+        "confidence": 0.9,
+        "description": "Inability to assess governing law, jurisdiction, and dispute resolution mechanisms due to missing clause text",
+        "id": "f-e2b9fc07",
+        "reasoning": "Section 17 likely specifies governing law, jurisdiction, venue, and dispute resolution procedures (including potential arbitration clauses or class action waivers). For UK consumers, this is critical because: (1) the context states governing law is English law, but the clause may contain conflicting provisions or choice of forum clauses designating non-UK courts, (2) the clause may contain mandatory arbitration provisions that strip UK consumers of their statutory rights to bring claims in UK courts under the Consumer Rights Act 2015, (3) the clause may contain class action waivers that prevent consumers from participating in collective redress schemes available under UK law, (4) the clause may specify inconvenient venues (e.g., California, USA) requiring UK consumers to litigate abroad, and (5) the clause may contain choice of law provisions that attempt to override mandatory consumer protections in UK law. Under UK and EU consumer protection law, clauses that deprive consumers of their statutory rights or jurisdiction are generally unenforceable, but their presence creates litigation risk and confusion.",
+        "remediation": "Require disclosure of Section 17 complete text. Ensure: (1) governing law is explicitly English law (as indicated in context) with explicit carve-out for mandatory UK consumer protection laws that cannot be derogated from, (2) jurisdiction is explicitly the courts of England and Wales (or user's home jurisdiction in UK), (3) no mandatory arbitration clauses for consumer disputes, (4) no class action waivers or collective redress restrictions, (5) venue provisions specify UK courts accessible to the consumer. If the clause contains foreign jurisdiction, arbitration, or class action waiver provisions, these are likely unenforceable against UK consumers under the Consumer Rights Act 2015, but their presence indicates potential bad faith and the consumer should seek clarification.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "2",
+        "clause_text": "[EMPTY SECTION - NO TEXT PROVIDED]",
+        "confidence": 0.95,
+        "description": "Missing clause text prevents assessment of fundamental service terms, scope, and eligibility requirements",
+        "id": "f-4ea3d862",
+        "reasoning": "Section 2 is completely empty, making it impossible to evaluate the scope of services, party obligations, deliverables, or key commercial terms. This creates unquantifiable risk exposure and prevents determination of whether the contract meets business requirements or creates unacceptable obligations.",
+        "remediation": "Request complete text for Section 2 before proceeding with contract execution. Do not accept risk for undefined service terms.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "12",
+        "clause_text": "[EMPTY SECTION - NO TEXT PROVIDED]",
+        "confidence": 0.95,
+        "description": "Missing clause text prevents assessment of liability limitations, indemnification obligations, and warranty disclaimers",
+        "id": "f-b95dcdbc",
+        "reasoning": "Section 12 is empty, creating unlimited potential liability exposure and inability to assess risk allocation between parties. Without liability caps, indemnification terms, or warranty limitations, the organization faces uncapped financial exposure for damages, third-party claims, and consequential losses. This is a material gap that could result in catastrophic financial liability.",
+        "remediation": "Request complete text for Section 12 including liability caps (preferably capped at fees paid or reasonable amount), mutual indemnification provisions, warranty disclaimers, and exclusions for consequential damages. Do not execute without these protections.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "16",
+        "clause_text": "[EMPTY SECTION - NO TEXT PROVIDED]",
+        "confidence": 0.95,
+        "description": "Missing clause text prevents assessment of termination rights, suspension powers, and post-termination obligations",
+        "id": "f-c1f7718c",
+        "reasoning": "Section 16 is empty, creating uncertainty regarding exit rights, survival obligations, data return/destruction procedures, and transition assistance. This exposes the organization to potential vendor lock-in, inability to exit without cause, uncontrolled termination by the counterparty, or undefined post-termination obligations regarding data, confidential information, and deliverables.",
+        "remediation": "Request complete text for Section 16 including termination for convenience rights (with reasonable notice), termination for cause provisions, data return/destruction obligations, transition assistance, and survival clauses. Ensure balance in termination rights between parties.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "17",
+        "clause_text": "[EMPTY SECTION - NO TEXT PROVIDED]",
+        "confidence": 0.95,
+        "description": "Missing clause text prevents assessment of governing law, jurisdiction, and dispute resolution mechanisms",
+        "id": "f-c0ce4fda",
+        "reasoning": "Section 17 is empty, creating uncertainty regarding applicable law, venue for disputes, and resolution procedures. This may result in unfavorable forum selection, conflicting legal interpretations, expensive litigation in distant jurisdictions, or lack of alternative dispute resolution mechanisms. Without clear governing law and jurisdiction clauses, parties may face parallel proceedings or conflicting judgments.",
+        "remediation": "Request complete text for Section 17 including favorable governing law (preferably organization's home jurisdiction or neutral venue), exclusive jurisdiction clause, and alternative dispute resolution provisions (mediation/arbitration) to reduce litigation costs.",
+        "severity": "critical"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-e0622ca6",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-798ea8d1",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-f174966c",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-34dad049",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-4830d779",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-f983bd97",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-7da55197",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-e561bc8f",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-6228407c",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Account Management, Termination and Changes",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-6657dd86",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "5",
+        "clause_text": "[Section 5 text not provided - Third Party Relationships cluster]",
+        "confidence": 0.75,
+        "description": "Missing section text prevents risk assessment of third party relationship provisions",
+        "id": "f-4f54680b",
+        "reasoning": "Section 5 is referenced in the Third Party Relationships cluster but no clause text was provided. Third party provisions in ToS agreements typically contain significant risks including: unlimited liability for third party actions, broad indemnification obligations, lack of control over third party service providers, data sharing with unspecified parties, and exclusion of provider liability for third party failures. Without the actual text, critical risks cannot be identified or mitigated.",
+        "remediation": "Request full text of Section 5 immediately. Pending receipt, negotiate for: (a) explicit liability caps for third party actions, (b) prior notice/consent requirements for data sharing with third parties, (c) provider retention of liability for acts of its agents/contractors, (d) list of specific third party categories with data processing purposes, and (e) right to object to changes in third party relationships.",
+        "severity": "high"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "7",
+        "clause_text": "[Section 7 text not provided]",
+        "confidence": 0.6,
+        "description": "Missing section text - unable to assess risks in adjacent provision",
+        "id": "f-d2127d49",
+        "reasoning": "Section 7 appears in the Third Party Relationships cluster without provided text. In standard ToS structures, Section 7 often addresses integration with third party services, API usage, or platform dependencies. Common risks include: mandatory integration with third party accounts, broad permissions granted to third parties, loss of data control, and service degradation from third party changes.",
+        "remediation": "Request Section 7 text. Negotiate for: opt-in rather than opt-out for third party integrations; granular permission controls; data minimization for third party access; and 30-day notice for material changes to third party relationships.",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "15",
+        "clause_text": "[Section 15 text not provided]",
+        "confidence": 0.55,
+        "description": "Missing section text - unable to assess risks in potentially related provision",
+        "id": "f-df4c6740",
+        "reasoning": "Section 15 is referenced without text. In ToS agreements, later sections often address limitation of liability, indemnification, or dispute resolution - all critical for third party risk allocation. Absent text, cannot determine if liability for third parties is capped or excluded entirely.",
+        "remediation": "Request Section 15 text. Ensure liability caps apply to third party claims and that provider cannot disclaim liability for its own selection/management of third parties.",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "Section 5",
+        "clause_text": "[Text not provided]",
+        "confidence": 1,
+        "description": "Section 5 (Third Party Relationships) text missing - unable to assess subprocessor governance, third-party data sharing risks, and liability allocation",
+        "id": "f-98548c79",
+        "reasoning": "Third Party Relationships provisions typically govern critical risk areas including: (1) appointment of subprocessors under UK GDPR Article 28, (2) liability allocation between provider and third parties, (3) international data transfer mechanisms, (4) service dependencies and continuity risks, and (5) audit rights over third parties. Without the actual text, it is impossible to determine whether Snap Group Limited imposes unlimited liability for third-party acts, excludes liability for third-party services, or fails to provide required GDPR data processing terms. This creates unquantified exposure regarding data protection compliance, service availability, and financial liability.",
+        "remediation": "Obtain and analyze the complete text of Section 5 immediately. Priority review items include: subprocessor lists and change notification rights; liability caps for third-party failures; data processing addendum integration; indemnification flow-through provisions; and geographic restrictions on data sharing.",
+        "severity": "critical"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "5",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Section 5 (Third Party Relationships) text is completely missing, preventing any assessment of subprocessor governance, third-party data sharing authorization, or liability allocation for vendor acts.",
+        "id": "f-9f6d81fd",
+        "reasoning": "Third party relationship provisions govern critical risk allocation for subcontractor performance, data breaches by vendors, and regulatory compliance (e.g., GDPR Article 28). Without this text, we cannot verify if the vendor has unrestricted rights to appoint subprocessors without consent, whether liability is capped for third-party acts, or if data processing agreements are required. This creates unquantifiable regulatory and financial exposure.",
+        "remediation": "Immediately obtain and insert the complete Section 5 text. Ensure it includes: (1) prior written consent requirements for subprocessors, (2) flow-down of data protection obligations, (3) liability caps specific to third-party actions, and (4) audit rights over subcontractors.",
+        "severity": "critical"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "7",
+        "clause_text": "",
+        "confidence": 0.9,
+        "description": "Section 7 text is unavailable, creating a blind spot in risk assessment for provisions potentially governing indemnification, confidentiality, or data security standards applicable to third parties.",
+        "id": "f-4e789684",
+        "reasoning": "Section 7 likely contains cross-referenced obligations or limitations of liability that interact with Section 5's third-party terms. Missing text prevents assessment of whether indemnification obligations extend to third-party claims, whether confidentiality restrictions bind subprocessors, or if security standards are contractually enforced. This gap may mask one-sided indemnification clauses or unlimited liability exposure.",
+        "remediation": "Provide the complete Section 7 text to assess interdependencies with third-party provisions. Verify that indemnification is mutual and subject to the aggregate liability cap, and that confidentiality obligations explicitly bind subcontractors via written agreements.",
+        "severity": "high"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "15",
+        "clause_text": "",
+        "confidence": 0.85,
+        "description": "Section 15 text is missing, potentially omitting survival clauses, termination effects on third-party data, or governing law provisions that impact post-termination liability for vendor actions.",
+        "id": "f-994ce372",
+        "reasoning": "Section 15 typically contains 'boilerplate' that is actually high-risk, including survival of indemnification obligations, data return/destruction requirements upon termination, and choice of law. Without this text, we cannot confirm if data retrieval obligations survive termination, whether third-party confidentiality obligations persist, or if forum selection clauses expose the company to distant litigation.",
+        "remediation": "Supply Section 15 text immediately. Ensure it includes: (1) survival of data protection and confidentiality obligations for 3-5 years post-termination, (2) obligation to return/destroy all third-party data containing company information, and (3) liability caps that survive termination.",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-000e7952",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-87ea7040",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-ada38486",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-f9dd770d",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-1d4cbcbd",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-27ecf540",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-7d69e0d5",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-01d127bf",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-5d880043",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-3b6b5a1f",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-4e5e8e08",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-e4faf4a7",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-81ae7b58",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Third Party Relationships",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-bc8cc3bf",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "8",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Section 8 clause text is empty or missing, preventing any risk assessment",
+        "id": "f-0ee7fc8f",
+        "reasoning": "The provided section contains no contractual language. Without the actual terms regarding what Section 8 governs (potentially IP, user content, payment terms, or other operational matters), it is impossible to identify risks, obligations, or missing protections. This represents a complete failure of contract review.",
+        "remediation": "Obtain the complete text of Section 8 from the Snap Group Limited Terms of Service or executed agreement. Do not proceed with contract execution or reliance on these terms until the full text is reviewed.",
+        "severity": "critical"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "14",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Section 14 clause text is empty or missing, preventing any risk assessment",
+        "id": "f-38a6262d",
+        "reasoning": "Section 14 typically contains critical provisions such as limitation of liability, warranty disclaimers, or termination rights in consumer contracts. The absence of text means potentially unlimited liability, lack of statutory protection awareness, or unknown termination conditions cannot be evaluated. This is a material gap in due diligence.",
+        "remediation": "Immediately obtain the full text of Section 14. Given that this section often contains liability limitations (which are heavily regulated in UK consumer law), verify that any caps comply with the Consumer Rights Act 2015 and Unfair Terms in Consumer Contracts Regulations 1999.",
+        "severity": "critical"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "22",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Section 22 clause text is empty or missing, preventing any risk assessment",
+        "id": "f-e030bb1f",
+        "reasoning": "Section 22 may govern indemnification, dispute resolution, governing law specifics, or data processing terms. In a UK consumer context involving Snap Group, this could contain forum selection clauses, arbitration requirements, or broad indemnity obligations that are unenforceable or unfair under UK consumer protection law. The missing text creates unquantifiable legal exposure.",
+        "remediation": "Secure the complete text of Section 22 immediately. Pay particular attention to any jurisdiction/forum selection clauses (must not deprive UK consumers of statutory rights), indemnification obligations (must be proportionate), and data protection provisions (must comply with UK GDPR).",
+        "severity": "critical"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "Obtain full executed contract or published Terms of Service document from Snap Group Limited",
+        "clause_text": "",
+        "confidence": 1,
+        "description": "Missing contract text prevents identification of consumer risks and regulatory compliance gaps",
+        "id": "f-72bd9e14",
+        "reasoning": "The section contains only a procedural instruction to obtain the document rather than substantive Terms of Service clauses. Without the actual contract text, it is impossible to analyze for one-sided terms, missing liability caps, IP ownership issues, termination rights, data protection compliance under UK GDPR, or fairness under the Consumer Rights Act 2015. This creates a critical coverage gap where material risks to the consumer party cannot be assessed.",
+        "remediation": "Obtain the complete, current Snap Group Limited Terms of Service document (including all incorporated policies such as Privacy Policy, Community Guidelines, and Cookie Policy) and resubmit for comprehensive clause-by-clause risk analysis. Ensure the version obtained is the one applicable to UK consumers.",
+        "severity": "high"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "Verify current version of Snap Terms of Service applicable to UK consumers",
+        "clause_text": "[Empty - no clause text provided]",
+        "confidence": 1,
+        "description": "Clause section provided with empty text content, preventing substantive risk analysis of Snap's UK consumer Terms of Service terms.",
+        "id": "f-0abba3ec",
+        "reasoning": "The section reference suggests analysis of version control or modification provisions in Snap's UK ToS, but the contractual text is missing. Without the actual terms, it is impossible to assess unfair terms under the UK Consumer Rights Act 2015, identify unilateral modification rights, evaluate liability caps (often unenforceable against UK consumers), or verify GDPR compliance disclosures required for English law jurisdiction.",
+        "remediation": "Provide the complete current text of Snap Group Limited's Terms of Service applicable to UK consumers, specifically including: (1) modification/change clauses, (2) liability limitation provisions, (3) governing law and jurisdiction clauses, (4) data processing and privacy terms, and (5) consumer right disclosures. Ensure text reflects the version currently presented to UK users.",
+        "severity": "critical"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "Section 8",
+        "clause_text": "[User Content License provision - inferred from contract context; actual text not provided]",
+        "confidence": 0.6,
+        "description": "Perpetual irrevocable license grant for user-generated content may conflict with UK Consumer Rights Act 2015 unfair terms provisions regarding unilateral reservation of rights and lack of termination mechanisms.",
+        "id": "f-2eb2a887",
+        "reasoning": "Under CRA 2015 Schedule 2 Part 1, terms that irrevocably bind the consumer while allowing the provider unilateral modification or retention of rights beyond contract termination may be deemed unfair. If Section 8 contains standard 'perpetual, irrevocable, worldwide' license language for user content, it likely infringes the fairness requirement (s62) and transparency (s68) by not providing clear mechanisms for consumers to terminate the license upon account deletion, and may override statutory rights to control personal data under UK GDPR. The imbalance is significant to the detriment of the consumer.",
+        "remediation": "Negotiate insertion of: (a) Limitation of license duration to active account period plus 30-day wind-down, (b) Express right for consumer to request deletion of content and termination of license (subject to technical retention logs), (c) Explicit carve-out preserving statutory consumer rights under CRA 2015 and UK GDPR Article 17 (right to erasure).",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "Section 14",
+        "clause_text": "[Limitation of Liability provision - inferred from contract context; actual text not provided]",
+        "confidence": 0.7,
+        "description": "Unilateral limitation or exclusion of liability for breach of statutory consumer rights regarding satisfactory quality, fitness for purpose, or digital content standards is void under UK Consumer Rights Act 2015 s31.",
+        "id": "f-fcb44d29",
+        "reasoning": "Section 31 CRA 2015 renders void any term that excludes or restricts liability for death, personal injury, or breach of statutory rights implied by Chapter 2 (goods), Chapter 3 (digital content), or Chapter 4 (services). Standard ToS liability caps (e.g., 'limited to fees paid in last 12 months') that apply to all damages without carve-outs for statutory breaches are unenforceable against UK consumers. Attempting to cap liability for faulty digital content, services not rendered with reasonable care, or data breaches violates mandatory consumer protections and exposes Snap to regulatory action by CMA and invalidity of the entire liability limitation.",
+        "remediation": "Insert prominent carve-out: 'Nothing in this agreement excludes or limits our liability for: (a) death or personal injury caused by negligence; (b) fraud or fraudulent misrepresentation; (c) breach of any statutory rights implied by the Consumer Rights Act 2015 including but not limited to the right to satisfactory quality, fitness for purpose, and digital content quality standards; (d) any matter where exclusion is prohibited by applicable law.' Ensure the liability cap applies only to non-statutory, direct damages.",
+        "severity": "critical"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "Section 22",
+        "clause_text": "[Governing Law and Jurisdiction provision - inferred from contract context; actual text not provided]",
+        "confidence": 0.6,
+        "description": "Exclusive jurisdiction clause designating non-UK courts or mandatory arbitration provision improperly restricts UK consumers' mandatory right to bring proceedings in UK courts under retained EU law and CRA 2015 unfair terms provisions.",
+        "id": "f-c810fed4",
+        "reasoning": "Article 18 Brussels I Recast (retained in UK law post-Brexit) and CRA 2015 Schedule 2 Part 1 (indicative unfair terms) protect consumers by permitting suit in their domicile jurisdiction and prohibiting terms that 'exclude or hinder the consumer's right to take legal action... particularly by requiring the consumer to take disputes exclusively to arbitration.' If Section 22 designates California/USA governing law and jurisdiction or mandates arbitration, it is likely unenforceable against UK consumers and constitutes an unfair term under s62 CRA 2015 due to significant imbalance and detriment.",
+        "remediation": "Amend to: 'As a UK consumer, you have the right to bring proceedings in the courts of England and Wales in relation to any dispute arising from this agreement. We accept the jurisdiction of the English courts for claims brought by UK consumers. This does not affect your statutory rights as a consumer.' Remove any mandatory arbitration requirement; if arbitration is included, ensure it is opt-in or expressly optional for consumers.",
+        "severity": "high"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-1653420a",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-558f7939",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-08e1c05e",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-2a7311d1",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-5861dc52",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-082017ef",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-c47fb990",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-3b2e59de",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-d9657b3c",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      },
+      {
+        "category": "Administrative and Operational Terms",
+        "clause_ref": "",
+        "clause_text": "",
+        "confidence": 0.8,
+        "description": "",
+        "id": "f-18f8689d",
+        "reasoning": "",
+        "remediation": "",
+        "severity": "medium"
+      }
+    ],
+    "overall_risk_profile": {
+      "category_scores": {},
+      "deal_recommendation": "incomplete_analysis",
+      "overall_risk": "unknown"
+    }
+  }
+}
