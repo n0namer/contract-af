@@ -8,6 +8,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-179%20passing-16a34a?style=for-the-badge)](#development)
 [![Built with AgentField](https://img.shields.io/badge/Built%20with-AgentField-0A66C2?style=for-the-badge)](https://github.com/Agent-Field/agentfield)
+[![More from Agent-Field](https://img.shields.io/badge/More_from-Agent--Field-111827?style=for-the-badge&logo=github)](https://github.com/Agent-Field)
 
 <p>
   <a href="#what-you-get-back">Output</a> •
@@ -104,6 +105,8 @@ Risk scores are computed by code, not by asking an LLM to guess a number. Severi
 
 Fast classification calls include a `confident` flag. When the first few pages don't contain enough metadata to classify the contract — unusual structure, exhibits before recitals, missing headers — the system automatically escalates to a deeper document-navigating agent. This costs ~$0.05-$0.10 extra but prevents a wrong classification from propagating through the entire pipeline. Every fast gate in the system has an escalation path to a deeper analysis when the input doesn't fit assumptions.
 
+> **Same pattern, code security:** [SEC-AF](https://github.com/Agent-Field/sec-af) applies adversarial verification to codebases — hunters find vulnerabilities, provers disprove false positives. Every finding ships with a verdict.
+
 ## Cost
 
 | Contract Size | Budget Models | Mid-Tier Models | Premium Models |
@@ -195,9 +198,19 @@ ruff check src/ tests/
 
 ---
 
+### Also built on AgentField
+
+> **[SEC-AF](https://github.com/Agent-Field/sec-af)** — AI-native security auditor. 250 agents per audit, 94% noise reduction, every finding proven exploitable.
+>
+> **[AF Deep Research](https://github.com/Agent-Field/af-deep-research)** — Autonomous research backend. 10,000+ agent invocations per query with self-correcting loops.
+
+[All repos →](https://github.com/Agent-Field)
+
+---
+
 <div align="center">
 
-Contract-AF is built on [AgentField](https://github.com/Agent-Field/agentfield), open infrastructure for production-grade autonomous agents.
+Contract-AF is built on [AgentField](https://github.com/Agent-Field/agentfield), open infrastructure for production-grade autonomous agents. [See what else we're building →](https://github.com/Agent-Field)
 
 **[Apache-2.0](LICENSE)**
 
