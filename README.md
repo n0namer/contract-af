@@ -138,6 +138,16 @@ contract-af serve --port 8000
 
 ### API
 
+#### AgentField Control Plane
+
+```bash
+curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
+  -H "Content-Type: application/json" \
+  -d '{"input": {"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}}'
+```
+
+#### Standalone API
+
 ```bash
 # Upload and start analysis
 curl -X POST http://localhost:8000/analyze \
