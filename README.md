@@ -24,6 +24,14 @@
   <img src="assets/hero.png" alt="Contract-AF — Your AI Legal Team" width="100%" />
 </p>
 
+## One-Call DX
+
+```bash
+curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
+  -H "Content-Type: application/json" \
+  -d '{"input": {"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}}'
+```
+
 Other tools flag patterns. Contract-AF **reads like a lawyer**: it navigates the full document, traces definitions across sections, discovers combination risks between clauses, and reviews from the opposing party's perspective. Every finding ships with an exploitation scenario, a risk score, and a negotiation playbook. One API call, ~$0.40-$1.30 in LLM costs.
 
 ## What You Get Back
