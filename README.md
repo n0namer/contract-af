@@ -147,46 +147,6 @@ Poll for results:
 curl http://localhost:8080/api/v1/executions/<execution_id>
 ```
 
-### CLI
-
-```bash
-pip install -e .[dev]
-contract-af analyze my-contract.pdf --context "I am the customer"
-contract-af analyze my-contract.docx --format json -o report.json
-contract-af serve --port 8000
-```
-
-### Standalone API
-
-```bash
-# Upload and start analysis
-curl -X POST http://localhost:8000/analyze \
-  -F "file=@my-contract.pdf" \
-  -F "user_context=I am the customer, SaaS subscription"
-
-# Response: {"job_id": "abc-123", "status": "running"}
-
-# Poll for results
-curl http://localhost:8000/analyze/abc-123
-
-# Get markdown report
-curl http://localhost:8000/analyze/abc-123/report
-```
-
-<details>
-<summary><strong>API endpoints</strong></summary>
-
-| Endpoint | Method | Description |
-|---|---|---|
-| `/health` | GET | Liveness probe |
-| `/analyze` | POST | Upload contract file (PDF, DOCX, TXT) + optional `user_context`. Returns `job_id` |
-| `/analyze/{job_id}` | GET | Poll analysis status and results |
-| `/analyze/{job_id}/report` | GET | Get markdown risk report for completed job |
-
-**Supported formats:** `.pdf`, `.docx`, `.doc`, `.txt`, `.md`
-
-</details>
-
 ## Comparison
 
 | | Contract-AF | Harvey AI | Klarity | Spellbook |
