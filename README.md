@@ -128,25 +128,12 @@ Budget: Kimi K2.5, MiniMax. Mid-tier: GPT-4o-mini, Sonnet. Premium: Opus, GPT-4o
 ## Quick Start
 
 ```bash
-pip install -e .[dev]
+git clone https://github.com/Agent-Field/contract-af.git && cd contract-af
+cp .env.example .env          # Add OPENROUTER_API_KEY
+docker compose up --build
 ```
 
-### CLI
-
-```bash
-# Analyze a contract
-contract-af analyze my-contract.pdf --context "I am the customer"
-
-# JSON output
-contract-af analyze my-contract.docx --format json -o report.json
-
-# Start the API server
-contract-af serve --port 8000
-```
-
-### API
-
-#### AgentField Control Plane
+Starts AgentField control plane (`http://localhost:8080`) + Contract-AF agent.
 
 ```bash
 curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
@@ -154,7 +141,22 @@ curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
   -d '{"input": {"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}}'
 ```
 
-#### Standalone API
+Poll for results:
+
+```bash
+curl http://localhost:8080/api/v1/executions/<execution_id>
+```
+
+### CLI
+
+```bash
+pip install -e .[dev]
+contract-af analyze my-contract.pdf --context "I am the customer"
+contract-af analyze my-contract.docx --format json -o report.json
+contract-af serve --port 8000
+```
+
+### Standalone API
 
 ```bash
 # Upload and start analysis
