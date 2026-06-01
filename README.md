@@ -26,6 +26,14 @@
 
 ## One-Call DX
 
+Trigger it with the `af` CLI (requires af ≥ 0.1.86) — it streams live progress and prints the result:
+
+```bash
+af call contract-af.analyze --in '{"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}'
+```
+
+Prefer raw HTTP? Hit the API directly with curl:
+
 ```bash
 curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
   -H "Content-Type: application/json" \
