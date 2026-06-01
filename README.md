@@ -26,10 +26,10 @@
 
 ## One-Call DX
 
-Trigger it with the `af` CLI (requires af ≥ 0.1.86) — it streams live progress and prints the result:
+Trigger it with the `af` CLI (requires af ≥ 0.1.87) — it streams live progress and prints the result:
 
 ```bash
-af call contract-af.analyze --in '{"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}'
+af call contract-af.analyze --in '{"document_text": "MASTER SERVICES AGREEMENT\n\n1. Term. This Agreement commences on the Effective Date and auto-renews for successive 12-month terms unless either party gives 90 days written notice.\n2. Liability. Provider'"'"'s total liability shall not exceed fees paid in the prior 3 months.\n3. Termination. Customer may terminate for convenience with 60 days notice; Provider may terminate immediately for any breach.", "user_context": "I am the customer"}'
 ```
 
 Prefer raw HTTP? Hit the API directly with curl:
@@ -37,7 +37,7 @@ Prefer raw HTTP? Hit the API directly with curl:
 ```bash
 curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
   -H "Content-Type: application/json" \
-  -d '{"input": {"file_path": "/path/to/contract.pdf", "user_context": "I am the customer"}}'
+  -d '{"input": {"document_text": "MASTER SERVICES AGREEMENT ... full contract text ...", "user_context": "I am the customer"}}'
 ```
 
 Other tools flag patterns. Contract-AF **reads like a lawyer** — navigates the full document, traces definitions across sections, discovers combination risks between clauses, and reviews from the opposing party's perspective. Every finding: exploitation scenario, risk score, negotiation playbook. One API call, ~$0.40-$1.30.
