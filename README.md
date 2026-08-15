@@ -146,6 +146,10 @@ docker compose up --build
 
 Starts AgentField control plane (`http://localhost:8080`) + Contract-AF agent.
 
+AForge `exec` is the default coding harness and is included in the container.
+Set `HARNESS_PROVIDER=opencode` to roll back, or set
+`AGENTFIELD_AFORGE_COMMAND=do` to explicitly use AForge orchestration.
+
 ```bash
 curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
   -H "Content-Type: application/json" \

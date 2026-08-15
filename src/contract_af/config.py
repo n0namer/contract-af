@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 class AIIntegrationConfig(BaseModel):
     provider: str = Field(
         default_factory=lambda: os.getenv(
-            "CONTRACT_AF_PROVIDER", os.getenv("HARNESS_PROVIDER", "opencode")
+            "CONTRACT_AF_PROVIDER", os.getenv("HARNESS_PROVIDER", "aforge")
         )
     )
     harness_model: str = Field(
@@ -33,6 +33,11 @@ class AIIntegrationConfig(BaseModel):
     opencode_bin: str = Field(
         default_factory=lambda: os.getenv("CONTRACT_AF_OPENCODE_BIN", "opencode")
     )
+    aforge_bin: str = Field(
+        default_factory=lambda: os.getenv(
+            "CONTRACT_AF_AFORGE_BIN", os.getenv("AFORGE_BIN", "aforge")
+        )
+    )
     opencode_server: str | None = Field(
         default_factory=lambda: os.getenv(
             "CONTRACT_AF_OPENCODE_SERVER", os.getenv("OPENCODE_SERVER")
@@ -53,6 +58,9 @@ class AIIntegrationConfig(BaseModel):
         env: dict[str, str] = {
             key: value for key in env_keys if (value := os.getenv(key))
         }
+        env["AGENTFIELD_AFORGE_COMMAND"] = os.getenv(
+            "AGENTFIELD_AFORGE_COMMAND", "exec"
+        )
         xdg = os.getenv("XDG_DATA_HOME") or os.path.join(
             tempfile.gettempdir(), "opencode-shared-data"
         )
