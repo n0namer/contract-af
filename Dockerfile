@@ -1,5 +1,38 @@
-ARG AFORGE_IMAGE=ghcr.io/agent-field/aforge-v2:chat-v2-exec
-FROM ${AFORGE_IMAGE} AS aforge
+# AForge CLI — fetched from the public release mirror and verified against the
+# release checksums (which hash the *uncompressed* binaries). Both ARGs are
+# overridable so CI or a local mirror can serve the same layout elsewhere:
+#   docker build --build-arg AFORGE_BASE_URL=... --build-arg AFORGE_VERSION=... .
+ARG AFORGE_BASE_URL=https://agentfield.ai/downloads/aforge
+ARG AFORGE_VERSION=build-9b3ff482de3f
+
+# Reuses the python:3.11-slim base (debian bookworm) already pulled for the
+# builder/runtime stages rather than adding a second base image to the build.
+FROM python:3.11-slim AS aforge
+
+ARG AFORGE_BASE_URL
+ARG AFORGE_VERSION
+# TARGETARCH is populated by BuildKit; dpkg is the fallback for the legacy
+# builder, where the build platform is always the target platform.
+ARG TARGETARCH
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /out
+
+RUN set -eu; \
+    arch="${TARGETARCH:-$(dpkg --print-architecture)}"; \
+    curl -fsSL "${AFORGE_BASE_URL}/${AFORGE_VERSION}/aforge-linux-${arch}.gz" -o aforge.gz; \
+    gunzip -c aforge.gz > aforge; \
+    rm aforge.gz; \
+    curl -fsSL "${AFORGE_BASE_URL}/${AFORGE_VERSION}/checksums.txt" -o checksums.txt; \
+    grep " aforge-linux-${arch}$" checksums.txt \
+      | sed "s/  aforge-linux-.*/  aforge/" \
+      | sha256sum -c -; \
+    rm checksums.txt; \
+    chmod +x aforge
 
 
 FROM python:3.11-slim AS builder
@@ -59,7 +92,7 @@ RUN mkdir -p /home/contractaf/.config/opencode && \
     chown -R contractaf:contractaf /home/contractaf/.config
 
 COPY --from=builder /install /usr/local
-COPY --from=aforge /aforge /usr/local/bin/aforge
+COPY --from=aforge /out/aforge /usr/local/bin/aforge
 COPY src/ /app/src/
 
 USER contractaf
