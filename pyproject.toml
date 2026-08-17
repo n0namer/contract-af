@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Legal contract risk analyzer — finds dangerous clauses, proves exploitability"
 requires-python = ">=3.10"
 dependencies = [
-    "agentfield @ git+https://github.com/Agent-Field/agentfield.git@bfd34426d1bdec3cbbfa946682a22ef0a1b91503#subdirectory=sdk/python",
+    "agentfield>=0.1.129",
     "pydantic>=2.0",
     "fastapi>=0.100",
     "uvicorn>=0.20",
