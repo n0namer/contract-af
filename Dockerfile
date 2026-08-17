@@ -3,7 +3,7 @@
 # overridable so CI or a local mirror can serve the same layout elsewhere:
 #   docker build --build-arg AFORGE_BASE_URL=... --build-arg AFORGE_VERSION=... .
 ARG AFORGE_BASE_URL=https://agentfield.ai/downloads/aforge
-ARG AFORGE_VERSION=build-9b3ff482de3f
+ARG AFORGE_VERSION=v0.1.0
 
 # Reuses the python:3.11-slim base (debian bookworm) already pulled for the
 # builder/runtime stages rather than adding a second base image to the build.
