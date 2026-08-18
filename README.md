@@ -146,6 +146,12 @@ docker compose up --build
 
 Starts AgentField control plane (`http://localhost:8080`) + Contract-AF agent.
 
+AForge `exec` is the default coding harness. The image fetches the released
+`aforge` binary from `https://agentfield.ai/downloads/aforge` at build time and
+verifies it against the release checksums. OpenCode stays installed as the
+configuration-only rollback: set `HARNESS_PROVIDER=opencode`. Point
+`CONTRACT_AF_AFORGE_BIN` at another binary to override which `aforge` runs.
+
 ```bash
 curl -X POST http://localhost:8080/api/v1/execute/async/contract-af.analyze \
   -H "Content-Type: application/json" \

@@ -1,0 +1,58 @@
+config_version: v1            # manifest schema version (omit = legacy v0)
+name: contract-af
+version: 0.1.0
+description: AI-native legal contract risk analyzer — finds dangerous clauses, proves exploitability
+author: Agent-Field
+
+entrypoint:
+  start: python -m contract_af.app
+  healthcheck: /health
+
+agent_node:
+  node_id: contract-af
+  default_port: 8004
+
+dependencies:
+  system:
+    # `af install` builds a Python venv; it does not fetch harness CLIs (the
+    # Docker image does). Printed as a manual step so a local install says so
+    # up front instead of failing on the first harness call.
+    - "aforge (https://agentfield.ai/downloads/aforge) — or set HARNESS_PROVIDER=opencode"
+
+user_environment:
+  required:
+    # Drives both the coding harness (AForge/OpenCode) and the .ai() reasoning
+    # calls — every phase of the pipeline needs it.
+    - name: OPENROUTER_API_KEY
+      description: LLM provider key (OpenRouter)
+      type: secret
+      scope: global
+  optional:
+    - name: AGENTFIELD_SERVER
+      description: Control-plane URL
+      default: http://localhost:8080
+    - name: AGENTFIELD_API_KEY
+      description: Control-plane API key (if auth is enabled)
+      type: secret
+      scope: global
+    - name: NODE_ID
+      description: Identity this node registers under
+      default: contract-af
+    # AForge is the default harness. OpenCode stays installed as the
+    # configuration-only rollback: set this to `opencode`.
+    - name: HARNESS_PROVIDER
+      description: Coding-agent harness provider (aforge | opencode)
+      default: aforge
+    - name: HARNESS_MODEL
+      description: Model the coding harness uses
+      default: openrouter/moonshotai/kimi-k2.5
+    - name: AI_MODEL
+      description: Model the .ai() reasoning calls use
+      default: openrouter/moonshotai/kimi-k2.5
+    - name: CONTRACT_AF_AFORGE_BIN
+      description: Path to the aforge binary (defaults to `aforge` on PATH)
+    - name: CONTRACT_AF_OPENCODE_BIN
+      description: Path to the opencode binary (defaults to `opencode` on PATH)
+    - name: CONTRACT_AF_MAX_TURNS
+      description: Maximum harness iterations per call
+      default: "50"

@@ -1,3 +1,40 @@
+# AForge CLI — fetched from the public release mirror and verified against the
+# release checksums (which hash the *uncompressed* binaries). Both ARGs are
+# overridable so CI or a local mirror can serve the same layout elsewhere:
+#   docker build --build-arg AFORGE_BASE_URL=... --build-arg AFORGE_VERSION=... .
+ARG AFORGE_BASE_URL=https://agentfield.ai/downloads/aforge
+ARG AFORGE_VERSION=v0.1.0
+
+# Reuses the python:3.11-slim base (debian bookworm) already pulled for the
+# builder/runtime stages rather than adding a second base image to the build.
+FROM python:3.11-slim AS aforge
+
+ARG AFORGE_BASE_URL
+ARG AFORGE_VERSION
+# TARGETARCH is populated by BuildKit; dpkg is the fallback for the legacy
+# builder, where the build platform is always the target platform.
+ARG TARGETARCH
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /out
+
+RUN set -eu; \
+    arch="${TARGETARCH:-$(dpkg --print-architecture)}"; \
+    curl -fsSL "${AFORGE_BASE_URL}/${AFORGE_VERSION}/aforge-linux-${arch}.gz" -o aforge.gz; \
+    gunzip -c aforge.gz > aforge; \
+    rm aforge.gz; \
+    curl -fsSL "${AFORGE_BASE_URL}/${AFORGE_VERSION}/checksums.txt" -o checksums.txt; \
+    grep " aforge-linux-${arch}$" checksums.txt \
+      | sed "s/  aforge-linux-.*/  aforge/" \
+      | sha256sum -c -; \
+    rm checksums.txt; \
+    chmod +x aforge
+
+
 FROM python:3.11-slim AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -14,7 +51,7 @@ COPY pyproject.toml README.md ./
 COPY src/ src/
 
 RUN pip install --no-cache-dir --prefix=/install \
-    "agentfield>=0.1.47" \
+    "agentfield>=0.1.130" \
     "pydantic>=2.0" \
     "httpx>=0.27" \
     "python-dotenv>=1.0" \
@@ -28,7 +65,8 @@ FROM python:3.11-slim AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     AGENTFIELD_SERVER=http://agentfield:8080 \
-    HARNESS_PROVIDER=opencode \
+    HARNESS_PROVIDER=aforge \
+    AGENTFIELD_AFORGE_COMMAND=exec \
     HARNESS_MODEL=openrouter/moonshotai/kimi-k2.5 \
     AI_MODEL=openrouter/moonshotai/kimi-k2.5 \
     PORT=8004 \
@@ -54,6 +92,7 @@ RUN mkdir -p /home/contractaf/.config/opencode && \
     chown -R contractaf:contractaf /home/contractaf/.config
 
 COPY --from=builder /install /usr/local
+COPY --from=aforge /out/aforge /usr/local/bin/aforge
 COPY src/ /app/src/
 
 USER contractaf
