@@ -49,8 +49,8 @@ app = Agent(
     ),
     ai_config=AIConfig(
         model=_ai_config.ai_model,
-        api_key=os.getenv("OPENROUTER_API_KEY", ""),
-        api_base="https://openrouter.ai/api/v1",
+        api_key=os.getenv("OPENAI_API_KEY", "") or os.getenv("OPENROUTER_API_KEY", ""),
+        api_base=os.getenv("OPENAI_BASE_URL", "") or "https://openrouter.ai/api/v1",
     ),
 )
 
