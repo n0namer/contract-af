@@ -378,7 +378,8 @@ app.include_router(reasoner_router)
 
 def main() -> None:
     """Entry point for the Contract-AF agent."""
-    app.run(port=8004, host="0.0.0.0")
+    port = int(os.getenv("PORT", "8004"))
+    app.run(port=port, host="0.0.0.0")
 
 
 if __name__ == "__main__":
