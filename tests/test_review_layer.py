@@ -471,12 +471,12 @@ class TestAdversaryReviewer:
         await _enqueue_and_sentinel(queue, findings, ADVERSARY_SENTINEL)
 
         await review_as_adversary(
-            mock_app, queue, _make_intake(), _make_anatomy(), "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         assert queue.empty()
-        # One call per finding (no survival pattern without cross-refs)
-        assert mock_app.call.call_count == len(findings)
+        # One call per finding plus the current aggregate combined-pattern review.
+        assert mock_app.call.call_count == len(findings) + 1
 
 
 # ===========================================================================
