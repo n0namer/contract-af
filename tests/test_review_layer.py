@@ -368,23 +368,26 @@ class TestAdversaryReviewer:
             severity=Severity.HIGH,
         )
 
-        mock_app.call.return_value = {
-            "is_false_positive": False,
-            "hidden_traps": [
-                {
-                    "clause_refs": ["12.1", "5.1"],
-                    "description": (
-                        "Combined perpetual license + IP assignment means Customer "
-                        "loses all rights to improvements permanently."
-                    ),
-                    "exploitation_scenario": (
-                        "Provider uses Customer-developed features in competing "
-                        "products sold to Customer's competitors."
-                    ),
-                    "severity": "critical",
-                }
-            ],
-        }
+        mock_app.call.side_effect = [
+            {
+                "is_false_positive": False,
+                "hidden_traps": [
+                    {
+                        "clause_refs": ["12.1", "5.1"],
+                        "description": (
+                            "Combined perpetual license + IP assignment means Customer "
+                            "loses all rights to improvements permanently."
+                        ),
+                        "exploitation_scenario": (
+                            "Provider uses Customer-developed features in competing "
+                            "products sold to Customer's competitors."
+                        ),
+                        "severity": "critical",
+                    }
+                ],
+            },
+            {"hidden_traps": []},
+        ]
 
         queue: asyncio.Queue = asyncio.Queue()
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
