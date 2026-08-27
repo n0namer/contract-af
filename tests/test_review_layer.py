@@ -522,6 +522,7 @@ class TestGapAnalyst:
             "governing_law",
         ]
 
+        mock_app.ai.return_value = MagicMock(expected=["dispute_resolution"])
         # Harness confirms absence
         mock_app.call.return_value = {"found": False}
 
