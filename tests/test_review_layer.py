@@ -634,19 +634,19 @@ class TestGapAnalyst:
         assert dr_found[0]["actual_section"] == "Section 15.5 Miscellaneous"
 
     @pytest.mark.asyncio
-    async def test_unknown_contract_type_defaults_to_saas(
+    async def test_unknown_contract_type_uses_ai_expectations(
         self, mock_app: MagicMock
     ) -> None:
-        """Unknown contract type falls back to saas_agreement defaults."""
+        """Unknown contract types use AI expectations instead of a hardcoded SaaS fallback."""
         intake = _make_intake(contract_type="convertible_note")
         anatomy = _make_anatomy()
-
-        # All saas_agreement clauses found — nothing missing
-        found_types = list(EXPECTED_CLAUSES["saas_agreement"])
+        found_types = ["conversion_terms", "governing_law"]
+        mock_app.ai.return_value = MagicMock(
+            expected=["conversion_terms", "governing_law"]
+        )
 
         result = await analyze_gaps(mock_app, intake, anatomy, found_types, "text")
 
-        # No clauses should be missing (all expected saas clauses provided)
         assert result.missing_clauses == []
-        # No harness calls needed since everything matched
+        mock_app.ai.assert_awaited_once()
         mock_app.call.assert_not_called()
