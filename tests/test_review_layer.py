@@ -583,7 +583,7 @@ class TestGapAnalyst:
             "governing_law",
         ]
 
-        # dispute_resolution not in found_types, no alias match in titles
+        mock_app.ai.return_value = MagicMock(expected=["dispute_resolution"])
         mock_app.call.return_value = {"found": False}
 
         result = await analyze_gaps(
