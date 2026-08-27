@@ -543,19 +543,22 @@ class TestGapAnalyst:
             ],
         )
 
-        # intellectual_property is NOT in found_types but its alias is in titles
         found_types = ["definitions"]
+        mock_app.ai.return_value = MagicMock(expected=["intellectual_property"])
+        mock_app.call.return_value = {
+            "found": True,
+            "found_in": "Proprietary Rights",
+        }
 
         result = await analyze_gaps(
             mock_app, _make_intake(), anatomy, found_types, "text"
         )
 
-        # Should be found under alias, NOT in missing
         ip_found = [
             f for f in result.found_elsewhere if f["expected"] == "intellectual_property"
         ]
         assert len(ip_found) == 1
-        assert ip_found[0]["actual_section"] == "proprietary rights"
+        assert ip_found[0]["actual_section"] == "Proprietary Rights"
         assert "intellectual_property" not in result.missing_clauses
 
     @pytest.mark.asyncio
