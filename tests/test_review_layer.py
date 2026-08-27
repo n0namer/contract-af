@@ -316,13 +316,12 @@ class TestAdversaryReviewer:
         }
 
         intake = _make_intake()
-        anatomy = _make_anatomy()
 
         queue: asyncio.Queue = asyncio.Queue()
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
 
         result = await review_as_adversary(
-            mock_app, queue, intake, anatomy, "contract text"
+            mock_app, queue, intake, "contract text"
         )
 
         assert len(result.false_positives) == 1
