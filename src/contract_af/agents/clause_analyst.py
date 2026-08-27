@@ -203,7 +203,7 @@ def _get_section_texts(contract_text: str, section_numbers: list[str]) -> dict[s
             rf"(?:^|\n)"
             rf"(?:(?:Section|SECTION|Article|ARTICLE)\s+)?"
             rf"({escaped})"
-            rf"[\.\s\)]"
+            rf"(?:\.(?!\d)|\s|\))"
         )
 
         # Find ALL matches — pick the best one (body, not TOC)
