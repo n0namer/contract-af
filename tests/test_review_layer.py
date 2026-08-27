@@ -351,7 +351,7 @@ class TestAdversaryReviewer:
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
 
         result = await review_as_adversary(
-            mock_app, queue, _make_intake(), _make_anatomy(), "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         assert len(result.exploitation_scenarios) == 1
