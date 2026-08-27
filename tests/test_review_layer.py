@@ -16,11 +16,7 @@ from contract_af.agents.adversary import (
     SENTINEL as ADVERSARY_SENTINEL,
     review_as_adversary,
 )
-from contract_af.agents.gap_analyst import (
-    CLAUSE_ALIASES,
-    EXPECTED_CLAUSES,
-    analyze_gaps,
-)
+from contract_af.agents.gap_analyst import analyze_gaps
 from contract_af.models import (
     AnatomyResult,
     CrossRef,
