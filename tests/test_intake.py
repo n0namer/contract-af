@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from unittest.mock import AsyncMock, call
 
 import pytest
@@ -138,10 +139,6 @@ async def test_uses_first_3000_chars(mock_app):
 
     await classify_contract(mock_app, long_text)
 
-    ai_call_kwargs = mock_app.ai.call_args
-    input_text = ai_call_kwargs.kwargs.get("input") or ai_call_kwargs[1].get("input")
-    if input_text is None:
-        # Positional args: prompt, input, schema
-        input_text = ai_call_kwargs[0][1] if len(ai_call_kwargs[0]) > 1 else ai_call_kwargs.kwargs["input"]
-
-    assert len(input_text["text"]) == FIRST_PAGES_CHAR_LIMIT
+    ai_call = mock_app.ai.call_args
+    user_payload = json.loads(ai_call.kwargs["user"])
+    assert len(user_payload["text"]) == FIRST_PAGES_CHAR_LIMIT

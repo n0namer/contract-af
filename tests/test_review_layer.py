@@ -16,11 +16,7 @@ from contract_af.agents.adversary import (
     SENTINEL as ADVERSARY_SENTINEL,
     review_as_adversary,
 )
-from contract_af.agents.gap_analyst import (
-    CLAUSE_ALIASES,
-    EXPECTED_CLAUSES,
-    analyze_gaps,
-)
+from contract_af.agents.gap_analyst import analyze_gaps
 from contract_af.models import (
     AnatomyResult,
     CrossRef,
@@ -320,13 +316,12 @@ class TestAdversaryReviewer:
         }
 
         intake = _make_intake()
-        anatomy = _make_anatomy()
 
         queue: asyncio.Queue = asyncio.Queue()
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
 
         result = await review_as_adversary(
-            mock_app, queue, intake, anatomy, "contract text"
+            mock_app, queue, intake, "contract text"
         )
 
         assert len(result.false_positives) == 1
@@ -356,7 +351,7 @@ class TestAdversaryReviewer:
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
 
         result = await review_as_adversary(
-            mock_app, queue, _make_intake(), _make_anatomy(), "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         assert len(result.exploitation_scenarios) == 1
@@ -373,29 +368,32 @@ class TestAdversaryReviewer:
             severity=Severity.HIGH,
         )
 
-        mock_app.call.return_value = {
-            "is_false_positive": False,
-            "hidden_traps": [
-                {
-                    "clause_refs": ["12.1", "5.1"],
-                    "description": (
-                        "Combined perpetual license + IP assignment means Customer "
-                        "loses all rights to improvements permanently."
-                    ),
-                    "exploitation_scenario": (
-                        "Provider uses Customer-developed features in competing "
-                        "products sold to Customer's competitors."
-                    ),
-                    "severity": "critical",
-                }
-            ],
-        }
+        mock_app.call.side_effect = [
+            {
+                "is_false_positive": False,
+                "hidden_traps": [
+                    {
+                        "clause_refs": ["12.1", "5.1"],
+                        "description": (
+                            "Combined perpetual license + IP assignment means Customer "
+                            "loses all rights to improvements permanently."
+                        ),
+                        "exploitation_scenario": (
+                            "Provider uses Customer-developed features in competing "
+                            "products sold to Customer's competitors."
+                        ),
+                        "severity": "critical",
+                    }
+                ],
+            },
+            {"hidden_traps": []},
+        ]
 
         queue: asyncio.Queue = asyncio.Queue()
         await _enqueue_and_sentinel(queue, [finding], ADVERSARY_SENTINEL)
 
         result = await review_as_adversary(
-            mock_app, queue, _make_intake(), _make_anatomy(), "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         assert len(result.hidden_traps) == 1
@@ -455,7 +453,7 @@ class TestAdversaryReviewer:
         )
 
         result = await review_as_adversary(
-            mock_app, queue, _make_intake(), anatomy, "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         # Sub-agent should have been called (3 total calls: 2 reviews + 1 survival)
@@ -476,12 +474,12 @@ class TestAdversaryReviewer:
         await _enqueue_and_sentinel(queue, findings, ADVERSARY_SENTINEL)
 
         await review_as_adversary(
-            mock_app, queue, _make_intake(), _make_anatomy(), "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         assert queue.empty()
-        # One call per finding (no survival pattern without cross-refs)
-        assert mock_app.call.call_count == len(findings)
+        # One call per finding plus the current aggregate combined-pattern review.
+        assert mock_app.call.call_count == len(findings) + 1
 
 
 # ===========================================================================
@@ -526,6 +524,7 @@ class TestGapAnalyst:
             "governing_law",
         ]
 
+        mock_app.ai.return_value = MagicMock(expected=["dispute_resolution"])
         # Harness confirms absence
         mock_app.call.return_value = {"found": False}
 
@@ -546,19 +545,22 @@ class TestGapAnalyst:
             ],
         )
 
-        # intellectual_property is NOT in found_types but its alias is in titles
         found_types = ["definitions"]
+        mock_app.ai.return_value = MagicMock(expected=["intellectual_property"])
+        mock_app.call.return_value = {
+            "found": True,
+            "found_in": "Proprietary Rights",
+        }
 
         result = await analyze_gaps(
             mock_app, _make_intake(), anatomy, found_types, "text"
         )
 
-        # Should be found under alias, NOT in missing
         ip_found = [
             f for f in result.found_elsewhere if f["expected"] == "intellectual_property"
         ]
         assert len(ip_found) == 1
-        assert ip_found[0]["actual_section"] == "proprietary rights"
+        assert ip_found[0]["actual_section"] == "Proprietary Rights"
         assert "intellectual_property" not in result.missing_clauses
 
     @pytest.mark.asyncio
@@ -583,7 +585,7 @@ class TestGapAnalyst:
             "governing_law",
         ]
 
-        # dispute_resolution not in found_types, no alias match in titles
+        mock_app.ai.return_value = MagicMock(expected=["dispute_resolution"])
         mock_app.call.return_value = {"found": False}
 
         result = await analyze_gaps(
@@ -615,6 +617,7 @@ class TestGapAnalyst:
             "governing_law",
         ]
 
+        mock_app.ai.return_value = MagicMock(expected=["dispute_resolution"])
         # Harness finds dispute_resolution embedded in Miscellaneous
         mock_app.call.return_value = {
             "found": True,
@@ -633,19 +636,19 @@ class TestGapAnalyst:
         assert dr_found[0]["actual_section"] == "Section 15.5 Miscellaneous"
 
     @pytest.mark.asyncio
-    async def test_unknown_contract_type_defaults_to_saas(
+    async def test_unknown_contract_type_uses_ai_expectations(
         self, mock_app: MagicMock
     ) -> None:
-        """Unknown contract type falls back to saas_agreement defaults."""
+        """Unknown contract types use AI expectations instead of a hardcoded SaaS fallback."""
         intake = _make_intake(contract_type="convertible_note")
         anatomy = _make_anatomy()
-
-        # All saas_agreement clauses found — nothing missing
-        found_types = list(EXPECTED_CLAUSES["saas_agreement"])
+        found_types = ["conversion_terms", "governing_law"]
+        mock_app.ai.return_value = MagicMock(
+            expected=["conversion_terms", "governing_law"]
+        )
 
         result = await analyze_gaps(mock_app, intake, anatomy, found_types, "text")
 
-        # No clauses should be missing (all expected saas clauses provided)
         assert result.missing_clauses == []
-        # No harness calls needed since everything matched
+        mock_app.ai.assert_awaited_once()
         mock_app.call.assert_not_called()

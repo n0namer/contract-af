@@ -300,13 +300,10 @@ async def test_depth_escalation_any_critical(
     assert result.depth_used == Depth.THOROUGH
     # 1 primary + 1 escalated = 2
     assert mock_app.call.call_count == 2
-    # Escalated call includes "ESCALATED ANALYSIS" context
-    escalated_call_input = mock_app.call.call_args_list[1][1].get(
-        "input", mock_app.call.call_args_list[1][0][1] if len(mock_app.call.call_args_list[1][0]) > 1 else {}
-    )
-    # Verify the second call used escalated depth
-    if isinstance(escalated_call_input, dict):
-        assert escalated_call_input.get("depth") == "thorough"
+    # Verify the second call used the current direct-kwargs harness contract.
+    escalated_kwargs = mock_app.call.call_args_list[1].kwargs
+    assert escalated_kwargs["depth"] == "thorough"
+    assert "ESCALATED ANALYSIS" in escalated_kwargs["context"]
 
 
 # ---------------------------------------------------------------------------
