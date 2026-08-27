@@ -450,7 +450,7 @@ class TestAdversaryReviewer:
         )
 
         result = await review_as_adversary(
-            mock_app, queue, _make_intake(), anatomy, "text"
+            mock_app, queue, _make_intake(), "text"
         )
 
         # Sub-agent should have been called (3 total calls: 2 reviews + 1 survival)
