@@ -396,6 +396,11 @@ async def analyze(
     }
 
     app.note("Contract-AF analysis complete", tags=["analyze", "complete"])
+    _emit_execution_event(
+        "reasoner.complete",
+        duration_ms=round(elapsed * 1000, 3),
+        total_findings=len(all_findings),
+    )
     return report
 
 
