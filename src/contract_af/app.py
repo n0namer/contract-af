@@ -8,6 +8,7 @@ from __future__ import annotations
 
 # pyright: reportMissingImports=false
 
+import json
 import os
 import shutil
 import tempfile
@@ -23,6 +24,7 @@ _project_root = Path(__file__).resolve().parents[2]
 load_dotenv(_project_root / ".env")
 
 from agentfield import Agent, AIConfig
+from agentfield.execution_context import get_current_context
 
 from .config import AIIntegrationConfig
 from .reasoners import router as reasoner_router
@@ -30,6 +32,28 @@ from .reasoners import router as reasoner_router
 _ai_config = AIIntegrationConfig.from_env()
 NODE_ID = os.getenv("NODE_ID", "contract-af")
 HarnessConfig = getattr(_agentfield, "HarnessConfig")
+
+
+def _emit_execution_event(event_type: str, *, level: str = "info", **attributes: Any) -> None:
+    ctx = get_current_context()
+    identity = ctx.to_log_identity() if ctx else {
+        "execution_id": None,
+        "workflow_id": None,
+        "run_id": None,
+        "root_workflow_id": None,
+        "parent_execution_id": None,
+        "agent_node_id": "contract-af",
+        "reasoner_id": "analyze",
+    }
+    payload = {
+        "timestamp": time.time(),
+        **identity,
+        "event_type": event_type,
+        "source": "contract-af",
+        "level": level,
+        "attributes": {**(ctx.to_log_attributes() if ctx else {}), **attributes},
+    }
+    print(json.dumps(payload, sort_keys=True), flush=True)
 
 app = Agent(
     node_id=NODE_ID,
