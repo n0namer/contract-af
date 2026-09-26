@@ -55,6 +55,7 @@ def _emit_execution_event(event_type: str, *, level: str = "info", **attributes:
     }
     print(json.dumps(payload, sort_keys=True), flush=True)
 
+
 app = Agent(
     node_id=NODE_ID,
     version="0.1.0",
