@@ -202,6 +202,7 @@ async def analyze(
             raise TimeoutError(f"Pipeline exceeded {MAX_PIPELINE_TIMEOUT_S}s wall-clock limit")
 
     app.note("Starting Contract-AF analysis pipeline", tags=["analyze", "start"])
+    _emit_execution_event("reasoner.start", document_chars=len(document_text))
 
     all_analysis_results: list[dict[str, Any]] = []
     all_findings: list[dict[str, Any]] = []
