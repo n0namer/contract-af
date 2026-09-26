@@ -314,6 +314,13 @@ async def analyze(
     except TimeoutError as exc:
         elapsed = time.monotonic() - start
         app.note(f"Pipeline timeout: {exc}", tags=["analyze", "timeout"])
+        _emit_execution_event(
+            "reasoner.error",
+            level="error",
+            duration_ms=round(elapsed * 1000, 3),
+            error_type=type(exc).__name__,
+            outcome="partial",
+        )
         shutil.rmtree(workdir, ignore_errors=True)
         return _force_partial_report(
             intake=locals().get("intake", {}),
